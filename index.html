@@ -512,34 +512,129 @@
             gap: 6px;
         }
 
-        /* Card Partita: Colorata con i colori della squadra e rifinitura liquid glass */
-        .compact-card {
-            border-radius: 12px;
-            padding: 9px 12px;
+        /* --- CARD TOP MATCH (A TUTTA LARGHEZZA, PIÙ GRANDE, COLORI VIVACI, NO SCRITTA TOP MATCH) --- */
+        .featured-match-card {
+            border-radius: 16px;
+            padding: 13px 15px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 8px 24px rgba(0, 0, 0, 0.45);
+            cursor: pointer;
+            transition: transform 0.12s;
+            contain: content;
+        }
+        .featured-match-card:active { transform: scale(0.99); }
+
+        .featured-match-header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .featured-match-faceoff {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .featured-team {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            flex: 1;
+        }
+        .featured-team.away {
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        .featured-crest {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            flex-shrink: 0;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+        }
+
+        .featured-team-name {
+            font-size: 15px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .featured-vs-badge {
+            font-size: 11.5px;
+            font-weight: 900;
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 3px 8px;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .featured-match-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-sub);
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            padding-top: 6px;
+        }
+
+        /* --- GRIGLIA PARTITE REGOLARI (2x2 PICCOLE, CON SPAN 2 SE DISPARI) --- */
+        .regular-matches-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .compact-card {
+            border-radius: 12px;
+            padding: 9px 10px;
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
             border: 1px solid var(--border);
             border-top: 1px solid var(--border-highlight);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 3px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 3px 10px rgba(0, 0, 0, 0.25);
             transition: transform 0.1s;
             contain: content;
+            min-height: 76px;
         }
-        .compact-card:active { transform: scale(0.99); }
+        .compact-card:active { transform: scale(0.98); }
+
+        /* Ultima partita di blocco dispari: sottile e a tutta larghezza */
+        .compact-card.span-full {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            align-items: center;
+            padding: 9px 12px;
+            min-height: auto;
+        }
 
         .compact-teams-col {
             display: flex;
             flex-direction: column;
-            gap: 3px;
-            flex: 1;
+            gap: 4px;
             overflow: hidden;
         }
 
         .compact-team-row {
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 6px;
             overflow: hidden;
             white-space: nowrap;
         }
@@ -553,49 +648,61 @@
         }
 
         .compact-team-name {
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 12.5px;
+            font-weight: 700;
             color: #f1f5f9;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        .compact-meta-col {
+        .compact-bottom-row {
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 2px;
-            margin-left: 10px;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 5px;
+            padding-top: 4px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .compact-span-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .compact-span-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
             flex-shrink: 0;
+            margin-left: 10px;
         }
 
         .compact-time {
-            font-size: 12.5px;
+            font-size: 11.5px;
             font-weight: 800;
             color: #ffffff;
             font-variant-numeric: tabular-nums;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid var(--border);
-            padding: 2px 6px;
-            border-radius: 6px;
+            padding: 2px 5px;
+            border-radius: 5px;
         }
 
         .compact-subloc {
-            font-size: 10px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .top-match-tag {
             font-size: 9.5px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 0.3px;
-            text-transform: uppercase;
-            margin-bottom: 2px;
-            display: flex;
-            align-items: center;
-            gap: 3px;
+            color: var(--text-muted);
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 65px;
+        }
+        .compact-card.span-full .compact-subloc {
+            max-width: none;
         }
 
         /* --- 7. SEZIONE CLASSIFICHE --- */
@@ -889,57 +996,99 @@
         let countdownTimerId = null;
 
         // ==========================================
-        // MAPPA DEI COLORI SOCIALI DELLE SQUADRE
+        // MAPPA DEI COLORI SOCIALI DELLE SQUADRE (ACCESI & SATURI)
         // ==========================================
         const TEAM_COLORS = {
-            'torino': '#8a151b',      // Granata
-            'fiorentina': '#5c2d91',  // Viola
-            'juventus': '#3a3a3a',    // Bianconero
-            'inter': '#0057b8',       // Nerazzurro
-            'milan': '#d31126',       // Rossonero
-            'roma': '#8e1f2f',        // Giallorosso
-            'lazio': '#6ba4b8',       // Biancoceleste
-            'napoli': '#1270b0',      // Azzurro
-            'atalanta': '#1e3d7b',    // Nerazzurro
-            'bologna': '#1a2b4c',     // Rossoblu
+            'torino': '#8a151b',      // Granata ricco
+            'fiorentina': '#5c2d91',  // Viola profondo
+            'juventus': '#4a4a4a',    // Bianconero
+            'inter': '#0057b8',       // Nerazzurro acceso
+            'milan': '#d31126',       // Rossonero fiammante
+            'roma': '#991b1b',        // Giallorosso
+            'lazio': '#38bdf8',       // Biancoceleste luminoso
+            'napoli': '#0284c7',      // Azzurro Napoli
+            'atalanta': '#1e40af',    // Nerazzurro Atalanta
+            'bologna': '#1e293b',     // Rossoblu
             'genoa': '#8b1e2b',       // Rossoblu
-            'como': '#003882',        // Azzurro Como
-            'monza': '#c8102e',       // Biancorosso
-            'verona': '#002f6c',      // Gialloblu
-            'udinese': '#444444',     // Bianconero
-            'parma': '#003399',       // Crociati
+            'como': '#0284c7',        // Azzurro Como
+            'monza': '#e11d48',       // Biancorosso
+            'verona': '#1e3a8a',      // Gialloblu
+            'udinese': '#52525b',     // Bianconero
+            'parma': '#1d4ed8',       // Crociati
             'cagliari': '#8b1e2b',    // Rossoblu
-            'lecce': '#c8102e',       // Giallorosso
-            'empoli': '#005ca9',      // Azzurro
-            'venezia': '#008559',     // Arancioneroverde
-            'broncos': '#fb4f14',     // Denver Broncos Orange
-            'denver': '#fb4f14',
-            'ferrari': '#e10600',     // Rosso Corsa
+            'lecce': '#dc2626',       // Giallorosso
+            'empoli': '#2563eb',      // Azzurro
+            'venezia': '#059669',     // Arancioneroverde
+            'broncos': '#ea580c',     // Denver Broncos Orange
+            'denver': '#ea580c',
+            'ferrari': '#e10600',     // Rosso Corsa F1
             'f1': '#e10600',
-            'red bull': '#061d42',
-            'mercedes': '#00a19c',
-            'mclaren': '#ff8000',
-            'italia': '#004ea2'
+            'formula 1': '#e10600',
+            'red bull': '#0f172a',
+            'mercedes': '#0d9488',
+            'mclaren': '#f97316',
+            'italia': '#1d4ed8'
         };
 
+        function hexToRgba(hex, alpha) {
+            if (!hex || !hex.startsWith('#')) return `rgba(255, 255, 255, ${alpha})`;
+            let c = hex.replace('#', '');
+            if (c.length === 3) c = c.split('').map(x => x + x).join('');
+            const r = parseInt(c.substring(0, 2), 16) || 255;
+            const g = parseInt(c.substring(2, 4), 16) || 255;
+            const b = parseInt(c.substring(4, 6), 16) || 255;
+            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        }
+
         function getTeamColor(name) {
-            if (!name) return 'rgba(255, 255, 255, 0.08)';
+            if (!name) return '#52525b';
             const lower = name.toLowerCase();
             for (const key of Object.keys(TEAM_COLORS)) {
                 if (lower.includes(key)) return TEAM_COLORS[key];
             }
-            return 'rgba(255, 255, 255, 0.08)';
+            return '#52525b';
         }
 
-        function getCardBackground(home, away) {
-            const cHome = getTeamColor(home);
-            const cAway = getTeamColor(away);
-            if (cHome !== 'rgba(255, 255, 255, 0.08)' && cAway !== 'rgba(255, 255, 255, 0.08)') {
-                return `linear-gradient(135deg, ${cHome}22 0%, rgba(20,20,26,0.6) 50%, ${cAway}22 100%)`;
-            } else if (cHome !== 'rgba(255, 255, 255, 0.08)') {
-                return `linear-gradient(135deg, ${cHome}28 0%, rgba(18,18,24,0.7) 100%)`;
+        function getEventStyle(e, isFeatured) {
+            // Formula 1: ROSSO CORSA VIBRANTE (Molto più rosso, come richiesto!)
+            if (e.sport === 'f1') {
+                const red = '#e10600';
+                const op1 = isFeatured ? '0.55' : '0.40';
+                const op2 = isFeatured ? '0.30' : '0.18';
+                return {
+                    bg: `linear-gradient(135deg, rgba(225, 6, 0, ${op1}) 0%, rgba(28, 12, 16, 0.9) 55%, rgba(225, 6, 0, ${op2}) 100%)`,
+                    borderLeft: `4px solid ${red}`,
+                    accentColor: red
+                };
             }
-            return `linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.015) 100%)`;
+
+            const cHome = getTeamColor(e.home || e.title);
+            const cAway = getTeamColor(e.away || '');
+            const hasHome = cHome !== '#52525b';
+            const hasAway = cAway !== '#52525b';
+
+            // Opacità più alte e sature per togliere l'effetto "sfumatura a matita con il dito"
+            const op1 = isFeatured ? 0.52 : 0.38;
+            const op2 = isFeatured ? 0.42 : 0.28;
+
+            let bg = '';
+            if (hasHome && hasAway) {
+                bg = `linear-gradient(135deg, ${hexToRgba(cHome, op1)} 0%, rgba(18, 18, 24, 0.88) 50%, ${hexToRgba(cAway, op2)} 100%)`;
+            } else if (hasHome) {
+                bg = `linear-gradient(135deg, ${hexToRgba(cHome, op1)} 0%, rgba(18, 18, 24, 0.88) 100%)`;
+            } else if (hasAway) {
+                bg = `linear-gradient(135deg, rgba(18, 18, 24, 0.88) 0%, ${hexToRgba(cAway, op1)} 100%)`;
+            } else {
+                bg = `linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)`;
+            }
+
+            const borderLeft = hasHome ? `3.5px solid ${cHome}` : (hasAway ? `3.5px solid ${cAway}` : '1px solid var(--border)');
+
+            return {
+                bg: bg,
+                borderLeft: borderLeft,
+                accentColor: cHome
+            };
         }
 
         const SPORT_NAMES = {
@@ -990,7 +1139,7 @@
             renderAll();
         }
 
-        // --- PROSSIMO TOP MATCH (CON COLORI SQUADRA) ---
+        // --- HERO BANNER IN ALTO (COLORI VIBRANTI, NO SCRITTA TOP MATCH) ---
         function renderHeroBanner() {
             const container = document.getElementById('heroBannerContainer');
             if (allEvents.length === 0) {
@@ -1013,7 +1162,7 @@
             const dStr = dObj.toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short' });
             const safeTitle = (upcoming.title || '').replace(/'/g, "\\'");
             const key = `${upcoming.date}_${upcoming.time}_${safeTitle}`;
-            const heroBg = getCardBackground(upcoming.home, upcoming.away);
+            const style = getEventStyle(upcoming, true);
 
             let faceoffHtml = '';
             if (upcoming.homeCrest && upcoming.awayCrest) {
@@ -1031,18 +1180,18 @@
                     </div>
                 `;
             } else {
-                faceoffHtml = `<div style="font-size:14.5px; font-weight:800; color:#fff; margin:4px 0;">${upcoming.title}</div>`;
+                faceoffHtml = `<div style="font-size:15px; font-weight:800; color:#fff; margin:4px 0;">${upcoming.title}</div>`;
             }
 
             container.innerHTML = `
-                <div class="hero-banner" style="background: ${heroBg};" onclick="openEventSheetByKey('${key}')">
+                <div class="hero-banner" style="background: ${style.bg}; border-left: ${style.borderLeft};" onclick="openEventSheetByKey('${key}')">
                     <div class="hero-top">
-                        <div class="hero-badge">PROSSIMO MATCH • ${sportTag}</div>
+                        <div class="hero-badge">🏆 ${sportTag} • ${upcoming.loc || 'In programma'}</div>
                         <div class="hero-countdown" id="heroCountdownTimer">⏳ Calcolo...</div>
                     </div>
                     ${faceoffHtml}
                     <div class="hero-bottom">
-                        <span>🗓️ ${dStr} ore ${upcoming.time} • 📍 ${upcoming.loc}</span>
+                        <span>🗓️ ${dStr} ore ${upcoming.time} ${upcoming.venue ? '• 🏟️ ' + upcoming.venue : ''}</span>
                         <span class="hero-cta">Dettagli ›</span>
                     </div>
                 </div>
@@ -1185,7 +1334,7 @@
             }
         }
 
-        // --- AGENDA FEED: CARD CON COLORI SQUADRE & LIQUID GLASS ---
+        // --- AGENDA FEED: TOP MATCH A TUTTA LARGHEZZA, ALTRE IN GRIGLIA 2x2 (DISPARI = INTERA) ---
         function renderAgendaFeed() {
             const container = document.getElementById('agendaFeed');
             const filtered = getFilteredEvents();
@@ -1220,6 +1369,9 @@
                 const monthShort = dObj.toLocaleDateString('it-IT', { month: 'short' });
                 const evs = groups[dKey];
 
+                const topMatches = evs.filter(e => isTop(e));
+                const regularMatches = evs.filter(e => !isTop(e));
+
                 html += `
                     <div class="day-group">
                         <div class="day-header ${isTod ? 'today' : ''}">
@@ -1229,54 +1381,103 @@
                             </div>
                             <span class="day-count-badge">${evs.length} ${evs.length === 1 ? 'partita' : 'partite'}</span>
                         </div>
-                        <div class="events-list">
                 `;
 
-                evs.forEach(e => {
-                    const topMatch = isTop(e);
+                // 1. I TOP MATCH: BOX A TUTTA LARGHEZZA, PIÙ INFO, COLORI SATURI (NO SCRITTA TOP MATCH!)
+                topMatches.forEach(e => {
                     const safeTitle = (e.title || '').replace(/'/g, "\\'");
                     const key = `${e.date}_${e.time}_${safeTitle}`;
-                    
-                    // Colore personalizzato della squadra di casa / trasferta
-                    const cardBg = getCardBackground(e.home, e.away);
-                    const homeColor = getTeamColor(e.home);
-                    const leftBorder = (homeColor !== 'rgba(255, 255, 255, 0.08)') ? `border-left: 3px solid ${homeColor};` : '';
+                    const style = getEventStyle(e, true);
+                    const sportTag = SPORT_NAMES[e.sport] || e.sport.toUpperCase();
 
-                    let teamsHtml = '';
-                    if (e.homeCrest || e.awayCrest) {
-                        teamsHtml = `
-                            <div class="compact-team-row">
-                                ${e.homeCrest ? `<img src="${e.homeCrest}" class="compact-crest" alt="">` : ''}
-                                <span class="compact-team-name">${e.home || 'Casa'}</span>
-                            </div>
-                            <div class="compact-team-row">
-                                ${e.awayCrest ? `<img src="${e.awayCrest}" class="compact-crest" alt="">` : ''}
-                                <span class="compact-team-name">${e.away || 'Trasferta'}</span>
+                    let faceoffHtml = '';
+                    if (e.homeCrest && e.awayCrest) {
+                        faceoffHtml = `
+                            <div class="featured-match-faceoff">
+                                <div class="featured-team">
+                                    <img src="${e.homeCrest}" class="featured-crest" alt="">
+                                    <span class="featured-team-name">${e.home || 'Casa'}</span>
+                                </div>
+                                <div class="featured-vs-badge">VS</div>
+                                <div class="featured-team away">
+                                    <span class="featured-team-name">${e.away || 'Trasferta'}</span>
+                                    <img src="${e.awayCrest}" class="featured-crest" alt="">
+                                </div>
                             </div>
                         `;
                     } else {
-                        teamsHtml = `
-                            <div class="compact-team-row">
-                                <span class="compact-team-name">${e.title}</span>
-                            </div>
-                        `;
+                        faceoffHtml = `<div style="font-size:15.5px; font-weight:800; color:#fff; margin:6px 0;">${e.title}</div>`;
                     }
 
                     html += `
-                        <div class="compact-card" style="background: ${cardBg}; ${leftBorder}" onclick="openEventSheetByKey('${key}')">
-                            <div class="compact-teams-col">
-                                ${topMatch ? `<div class="top-match-tag">• TOP MATCH • ${SPORT_NAMES[e.sport] || e.sport}</div>` : ''}
-                                ${teamsHtml}
+                        <div class="featured-match-card" style="background: ${style.bg}; border-left: ${style.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                            <div class="featured-match-header">
+                                <span>🏆 ${sportTag} • ${e.loc || 'Ufficiale'}</span>
+                                <span style="color:#fff; font-weight:800; font-size:12.5px;">⏰ ${e.time || '--:--'}</span>
                             </div>
-                            <div class="compact-meta-col">
-                                <span class="compact-time">${e.time || '--:--'}</span>
-                                <span class="compact-subloc">${e.loc || ''}</span>
+                            ${faceoffHtml}
+                            <div class="featured-match-footer">
+                                <span>${e.venue ? '🏟️ ' + e.venue : (e.loc || '')}</span>
+                                <span style="color:#fff; font-weight:700;">Dettagli ›</span>
                             </div>
                         </div>
                     `;
                 });
 
-                html += `</div></div>`;
+                // 2. LE ALTRE PARTITE: GRIGLIA 2x2, E SE DISPARI L'ULTIMA VA A TUTTA LARGHEZZA!
+                if (regularMatches.length > 0) {
+                    html += `<div class="regular-matches-grid">`;
+                    const isOdd = regularMatches.length % 2 !== 0;
+
+                    regularMatches.forEach((e, idx) => {
+                        const safeTitle = (e.title || '').replace(/'/g, "\\'");
+                        const key = `${e.date}_${e.time}_${safeTitle}`;
+                        const style = getEventStyle(e, false);
+                        const isLastAndOdd = isOdd && (idx === regularMatches.length - 1);
+
+                        if (isLastAndOdd) {
+                            // Ultima partita di blocco dispari: sottile e a tutta larghezza (span-full)
+                            html += `
+                                <div class="compact-card span-full" style="background: ${style.bg}; border-left: ${style.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                                    <div class="compact-span-left">
+                                        ${e.homeCrest ? `<img src="${e.homeCrest}" class="compact-crest" alt="">` : ''}
+                                        <span class="compact-team-name">${e.home || e.title}</span>
+                                        <span style="font-size:11px; color:var(--text-muted); margin:0 4px;">vs</span>
+                                        <span class="compact-team-name">${e.away || ''}</span>
+                                        ${e.awayCrest ? `<img src="${e.awayCrest}" class="compact-crest" alt="">` : ''}
+                                    </div>
+                                    <div class="compact-span-right">
+                                        <span class="compact-subloc">${e.loc || ''}</span>
+                                        <span class="compact-time">${e.time || '--:--'}</span>
+                                    </div>
+                                </div>
+                            `;
+                        } else {
+                            // Partita normale in blocco 2x2
+                            html += `
+                                <div class="compact-card" style="background: ${style.bg}; border-left: ${style.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                                    <div class="compact-teams-col">
+                                        <div class="compact-team-row">
+                                            ${e.homeCrest ? `<img src="${e.homeCrest}" class="compact-crest" alt="">` : ''}
+                                            <span class="compact-team-name">${e.home || e.title}</span>
+                                        </div>
+                                        <div class="compact-team-row">
+                                            ${e.awayCrest ? `<img src="${e.awayCrest}" class="compact-crest" alt="">` : ''}
+                                            <span class="compact-team-name">${e.away || ''}</span>
+                                        </div>
+                                    </div>
+                                    <div class="compact-bottom-row">
+                                        <span class="compact-subloc">${e.loc || ''}</span>
+                                        <span class="compact-time">${e.time || '--:--'}</span>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    });
+                    html += `</div>`;
+                }
+
+                html += `</div>`;
             }
 
             container.innerHTML = html;
