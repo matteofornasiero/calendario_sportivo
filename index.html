@@ -453,57 +453,49 @@
         }
 
         .day-group {
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
+        /* Scritta del giorno: fluttuante, pulita, senza riquadri o scatole, spaziata sopra e sotto */
         .day-header {
             display: flex;
-            align-items: center;
+            align-items: baseline;
             justify-content: space-between;
-            padding: 7px 11px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            border-top: 1px solid var(--border-highlight);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-            margin-bottom: 7px;
-        }
-
-        .day-header.today {
-            border-color: rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .day-header-title {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .day-date-badge {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 6px;
-            padding: 2px 6px;
-            font-size: 11px;
-            font-weight: 800;
-            color: #fff;
-        }
-        .day-header.today .day-date-badge {
-            background: #ffffff;
-            color: #000;
+            padding: 0 4px;
+            margin-top: 26px; /* Spazio per staccare nettamente dal giorno precedente */
+            margin-bottom: 9px; /* Spazio sotto prima delle partite */
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
         }
 
         .day-weekday-name {
-            font-size: 13.5px;
+            font-size: 13px;
             font-weight: 700;
-            color: #f1f5f9;
+            color: #94a3b8;
+            letter-spacing: 0.3px;
             text-transform: capitalize;
+        }
+
+        .day-header.today .day-weekday-name {
+            color: #ffffff;
+            font-weight: 900;
         }
 
         .day-count-badge {
             font-size: 11px;
             font-weight: 600;
-            color: var(--text-muted);
+            color: #64748b;
+        }
+
+        /* Stanghetta colorata a sinistra della squadra per evidenziare i colori sociali */
+        .team-stanghetta {
+            width: 3.5px;
+            height: 13px;
+            border-radius: 2px;
+            flex-shrink: 0;
+            display: inline-block;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
 
         .events-list {
@@ -606,9 +598,10 @@
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
+            background: rgba(255, 255, 255, 0.035);
             border: 1px solid var(--border);
             border-top: 1px solid var(--border-highlight);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 3px 10px rgba(0, 0, 0, 0.25);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 3px 10px rgba(0, 0, 0, 0.25);
             transition: transform 0.1s;
             contain: content;
             min-height: 76px;
@@ -996,38 +989,41 @@
         let countdownTimerId = null;
 
         // ==========================================
-        // MAPPA DEI COLORI SOCIALI DELLE SQUADRE (ACCESI & SATURI)
+        // MAPPA DEI COLORI SOCIALI DELLE SQUADRE
         // ==========================================
         const TEAM_COLORS = {
-            'torino': '#8a151b',      // Granata ricco
+            'torino': '#8a151b',      // Granata puro
+            'toro': '#8a151b',
             'fiorentina': '#5c2d91',  // Viola profondo
-            'juventus': '#4a4a4a',    // Bianconero
+            'juventus': '#e2e8f0',    // Bianconero
             'inter': '#0057b8',       // Nerazzurro acceso
             'milan': '#d31126',       // Rossonero fiammante
             'roma': '#991b1b',        // Giallorosso
             'lazio': '#38bdf8',       // Biancoceleste luminoso
             'napoli': '#0284c7',      // Azzurro Napoli
-            'atalanta': '#1e40af',    // Nerazzurro Atalanta
-            'bologna': '#1e293b',     // Rossoblu
-            'genoa': '#8b1e2b',       // Rossoblu
+            'atalanta': '#1d4ed8',    // Nerazzurro Atalanta
+            'bologna': '#dc2626',     // Rossoblu
+            'genoa': '#991b1b',       // Rossoblu
             'como': '#0284c7',        // Azzurro Como
             'monza': '#e11d48',       // Biancorosso
-            'verona': '#1e3a8a',      // Gialloblu
-            'udinese': '#52525b',     // Bianconero
-            'parma': '#1d4ed8',       // Crociati
-            'cagliari': '#8b1e2b',    // Rossoblu
+            'verona': '#2563eb',      // Gialloblu
+            'udinese': '#e2e8f0',     // Bianconero
+            'parma': '#2563eb',       // Crociati
+            'cagliari': '#991b1b',    // Rossoblu
             'lecce': '#dc2626',       // Giallorosso
             'empoli': '#2563eb',      // Azzurro
             'venezia': '#059669',     // Arancioneroverde
-            'broncos': '#ea580c',     // Denver Broncos Orange
-            'denver': '#ea580c',
+            'frosinone': '#f59e0b',   // Giallazzurri
+            'sassuolo': '#10b981',    // Neroverde
+            'broncos': '#fb4f14',     // Denver Broncos Orange
+            'denver': '#fb4f14',
             'ferrari': '#e10600',     // Rosso Corsa F1
             'f1': '#e10600',
             'formula 1': '#e10600',
             'red bull': '#0f172a',
             'mercedes': '#0d9488',
             'mclaren': '#f97316',
-            'italia': '#1d4ed8'
+            'italia': '#004ea2'
         };
 
         function hexToRgba(hex, alpha) {
@@ -1049,45 +1045,66 @@
             return '#52525b';
         }
 
-        function getEventStyle(e, isFeatured) {
-            // 1. SE È UN TOP MATCH (In evidenza con sottile accento sportivo/squadra, mai arlecchino)
-            if (isFeatured) {
-                if (e.sport === 'f1') {
-                    return {
-                        bg: 'linear-gradient(135deg, rgba(225, 6, 0, 0.15) 0%, rgba(20, 16, 18, 0.95) 100%)',
-                        borderLeft: '3.5px solid #e10600',
-                        accentColor: '#e10600'
-                    };
-                }
-                if (e.sport === 'nfl') {
-                    return {
-                        bg: 'linear-gradient(135deg, rgba(234, 88, 12, 0.15) 0%, rgba(18, 20, 26, 0.95) 100%)',
-                        borderLeft: '3.5px solid #ea580c',
-                        accentColor: '#ea580c'
-                    };
-                }
-                const cHome = getTeamColor(e.home || e.title);
-                const hasHome = cHome !== '#52525b';
-                if (hasHome) {
-                    return {
-                        bg: `linear-gradient(135deg, ${hexToRgba(cHome, 0.14)} 0%, rgba(18, 18, 24, 0.95) 100%)`,
-                        borderLeft: `3.5px solid ${cHome}`,
-                        accentColor: cHome
-                    };
-                }
+        // TEMA DEDICATO AI TOP MATCH (PRIORITÀ ASSOLUTA ALLE SQUADRE DELL'UTENTE: TORO, F1, BRONCOS!)
+        function getTopMatchTheme(e) {
+            const t = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
+
+            // 1. IL TORO È LA SQUADRA DEL CUORE DELL'UTENTE (Sempre Granata, ovunque giochi!)
+            if (t.includes('torino') || t.includes('toro')) {
                 return {
-                    bg: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(18, 18, 24, 0.95) 100%)',
-                    borderLeft: '3.5px solid rgba(255, 255, 255, 0.3)',
-                    accentColor: '#fff'
+                    name: 'Torino FC',
+                    color: '#8a151b',
+                    bg: 'linear-gradient(135deg, rgba(138, 21, 27, 0.48) 0%, rgba(20, 14, 18, 0.95) 55%, rgba(138, 21, 27, 0.22) 100%)',
+                    borderLeft: '4.5px solid #8a151b'
                 };
             }
 
-            // 2. SE È UNA PARTITA NORMALE: 100% UNIFORME, PULITA, LIQUID GLASS SCURO (ZERO ARLECCHINO!)
-            // I colori vengono solo dai loghi ufficiali delle squadre, lo sfondo resta scuro e riposante.
+            // 2. FORMULA 1 (Rosso Corsa Fiammante)
+            if (e.sport === 'f1' || t.includes('f1') || t.includes('formula 1') || t.includes('grand prix') || t.includes('ferrari')) {
+                return {
+                    name: 'Formula 1',
+                    color: '#e10600',
+                    bg: 'linear-gradient(135deg, rgba(225, 6, 0, 0.50) 0%, rgba(26, 12, 16, 0.95) 55%, rgba(225, 6, 0, 0.22) 100%)',
+                    borderLeft: '4.5px solid #e10600'
+                };
+            }
+
+            // 3. DENVER BRONCOS (Arancione Broncos)
+            if (t.includes('broncos') || t.includes('denver')) {
+                return {
+                    name: 'Denver Broncos',
+                    color: '#fb4f14',
+                    bg: 'linear-gradient(135deg, rgba(251, 79, 20, 0.46) 0%, rgba(14, 18, 28, 0.95) 55%, rgba(0, 34, 68, 0.35) 100%)',
+                    borderLeft: '4.5px solid #fb4f14'
+                };
+            }
+
+            // 4. NAZIONALE ITALIANA (Azzurro Italia)
+            if (e.sport === 'nazionale' || t.includes('italia')) {
+                return {
+                    name: 'Nazionale Italiana',
+                    color: '#004ea2',
+                    bg: 'linear-gradient(135deg, rgba(0, 78, 162, 0.46) 0%, rgba(12, 18, 30, 0.95) 55%, rgba(0, 78, 162, 0.22) 100%)',
+                    borderLeft: '4.5px solid #004ea2'
+                };
+            }
+
+            // 5. ITALIANE IN CHAMPIONS LEAGUE
+            if (e.sport === 'champions') {
+                return {
+                    name: 'Champions League',
+                    color: '#2563eb',
+                    bg: 'linear-gradient(135deg, rgba(37, 99, 235, 0.42) 0%, rgba(14, 18, 32, 0.95) 55%, rgba(147, 51, 234, 0.25) 100%)',
+                    borderLeft: '4.5px solid #3b82f6'
+                };
+            }
+
+            const cHome = getTeamColor(e.home || e.title);
             return {
-                bg: 'rgba(255, 255, 255, 0.035)',
-                borderLeft: '1px solid var(--border)',
-                accentColor: '#fff'
+                name: 'Top Match',
+                color: cHome,
+                bg: `linear-gradient(135deg, ${hexToRgba(cHome, 0.35)} 0%, rgba(20, 20, 26, 0.95) 100%)`,
+                borderLeft: `4px solid ${cHome}`
             };
         }
 
@@ -1139,7 +1156,7 @@
             renderAll();
         }
 
-        // --- HERO BANNER IN ALTO (COLORI VIBRANTI, NO SCRITTA TOP MATCH) ---
+        // --- HERO BANNER IN ALTO (TEMA SQUADRA DELL'UTENTE + STANGHETTE) ---
         function renderHeroBanner() {
             const container = document.getElementById('heroBannerContainer');
             if (allEvents.length === 0) {
@@ -1162,13 +1179,14 @@
             const dStr = dObj.toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short' });
             const safeTitle = (upcoming.title || '').replace(/'/g, "\\'");
             const key = `${upcoming.date}_${upcoming.time}_${safeTitle}`;
-            const style = getEventStyle(upcoming, true);
+            const theme = getTopMatchTheme(upcoming);
 
             let faceoffHtml = '';
             if (upcoming.homeCrest && upcoming.awayCrest) {
                 faceoffHtml = `
                     <div class="hero-faceoff">
                         <div class="hero-team">
+                            <span class="team-stanghetta" style="height:20px; width:4px; background: ${getTeamColor(upcoming.home)};"></span>
                             <img src="${upcoming.homeCrest}" class="hero-crest" alt="">
                             <span class="hero-team-name">${upcoming.home || 'Casa'}</span>
                         </div>
@@ -1176,6 +1194,7 @@
                         <div class="hero-team away">
                             <span class="hero-team-name">${upcoming.away || 'Trasferta'}</span>
                             <img src="${upcoming.awayCrest}" class="hero-crest" alt="">
+                            <span class="team-stanghetta" style="height:20px; width:4px; background: ${getTeamColor(upcoming.away)};"></span>
                         </div>
                     </div>
                 `;
@@ -1184,7 +1203,7 @@
             }
 
             container.innerHTML = `
-                <div class="hero-banner" style="background: ${style.bg}; border-left: ${style.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                <div class="hero-banner" style="background: ${theme.bg}; border-left: ${theme.borderLeft};" onclick="openEventSheetByKey('${key}')">
                     <div class="hero-top">
                         <div class="hero-badge">🏆 ${sportTag} • ${upcoming.loc || 'In programma'}</div>
                         <div class="hero-countdown" id="heroCountdownTimer">⏳ Calcolo...</div>
@@ -1334,7 +1353,7 @@
             }
         }
 
-        // --- AGENDA FEED: TOP MATCH A TUTTA LARGHEZZA, ALTRE IN GRIGLIA 2x2 (DISPARI = INTERA) ---
+        // --- AGENDA FEED: SCRITTA GIORNO FLUTTUANTE, TOP MATCH SATURO, 2x2 CON STANGHETTE ---
         function renderAgendaFeed() {
             const container = document.getElementById('agendaFeed');
             const filtered = getFilteredEvents();
@@ -1365,8 +1384,6 @@
                 const dObj = new Date(dKey + 'T00:00:00');
                 const isTod = dKey === todayStr;
                 const fullDayStr = dObj.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
-                const dayNum = dObj.getDate();
-                const monthShort = dObj.toLocaleDateString('it-IT', { month: 'short' });
                 const evs = groups[dKey];
 
                 const topMatches = evs.filter(e => isTop(e));
@@ -1374,20 +1391,18 @@
 
                 html += `
                     <div class="day-group">
+                        <!-- Intestazione giorno pulita, fluttuante, senza riquadro -->
                         <div class="day-header ${isTod ? 'today' : ''}">
-                            <div class="day-header-title">
-                                <span class="day-date-badge">${dayNum} ${monthShort}</span>
-                                <span class="day-weekday-name">${fullDayStr}</span>
-                            </div>
-                            <span class="day-count-badge">${evs.length} ${evs.length === 1 ? 'partita' : 'partite'}</span>
+                            <span class="day-weekday-name">${fullDayStr}${isTod ? ' • Oggi' : ''}</span>
+                            <span class="day-count-badge">${evs.length} ${evs.length === 1 ? 'evento' : 'eventi'}</span>
                         </div>
                 `;
 
-                // 1. I TOP MATCH: BOX A TUTTA LARGHEZZA, PIÙ INFO, COLORI SATURI (NO SCRITTA TOP MATCH!)
+                // 1. I TOP MATCH: COLORI VIBRANTI DEDICATI ALLA TUA SQUADRA (TORO = GRANATA!), NO ARLECCHINO
                 topMatches.forEach(e => {
                     const safeTitle = (e.title || '').replace(/'/g, "\\'");
                     const key = `${e.date}_${e.time}_${safeTitle}`;
-                    const style = getEventStyle(e, true);
+                    const theme = getTopMatchTheme(e);
                     const sportTag = SPORT_NAMES[e.sport] || e.sport.toUpperCase();
 
                     let faceoffHtml = '';
@@ -1395,6 +1410,7 @@
                         faceoffHtml = `
                             <div class="featured-match-faceoff">
                                 <div class="featured-team">
+                                    <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(e.home)};"></span>
                                     <img src="${e.homeCrest}" class="featured-crest" alt="">
                                     <span class="featured-team-name">${e.home || 'Casa'}</span>
                                 </div>
@@ -1402,6 +1418,7 @@
                                 <div class="featured-team away">
                                     <span class="featured-team-name">${e.away || 'Trasferta'}</span>
                                     <img src="${e.awayCrest}" class="featured-crest" alt="">
+                                    <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(e.away)};"></span>
                                 </div>
                             </div>
                         `;
@@ -1410,7 +1427,7 @@
                     }
 
                     html += `
-                        <div class="featured-match-card" style="background: ${style.bg}; border-left: ${style.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                        <div class="featured-match-card" style="background: ${theme.bg}; border-left: ${theme.borderLeft};" onclick="openEventSheetByKey('${key}')">
                             <div class="featured-match-header">
                                 <span>🏆 ${sportTag} • ${e.loc || 'Ufficiale'}</span>
                                 <span style="color:#fff; font-weight:800; font-size:12.5px;">⏰ ${e.time || '--:--'}</span>
@@ -1424,7 +1441,7 @@
                     `;
                 });
 
-                // 2. LE ALTRE PARTITE: GRIGLIA 2x2, E SE DISPARI L'ULTIMA VA A TUTTA LARGHEZZA!
+                // 2. LE ALTRE PARTITE: GRIGLIA 2x2 SCURA LIQUID GLASS CON STANGHETTA DEI COLORI DELLA SQUADRA
                 if (regularMatches.length > 0) {
                     html += `<div class="regular-matches-grid">`;
                     const isOdd = regularMatches.length % 2 !== 0;
@@ -1432,17 +1449,20 @@
                     regularMatches.forEach((e, idx) => {
                         const safeTitle = (e.title || '').replace(/'/g, "\\'");
                         const key = `${e.date}_${e.time}_${safeTitle}`;
-                        const style = getEventStyle(e, false);
                         const isLastAndOdd = isOdd && (idx === regularMatches.length - 1);
+                        const homeColor = getTeamColor(e.home || e.title);
+                        const awayColor = getTeamColor(e.away || '');
 
                         if (isLastAndOdd) {
                             // Ultima partita di blocco dispari: sottile e a tutta larghezza (span-full)
                             html += `
-                                <div class="compact-card span-full" style="background: ${style.bg}; border-left: ${style.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                                <div class="compact-card span-full" onclick="openEventSheetByKey('${key}')">
                                     <div class="compact-span-left">
+                                        <span class="team-stanghetta" style="background: ${homeColor};"></span>
                                         ${e.homeCrest ? `<img src="${e.homeCrest}" class="compact-crest" alt="">` : ''}
                                         <span class="compact-team-name">${e.home || e.title}</span>
                                         <span style="font-size:11px; color:var(--text-muted); margin:0 4px;">vs</span>
+                                        <span class="team-stanghetta" style="background: ${awayColor};"></span>
                                         <span class="compact-team-name">${e.away || ''}</span>
                                         ${e.awayCrest ? `<img src="${e.awayCrest}" class="compact-crest" alt="">` : ''}
                                     </div>
@@ -1455,13 +1475,15 @@
                         } else {
                             // Partita normale in blocco 2x2
                             html += `
-                                <div class="compact-card" style="background: ${style.bg}; border-left: ${style.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                                <div class="compact-card" onclick="openEventSheetByKey('${key}')">
                                     <div class="compact-teams-col">
                                         <div class="compact-team-row">
+                                            <span class="team-stanghetta" style="background: ${homeColor};"></span>
                                             ${e.homeCrest ? `<img src="${e.homeCrest}" class="compact-crest" alt="">` : ''}
                                             <span class="compact-team-name">${e.home || e.title}</span>
                                         </div>
                                         <div class="compact-team-row">
+                                            <span class="team-stanghetta" style="background: ${awayColor};"></span>
                                             ${e.awayCrest ? `<img src="${e.awayCrest}" class="compact-crest" alt="">` : ''}
                                             <span class="compact-team-name">${e.away || ''}</span>
                                         </div>
