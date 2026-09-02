@@ -274,45 +274,68 @@
             color: #fff;
         }
 
-        /* --- 3. FILTRI CHIP (MONOCHROME LIQUID GLASS) --- */
-        .filters-container {
-            display: flex;
-            gap: 6px;
-            padding: 2px 14px 8px 14px;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-        .filters-container::-webkit-scrollbar { display: none; }
-
-        .chip {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            padding: 6px 12px;
-            border-radius: 16px;
-            font-size: 11.5px;
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            border-top: 1px solid var(--border-highlight);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-            color: var(--text-sub);
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-        .chip:active { transform: scale(0.96); }
-
-        /* Chip attivo: Bianco & Nero nitido */
-        .chip.active {
-            color: #000;
-            background: #ffffff;
-            border-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
-            font-weight: 800;
+        /* --- RESPONSIVE DESKTOP ADAPTATION (PC VIEW) --- */
+        .app-container {
+            width: 100%;
+            margin: 0 auto;
         }
 
-        /* --- 4. CONTROLLI MESE & SWITCHER VISTE (MAI PIÙ SBORDAMENTI!) --- */
+        @media (min-width: 768px) {
+            body {
+                display: flex;
+                justify-content: center;
+                background-color: #060608;
+            }
+            .app-container {
+                max-width: 1060px;
+                background-color: #09090b;
+                border-left: 1px solid rgba(255, 255, 255, 0.08);
+                border-right: 1px solid rgba(255, 255, 255, 0.08);
+                min-height: 100vh;
+                box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+            }
+            .main-content {
+                padding: 0 24px;
+            }
+            .top-bar {
+                padding: 14px 24px;
+            }
+            .nav-controls-box {
+                padding: 4px 24px 10px 24px;
+            }
+            .date-strip-wrapper {
+                padding: 0 24px 12px 24px;
+            }
+            .hero-container {
+                padding: 0 24px 12px 24px;
+            }
+            .regular-matches-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 12px !important;
+            }
+            .featured-match-card {
+                padding: 16px 20px;
+            }
+            .featured-crest {
+                width: 38px;
+                height: 38px;
+            }
+            .featured-team-name {
+                font-size: 17px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .app-container {
+                max-width: 1240px;
+            }
+            .regular-matches-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 14px !important;
+            }
+        }
+
+        /* --- 4. CONTROLLI MESE & SWITCHER VISTE (2 COLONNE PULITE) --- */
         .nav-controls-box {
             padding: 2px 14px 8px 14px;
             display: flex;
@@ -349,25 +372,27 @@
             color: #fff;
         }
 
-        /* Switcher a griglia 3 colonne perfettamente equilibrate (100% IMPOSSIBILE SBORDARE!) */
+        /* Switcher a 2 colonne: Agenda e Classifiche (la vista mese è rimossa perché inutile su mobile) */
         .view-switcher-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4px;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border);
             border-top: 1px solid var(--border-highlight);
             padding: 3px;
             border-radius: 10px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .view-btn {
             background: transparent;
             border: none;
             color: var(--text-sub);
-            padding: 6px 2px;
+            padding: 7px 4px;
             border-radius: 8px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             cursor: pointer;
             text-align: center;
@@ -591,20 +616,20 @@
             gap: 8px;
         }
 
+        /* Box partite normali: solido, opaco, zero liquid glass come richiesto */
         .compact-card {
             border-radius: 12px;
-            padding: 9px 10px;
+            padding: 9px 11px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
-            background: rgba(255, 255, 255, 0.035);
-            border: 1px solid var(--border);
-            border-top: 1px solid var(--border-highlight);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 3px 10px rgba(0, 0, 0, 0.25);
+            background: #141417; /* Solido opaco, senza riflessi o blur */
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
             transition: transform 0.1s;
             contain: content;
-            min-height: 76px;
+            min-height: 74px;
         }
         .compact-card:active { transform: scale(0.98); }
 
@@ -615,6 +640,7 @@
             align-items: center;
             padding: 9px 12px;
             min-height: auto;
+            background: #141417;
         }
 
         .compact-teams-col {
@@ -867,6 +893,7 @@
     </style>
 </head>
 <body>
+<div class="app-container">
 
     <!-- 1. TOP BAR (MONOCHROME LIQUID GLASS) -->
     <header class="top-bar">
@@ -889,19 +916,7 @@
     <!-- 2. PROSSIMO TOP MATCH (CARD CON COLORI SQUADRE) -->
     <div class="hero-container" id="heroBannerContainer"></div>
 
-    <!-- 3. FILTRI CHIP -->
-    <div class="filters-container">
-        <button class="chip active" data-sport="all" onclick="setSportFilter('all', this)">Tutti</button>
-        <button class="chip" data-sport="top" onclick="setSportFilter('top', this)">I Miei Match</button>
-        <button class="chip" data-sport="weekend" onclick="setSportFilter('weekend', this)">Weekend</button>
-        <button class="chip" data-sport="seriea" onclick="setSportFilter('seriea', this)">Serie A</button>
-        <button class="chip" data-sport="f1" onclick="setSportFilter('f1', this)">F1</button>
-        <button class="chip" data-sport="champions" onclick="setSportFilter('champions', this)">Champions</button>
-        <button class="chip" data-sport="nfl" onclick="setSportFilter('nfl', this)">NFL</button>
-        <button class="chip" data-sport="nazionale" onclick="setSportFilter('nazionale', this)">Italia</button>
-    </div>
-
-    <!-- 4. CONTROLLI MESE & SWITCHER VISTE (DUE RIGHE PERFETTE, 0 SBORDAMENTI) -->
+    <!-- 3. CONTROLLI MESE & SWITCHER VISTE (2 COLONNE: AGENDA & CLASSIFICHE) -->
     <div class="nav-controls-box">
         <div class="month-selector-row" id="monthSelectorGroup">
             <button class="nav-btn" onclick="navigateTime(-1)">‹</button>
@@ -911,16 +926,15 @@
         <div class="view-switcher-grid">
             <button class="view-btn active" id="btnAgendaView" onclick="switchView('agenda')">Agenda</button>
             <button class="view-btn" id="btnStandingsView" onclick="switchView('standings')">Classifiche</button>
-            <button class="view-btn" id="btnMonthView" onclick="switchView('month')">Mese</button>
         </div>
     </div>
 
-    <!-- 5. DATE STRIP SETTIMANALE -->
+    <!-- 4. DATE STRIP SETTIMANALE -->
     <div class="date-strip-wrapper" id="dateStripWrapper">
         <div class="date-strip" id="dateStrip"></div>
     </div>
 
-    <!-- 6. CONTENUTO PRINCIPALE -->
+    <!-- 5. CONTENUTO PRINCIPALE -->
     <main class="main-content">
         <!-- VISTA AGENDA -->
         <div id="agendaView">
@@ -938,16 +952,8 @@
             </div>
             <div id="standingsContentBox"></div>
         </div>
-
-        <!-- VISTA MESE -->
-        <div id="monthView" class="month-view-container">
-            <div class="month-grid-weekdays">
-                <div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div>
-            </div>
-            <div class="month-grid" id="monthGrid"></div>
-            <div id="monthSelectedDayEvents"></div>
-        </div>
     </main>
+</div>
 
     <!-- MODAL DETTAGLI PARTITA -->
     <div class="modal-backdrop" id="modalBackdrop" onclick="closeAllSheets()"></div>
@@ -986,14 +992,12 @@
         let currentStandingsTab = 'seriea';
         let searchQuery = '';
         let activeSheetEvent = null;
-        let countdownTimerId = null;
-
-        // ==========================================
+             // ==========================================
         // MAPPA DEI COLORI SOCIALI DELLE SQUADRE
         // ==========================================
         const TEAM_COLORS = {
-            'torino': '#8a151b',      // Granata puro
-            'toro': '#8a151b',
+            'torino': '#681019',      // Vero Granata storico profondo (NON rosso!)
+            'toro': '#681019',
             'fiorentina': '#5c2d91',  // Viola profondo
             'juventus': '#e2e8f0',    // Bianconero
             'inter': '#0057b8',       // Nerazzurro acceso
@@ -1045,66 +1049,56 @@
             return '#52525b';
         }
 
-        // TEMA DEDICATO AI TOP MATCH (PRIORITÀ ASSOLUTA ALLE SQUADRE DELL'UTENTE: TORO, F1, BRONCOS!)
+        // TEMA TOP MATCH (PRIORITÀ TORO/BRONCOS CON EVIDENZIAZIONE A SINISTRA SE CASA, DESTRA SE TRASFERTA!)
         function getTopMatchTheme(e) {
             const t = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
+            const homeStr = (e.home || '').toLowerCase();
+            const awayStr = (e.away || '').toLowerCase();
 
-            // 1. IL TORO È LA SQUADRA DEL CUORE DELL'UTENTE (Sempre Granata, ovunque giochi!)
-            if (t.includes('torino') || t.includes('toro')) {
-                return {
-                    name: 'Torino FC',
-                    color: '#8a151b',
-                    bg: 'linear-gradient(135deg, rgba(138, 21, 27, 0.48) 0%, rgba(20, 14, 18, 0.95) 55%, rgba(138, 21, 27, 0.22) 100%)',
-                    borderLeft: '4.5px solid #8a151b'
-                };
+            const isToro = t.includes('torino') || t.includes('toro');
+            const isBroncos = t.includes('broncos') || t.includes('denver');
+
+            let color = '#ffffff';
+            let isAway = false;
+
+            if (isToro) {
+                color = '#681019'; // Granata autentico del Torino
+                isAway = awayStr.includes('torino') || awayStr.includes('toro');
+            } else if (isBroncos) {
+                color = '#fb4f14';
+                isAway = awayStr.includes('broncos') || awayStr.includes('denver');
+            } else if (e.sport === 'f1') {
+                color = '#e10600';
+                isAway = false;
+            } else if (e.sport === 'nazionale') {
+                color = '#004ea2';
+                isAway = false;
+            } else if (e.sport === 'champions') {
+                color = '#2563eb';
+                isAway = false;
+            } else {
+                color = getTeamColor(e.home);
+                isAway = false;
             }
 
-            // 2. FORMULA 1 (Rosso Corsa Fiammante)
-            if (e.sport === 'f1' || t.includes('f1') || t.includes('formula 1') || t.includes('grand prix') || t.includes('ferrari')) {
-                return {
-                    name: 'Formula 1',
-                    color: '#e10600',
-                    bg: 'linear-gradient(135deg, rgba(225, 6, 0, 0.50) 0%, rgba(26, 12, 16, 0.95) 55%, rgba(225, 6, 0, 0.22) 100%)',
-                    borderLeft: '4.5px solid #e10600'
-                };
+            let bg = '';
+            let border = '';
+
+            if (isAway) {
+                // Squadra del cuore in TRASFERTA: accento a DESTRA!
+                border = `border-right: 5px solid ${color}; border-left: 1px solid var(--border);`;
+                bg = `linear-gradient(225deg, ${hexToRgba(color, 0.50)} 0%, rgba(20, 14, 18, 0.95) 55%, rgba(14, 14, 18, 0.98) 100%)`;
+            } else {
+                // Squadra del cuore in CASA (o F1 / neutrale): accento a SINISTRA!
+                border = `border-left: 5px solid ${color}; border-right: 1px solid var(--border);`;
+                bg = `linear-gradient(135deg, ${hexToRgba(color, 0.50)} 0%, rgba(20, 14, 18, 0.95) 55%, rgba(14, 14, 18, 0.98) 100%)`;
             }
 
-            // 3. DENVER BRONCOS (Arancione Broncos)
-            if (t.includes('broncos') || t.includes('denver')) {
-                return {
-                    name: 'Denver Broncos',
-                    color: '#fb4f14',
-                    bg: 'linear-gradient(135deg, rgba(251, 79, 20, 0.46) 0%, rgba(14, 18, 28, 0.95) 55%, rgba(0, 34, 68, 0.35) 100%)',
-                    borderLeft: '4.5px solid #fb4f14'
-                };
-            }
-
-            // 4. NAZIONALE ITALIANA (Azzurro Italia)
-            if (e.sport === 'nazionale' || t.includes('italia')) {
-                return {
-                    name: 'Nazionale Italiana',
-                    color: '#004ea2',
-                    bg: 'linear-gradient(135deg, rgba(0, 78, 162, 0.46) 0%, rgba(12, 18, 30, 0.95) 55%, rgba(0, 78, 162, 0.22) 100%)',
-                    borderLeft: '4.5px solid #004ea2'
-                };
-            }
-
-            // 5. ITALIANE IN CHAMPIONS LEAGUE
-            if (e.sport === 'champions') {
-                return {
-                    name: 'Champions League',
-                    color: '#2563eb',
-                    bg: 'linear-gradient(135deg, rgba(37, 99, 235, 0.42) 0%, rgba(14, 18, 32, 0.95) 55%, rgba(147, 51, 234, 0.25) 100%)',
-                    borderLeft: '4.5px solid #3b82f6'
-                };
-            }
-
-            const cHome = getTeamColor(e.home || e.title);
             return {
-                name: 'Top Match',
-                color: cHome,
-                bg: `linear-gradient(135deg, ${hexToRgba(cHome, 0.35)} 0%, rgba(20, 20, 26, 0.95) 100%)`,
-                borderLeft: `4px solid ${cHome}`
+                color: color,
+                isAway: isAway,
+                bg: bg,
+                border: border
             };
         }
 
@@ -1126,7 +1120,7 @@
         function isTop(e) {
             if (e.isTop) return true;
             const t = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
-            if (e.sport === 'seriea' && t.includes('torino')) return true;
+            if (e.sport === 'seriea' && (t.includes('torino') || t.includes('toro'))) return true;
             if (e.sport === 'nfl' && (t.includes('broncos') || t.includes('denver'))) return true;
             if (e.sport === 'f1' && t.includes('gara')) return true;
             if (e.sport === 'champions') {
@@ -1203,7 +1197,7 @@
             }
 
             container.innerHTML = `
-                <div class="hero-banner" style="background: ${theme.bg}; border-left: ${theme.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                <div class="hero-banner" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
                     <div class="hero-top">
                         <div class="hero-badge">🏆 ${sportTag} • ${upcoming.loc || 'In programma'}</div>
                         <div class="hero-countdown" id="heroCountdownTimer">⏳ Calcolo...</div>
@@ -1234,11 +1228,7 @@
 
         // --- NAVIGAZIONE & VISTE ---
         function navigateTime(delta) {
-            if (currentView === 'agenda') {
-                currentDate.setDate(currentDate.getDate() + (delta * 7));
-            } else if (currentView === 'month') {
-                currentDate.setMonth(currentDate.getMonth() + delta);
-            }
+            currentDate.setDate(currentDate.getDate() + (delta * 7));
             selectedDateStr = formatDate(currentDate);
             renderAll();
         }
@@ -1255,23 +1245,13 @@
             currentView = view;
             document.getElementById('btnAgendaView').classList.toggle('active', view === 'agenda');
             document.getElementById('btnStandingsView').classList.toggle('active', view === 'standings');
-            document.getElementById('btnMonthView').classList.toggle('active', view === 'month');
 
             document.getElementById('agendaView').style.display = (view === 'agenda') ? 'block' : 'none';
             document.getElementById('standingsView').style.display = (view === 'standings') ? 'block' : 'none';
-            document.getElementById('monthView').style.display = (view === 'month') ? 'block' : 'none';
 
             document.getElementById('dateStripWrapper').style.display = (view === 'agenda') ? 'block' : 'none';
             document.getElementById('monthSelectorGroup').style.display = (view === 'standings') ? 'none' : 'flex';
 
-            renderAll();
-        }
-
-        function setSportFilter(sport, btn) {
-            currentSport = sport;
-            document.querySelectorAll('.filters-container .chip').forEach(c => c.classList.remove('active'));
-            btn.classList.add('active');
-            if (currentView === 'standings') switchView('agenda');
             renderAll();
         }
 
@@ -1282,13 +1262,6 @@
 
         function getFilteredEvents() {
             return allEvents.filter(e => {
-                if (currentSport === 'top' && !isTop(e)) return false;
-                if (currentSport === 'weekend') {
-                    const day = new Date(e.date + 'T00:00:00').getDay();
-                    if (day !== 0 && day !== 6) return false;
-                } else if (currentSport !== 'all' && currentSport !== 'top' && e.sport !== currentSport) {
-                    return false;
-                }
                 if (searchQuery) {
                     const match = `${e.title || ''} ${e.home || ''} ${e.away || ''} ${e.loc || ''}`.toLowerCase();
                     if (!match.includes(searchQuery)) return false;
@@ -1304,8 +1277,6 @@
                 renderAgendaFeed();
             } else if (currentView === 'standings') {
                 renderStandings();
-            } else {
-                renderMonthGrid();
             }
         }
 
@@ -1314,7 +1285,7 @@
             document.getElementById('monthDisplay').textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
         }
 
-        // --- STRIP DATA ---
+        // --- STRIP DATA SETTIMANALE ---
         function renderDateStrip() {
             const strip = document.getElementById('dateStrip');
             strip.innerHTML = '';
@@ -1353,7 +1324,7 @@
             }
         }
 
-        // --- AGENDA FEED: SCRITTA GIORNO FLUTTUANTE, TOP MATCH SATURO, 2x2 CON STANGHETTE ---
+        // --- AGENDA FEED: SCRITTA GIORNO FLUTTUANTE, TOP MATCH EVIDENZIATO SUL LATO DELLA SQUADRA, BOX OPACHI ---
         function renderAgendaFeed() {
             const container = document.getElementById('agendaFeed');
             const filtered = getFilteredEvents();
@@ -1398,7 +1369,7 @@
                         </div>
                 `;
 
-                // 1. I TOP MATCH: COLORI VIBRANTI DEDICATI ALLA TUA SQUADRA (TORO = GRANATA!), NO ARLECCHINO
+                // 1. I TOP MATCH: EVIDENZIAZIONE SUL LATO DELLA SQUADRA (SINISTRA SE IN CASA, DESTRA SE FUORI)
                 topMatches.forEach(e => {
                     const safeTitle = (e.title || '').replace(/'/g, "\\'");
                     const key = `${e.date}_${e.time}_${safeTitle}`;
@@ -1427,7 +1398,7 @@
                     }
 
                     html += `
-                        <div class="featured-match-card" style="background: ${theme.bg}; border-left: ${theme.borderLeft};" onclick="openEventSheetByKey('${key}')">
+                        <div class="featured-match-card" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
                             <div class="featured-match-header">
                                 <span>🏆 ${sportTag} • ${e.loc || 'Ufficiale'}</span>
                                 <span style="color:#fff; font-weight:800; font-size:12.5px;">⏰ ${e.time || '--:--'}</span>
@@ -1441,7 +1412,7 @@
                     `;
                 });
 
-                // 2. LE ALTRE PARTITE: GRIGLIA 2x2 SCURA LIQUID GLASS CON STANGHETTA DEI COLORI DELLA SQUADRA
+                // 2. LE ALTRE PARTITE: GRIGLIA MATTE SCURA (F1 CON PIÙ INFO E SENZA STANGHETTE)
                 if (regularMatches.length > 0) {
                     html += `<div class="regular-matches-grid">`;
                     const isOdd = regularMatches.length % 2 !== 0;
@@ -1450,11 +1421,37 @@
                         const safeTitle = (e.title || '').replace(/'/g, "\\'");
                         const key = `${e.date}_${e.time}_${safeTitle}`;
                         const isLastAndOdd = isOdd && (idx === regularMatches.length - 1);
-                        const homeColor = getTeamColor(e.home || e.title);
-                        const awayColor = getTeamColor(e.away || '');
+                        const isF1Session = e.sport === 'f1';
 
-                        if (isLastAndOdd) {
+                        if (isF1Session) {
+                            // FORMULA 1 QUALIFICHE / PROVE: niente stanghette, più informazioni e dettagli utili
+                            const sessionTag = e.title.toUpperCase().includes('QUALIFICHE') ? 'QUALIFICHE' : (e.title.toUpperCase().includes('PROVE') ? 'PROVE LIBERE' : 'SESSIONE F1');
+                            html += `
+                                <div class="compact-card ${isLastAndOdd ? 'span-full' : ''}" onclick="openEventSheetByKey('${key}')">
+                                    <div style="display:flex; flex-direction:column; gap:3px; overflow:hidden;">
+                                        <div style="display:flex; align-items:center; gap:6px;">
+                                            <span style="font-size:9.5px; font-weight:800; color:#ff4d4d; text-transform:uppercase; background:rgba(225,6,0,0.18); padding:1px 6px; border-radius:4px; border:1px solid rgba(225,6,0,0.35);">
+                                                🏎️ ${sessionTag}
+                                            </span>
+                                            <span style="font-size:10px; color:#94a3b8; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                                                ${e.loc || 'Circuito'}
+                                            </span>
+                                        </div>
+                                        <div style="font-size:12.5px; font-weight:800; color:#fff; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-top:2px;">
+                                            ${e.title}
+                                        </div>
+                                        ${e.venue ? `<div style="font-size:10px; color:#64748b; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">🏟️ ${e.venue}</div>` : ''}
+                                    </div>
+                                    <div class="compact-bottom-row" style="margin-top:4px;">
+                                        <span class="compact-subloc">${e.loc || 'Monza'}</span>
+                                        <span class="compact-time">⏰ ${e.time || '--:--'}</span>
+                                    </div>
+                                </div>
+                            `;
+                        } else if (isLastAndOdd) {
                             // Ultima partita di blocco dispari: sottile e a tutta larghezza (span-full)
+                            const homeColor = getTeamColor(e.home || e.title);
+                            const awayColor = getTeamColor(e.away || '');
                             html += `
                                 <div class="compact-card span-full" onclick="openEventSheetByKey('${key}')">
                                     <div class="compact-span-left">
@@ -1474,6 +1471,8 @@
                             `;
                         } else {
                             // Partita normale in blocco 2x2
+                            const homeColor = getTeamColor(e.home || e.title);
+                            const awayColor = getTeamColor(e.away || '');
                             html += `
                                 <div class="compact-card" onclick="openEventSheetByKey('${key}')">
                                     <div class="compact-teams-col">
