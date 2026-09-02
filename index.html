@@ -1050,44 +1050,44 @@
         }
 
         function getEventStyle(e, isFeatured) {
-            // Formula 1: ROSSO CORSA VIBRANTE (Molto più rosso, come richiesto!)
-            if (e.sport === 'f1') {
-                const red = '#e10600';
-                const op1 = isFeatured ? '0.55' : '0.40';
-                const op2 = isFeatured ? '0.30' : '0.18';
+            // 1. SE È UN TOP MATCH (In evidenza con sottile accento sportivo/squadra, mai arlecchino)
+            if (isFeatured) {
+                if (e.sport === 'f1') {
+                    return {
+                        bg: 'linear-gradient(135deg, rgba(225, 6, 0, 0.15) 0%, rgba(20, 16, 18, 0.95) 100%)',
+                        borderLeft: '3.5px solid #e10600',
+                        accentColor: '#e10600'
+                    };
+                }
+                if (e.sport === 'nfl') {
+                    return {
+                        bg: 'linear-gradient(135deg, rgba(234, 88, 12, 0.15) 0%, rgba(18, 20, 26, 0.95) 100%)',
+                        borderLeft: '3.5px solid #ea580c',
+                        accentColor: '#ea580c'
+                    };
+                }
+                const cHome = getTeamColor(e.home || e.title);
+                const hasHome = cHome !== '#52525b';
+                if (hasHome) {
+                    return {
+                        bg: `linear-gradient(135deg, ${hexToRgba(cHome, 0.14)} 0%, rgba(18, 18, 24, 0.95) 100%)`,
+                        borderLeft: `3.5px solid ${cHome}`,
+                        accentColor: cHome
+                    };
+                }
                 return {
-                    bg: `linear-gradient(135deg, rgba(225, 6, 0, ${op1}) 0%, rgba(28, 12, 16, 0.9) 55%, rgba(225, 6, 0, ${op2}) 100%)`,
-                    borderLeft: `4px solid ${red}`,
-                    accentColor: red
+                    bg: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(18, 18, 24, 0.95) 100%)',
+                    borderLeft: '3.5px solid rgba(255, 255, 255, 0.3)',
+                    accentColor: '#fff'
                 };
             }
 
-            const cHome = getTeamColor(e.home || e.title);
-            const cAway = getTeamColor(e.away || '');
-            const hasHome = cHome !== '#52525b';
-            const hasAway = cAway !== '#52525b';
-
-            // Opacità più alte e sature per togliere l'effetto "sfumatura a matita con il dito"
-            const op1 = isFeatured ? 0.52 : 0.38;
-            const op2 = isFeatured ? 0.42 : 0.28;
-
-            let bg = '';
-            if (hasHome && hasAway) {
-                bg = `linear-gradient(135deg, ${hexToRgba(cHome, op1)} 0%, rgba(18, 18, 24, 0.88) 50%, ${hexToRgba(cAway, op2)} 100%)`;
-            } else if (hasHome) {
-                bg = `linear-gradient(135deg, ${hexToRgba(cHome, op1)} 0%, rgba(18, 18, 24, 0.88) 100%)`;
-            } else if (hasAway) {
-                bg = `linear-gradient(135deg, rgba(18, 18, 24, 0.88) 0%, ${hexToRgba(cAway, op1)} 100%)`;
-            } else {
-                bg = `linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)`;
-            }
-
-            const borderLeft = hasHome ? `3.5px solid ${cHome}` : (hasAway ? `3.5px solid ${cAway}` : '1px solid var(--border)');
-
+            // 2. SE È UNA PARTITA NORMALE: 100% UNIFORME, PULITA, LIQUID GLASS SCURO (ZERO ARLECCHINO!)
+            // I colori vengono solo dai loghi ufficiali delle squadre, lo sfondo resta scuro e riposante.
             return {
-                bg: bg,
-                borderLeft: borderLeft,
-                accentColor: cHome
+                bg: 'rgba(255, 255, 255, 0.035)',
+                borderLeft: '1px solid var(--border)',
+                accentColor: '#fff'
             };
         }
 
