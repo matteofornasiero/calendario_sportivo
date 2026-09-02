@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Sport OS</title>
+    <title>Sport OS Mobile</title>
 
     <!-- PWA Meta -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,20 +21,23 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --bg: #09090b;
-            --card: #131317;
-            --card-hover: #1c1c22;
-            --border: rgba(255, 255, 255, 0.07);
+            --surface: #121217;
+            --surface-card: #181820;
+            --surface-hover: #22222c;
+            --border: rgba(255, 255, 255, 0.08);
             
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
-            --text-muted: #52525b;
+            --text-muted: #64748b;
             
-            --accent: #3b82f6;
+            --blue: #2563eb;
+            --top-gold: #eab308;
+
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
@@ -44,96 +47,135 @@
             margin: 0;
             padding: 0;
             -webkit-tap-highlight-color: transparent;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             user-select: none;
             -webkit-user-select: none;
         }
 
         body {
-            background: var(--bg);
+            background-color: #07070a;
+            background-image: 
+                radial-gradient(circle 800px at 15% 0%, rgba(37, 99, 235, 0.12), transparent 70%),
+                radial-gradient(circle 600px at 85% 15%, rgba(147, 51, 234, 0.07), transparent 60%),
+                radial-gradient(circle 900px at 50% 85%, rgba(30, 58, 138, 0.08), transparent 70%);
+            background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
             padding-top: var(--safe-top);
-            padding-bottom: calc(var(--safe-bottom) + 30px);
+            padding-bottom: calc(var(--safe-bottom) + 36px);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- HEADER MINIMALISTA & PULITO --- */
-        .app-header {
+        /* --- 1. TOP BAR (LIQUID GLASS) --- */
+        .top-bar {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(9, 9, 11, 0.94);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 10px 16px;
+            background: rgba(9, 9, 13, 0.75);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 14px;
         }
 
-        .header-top {
+        .header-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 8px;
         }
 
-        .brand-logo {
-            font-size: 17px;
+        .app-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .brand-badge {
+            width: 30px;
+            height: 30px;
+            border-radius: 9px;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 8px rgba(37, 99, 235, 0.35);
+        }
+
+        .brand-title {
+            font-size: 18px;
             font-weight: 800;
             letter-spacing: -0.4px;
             color: #fff;
+        }
+
+        .header-actions {
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
+        }
+
+        .btn-today {
+            background: rgba(59, 130, 246, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #60a5fa;
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 16px;
             cursor: pointer;
         }
+        .btn-today:active { background: #2563eb; color: #fff; }
 
-        .view-toggle {
-            display: flex;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 9px;
-            padding: 2px;
-        }
-
-        .view-btn {
-            background: transparent;
-            border: none;
+        .btn-info {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
             color: var(--text-sub);
-            padding: 5px 11px;
-            border-radius: 7px;
-            font-size: 12px;
-            font-weight: 600;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
             cursor: pointer;
-            transition: all 0.15s;
         }
 
-        .view-btn.active {
-            background: #27272a;
-            color: #fff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-
-        /* Search essenziale */
-        .search-row {
-            margin-top: 8px;
+        /* Search input (Liquid Glass) */
+        .search-container {
             position: relative;
         }
 
         .search-input {
             width: 100%;
             background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 7px 10px 7px 30px;
-            font-size: 12.5px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 8px 12px 8px 32px;
+            font-size: 13px;
             color: #fff;
             outline: none;
+            user-select: text;
+            -webkit-user-select: text;
         }
-        .search-input:focus { border-color: rgba(255,255,255,0.2); }
+        .search-input:focus { border-color: rgba(255, 255, 255, 0.25); }
 
         .search-icon {
             position: absolute;
-            left: 9px;
+            left: 10px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 12px;
@@ -141,218 +183,411 @@
             pointer-events: none;
         }
 
-        /* --- DATE STRIP MINIMALISTA (SENZA SCATOLE PESANTI) --- */
-        .date-section {
-            padding: 12px 16px 8px 16px;
+        /* --- 2. HERO CARD (LIQUID GLASS ACCENT) --- */
+        .hero-container {
+            padding: 0 14px 8px 14px;
         }
 
-        .month-header {
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.065) 0%, rgba(255, 255, 255, 0.02) 100%);
+            backdrop-filter: blur(20px) saturate(150%);
+            -webkit-backdrop-filter: blur(20px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 24px rgba(0, 0, 0, 0.35);
+            border-radius: 16px;
+            padding: 12px 14px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.15s, transform 0.12s;
+        }
+        .hero-banner:active { transform: scale(0.99); background: rgba(255, 255, 255, 0.08); }
+
+        .hero-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
-        .month-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: #e4e4e7;
-            text-transform: capitalize;
-        }
-
-        .month-nav {
+        .hero-badge {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: #facc15;
             display: flex;
+            align-items: center;
             gap: 4px;
         }
 
-        .month-arrow {
-            background: none;
-            border: none;
-            color: var(--text-sub);
-            font-size: 16px;
+        .hero-countdown {
+            font-size: 11px;
+            font-weight: 700;
+            color: #facc15;
+            background: rgba(234, 179, 8, 0.12);
+            border: 1px solid rgba(234, 179, 8, 0.25);
+            padding: 2px 7px;
+            border-radius: 6px;
+        }
+
+        .hero-faceoff {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 4px 0 6px 0;
+            gap: 8px;
+        }
+
+        .hero-team {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+        .hero-team.away {
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        .hero-team-name {
+            font-size: 14px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .hero-crest {
             width: 28px;
             height: 28px;
+            object-fit: contain;
+            flex-shrink: 0;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+        }
+
+        .hero-vs {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--text-muted);
+            padding: 2px 6px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+
+        .hero-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-sub);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 6px;
+        }
+
+        .hero-cta {
+            font-weight: 700;
+            color: #60a5fa;
+        }
+
+        /* --- 3. FILTRI CHIP (LIQUID GLASS PILLS) --- */
+        .filters-container {
+            display: flex;
+            gap: 6px;
+            padding: 2px 14px 8px 14px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .filters-container::-webkit-scrollbar { display: none; }
+
+        .chip {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 11.5px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            color: var(--text-sub);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .chip:active { transform: scale(0.96); }
+
+        .chip.active {
+            color: #fff;
+            background: rgba(37, 99, 235, 0.7);
+            border-color: rgba(147, 197, 253, 0.35);
+            border-top: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 3px 10px rgba(37, 99, 235, 0.25);
+        }
+
+        /* --- 4. CONTROLLI MESE & SWITCHER VISTA (FROSTED GLASS) --- */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4px;
+            padding: 2px 14px 8px 14px;
+        }
+
+        .month-selector {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            color: var(--text-main);
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 6px;
+            font-size: 14px;
             cursor: pointer;
+            flex-shrink: 0;
         }
-        .month-arrow:active { background: rgba(255,255,255,0.08); }
 
-        .week-strip {
+        .current-month-text {
+            font-size: 12.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+        }
+
+        .view-switcher {
+            display: flex;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            padding: 2px;
+            border-radius: 9px;
+            flex-shrink: 0;
+        }
+
+        .view-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            padding: 4px 7px;
+            border-radius: 7px;
+            font-size: 10.5px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .view-btn.active {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* --- 5. DATE STRIP (LIQUID GLASS CAPSULE) --- */
+        .date-strip-wrapper {
+            padding: 0 14px 10px 14px;
+        }
+
+        .date-strip {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 4px;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 6px 4px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
-        .day-cell {
+        .strip-day {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 6px 2px;
-            border-radius: 9px;
+            padding: 5px 2px;
+            border-radius: 8px;
             cursor: pointer;
             transition: background 0.15s;
         }
-        .day-cell:active { background: rgba(255,255,255,0.06); }
 
-        .day-cell.selected {
+        /* Giorno selezionato: blu satinato, pulito, riflesso di vetro */
+        .strip-day.selected {
             background: #2563eb;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
-        .day-cell.is-today:not(.selected) {
+        .strip-day.is-today:not(.selected) {
             border: 1px solid rgba(59, 130, 246, 0.4);
+            background: rgba(59, 130, 246, 0.08);
         }
 
-        .day-cell-name {
-            font-size: 9.5px;
+        .strip-name {
+            font-size: 9px;
             font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
         }
-        .day-cell.selected .day-cell-name { color: #dbeafe; }
+        .strip-day.selected .strip-name { color: #dbeafe; }
 
-        .day-cell-num {
+        .strip-num {
             font-size: 14px;
             font-weight: 700;
-            margin-top: 3px;
-            color: #d4d4d8;
+            margin-top: 2px;
+            color: var(--text-main);
         }
-        .day-cell.selected .day-cell-num { color: #fff; font-weight: 800; }
+        .strip-day.selected .strip-num { color: #ffffff; font-weight: 800; }
 
-        .day-cell-dot {
-            width: 4px;
-            height: 4px;
+        .strip-dot {
+            width: 3.5px;
+            height: 3.5px;
             border-radius: 50%;
             background: #3b82f6;
             margin-top: 3px;
             opacity: 0;
         }
-        .day-cell.has-events .day-cell-dot { opacity: 1; }
-        .day-cell.selected .day-cell-dot { background: #fff; }
+        .strip-day.has-events .strip-dot { opacity: 1; }
+        .strip-day.selected .strip-dot { background: #fff; }
 
-        /* --- FILTRI CHIP ESSENZIALI --- */
-        .chips-scroll {
-            display: flex;
-            gap: 5px;
-            padding: 4px 16px 10px 16px;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
-        .chips-scroll::-webkit-scrollbar { display: none; }
-
-        .chip-item {
-            flex-shrink: 0;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid transparent;
-            color: var(--text-sub);
-            padding: 5px 11px;
-            border-radius: 14px;
-            font-size: 11.5px;
-            font-weight: 600;
-            cursor: pointer;
+        /* --- 6. AGENDA FEED (CARD COMPATTE LIQUID GLASS) --- */
+        .main-content {
+            padding: 0 14px;
         }
 
-        .chip-item.active {
-            background: #27272a;
-            color: #fff;
-            border-color: rgba(255, 255, 255, 0.12);
+        .day-group {
+            margin-bottom: 16px;
         }
 
-        /* --- LISTA PARTITE A COLONNA SINGOLA (PULITA & RIPOSANTE) --- */
-        .content-area {
-            padding: 0 16px;
-        }
-
-        .day-section {
-            margin-bottom: 20px;
-        }
-
-        .day-label {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-sub);
-            margin-bottom: 7px;
-            text-transform: capitalize;
+        .day-header {
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: space-between;
+            padding: 7px 11px;
+            background: rgba(18, 18, 25, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            margin-bottom: 7px;
         }
 
-        .day-label-today {
-            font-size: 9.5px;
+        .day-header.today {
+            border-color: rgba(59, 130, 246, 0.35);
+            background: rgba(30, 41, 59, 0.45);
+        }
+
+        .day-header-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .day-date-badge {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            padding: 2px 6px;
+            font-size: 11px;
             font-weight: 800;
+            color: #cbd5e1;
+        }
+        .day-header.today .day-date-badge {
             background: #2563eb;
             color: #fff;
-            padding: 1px 6px;
-            border-radius: 8px;
-            text-transform: uppercase;
         }
 
-        .matches-list {
+        .day-weekday-name {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #f1f5f9;
+            text-transform: capitalize;
+        }
+
+        .day-count-badge {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .events-list {
             display: flex;
             flex-direction: column;
             gap: 6px;
         }
 
-        /* Riga Partita Singola (Chiara, leggibile, 0 affaticamento) */
-        .match-row {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 9px 12px;
+        /* Card Partita Compatta (Liquid Glass) */
+        .compact-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 3px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 8px 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            transition: background 0.1s;
+            transition: background 0.12s, transform 0.1s;
         }
-        .match-row:active { background: var(--card-hover); }
-
-        .match-row.is-top-match {
-            border-color: rgba(234, 179, 8, 0.25);
-            background: linear-gradient(135deg, rgba(234, 179, 8, 0.05), var(--card));
+        .compact-card:active {
+            background: rgba(255, 255, 255, 0.08);
+            transform: scale(0.99);
         }
 
-        .match-teams-col {
+        .compact-teams-col {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 3px;
             flex: 1;
             overflow: hidden;
         }
 
-        .team-line {
+        .compact-team-row {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
             overflow: hidden;
             white-space: nowrap;
         }
 
-        .team-crest {
+        .compact-crest {
             width: 17px;
             height: 17px;
             object-fit: contain;
             flex-shrink: 0;
+            filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
         }
 
-        .team-name {
+        .compact-team-name {
             font-size: 13px;
             font-weight: 600;
-            color: #f1f5f9;
+            color: #e2e8f0;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        .match-row.is-top-match .team-name {
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .match-meta-col {
+        .compact-meta-col {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -361,150 +596,202 @@
             flex-shrink: 0;
         }
 
-        .match-time {
+        .compact-time {
             font-size: 12.5px;
             font-weight: 700;
             color: #60a5fa;
             font-variant-numeric: tabular-nums;
         }
 
-        .match-subloc {
+        .compact-subloc {
             font-size: 10px;
             color: var(--text-muted);
             font-weight: 500;
         }
 
-        .top-star {
-            color: #facc15;
-            font-size: 11px;
-            margin-left: 4px;
+        /* Card Top Match in evidenza nel feed (Glass Gold) */
+        .compact-card.top-match-card {
+            border-color: rgba(234, 179, 8, 0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
         }
 
-        /* --- SEZIONE CLASSIFICHE --- */
-        .standings-tabs-row {
+        .top-match-tag {
+            font-size: 9.5px;
+            font-weight: 800;
+            color: #facc15;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        /* --- 7. SEZIONE CLASSIFICHE (LIQUID GLASS) --- */
+        .standings-view-container {
+            display: none;
+        }
+
+        .standings-tabs {
             display: flex;
             gap: 5px;
-            margin-bottom: 12px;
             overflow-x: auto;
             scrollbar-width: none;
+            margin-bottom: 10px;
         }
-        .standings-tabs-row::-webkit-scrollbar { display: none; }
+        .standings-tabs::-webkit-scrollbar { display: none; }
 
-        .tab-pill {
+        .standings-tab-btn {
             background: rgba(255, 255, 255, 0.04);
-            border: 1px solid transparent;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
             color: var(--text-sub);
-            padding: 6px 12px;
-            border-radius: 8px;
+            padding: 6px 11px;
+            border-radius: 10px;
             font-size: 11.5px;
             font-weight: 600;
+            flex-shrink: 0;
             cursor: pointer;
-            white-space: nowrap;
         }
-        .tab-pill.active {
-            background: #27272a;
+        .standings-tab-btn.active {
+            background: rgba(255, 255, 255, 0.12);
             color: #fff;
-            border-color: rgba(255,255,255,0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
 
-        .standings-box {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
+        .standings-table-card {
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
             overflow: hidden;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
-        .standings-box-header {
+        .standings-group-title {
+            background: rgba(255, 255, 255, 0.03);
             padding: 7px 10px;
             font-size: 11px;
             font-weight: 700;
             color: var(--text-sub);
-            background: rgba(255,255,255,0.02);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             text-transform: uppercase;
             letter-spacing: 0.3px;
         }
 
-        .std-table {
+        .standings-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 12.5px;
         }
 
-        .std-table th {
+        .standings-table th {
             padding: 6px 8px;
             color: var(--text-muted);
             font-size: 10px;
             font-weight: 700;
             text-align: left;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .std-table td {
+        .standings-table td {
             padding: 7px 8px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            color: #e4e4e7;
+            color: #e2e8f0;
         }
 
-        .std-table tr:last-child td { border-bottom: none; }
+        .standings-table tr:last-child td { border-bottom: none; }
 
-        .std-pos { width: 22px; color: var(--text-muted); font-weight: 700; text-align: center; }
-        .std-pos.p1 { color: #facc15; }
-        .std-pos.p2 { color: #cbd5e1; }
-        .std-pos.p3 { color: #d97706; }
+        .standings-pos { width: 22px; color: var(--text-muted); font-weight: 700; text-align: center; }
+        .standings-pos.pos-1 { color: #facc15; }
+        .standings-pos.pos-2 { color: #cbd5e1; }
+        .standings-pos.pos-3 { color: #d97706; }
 
-        .std-team { display: flex; align-items: center; gap: 7px; font-weight: 600; }
-        .std-crest { width: 16px; height: 16px; object-fit: contain; }
-        .std-num { text-align: center; color: var(--text-sub); }
-        .std-pts { text-align: right; font-weight: 800; color: #fff; }
+        .standings-team-cell { display: flex; align-items: center; gap: 7px; font-weight: 600; }
+        .standings-crest { width: 16px; height: 16px; object-fit: contain; }
+        .standings-pts { text-align: right; font-weight: 800; color: #fff; }
+        .standings-center { text-align: center; color: var(--text-sub); }
 
-        /* --- MODAL SCHEDA PARTITA --- */
+        /* --- 8. MONTH VIEW --- */
+        .month-view-container { display: none; }
+        .month-grid-weekdays {
+            display: grid; grid-template-columns: repeat(7, 1fr);
+            text-align: center; font-size: 10px; font-weight: 700;
+            color: var(--text-muted); padding-bottom: 6px; text-transform: uppercase;
+        }
+        .month-grid {
+            display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px;
+            background: var(--surface); padding: 5px; border-radius: 12px;
+            border: 1px solid var(--border); margin-bottom: 14px;
+        }
+        .month-cell {
+            aspect-ratio: 1; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; border-radius: 7px; cursor: pointer;
+        }
+        .month-cell.diff-month { opacity: 0.2; }
+        .month-cell.active-cell { background: #2563eb; color: #fff !important; }
+        .cell-num { font-size: 12.5px; font-weight: 600; }
+
+        /* --- MODAL SCHEDA DETTAGLI --- */
         .modal-sheet {
             position: fixed;
             bottom: 0; left: 0; right: 0;
-            background: #141418;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 18px 18px 0 0;
+            background: rgba(16, 16, 23, 0.85);
+            backdrop-filter: blur(28px) saturate(190%);
+            -webkit-backdrop-filter: blur(28px) saturate(190%);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 -12px 40px rgba(0, 0, 0, 0.75);
+            border-radius: 20px 20px 0 0;
             padding: 14px 18px calc(var(--safe-bottom) + 18px) 18px;
             z-index: 200;
-            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
             transform: translateY(100%);
-            transition: transform 0.22s ease-out;
+            transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .modal-sheet.open { transform: translateY(0); }
 
         .sheet-handle {
-            width: 32px; height: 4px; border-radius: 2px;
-            background: rgba(255, 255, 255, 0.2);
+            width: 34px; height: 4px; border-radius: 2px;
+            background: rgba(255, 255, 255, 0.25);
             margin: 0 auto 12px auto;
         }
 
         .modal-backdrop {
-            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
             z-index: 150; opacity: 0; pointer-events: none;
             transition: opacity 0.2s;
         }
         .modal-backdrop.open { opacity: 1; pointer-events: auto; }
 
-        .sheet-title-row {
-            display: flex; justify-content: space-between; align-items: flex-start;
-            margin-bottom: 12px;
+        .sheet-faceoff-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            border-radius: 14px; padding: 12px; margin-bottom: 12px;
+            display: flex; align-items: center; justify-content: space-between; text-align: center;
         }
-        .sheet-close {
-            background: none; border: none; color: var(--text-muted);
-            font-size: 18px; cursor: pointer; padding: 4px;
+        .sheet-team-block {
+            display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1;
         }
+        .sheet-crest { width: 36px; height: 36px; object-fit: contain; }
+        .sheet-team-name { font-size: 12.5px; font-weight: 700; color: #fff; max-width: 90px; }
 
-        .btn-action {
+        .btn-gcal {
             width: 100%;
             background: #2563eb;
             color: #fff;
             border: none;
-            border-radius: 9px;
+            border-radius: 10px;
             padding: 11px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
@@ -515,85 +802,112 @@
 </head>
 <body>
 
-    <!-- HEADER MINIMALE: SOLO TITOLO E TOGGLE CALENDARIO/CLASSIFICHE -->
-    <header class="app-header">
-        <div class="header-top">
-            <div class="brand-logo" onclick="jumpToToday()">
-                <span>⚽ Sport OS</span>
+    <!-- 1. TOP BAR -->
+    <header class="top-bar">
+        <div class="header-row">
+            <div class="app-brand" onclick="jumpToToday()">
+                <div class="brand-badge">⚽</div>
+                <div class="brand-title">Sport OS</div>
             </div>
-            <div class="view-toggle">
-                <button class="view-btn active" id="tabAgenda" onclick="switchView('agenda')">Calendario</button>
-                <button class="view-btn" id="tabStandings" onclick="switchView('standings')">Classifiche</button>
+            <div class="header-actions">
+                <button class="btn-today" onclick="jumpToToday()">Oggi</button>
+                <button class="btn-info" onclick="openInfoSheet()">ℹ️</button>
             </div>
         </div>
-        <div class="search-row" id="searchBarBox">
+        <div class="search-container">
             <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" placeholder="Cerca squadra..." oninput="handleSearch(this.value)">
+            <input type="text" class="search-input" placeholder="Cerca squadra o evento..." oninput="handleSearch(this.value)">
         </div>
     </header>
 
-    <!-- 1. VISTA CALENDARIO -->
-    <div id="calendarView">
-        <!-- BARRA DATA & SETTIMANA (FLUTTUANTE, SENZA SCATOLONI) -->
-        <div class="date-section">
-            <div class="month-header">
-                <div class="month-title" id="monthDisplay">Mese 2026</div>
-                <div class="month-nav">
-                    <button class="month-arrow" onclick="navigateWeek(-1)">‹</button>
-                    <button class="month-arrow" onclick="jumpToToday()" style="font-size:12px; font-weight:700; width:auto; padding:0 6px;">Oggi</button>
-                    <button class="month-arrow" onclick="navigateWeek(1)">›</button>
-                </div>
+    <!-- 2. PROSSIMO TOP MATCH (IN ALTO, SOBRIO ED ELEGANTE) -->
+    <div class="hero-container" id="heroBannerContainer"></div>
+
+    <!-- 3. FILTRI CHIP -->
+    <div class="filters-container">
+        <button class="chip active" data-sport="all" onclick="setSportFilter('all', this)">⚡ Tutti</button>
+        <button class="chip" data-sport="top" onclick="setSportFilter('top', this)">⭐ I Miei Match</button>
+        <button class="chip" data-sport="weekend" onclick="setSportFilter('weekend', this)">🗓️ Weekend</button>
+        <button class="chip" data-sport="seriea" onclick="setSportFilter('seriea', this)">⚽ Serie A</button>
+        <button class="chip" data-sport="f1" onclick="setSportFilter('f1', this)">🏎️ F1</button>
+        <button class="chip" data-sport="champions" onclick="setSportFilter('champions', this)">🏆 Champions</button>
+        <button class="chip" data-sport="nfl" onclick="setSportFilter('nfl', this)">🏈 NFL</button>
+        <button class="chip" data-sport="nazionale" onclick="setSportFilter('nazionale', this)">🇮🇹 Italia</button>
+    </div>
+
+    <!-- 4. CONTROLLI MESE & SWITCHER VISTE (ADATTATO AL 100%, NON SBORDA MAI) -->
+    <div class="nav-controls">
+        <div class="month-selector" id="monthSelectorGroup">
+            <button class="nav-btn" onclick="navigateTime(-1)">‹</button>
+            <div class="current-month-text" id="monthDisplay">Mese 2026</div>
+            <button class="nav-btn" onclick="navigateTime(1)">›</button>
+        </div>
+        <div class="view-switcher">
+            <button class="view-btn active" id="btnAgendaView" onclick="switchView('agenda')">Agenda</button>
+            <button class="view-btn" id="btnStandingsView" onclick="switchView('standings')">🏆 Classifiche</button>
+            <button class="view-btn" id="btnMonthView" onclick="switchView('month')">Mese</button>
+        </div>
+    </div>
+
+    <!-- 5. DATE STRIP SETTIMANALE -->
+    <div class="date-strip-wrapper" id="dateStripWrapper">
+        <div class="date-strip" id="dateStrip"></div>
+    </div>
+
+    <!-- 6. CONTENUTO PRINCIPALE -->
+    <main class="main-content">
+        <!-- VISTA AGENDA -->
+        <div id="agendaView">
+            <div id="agendaFeed"></div>
+        </div>
+
+        <!-- VISTA CLASSIFICHE -->
+        <div id="standingsView" class="standings-view-container">
+            <div class="standings-tabs">
+                <button class="standings-tab-btn active" onclick="switchStandingsTab('seriea', this)">⚽ Serie A</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('champions', this)">🏆 Champions</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('f1_drivers', this)">🏎️ F1 Piloti</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('f1_constructors', this)">🏎️ F1 Scuderie</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('nfl', this)">🏈 NFL</button>
             </div>
-            <div class="week-strip" id="weekStrip"></div>
+            <div id="standingsContentBox"></div>
         </div>
 
-        <!-- FILTRI SPORT DISCRETI -->
-        <div class="chips-scroll">
-            <button class="chip-item active" onclick="setFilter('all', this)">Tutti</button>
-            <button class="chip-item" onclick="setFilter('top', this)">⭐ I Miei Match</button>
-            <button class="chip-item" onclick="setFilter('seriea', this)">Serie A</button>
-            <button class="chip-item" onclick="setFilter('f1', this)">F1</button>
-            <button class="chip-item" onclick="setFilter('champions', this)">Champions</button>
-            <button class="chip-item" onclick="setFilter('nfl', this)">NFL</button>
-            <button class="chip-item" onclick="setFilter('nazionale', this)">Italia</button>
+        <!-- VISTA MESE -->
+        <div id="monthView" class="month-view-container">
+            <div class="month-grid-weekdays">
+                <div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div>
+            </div>
+            <div class="month-grid" id="monthGrid"></div>
+            <div id="monthSelectedDayEvents"></div>
         </div>
+    </main>
 
-        <!-- FEED DELLE PARTITE (PULITO, RIPOSANTE, COLONNA SINGOLA) -->
-        <main class="content-area">
-            <div id="matchesFeed"></div>
-        </main>
-    </div>
-
-    <!-- 2. VISTA CLASSIFICHE (PULITA) -->
-    <div id="standingsView" style="display:none; padding: 12px 16px;">
-        <div class="standings-tabs-row">
-            <button class="tab-pill active" onclick="setStandingsTab('seriea', this)">Serie A</button>
-            <button class="tab-pill" onclick="setStandingsTab('champions', this)">Champions League</button>
-            <button class="tab-pill" onclick="setStandingsTab('f1_drivers', this)">F1 Piloti</button>
-            <button class="tab-pill" onclick="setStandingsTab('f1_constructors', this)">F1 Scuderie</button>
-            <button class="tab-pill" onclick="setStandingsTab('nfl', this)">NFL</button>
-        </div>
-        <div id="standingsContainer"></div>
-    </div>
-
-    <!-- MODAL DETTAGLI -->
-    <div class="modal-backdrop" id="modalBackdrop" onclick="closeSheet()"></div>
-    <div class="modal-sheet" id="detailSheet">
+    <!-- MODAL DETTAGLI PARTITA -->
+    <div class="modal-backdrop" id="modalBackdrop" onclick="closeAllSheets()"></div>
+    <div class="modal-sheet" id="eventDetailSheet">
         <div class="sheet-handle"></div>
-        <div class="sheet-title-row">
-            <div>
-                <div id="sheetSport" style="font-size:11px; font-weight:700; color:#60a5fa; text-transform:uppercase;">SPORT</div>
-                <div id="sheetTitle" style="font-size:15px; font-weight:700; color:#fff; margin-top:2px;">Partita</div>
-            </div>
-            <button class="sheet-close" onclick="closeSheet()">✕</button>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span id="sheetSportTag" style="font-size:11px; font-weight:700; color:#60a5fa; text-transform:uppercase;">SPORT</span>
+            <button onclick="closeAllSheets()" style="background:none; border:none; color:var(--text-muted); font-size:16px;">✕</button>
         </div>
-        <div style="font-size:13px; color:var(--text-sub); line-height:1.6; margin-bottom:12px;">
-            <div>🗓️ Data: <span id="sheetDate" style="color:#fff; font-weight:600;"></span></div>
-            <div>⏰ Orario: <span id="sheetTime" style="color:#fff; font-weight:600;"></span></div>
-            <div>🏆 Torneo: <span id="sheetLoc" style="color:#fff; font-weight:600;"></span></div>
-            <div id="sheetVenueBox">🏟️ Stadio: <span id="sheetVenue" style="color:#fff; font-weight:600;"></span></div>
+        <div class="sheet-faceoff-card" id="sheetFaceoffBox"></div>
+        <div style="font-size:12.5px; color:var(--text-sub); line-height:1.6; margin-bottom:10px;">
+            <div>🗓️ Data: <span id="sheetEventDate" style="color:#fff; font-weight:600;"></span></div>
+            <div>⏰ Orario: <span id="sheetEventTime" style="color:#fff; font-weight:600;"></span></div>
+            <div>🏆 Turno: <span id="sheetEventLoc" style="color:#fff; font-weight:600;"></span></div>
+            <div id="sheetVenueRow">🏟️ Luogo: <span id="sheetEventVenue" style="color:#fff; font-weight:600;"></span></div>
         </div>
-        <a id="btnGCal" href="#" target="_blank" class="btn-action">📅 Aggiungi a Google Calendar</a>
+        <a id="btnGoogleCalendar" href="#" target="_blank" class="btn-gcal">📅 Aggiungi a Google Calendar</a>
+    </div>
+
+    <!-- INFO SHEET -->
+    <div class="modal-sheet" id="infoSheet">
+        <div class="sheet-handle"></div>
+        <div style="font-size:16px; font-weight:800; color:#fff; margin-bottom:8px;">Sport OS</div>
+        <div style="font-size:13px; color:var(--text-sub); line-height:1.5;">
+            Calendario sportivo personale con classifiche e match di Serie A, Champions League, Formula 1 e NFL.
+        </div>
     </div>
 
     <script>
@@ -605,6 +919,16 @@
         let currentView = 'agenda';
         let currentStandingsTab = 'seriea';
         let searchQuery = '';
+        let activeSheetEvent = null;
+        let countdownTimerId = null;
+
+        const SPORT_NAMES = {
+            f1: 'Formula 1',
+            seriea: 'Serie A',
+            nfl: 'NFL',
+            champions: 'Champions League',
+            nazionale: 'Italia'
+        };
 
         function formatDate(d) {
             const year = d.getFullYear();
@@ -627,7 +951,7 @@
             return false;
         }
 
-        function init() {
+        function initData() {
             if (typeof window.calendarData !== 'undefined') allEvents = window.calendarData;
             if (typeof window.standingsData !== 'undefined') standingsData = window.standingsData;
 
@@ -642,21 +966,90 @@
                     selectedDateStr = todayStr;
                 }
             }
+            renderHeroBanner();
             renderAll();
         }
 
-        function switchView(view) {
-            currentView = view;
-            document.getElementById('tabAgenda').classList.toggle('active', view === 'agenda');
-            document.getElementById('tabStandings').classList.toggle('active', view === 'standings');
-            document.getElementById('calendarView').style.display = (view === 'agenda') ? 'block' : 'none';
-            document.getElementById('standingsView').style.display = (view === 'standings') ? 'block' : 'none';
-            document.getElementById('searchBarBox').style.display = (view === 'agenda') ? 'block' : 'none';
-            if (view === 'standings') renderStandings();
+        // --- PROSSIMO TOP MATCH ---
+        function renderHeroBanner() {
+            const container = document.getElementById('heroBannerContainer');
+            if (allEvents.length === 0) {
+                container.innerHTML = '';
+                return;
+            }
+            const todayStr = formatDate(new Date());
+            let upcoming = allEvents
+                .filter(e => isTop(e) && e.date >= todayStr)
+                .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))[0];
+
+            if (!upcoming) upcoming = allEvents.filter(e => isTop(e))[0];
+            if (!upcoming) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const sportTag = SPORT_NAMES[upcoming.sport] || upcoming.sport.toUpperCase();
+            const dObj = new Date(upcoming.date + 'T00:00:00');
+            const dStr = dObj.toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short' });
+            const safeTitle = (upcoming.title || '').replace(/'/g, "\\'");
+            const key = `${upcoming.date}_${upcoming.time}_${safeTitle}`;
+
+            let faceoffHtml = '';
+            if (upcoming.homeCrest && upcoming.awayCrest) {
+                faceoffHtml = `
+                    <div class="hero-faceoff">
+                        <div class="hero-team">
+                            <img src="${upcoming.homeCrest}" class="hero-crest" alt="">
+                            <span class="hero-team-name">${upcoming.home || 'Casa'}</span>
+                        </div>
+                        <div class="hero-vs">VS</div>
+                        <div class="hero-team away">
+                            <span class="hero-team-name">${upcoming.away || 'Trasferta'}</span>
+                            <img src="${upcoming.awayCrest}" class="hero-crest" alt="">
+                        </div>
+                    </div>
+                `;
+            } else {
+                faceoffHtml = `<div style="font-size:14px; font-weight:800; color:#fff; margin:4px 0;">${upcoming.title}</div>`;
+            }
+
+            container.innerHTML = `
+                <div class="hero-banner" onclick="openEventSheetByKey('${key}')">
+                    <div class="hero-top">
+                        <div class="hero-badge">⭐ PROSSIMO TOP MATCH • ${sportTag}</div>
+                        <div class="hero-countdown" id="heroCountdownTimer">⏳ Calcolo...</div>
+                    </div>
+                    ${faceoffHtml}
+                    <div class="hero-bottom">
+                        <span>🗓️ ${dStr} ore ${upcoming.time} • 📍 ${upcoming.loc}</span>
+                        <span class="hero-cta">Dettagli ›</span>
+                    </div>
+                </div>
+            `;
+
+            if (countdownTimerId) clearInterval(countdownTimerId);
+            updateCountdown(upcoming.date, upcoming.time);
+            countdownTimerId = setInterval(() => updateCountdown(upcoming.date, upcoming.time), 1000);
         }
 
-        function navigateWeek(delta) {
-            currentDate.setDate(currentDate.getDate() + (delta * 7));
+        function updateCountdown(dateStr, timeStr) {
+            const el = document.getElementById('heroCountdownTimer');
+            if (!el) return;
+            const diff = new Date(`${dateStr}T${timeStr}:00`) - new Date();
+            if (diff <= 0) { el.textContent = "OGGI"; return; }
+            const d = Math.floor(diff / (86400000));
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            el.textContent = d > 0 ? `⏳ Tra ${d}g ${h}h` : `⏳ Tra ${h}h ${m}m`;
+        }
+
+        // --- NAVIGAZIONE & VISTE ---
+        function navigateTime(delta) {
+            if (currentView === 'agenda') {
+                currentDate.setDate(currentDate.getDate() + (delta * 7));
+            } else if (currentView === 'month') {
+                currentDate.setMonth(currentDate.getMonth() + delta);
+            }
             selectedDateStr = formatDate(currentDate);
             renderAll();
         }
@@ -669,41 +1062,72 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function setFilter(sport, btn) {
+        function switchView(view) {
+            currentView = view;
+            document.getElementById('btnAgendaView').classList.toggle('active', view === 'agenda');
+            document.getElementById('btnStandingsView').classList.toggle('active', view === 'standings');
+            document.getElementById('btnMonthView').classList.toggle('active', view === 'month');
+
+            document.getElementById('agendaView').style.display = (view === 'agenda') ? 'block' : 'none';
+            document.getElementById('standingsView').style.display = (view === 'standings') ? 'block' : 'none';
+            document.getElementById('monthView').style.display = (view === 'month') ? 'block' : 'none';
+
+            document.getElementById('dateStripWrapper').style.display = (view === 'agenda') ? 'block' : 'none';
+            document.getElementById('monthSelectorGroup').style.visibility = (view === 'standings') ? 'hidden' : 'visible';
+
+            renderAll();
+        }
+
+        function setSportFilter(sport, btn) {
             currentSport = sport;
-            document.querySelectorAll('.chips-scroll .chip-item').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.filters-container .chip').forEach(c => c.classList.remove('active'));
             btn.classList.add('active');
-            renderFeed();
+            if (currentView === 'standings') switchView('agenda');
+            renderAll();
         }
 
         function handleSearch(val) {
             searchQuery = val.trim().toLowerCase();
-            renderFeed();
+            renderAll();
         }
 
-        function getFiltered() {
+        function getFilteredEvents() {
             return allEvents.filter(e => {
                 if (currentSport === 'top' && !isTop(e)) return false;
-                if (currentSport !== 'all' && currentSport !== 'top' && e.sport !== currentSport) return false;
+                if (currentSport === 'weekend') {
+                    const day = new Date(e.date + 'T00:00:00').getDay();
+                    if (day !== 0 && day !== 6) return false;
+                } else if (currentSport !== 'all' && currentSport !== 'top' && e.sport !== currentSport) {
+                    return false;
+                }
                 if (searchQuery) {
-                    const text = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
-                    if (!text.includes(searchQuery)) return false;
+                    const match = `${e.title || ''} ${e.home || ''} ${e.away || ''} ${e.loc || ''}`.toLowerCase();
+                    if (!match.includes(searchQuery)) return false;
                 }
                 return true;
             });
         }
 
         function renderAll() {
-            renderDateStrip();
-            renderFeed();
+            updateMonthHeader();
+            if (currentView === 'agenda') {
+                renderDateStrip();
+                renderAgendaFeed();
+            } else if (currentView === 'standings') {
+                renderStandings();
+            } else {
+                renderMonthGrid();
+            }
         }
 
-        // --- STRIP DATA SENZA SCATOLE ---
-        function renderDateStrip() {
+        function updateMonthHeader() {
             const months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
             document.getElementById('monthDisplay').textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+        }
 
-            const strip = document.getElementById('weekStrip');
+        // --- STRIP DATA ---
+        function renderDateStrip() {
+            const strip = document.getElementById('dateStrip');
             strip.innerHTML = '';
             const dayNames = ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
             const todayStr = formatDate(new Date());
@@ -713,7 +1137,7 @@
             const diff = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
             start.setDate(start.getDate() + diff);
 
-            const filtered = getFiltered();
+            const filtered = getFilteredEvents();
 
             for (let i = 0; i < 7; i++) {
                 const d = new Date(start);
@@ -723,45 +1147,45 @@
                 const isTod = dStr === todayStr;
                 const hasEv = filtered.some(e => e.date === dStr);
 
-                const cell = document.createElement('div');
-                cell.className = `day-cell ${isSel ? 'selected' : ''} ${isTod ? 'is-today' : ''} ${hasEv ? 'has-events' : ''}`;
-                cell.innerHTML = `
-                    <span class="day-cell-name">${dayNames[d.getDay()]}</span>
-                    <span class="day-cell-num">${d.getDate()}</span>
-                    <span class="day-cell-dot"></span>
+                const el = document.createElement('div');
+                el.className = `strip-day ${isSel ? 'selected' : ''} ${isTod ? 'is-today' : ''} ${hasEv ? 'has-events' : ''}`;
+                el.innerHTML = `
+                    <div class="strip-name">${dayNames[d.getDay()]}</div>
+                    <div class="strip-num">${d.getDate()}</div>
+                    <span class="strip-dot"></span>
                 `;
-                cell.onclick = () => {
+                el.onclick = () => {
                     selectedDateStr = dStr;
                     renderDateStrip();
-                    renderFeed();
+                    renderAgendaFeed();
+                    window.scrollTo({ top: 110, behavior: 'smooth' });
                 };
-                strip.appendChild(cell);
+                strip.appendChild(el);
             }
         }
 
-        // --- FEED PARTITE: COLONNA SINGOLA, PULITA, METÀ ALTEZZA, RIPOSANTE ---
-        function renderFeed() {
-            const container = document.getElementById('matchesFeed');
-            const filtered = getFiltered();
+        // --- AGENDA FEED: CARD COMPATTE, METÀ ALTEZZA, RIPOSANTI ---
+        function renderAgendaFeed() {
+            const container = document.getElementById('agendaFeed');
+            const filtered = getFilteredEvents();
             const todayStr = formatDate(new Date());
 
-            // Si parte dal giorno selezionato, nascondendo i giorni passati
             const startStr = selectedDateStr;
             const endD = new Date(selectedDateStr + 'T00:00:00');
             endD.setDate(endD.getDate() + 21);
             const endStr = formatDate(endD);
 
-            const range = filtered
+            const rangeEvents = filtered
                 .filter(e => (searchQuery ? true : (e.date >= startStr && e.date <= endStr)))
                 .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
 
-            if (range.length === 0) {
-                container.innerHTML = `<div style="text-align:center; padding:40px 0; color:var(--text-muted); font-size:13px;">Nessuna partita da questa data.</div>`;
+            if (rangeEvents.length === 0) {
+                container.innerHTML = `<div style="text-align:center; padding:30px 0; color:var(--text-muted); font-size:13px;">Nessuna partita da questa data.</div>`;
                 return;
             }
 
             const groups = {};
-            range.forEach(e => {
+            rangeEvents.forEach(e => {
                 if (!groups[e.date]) groups[e.date] = [];
                 groups[e.date].push(e);
             });
@@ -771,15 +1195,20 @@
                 const dObj = new Date(dKey + 'T00:00:00');
                 const isTod = dKey === todayStr;
                 const fullDayStr = dObj.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
+                const dayNum = dObj.getDate();
+                const monthShort = dObj.toLocaleDateString('it-IT', { month: 'short' });
                 const evs = groups[dKey];
 
                 html += `
-                    <div class="day-section">
-                        <div class="day-label">
-                            <span>${fullDayStr}</span>
-                            ${isTod ? '<span class="day-label-today">Oggi</span>' : ''}
+                    <div class="day-group">
+                        <div class="day-header ${isTod ? 'today' : ''}">
+                            <div class="day-header-title">
+                                <span class="day-date-badge">${dayNum} ${monthShort}</span>
+                                <span class="day-weekday-name">${fullDayStr}</span>
+                            </div>
+                            <span class="day-count-badge">${evs.length} ${evs.length === 1 ? 'partita' : 'partite'}</span>
                         </div>
-                        <div class="matches-list">
+                        <div class="events-list">
                 `;
 
                 evs.forEach(e => {
@@ -790,34 +1219,32 @@
                     let teamsHtml = '';
                     if (e.homeCrest || e.awayCrest) {
                         teamsHtml = `
-                            <div class="team-line">
-                                ${e.homeCrest ? `<img src="${e.homeCrest}" class="team-crest" alt="">` : ''}
-                                <span class="team-name">${e.home || 'Casa'}</span>
+                            <div class="compact-team-row">
+                                ${e.homeCrest ? `<img src="${e.homeCrest}" class="compact-crest" alt="">` : ''}
+                                <span class="compact-team-name">${e.home || 'Casa'}</span>
                             </div>
-                            <div class="team-line">
-                                ${e.awayCrest ? `<img src="${e.awayCrest}" class="team-crest" alt="">` : ''}
-                                <span class="team-name">${e.away || 'Trasferta'}</span>
+                            <div class="compact-team-row">
+                                ${e.awayCrest ? `<img src="${e.awayCrest}" class="compact-crest" alt="">` : ''}
+                                <span class="compact-team-name">${e.away || 'Trasferta'}</span>
                             </div>
                         `;
                     } else {
                         teamsHtml = `
-                            <div class="team-line">
-                                <span class="team-name">${e.title}</span>
+                            <div class="compact-team-row">
+                                <span class="compact-team-name">${e.title}</span>
                             </div>
                         `;
                     }
 
                     html += `
-                        <div class="match-row ${topMatch ? 'is-top-match' : ''}" onclick="openSheet('${key}')">
-                            <div class="match-teams-col">
+                        <div class="compact-card ${topMatch ? 'top-match-card' : ''}" onclick="openEventSheetByKey('${key}')">
+                            <div class="compact-teams-col">
+                                ${topMatch ? `<div class="top-match-tag">⭐ Top Match • ${SPORT_NAMES[e.sport] || e.sport}</div>` : ''}
                                 ${teamsHtml}
                             </div>
-                            <div class="match-meta-col">
-                                <div class="match-time">
-                                    ${topMatch ? '<span class="top-star">⭐</span>' : ''}
-                                    ${e.time}
-                                </div>
-                                <span class="match-subloc">${e.loc || ''}</span>
+                            <div class="compact-meta-col">
+                                <span class="compact-time">⏰ ${e.time || '--:--'}</span>
+                                <span class="compact-subloc">${e.loc || ''}</span>
                             </div>
                         </div>
                     `;
@@ -829,34 +1256,34 @@
             container.innerHTML = html;
         }
 
-        // --- CLASSIFICHE SEMPLICI E LEGGIBILI ---
-        function setStandingsTab(tab, btn) {
+        // --- CLASSIFICHE ---
+        function switchStandingsTab(tab, btn) {
             currentStandingsTab = tab;
-            document.querySelectorAll('.standings-tabs-row .tab-pill').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.standings-tabs .standings-tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             renderStandings();
         }
 
         function renderStandings() {
-            const container = document.getElementById('standingsContainer');
+            const container = document.getElementById('standingsContentBox');
             if (!standingsData) return;
 
             if (currentStandingsTab === 'seriea') {
                 const data = standingsData['seriea'] || [];
                 let rows = data.map(item => `
                     <tr>
-                        <td class="std-pos p${item.pos}">${item.pos}</td>
-                        <td><div class="std-team">${item.crest ? `<img src="${item.crest}" class="std-crest">` : ''}<span>${item.name}</span></div></td>
-                        <td class="std-num">${item.played}</td>
-                        <td class="std-num">${item.diff > 0 ? '+' + item.diff : item.diff}</td>
-                        <td class="std-pts">${item.points}</td>
+                        <td class="standings-pos pos-${item.pos}">${item.pos}</td>
+                        <td><div class="standings-team-cell">${item.crest ? `<img src="${item.crest}" class="standings-crest">` : ''}<span>${item.name}</span></div></td>
+                        <td class="standings-center">${item.played}</td>
+                        <td class="standings-center">${item.diff > 0 ? '+' + item.diff : item.diff}</td>
+                        <td class="standings-pts">${item.points}</td>
                     </tr>
                 `).join('');
 
                 container.innerHTML = `
-                    <div class="standings-box">
-                        <table class="std-table">
-                            <thead><tr><th style="width:22px;">#</th><th>Squadra</th><th class="std-num">PG</th><th class="std-num">DG</th><th style="text-align:right;">PT</th></tr></thead>
+                    <div class="standings-table-card">
+                        <table class="standings-table">
+                            <thead><tr><th style="width:22px;">#</th><th>Squadra</th><th class="standings-center">PG</th><th class="standings-center">DG</th><th style="text-align:right;">PT</th></tr></thead>
                             <tbody>${rows}</tbody>
                         </table>
                     </div>
@@ -865,18 +1292,18 @@
                 const data = standingsData['champions'] || [];
                 let rows = data.map(item => `
                     <tr>
-                        <td class="std-pos">${item.pos}</td>
-                        <td><div class="std-team">${item.crest ? `<img src="${item.crest}" class="std-crest">` : ''}<span>${item.name}</span></div></td>
-                        <td class="std-num">0</td>
-                        <td class="std-pts">0</td>
+                        <td class="standings-pos">${item.pos}</td>
+                        <td><div class="standings-team-cell">${item.crest ? `<img src="${item.crest}" class="standings-crest">` : ''}<span>${item.name}</span></div></td>
+                        <td class="standings-center">0</td>
+                        <td class="standings-pts">0</td>
                     </tr>
                 `).join('');
 
                 container.innerHTML = `
-                    <div class="standings-box">
-                        <div class="standings-box-header">Girone Unico 2026/27 (Tutte le 36 Squadre a 0 pt)</div>
-                        <table class="std-table">
-                            <thead><tr><th style="width:22px;">#</th><th>Squadra</th><th class="std-num">PG</th><th style="text-align:right;">PT</th></tr></thead>
+                    <div class="standings-table-card">
+                        <div class="standings-group-title">Girone Unico 2026/27 (36 Squadre a 0 pt)</div>
+                        <table class="standings-table">
+                            <thead><tr><th style="width:22px;">#</th><th>Squadra</th><th class="standings-center">PG</th><th style="text-align:right;">PT</th></tr></thead>
                             <tbody>${rows}</tbody>
                         </table>
                     </div>
@@ -885,17 +1312,17 @@
                 const data = standingsData['f1_drivers'] || [];
                 let rows = data.map(item => `
                     <tr>
-                        <td class="std-pos p${item.pos}">${item.pos}</td>
-                        <td><div class="std-team"><span>${item.name}</span> <span style="font-size:10px; color:var(--text-muted);">(${item.team})</span></div></td>
-                        <td class="std-num">${item.wins}</td>
-                        <td class="std-pts">${item.points}</td>
+                        <td class="standings-pos pos-${item.pos}">${item.pos}</td>
+                        <td><span style="font-weight:700;">${item.name}</span> <span style="font-size:10px; color:var(--text-muted);">(${item.team})</span></td>
+                        <td class="standings-center">${item.wins}</td>
+                        <td class="standings-pts">${item.points}</td>
                     </tr>
                 `).join('');
 
                 container.innerHTML = `
-                    <div class="standings-box">
-                        <table class="std-table">
-                            <thead><tr><th style="width:22px;">#</th><th>Pilota</th><th class="std-num">Vittorie</th><th style="text-align:right;">PT</th></tr></thead>
+                    <div class="standings-table-card">
+                        <table class="standings-table">
+                            <thead><tr><th style="width:22px;">#</th><th>Pilota</th><th class="standings-center">Vittorie</th><th style="text-align:right;">PT</th></tr></thead>
                             <tbody>${rows}</tbody>
                         </table>
                     </div>
@@ -904,17 +1331,17 @@
                 const data = standingsData['f1_constructors'] || [];
                 let rows = data.map(item => `
                     <tr>
-                        <td class="std-pos p${item.pos}">${item.pos}</td>
-                        <td><div class="std-team"><span>${item.name}</span></div></td>
-                        <td class="std-num">${item.wins}</td>
-                        <td class="std-pts">${item.points}</td>
+                        <td class="standings-pos pos-${item.pos}">${item.pos}</td>
+                        <td><span style="font-weight:700;">${item.name}</span></td>
+                        <td class="standings-center">${item.wins}</td>
+                        <td class="standings-pts">${item.points}</td>
                     </tr>
                 `).join('');
 
                 container.innerHTML = `
-                    <div class="standings-box">
-                        <table class="std-table">
-                            <thead><tr><th style="width:22px;">#</th><th>Scuderia</th><th class="std-num">Vittorie</th><th style="text-align:right;">PT</th></tr></thead>
+                    <div class="standings-table-card">
+                        <table class="standings-table">
+                            <thead><tr><th style="width:22px;">#</th><th>Scuderia</th><th class="standings-center">Vittorie</th><th style="text-align:right;">PT</th></tr></thead>
                             <tbody>${rows}</tbody>
                         </table>
                     </div>
@@ -926,16 +1353,16 @@
                 for (const dName of Object.keys(divs)) {
                     let rows = divs[dName].map((t, idx) => `
                         <tr>
-                            <td class="std-pos">${idx + 1}</td>
-                            <td><div class="std-team">${t.logo ? `<img src="${t.logo}" class="std-crest">` : ''}<span>${t.name}</span></div></td>
-                            <td class="std-pts" style="text-align:center;">0-0</td>
+                            <td class="standings-pos">${idx + 1}</td>
+                            <td><div class="standings-team-cell">${t.logo ? `<img src="${t.logo}" class="standings-crest">` : ''}<span>${t.name}</span></div></td>
+                            <td class="standings-pts" style="text-align:center;">0-0</td>
                         </tr>
                     `).join('');
 
                     html += `
-                        <div class="standings-box">
-                            <div class="standings-box-header">${dName}</div>
-                            <table class="std-table">
+                        <div class="standings-table-card">
+                            <div class="standings-group-title">${dName}</div>
+                            <table class="standings-table">
                                 <thead><tr><th style="width:22px;">#</th><th>Squadra</th><th style="text-align:center;">W-L</th></tr></thead>
                                 <tbody>${rows}</tbody>
                             </table>
@@ -946,25 +1373,103 @@
             }
         }
 
-        // --- SCHEDA DETTAGLI (ESSENZIALE) ---
-        function openSheet(key) {
+        // --- VISTA MESE ---
+        function renderMonthGrid() {
+            const grid = document.getElementById('monthGrid');
+            grid.innerHTML = '';
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const todayStr = formatDate(new Date());
+
+            const first = new Date(year, month, 1);
+            let pad = first.getDay() - 1;
+            if (pad === -1) pad = 6;
+            const start = new Date(year, month, 1 - pad);
+            const filtered = getFilteredEvents();
+
+            for (let i = 0; i < 42; i++) {
+                const cellD = new Date(start);
+                cellD.setDate(start.getDate() + i);
+                const cellStr = formatDate(cellD);
+                const isDiff = cellD.getMonth() !== month;
+                const isSel = cellStr === selectedDateStr;
+
+                const cell = document.createElement('div');
+                cell.className = `month-cell ${isDiff ? 'diff-month' : ''} ${isSel ? 'active-cell' : ''}`;
+                cell.innerHTML = `<span class="cell-num">${cellD.getDate()}</span>`;
+                cell.onclick = () => {
+                    selectedDateStr = cellStr;
+                    document.querySelectorAll('.month-cell').forEach(c => c.classList.remove('active-cell'));
+                    cell.classList.add('active-cell');
+                    renderMonthSelectedDay(cellStr, filtered.filter(e => e.date === cellStr));
+                };
+                grid.appendChild(cell);
+
+                if (isSel) renderMonthSelectedDay(cellStr, filtered.filter(e => e.date === cellStr));
+            }
+        }
+
+        function renderMonthSelectedDay(dateStr, evs) {
+            const container = document.getElementById('monthSelectedDayEvents');
+            const dObj = new Date(dateStr + 'T00:00:00');
+            const dStr = dObj.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
+
+            if (!evs || evs.length === 0) {
+                container.innerHTML = `<div style="text-align:center; padding:16px 0; color:var(--text-muted); font-size:12px;">Nessuna partita il ${dStr}.</div>`;
+                return;
+            }
+
+            let html = `<div style="font-size:12.5px; font-weight:700; color:#fff; margin:10px 0 6px 0;">${dStr} (${evs.length} eventi)</div><div class="events-list">`;
+            evs.forEach(e => {
+                const safeTitle = (e.title || '').replace(/'/g, "\\'");
+                const key = `${e.date}_${e.time}_${safeTitle}`;
+                html += `
+                    <div class="compact-card" onclick="openEventSheetByKey('${key}')">
+                        <span class="compact-team-name">${e.title}</span>
+                        <span class="compact-time">⏰ ${e.time}</span>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        // --- SCHEDA DETTAGLI PARTITA ---
+        function openEventSheetByKey(key) {
             const found = allEvents.find(e => `${e.date}_${e.time}_${e.title}` === key);
             if (!found) return;
 
-            document.getElementById('sheetSport').textContent = (found.sport || '').toUpperCase();
-            document.getElementById('sheetTitle').textContent = found.title;
-
+            document.getElementById('sheetSportTag').textContent = SPORT_NAMES[found.sport] || (found.sport || '').toUpperCase();
             const d = new Date(found.date + 'T00:00:00');
-            document.getElementById('sheetDate').textContent = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
-            document.getElementById('sheetTime').textContent = found.time || '--:--';
-            document.getElementById('sheetLoc').textContent = found.loc || 'Ufficiale';
+            document.getElementById('sheetEventDate').textContent = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
+            document.getElementById('sheetEventTime').textContent = found.time || '--:--';
+            document.getElementById('sheetEventLoc').textContent = found.loc || 'Ufficiale';
 
-            const venueBox = document.getElementById('sheetVenueBox');
-            if (found.venue) {
-                venueBox.style.display = 'block';
-                document.getElementById('sheetVenue').textContent = found.venue;
+            const faceoffEl = document.getElementById('sheetFaceoffBox');
+            if (found.homeCrest || found.awayCrest) {
+                faceoffEl.style.display = 'flex';
+                faceoffEl.innerHTML = `
+                    <div class="sheet-team-block">
+                        ${found.homeCrest ? `<img src="${found.homeCrest}" class="sheet-crest" alt="">` : ''}
+                        <span class="sheet-team-name">${found.home || 'Casa'}</span>
+                    </div>
+                    <div style="font-size:15px; font-weight:800; color:var(--text-muted);">VS</div>
+                    <div class="sheet-team-block">
+                        ${found.awayCrest ? `<img src="${found.awayCrest}" class="sheet-crest" alt="">` : ''}
+                        <span class="sheet-team-name">${found.away || 'Trasferta'}</span>
+                    </div>
+                `;
             } else {
-                venueBox.style.display = 'none';
+                faceoffEl.style.display = 'block';
+                faceoffEl.innerHTML = `<div style="font-size:15px; font-weight:800; color:#fff; text-align:center;">${found.title}</div>`;
+            }
+
+            const vRow = document.getElementById('sheetVenueRow');
+            if (found.venue) {
+                vRow.style.display = 'block';
+                document.getElementById('sheetEventVenue').textContent = found.venue;
+            } else {
+                vRow.style.display = 'none';
             }
 
             const cleanDate = found.date.replace(/-/g, '');
@@ -974,18 +1479,24 @@
             if (endH >= 24) endH -= 24;
             const endTime = `${cleanDate}T${String(endH).padStart(2, '0')}${cleanTime.slice(2)}`;
 
-            document.getElementById('btnGCal').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(found.title)}&dates=${startTime}/${endTime}&details=${encodeURIComponent(found.loc || '')}`;
+            document.getElementById('btnGoogleCalendar').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(found.title)}&dates=${startTime}/${endTime}&details=${encodeURIComponent(found.loc || '')}`;
 
             document.getElementById('modalBackdrop').classList.add('open');
-            document.getElementById('detailSheet').classList.add('open');
+            document.getElementById('eventDetailSheet').classList.add('open');
         }
 
-        function closeSheet() {
+        function openInfoSheet() {
+            document.getElementById('modalBackdrop').classList.add('open');
+            document.getElementById('infoSheet').classList.add('open');
+        }
+
+        function closeAllSheets() {
             document.getElementById('modalBackdrop').classList.remove('open');
-            document.getElementById('detailSheet').classList.remove('open');
+            document.getElementById('eventDetailSheet').classList.remove('open');
+            document.getElementById('infoSheet').classList.remove('open');
         }
 
-        window.addEventListener('DOMContentLoaded', init);
+        window.addEventListener('DOMContentLoaded', initData);
     </script>
 </body>
 </html>
