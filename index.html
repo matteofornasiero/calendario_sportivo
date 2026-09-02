@@ -26,17 +26,13 @@
     <style>
         :root {
             --bg: #09090b;
-            --surface: #121217;
-            --surface-card: #181820;
-            --surface-hover: #22222c;
+            --surface: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(255, 255, 255, 0.18);
             
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
             --text-muted: #64748b;
-            
-            --blue: #2563eb;
-            --top-gold: #eab308;
 
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -52,13 +48,9 @@
             -webkit-user-select: none;
         }
 
+        /* 120 FPS SMOOTH SCROLLING (Nessun repaint lag!) */
         body {
-            background-color: #07070a;
-            background-image: 
-                radial-gradient(circle 800px at 15% 0%, rgba(37, 99, 235, 0.12), transparent 70%),
-                radial-gradient(circle 600px at 85% 15%, rgba(147, 51, 234, 0.07), transparent 60%),
-                radial-gradient(circle 900px at 50% 85%, rgba(30, 58, 138, 0.08), transparent 70%);
-            background-attachment: fixed;
+            background-color: var(--bg);
             color: var(--text-main);
             min-height: 100vh;
             padding-top: var(--safe-top);
@@ -67,15 +59,15 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- 1. TOP BAR (LIQUID GLASS) --- */
+        /* --- 1. TOP BAR (LIQUID GLASS BIANCO & NERO) --- */
         .top-bar {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(9, 9, 13, 0.75);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(9, 9, 12, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
             padding: 10px 14px;
         }
 
@@ -97,17 +89,18 @@
             width: 30px;
             height: 30px;
             border-radius: 9px;
-            background: #2563eb;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 8px rgba(37, 99, 235, 0.35);
         }
 
         .brand-title {
             font-size: 18px;
-            font-weight: 800;
+            font-weight: 900;
             letter-spacing: -0.4px;
             color: #fff;
         }
@@ -119,26 +112,21 @@
         }
 
         .btn-today {
-            background: rgba(59, 130, 246, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(59, 130, 246, 0.35);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            color: #60a5fa;
-            font-size: 12.5px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 12px;
             font-weight: 700;
             padding: 5px 12px;
-            border-radius: 16px;
+            border-radius: 14px;
             cursor: pointer;
         }
-        .btn-today:active { background: #2563eb; color: #fff; }
+        .btn-today:active { background: #fff; color: #000; }
 
         .btn-info {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid var(--border);
             color: var(--text-sub);
             width: 28px;
             height: 28px;
@@ -150,7 +138,7 @@
             cursor: pointer;
         }
 
-        /* Search input (Liquid Glass) */
+        /* Search input */
         .search-container {
             position: relative;
         }
@@ -158,11 +146,9 @@
         .search-input {
             width: 100%;
             background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
             border-radius: 10px;
             padding: 8px 12px 8px 32px;
             font-size: 13px;
@@ -171,7 +157,7 @@
             user-select: text;
             -webkit-user-select: text;
         }
-        .search-input:focus { border-color: rgba(255, 255, 255, 0.25); }
+        .search-input:focus { border-color: rgba(255, 255, 255, 0.3); }
 
         .search-icon {
             position: absolute;
@@ -183,25 +169,23 @@
             pointer-events: none;
         }
 
-        /* --- 2. HERO CARD (LIQUID GLASS ACCENT) --- */
+        /* --- 2. HERO CARD (PERSONALIZZATA CON I COLORI DELLE SQUADRE) --- */
         .hero-container {
             padding: 0 14px 8px 14px;
         }
 
         .hero-banner {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.065) 0%, rgba(255, 255, 255, 0.02) 100%);
-            backdrop-filter: blur(20px) saturate(150%);
-            -webkit-backdrop-filter: blur(20px) saturate(150%);
-            border: 1px solid rgba(255, 255, 255, 0.09);
-            border-top: 1px solid rgba(255, 255, 255, 0.22);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 24px rgba(0, 0, 0, 0.35);
             border-radius: 16px;
             padding: 12px 14px;
             position: relative;
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 24px rgba(0, 0, 0, 0.4);
             cursor: pointer;
-            transition: background 0.15s, transform 0.12s;
+            transition: transform 0.12s;
+            contain: content;
         }
-        .hero-banner:active { transform: scale(0.99); background: rgba(255, 255, 255, 0.08); }
+        .hero-banner:active { transform: scale(0.99); }
 
         .hero-top {
             display: flex;
@@ -211,22 +195,22 @@
         }
 
         .hero-badge {
-            font-size: 10px;
+            font-size: 10.5px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.4px;
-            color: #facc15;
+            color: #f1f5f9;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
         }
 
         .hero-countdown {
             font-size: 11px;
             font-weight: 700;
-            color: #facc15;
-            background: rgba(234, 179, 8, 0.12);
-            border: 1px solid rgba(234, 179, 8, 0.25);
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-highlight);
             padding: 2px 7px;
             border-radius: 6px;
         }
@@ -251,7 +235,7 @@
         }
 
         .hero-team-name {
-            font-size: 14px;
+            font-size: 14.5px;
             font-weight: 800;
             color: #fff;
             line-height: 1.2;
@@ -262,16 +246,16 @@
             height: 28px;
             object-fit: contain;
             flex-shrink: 0;
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
         }
 
         .hero-vs {
             font-size: 11px;
             font-weight: 800;
-            color: var(--text-muted);
+            color: var(--text-sub);
             padding: 2px 6px;
             border-radius: 5px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.06);
             flex-shrink: 0;
         }
 
@@ -287,10 +271,10 @@
 
         .hero-cta {
             font-weight: 700;
-            color: #60a5fa;
+            color: #fff;
         }
 
-        /* --- 3. FILTRI CHIP (LIQUID GLASS PILLS) --- */
+        /* --- 3. FILTRI CHIP (MONOCHROME LIQUID GLASS) --- */
         .filters-container {
             display: flex;
             gap: 6px;
@@ -310,10 +294,8 @@
             font-size: 11.5px;
             font-weight: 600;
             background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
             color: var(--text-sub);
             cursor: pointer;
@@ -321,86 +303,86 @@
         }
         .chip:active { transform: scale(0.96); }
 
+        /* Chip attivo: Bianco & Nero nitido */
         .chip.active {
-            color: #fff;
-            background: rgba(37, 99, 235, 0.7);
-            border-color: rgba(147, 197, 253, 0.35);
-            border-top: 1px solid rgba(255, 255, 255, 0.35);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 3px 10px rgba(37, 99, 235, 0.25);
+            color: #000;
+            background: #ffffff;
+            border-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+            font-weight: 800;
         }
 
-        /* --- 4. CONTROLLI MESE & SWITCHER VISTA (FROSTED GLASS) --- */
-        .nav-controls {
+        /* --- 4. CONTROLLI MESE & SWITCHER VISTE (MAI PIÙ SBORDAMENTI!) --- */
+        .nav-controls-box {
+            padding: 2px 14px 8px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .month-selector-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 4px;
-            padding: 2px 14px 8px 14px;
-        }
-
-        .month-selector {
-            display: flex;
-            align-items: center;
-            gap: 3px;
         }
 
         .nav-btn {
             background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
             color: var(--text-main);
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 14px;
             cursor: pointer;
-            flex-shrink: 0;
         }
 
         .current-month-text {
-            font-size: 12.5px;
+            font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.2px;
-            white-space: nowrap;
+            letter-spacing: 0.3px;
+            color: #fff;
         }
 
-        .view-switcher {
-            display: flex;
+        /* Switcher a griglia 3 colonne perfettamente equilibrate (100% IMPOSSIBILE SBORDARE!) */
+        .view-switcher-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4px;
             background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.16);
-            padding: 2px;
-            border-radius: 9px;
-            flex-shrink: 0;
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
+            padding: 3px;
+            border-radius: 10px;
         }
 
         .view-btn {
             background: transparent;
             border: none;
             color: var(--text-sub);
-            padding: 4px 7px;
-            border-radius: 7px;
-            font-size: 10.5px;
+            padding: 6px 2px;
+            border-radius: 8px;
+            font-size: 11px;
             font-weight: 700;
             cursor: pointer;
+            text-align: center;
             white-space: nowrap;
+            transition: all 0.15s;
         }
 
         .view-btn.active {
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 3px rgba(0,0,0,0.3);
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            font-weight: 800;
         }
 
-        /* --- 5. DATE STRIP (LIQUID GLASS CAPSULE) --- */
+        /* --- 5. DATE STRIP SETTIMANALE (LIQUID GLASS MONOCHROME) --- */
         .date-strip-wrapper {
             padding: 0 14px 10px 14px;
         }
@@ -409,14 +391,12 @@
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 4px;
-            background: rgba(255, 255, 255, 0.035);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
             padding: 6px 4px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.25);
         }
 
         .strip-day {
@@ -424,20 +404,20 @@
             flex-direction: column;
             align-items: center;
             padding: 5px 2px;
-            border-radius: 8px;
+            border-radius: 9px;
             cursor: pointer;
-            transition: background 0.15s;
+            transition: background 0.12s;
         }
 
-        /* Giorno selezionato: blu satinato, pulito, riflesso di vetro */
+        /* Giorno selezionato: Bianco puro nitido */
         .strip-day.selected {
-            background: #2563eb;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
         }
 
         .strip-day.is-today:not(.selected) {
-            border: 1px solid rgba(59, 130, 246, 0.4);
-            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .strip-name {
@@ -446,7 +426,7 @@
             color: var(--text-muted);
             text-transform: uppercase;
         }
-        .strip-day.selected .strip-name { color: #dbeafe; }
+        .strip-day.selected .strip-name { color: #52525b; font-weight: 700; }
 
         .strip-num {
             font-size: 14px;
@@ -454,20 +434,20 @@
             margin-top: 2px;
             color: var(--text-main);
         }
-        .strip-day.selected .strip-num { color: #ffffff; font-weight: 800; }
+        .strip-day.selected .strip-num { color: #000000; font-weight: 900; }
 
         .strip-dot {
             width: 3.5px;
             height: 3.5px;
             border-radius: 50%;
-            background: #3b82f6;
+            background: #fff;
             margin-top: 3px;
             opacity: 0;
         }
-        .strip-day.has-events .strip-dot { opacity: 1; }
-        .strip-day.selected .strip-dot { background: #fff; }
+        .strip-day.has-events .strip-dot { opacity: 0.7; }
+        .strip-day.selected .strip-dot { background: #000; opacity: 1; }
 
-        /* --- 6. AGENDA FEED (CARD COMPATTE LIQUID GLASS) --- */
+        /* --- 6. AGENDA FEED (CARD CON COLORI DELLE SQUADRE & LIQUID GLASS) --- */
         .main-content {
             padding: 0 14px;
         }
@@ -481,19 +461,17 @@
             align-items: center;
             justify-content: space-between;
             padding: 7px 11px;
-            background: rgba(18, 18, 25, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-top: 1px solid rgba(255, 255, 255, 0.16);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
             margin-bottom: 7px;
         }
 
         .day-header.today {
-            border-color: rgba(59, 130, 246, 0.35);
-            background: rgba(30, 41, 59, 0.45);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .day-header-title {
@@ -503,16 +481,16 @@
         }
 
         .day-date-badge {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 6px;
             padding: 2px 6px;
             font-size: 11px;
             font-weight: 800;
-            color: #cbd5e1;
+            color: #fff;
         }
         .day-header.today .day-date-badge {
-            background: #2563eb;
-            color: #fff;
+            background: #ffffff;
+            color: #000;
         }
 
         .day-weekday-name {
@@ -534,26 +512,21 @@
             gap: 6px;
         }
 
-        /* Card Partita Compatta (Liquid Glass) */
+        /* Card Partita: Colorata con i colori della squadra e rifinitura liquid glass */
         .compact-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-top: 1px solid rgba(255, 255, 255, 0.16);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 3px 10px rgba(0, 0, 0, 0.2);
             border-radius: 12px;
-            padding: 8px 12px;
+            padding: 9px 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            transition: background 0.12s, transform 0.1s;
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.1s;
+            contain: content;
         }
-        .compact-card:active {
-            background: rgba(255, 255, 255, 0.08);
-            transform: scale(0.99);
-        }
+        .compact-card:active { transform: scale(0.99); }
 
         .compact-teams-col {
             display: flex;
@@ -576,13 +549,13 @@
             height: 17px;
             object-fit: contain;
             flex-shrink: 0;
-            filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
         }
 
         .compact-team-name {
             font-size: 13px;
             font-weight: 600;
-            color: #e2e8f0;
+            color: #f1f5f9;
             overflow: hidden;
             text-overflow: ellipsis;
         }
@@ -598,9 +571,13 @@
 
         .compact-time {
             font-size: 12.5px;
-            font-weight: 700;
-            color: #60a5fa;
+            font-weight: 800;
+            color: #ffffff;
             font-variant-numeric: tabular-nums;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border);
+            padding: 2px 6px;
+            border-radius: 6px;
         }
 
         .compact-subloc {
@@ -609,23 +586,19 @@
             font-weight: 500;
         }
 
-        /* Card Top Match in evidenza nel feed (Glass Gold) */
-        .compact-card.top-match-card {
-            border-color: rgba(234, 179, 8, 0.25);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            background: linear-gradient(135deg, rgba(234, 179, 8, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-        }
-
         .top-match-tag {
             font-size: 9.5px;
             font-weight: 800;
-            color: #facc15;
+            color: #ffffff;
             letter-spacing: 0.3px;
             text-transform: uppercase;
             margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
         }
 
-        /* --- 7. SEZIONE CLASSIFICHE (LIQUID GLASS) --- */
+        /* --- 7. SEZIONE CLASSIFICHE --- */
         .standings-view-container {
             display: none;
         }
@@ -641,10 +614,8 @@
 
         .standings-tab-btn {
             background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
             color: var(--text-sub);
             padding: 6px 11px;
             border-radius: 10px;
@@ -654,22 +625,21 @@
             cursor: pointer;
         }
         .standings-tab-btn.active {
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            background: #ffffff;
+            color: #000;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
         }
 
         .standings-table-card {
             background: rgba(255, 255, 255, 0.035);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             overflow: hidden;
             margin-bottom: 12px;
+            contain: content;
         }
 
         .standings-group-title {
@@ -707,16 +677,16 @@
         .standings-table tr:last-child td { border-bottom: none; }
 
         .standings-pos { width: 22px; color: var(--text-muted); font-weight: 700; text-align: center; }
-        .standings-pos.pos-1 { color: #facc15; }
+        .standings-pos.pos-1 { color: #ffffff; font-weight: 900; }
         .standings-pos.pos-2 { color: #cbd5e1; }
-        .standings-pos.pos-3 { color: #d97706; }
+        .standings-pos.pos-3 { color: #94a3b8; }
 
         .standings-team-cell { display: flex; align-items: center; gap: 7px; font-weight: 600; }
         .standings-crest { width: 16px; height: 16px; object-fit: contain; }
         .standings-pts { text-align: right; font-weight: 800; color: #fff; }
         .standings-center { text-align: center; color: var(--text-sub); }
 
-        /* --- 8. MONTH VIEW --- */
+        /* --- 8. MONTH VIEW (CALENDARIO MESE) --- */
         .month-view-container { display: none; }
         .month-grid-weekdays {
             display: grid; grid-template-columns: repeat(7, 1fr);
@@ -725,7 +695,7 @@
         }
         .month-grid {
             display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px;
-            background: var(--surface); padding: 5px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03); padding: 5px; border-radius: 12px;
             border: 1px solid var(--border); margin-bottom: 14px;
         }
         .month-cell {
@@ -733,23 +703,23 @@
             align-items: center; justify-content: center; border-radius: 7px; cursor: pointer;
         }
         .month-cell.diff-month { opacity: 0.2; }
-        .month-cell.active-cell { background: #2563eb; color: #fff !important; }
+        .month-cell.active-cell { background: #ffffff; color: #000000 !important; font-weight: 800; }
         .cell-num { font-size: 12.5px; font-weight: 600; }
 
         /* --- MODAL SCHEDA DETTAGLI --- */
         .modal-sheet {
             position: fixed;
             bottom: 0; left: 0; right: 0;
-            background: rgba(16, 16, 23, 0.85);
-            backdrop-filter: blur(28px) saturate(190%);
-            -webkit-backdrop-filter: blur(28px) saturate(190%);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 -12px 40px rgba(0, 0, 0, 0.75);
+            background: rgba(16, 16, 20, 0.92);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-top: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 -12px 40px rgba(0, 0, 0, 0.8);
             border-radius: 20px 20px 0 0;
             padding: 14px 18px calc(var(--safe-bottom) + 18px) 18px;
             z-index: 200;
             transform: translateY(100%);
-            transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.22s ease-out;
         }
         .modal-sheet.open { transform: translateY(0); }
 
@@ -761,20 +731,16 @@
 
         .modal-backdrop {
             position: fixed; inset: 0; background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(4px);
             z-index: 150; opacity: 0; pointer-events: none;
             transition: opacity 0.2s;
         }
         .modal-backdrop.open { opacity: 1; pointer-events: auto; }
 
         .sheet-faceoff-card {
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
             border-radius: 14px; padding: 12px; margin-bottom: 12px;
+            border: 1px solid var(--border);
+            border-top: 1px solid var(--border-highlight);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
             display: flex; align-items: center; justify-content: space-between; text-align: center;
         }
         .sheet-team-block {
@@ -785,13 +751,13 @@
 
         .btn-gcal {
             width: 100%;
-            background: #2563eb;
-            color: #fff;
+            background: #ffffff;
+            color: #000000;
             border: none;
             border-radius: 10px;
             padding: 11px;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
@@ -802,7 +768,7 @@
 </head>
 <body>
 
-    <!-- 1. TOP BAR -->
+    <!-- 1. TOP BAR (MONOCHROME LIQUID GLASS) -->
     <header class="top-bar">
         <div class="header-row">
             <div class="app-brand" onclick="jumpToToday()">
@@ -820,31 +786,31 @@
         </div>
     </header>
 
-    <!-- 2. PROSSIMO TOP MATCH (IN ALTO, SOBRIO ED ELEGANTE) -->
+    <!-- 2. PROSSIMO TOP MATCH (CARD CON COLORI SQUADRE) -->
     <div class="hero-container" id="heroBannerContainer"></div>
 
     <!-- 3. FILTRI CHIP -->
     <div class="filters-container">
-        <button class="chip active" data-sport="all" onclick="setSportFilter('all', this)">⚡ Tutti</button>
-        <button class="chip" data-sport="top" onclick="setSportFilter('top', this)">⭐ I Miei Match</button>
-        <button class="chip" data-sport="weekend" onclick="setSportFilter('weekend', this)">🗓️ Weekend</button>
-        <button class="chip" data-sport="seriea" onclick="setSportFilter('seriea', this)">⚽ Serie A</button>
-        <button class="chip" data-sport="f1" onclick="setSportFilter('f1', this)">🏎️ F1</button>
-        <button class="chip" data-sport="champions" onclick="setSportFilter('champions', this)">🏆 Champions</button>
-        <button class="chip" data-sport="nfl" onclick="setSportFilter('nfl', this)">🏈 NFL</button>
-        <button class="chip" data-sport="nazionale" onclick="setSportFilter('nazionale', this)">🇮🇹 Italia</button>
+        <button class="chip active" data-sport="all" onclick="setSportFilter('all', this)">Tutti</button>
+        <button class="chip" data-sport="top" onclick="setSportFilter('top', this)">I Miei Match</button>
+        <button class="chip" data-sport="weekend" onclick="setSportFilter('weekend', this)">Weekend</button>
+        <button class="chip" data-sport="seriea" onclick="setSportFilter('seriea', this)">Serie A</button>
+        <button class="chip" data-sport="f1" onclick="setSportFilter('f1', this)">F1</button>
+        <button class="chip" data-sport="champions" onclick="setSportFilter('champions', this)">Champions</button>
+        <button class="chip" data-sport="nfl" onclick="setSportFilter('nfl', this)">NFL</button>
+        <button class="chip" data-sport="nazionale" onclick="setSportFilter('nazionale', this)">Italia</button>
     </div>
 
-    <!-- 4. CONTROLLI MESE & SWITCHER VISTE (ADATTATO AL 100%, NON SBORDA MAI) -->
-    <div class="nav-controls">
-        <div class="month-selector" id="monthSelectorGroup">
+    <!-- 4. CONTROLLI MESE & SWITCHER VISTE (DUE RIGHE PERFETTE, 0 SBORDAMENTI) -->
+    <div class="nav-controls-box">
+        <div class="month-selector-row" id="monthSelectorGroup">
             <button class="nav-btn" onclick="navigateTime(-1)">‹</button>
             <div class="current-month-text" id="monthDisplay">Mese 2026</div>
             <button class="nav-btn" onclick="navigateTime(1)">›</button>
         </div>
-        <div class="view-switcher">
+        <div class="view-switcher-grid">
             <button class="view-btn active" id="btnAgendaView" onclick="switchView('agenda')">Agenda</button>
-            <button class="view-btn" id="btnStandingsView" onclick="switchView('standings')">🏆 Classifiche</button>
+            <button class="view-btn" id="btnStandingsView" onclick="switchView('standings')">Classifiche</button>
             <button class="view-btn" id="btnMonthView" onclick="switchView('month')">Mese</button>
         </div>
     </div>
@@ -864,11 +830,11 @@
         <!-- VISTA CLASSIFICHE -->
         <div id="standingsView" class="standings-view-container">
             <div class="standings-tabs">
-                <button class="standings-tab-btn active" onclick="switchStandingsTab('seriea', this)">⚽ Serie A</button>
-                <button class="standings-tab-btn" onclick="switchStandingsTab('champions', this)">🏆 Champions</button>
-                <button class="standings-tab-btn" onclick="switchStandingsTab('f1_drivers', this)">🏎️ F1 Piloti</button>
-                <button class="standings-tab-btn" onclick="switchStandingsTab('f1_constructors', this)">🏎️ F1 Scuderie</button>
-                <button class="standings-tab-btn" onclick="switchStandingsTab('nfl', this)">🏈 NFL</button>
+                <button class="standings-tab-btn active" onclick="switchStandingsTab('seriea', this)">Serie A</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('champions', this)">Champions</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('f1_drivers', this)">F1 Piloti</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('f1_constructors', this)">F1 Scuderie</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('nfl', this)">NFL</button>
             </div>
             <div id="standingsContentBox"></div>
         </div>
@@ -888,7 +854,7 @@
     <div class="modal-sheet" id="eventDetailSheet">
         <div class="sheet-handle"></div>
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-            <span id="sheetSportTag" style="font-size:11px; font-weight:700; color:#60a5fa; text-transform:uppercase;">SPORT</span>
+            <span id="sheetSportTag" style="font-size:11px; font-weight:800; color:#fff; text-transform:uppercase;">SPORT</span>
             <button onclick="closeAllSheets()" style="background:none; border:none; color:var(--text-muted); font-size:16px;">✕</button>
         </div>
         <div class="sheet-faceoff-card" id="sheetFaceoffBox"></div>
@@ -898,7 +864,7 @@
             <div>🏆 Turno: <span id="sheetEventLoc" style="color:#fff; font-weight:600;"></span></div>
             <div id="sheetVenueRow">🏟️ Luogo: <span id="sheetEventVenue" style="color:#fff; font-weight:600;"></span></div>
         </div>
-        <a id="btnGoogleCalendar" href="#" target="_blank" class="btn-gcal">📅 Aggiungi a Google Calendar</a>
+        <a id="btnGoogleCalendar" href="#" target="_blank" class="btn-gcal">Aggiungi a Google Calendar</a>
     </div>
 
     <!-- INFO SHEET -->
@@ -906,7 +872,7 @@
         <div class="sheet-handle"></div>
         <div style="font-size:16px; font-weight:800; color:#fff; margin-bottom:8px;">Sport OS</div>
         <div style="font-size:13px; color:var(--text-sub); line-height:1.5;">
-            Calendario sportivo personale con classifiche e match di Serie A, Champions League, Formula 1 e NFL.
+            Calendario sportivo minimale con classifiche e match personalizzati con i colori sociali delle squadre.
         </div>
     </div>
 
@@ -921,6 +887,60 @@
         let searchQuery = '';
         let activeSheetEvent = null;
         let countdownTimerId = null;
+
+        // ==========================================
+        // MAPPA DEI COLORI SOCIALI DELLE SQUADRE
+        // ==========================================
+        const TEAM_COLORS = {
+            'torino': '#8a151b',      // Granata
+            'fiorentina': '#5c2d91',  // Viola
+            'juventus': '#3a3a3a',    // Bianconero
+            'inter': '#0057b8',       // Nerazzurro
+            'milan': '#d31126',       // Rossonero
+            'roma': '#8e1f2f',        // Giallorosso
+            'lazio': '#6ba4b8',       // Biancoceleste
+            'napoli': '#1270b0',      // Azzurro
+            'atalanta': '#1e3d7b',    // Nerazzurro
+            'bologna': '#1a2b4c',     // Rossoblu
+            'genoa': '#8b1e2b',       // Rossoblu
+            'como': '#003882',        // Azzurro Como
+            'monza': '#c8102e',       // Biancorosso
+            'verona': '#002f6c',      // Gialloblu
+            'udinese': '#444444',     // Bianconero
+            'parma': '#003399',       // Crociati
+            'cagliari': '#8b1e2b',    // Rossoblu
+            'lecce': '#c8102e',       // Giallorosso
+            'empoli': '#005ca9',      // Azzurro
+            'venezia': '#008559',     // Arancioneroverde
+            'broncos': '#fb4f14',     // Denver Broncos Orange
+            'denver': '#fb4f14',
+            'ferrari': '#e10600',     // Rosso Corsa
+            'f1': '#e10600',
+            'red bull': '#061d42',
+            'mercedes': '#00a19c',
+            'mclaren': '#ff8000',
+            'italia': '#004ea2'
+        };
+
+        function getTeamColor(name) {
+            if (!name) return 'rgba(255, 255, 255, 0.08)';
+            const lower = name.toLowerCase();
+            for (const key of Object.keys(TEAM_COLORS)) {
+                if (lower.includes(key)) return TEAM_COLORS[key];
+            }
+            return 'rgba(255, 255, 255, 0.08)';
+        }
+
+        function getCardBackground(home, away) {
+            const cHome = getTeamColor(home);
+            const cAway = getTeamColor(away);
+            if (cHome !== 'rgba(255, 255, 255, 0.08)' && cAway !== 'rgba(255, 255, 255, 0.08)') {
+                return `linear-gradient(135deg, ${cHome}22 0%, rgba(20,20,26,0.6) 50%, ${cAway}22 100%)`;
+            } else if (cHome !== 'rgba(255, 255, 255, 0.08)') {
+                return `linear-gradient(135deg, ${cHome}28 0%, rgba(18,18,24,0.7) 100%)`;
+            }
+            return `linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.015) 100%)`;
+        }
 
         const SPORT_NAMES = {
             f1: 'Formula 1',
@@ -970,7 +990,7 @@
             renderAll();
         }
 
-        // --- PROSSIMO TOP MATCH ---
+        // --- PROSSIMO TOP MATCH (CON COLORI SQUADRA) ---
         function renderHeroBanner() {
             const container = document.getElementById('heroBannerContainer');
             if (allEvents.length === 0) {
@@ -993,6 +1013,7 @@
             const dStr = dObj.toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short' });
             const safeTitle = (upcoming.title || '').replace(/'/g, "\\'");
             const key = `${upcoming.date}_${upcoming.time}_${safeTitle}`;
+            const heroBg = getCardBackground(upcoming.home, upcoming.away);
 
             let faceoffHtml = '';
             if (upcoming.homeCrest && upcoming.awayCrest) {
@@ -1010,13 +1031,13 @@
                     </div>
                 `;
             } else {
-                faceoffHtml = `<div style="font-size:14px; font-weight:800; color:#fff; margin:4px 0;">${upcoming.title}</div>`;
+                faceoffHtml = `<div style="font-size:14.5px; font-weight:800; color:#fff; margin:4px 0;">${upcoming.title}</div>`;
             }
 
             container.innerHTML = `
-                <div class="hero-banner" onclick="openEventSheetByKey('${key}')">
+                <div class="hero-banner" style="background: ${heroBg};" onclick="openEventSheetByKey('${key}')">
                     <div class="hero-top">
-                        <div class="hero-badge">⭐ PROSSIMO TOP MATCH • ${sportTag}</div>
+                        <div class="hero-badge">PROSSIMO MATCH • ${sportTag}</div>
                         <div class="hero-countdown" id="heroCountdownTimer">⏳ Calcolo...</div>
                     </div>
                     ${faceoffHtml}
@@ -1040,7 +1061,7 @@
             const d = Math.floor(diff / (86400000));
             const h = Math.floor((diff % 86400000) / 3600000);
             const m = Math.floor((diff % 3600000) / 60000);
-            el.textContent = d > 0 ? `⏳ Tra ${d}g ${h}h` : `⏳ Tra ${h}h ${m}m`;
+            el.textContent = d > 0 ? `Tra ${d}g ${h}h` : `Tra ${h}h ${m}m`;
         }
 
         // --- NAVIGAZIONE & VISTE ---
@@ -1073,7 +1094,7 @@
             document.getElementById('monthView').style.display = (view === 'month') ? 'block' : 'none';
 
             document.getElementById('dateStripWrapper').style.display = (view === 'agenda') ? 'block' : 'none';
-            document.getElementById('monthSelectorGroup').style.visibility = (view === 'standings') ? 'hidden' : 'visible';
+            document.getElementById('monthSelectorGroup').style.display = (view === 'standings') ? 'none' : 'flex';
 
             renderAll();
         }
@@ -1164,7 +1185,7 @@
             }
         }
 
-        // --- AGENDA FEED: CARD COMPATTE, METÀ ALTEZZA, RIPOSANTI ---
+        // --- AGENDA FEED: CARD CON COLORI SQUADRE & LIQUID GLASS ---
         function renderAgendaFeed() {
             const container = document.getElementById('agendaFeed');
             const filtered = getFilteredEvents();
@@ -1215,6 +1236,11 @@
                     const topMatch = isTop(e);
                     const safeTitle = (e.title || '').replace(/'/g, "\\'");
                     const key = `${e.date}_${e.time}_${safeTitle}`;
+                    
+                    // Colore personalizzato della squadra di casa / trasferta
+                    const cardBg = getCardBackground(e.home, e.away);
+                    const homeColor = getTeamColor(e.home);
+                    const leftBorder = (homeColor !== 'rgba(255, 255, 255, 0.08)') ? `border-left: 3px solid ${homeColor};` : '';
 
                     let teamsHtml = '';
                     if (e.homeCrest || e.awayCrest) {
@@ -1237,13 +1263,13 @@
                     }
 
                     html += `
-                        <div class="compact-card ${topMatch ? 'top-match-card' : ''}" onclick="openEventSheetByKey('${key}')">
+                        <div class="compact-card" style="background: ${cardBg}; ${leftBorder}" onclick="openEventSheetByKey('${key}')">
                             <div class="compact-teams-col">
-                                ${topMatch ? `<div class="top-match-tag">⭐ Top Match • ${SPORT_NAMES[e.sport] || e.sport}</div>` : ''}
+                                ${topMatch ? `<div class="top-match-tag">• TOP MATCH • ${SPORT_NAMES[e.sport] || e.sport}</div>` : ''}
                                 ${teamsHtml}
                             </div>
                             <div class="compact-meta-col">
-                                <span class="compact-time">⏰ ${e.time || '--:--'}</span>
+                                <span class="compact-time">${e.time || '--:--'}</span>
                                 <span class="compact-subloc">${e.loc || ''}</span>
                             </div>
                         </div>
@@ -1426,7 +1452,7 @@
                 html += `
                     <div class="compact-card" onclick="openEventSheetByKey('${key}')">
                         <span class="compact-team-name">${e.title}</span>
-                        <span class="compact-time">⏰ ${e.time}</span>
+                        <span class="compact-time">${e.time}</span>
                     </div>
                 `;
             });
@@ -1446,6 +1472,9 @@
             document.getElementById('sheetEventLoc').textContent = found.loc || 'Ufficiale';
 
             const faceoffEl = document.getElementById('sheetFaceoffBox');
+            const cardBg = getCardBackground(found.home, found.away);
+            faceoffEl.style.background = cardBg;
+
             if (found.homeCrest || found.awayCrest) {
                 faceoffEl.style.display = 'flex';
                 faceoffEl.innerHTML = `
@@ -1453,7 +1482,7 @@
                         ${found.homeCrest ? `<img src="${found.homeCrest}" class="sheet-crest" alt="">` : ''}
                         <span class="sheet-team-name">${found.home || 'Casa'}</span>
                     </div>
-                    <div style="font-size:15px; font-weight:800; color:var(--text-muted);">VS</div>
+                    <div style="font-size:15px; font-weight:800; color:var(--text-sub);">VS</div>
                     <div class="sheet-team-block">
                         ${found.awayCrest ? `<img src="${found.awayCrest}" class="sheet-crest" alt="">` : ''}
                         <span class="sheet-team-name">${found.away || 'Trasferta'}</span>
