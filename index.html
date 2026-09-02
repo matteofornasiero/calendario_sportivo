@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Sport OS Mobile</title>
+
+    <!-- PWA & Mobile Web App Meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sport OS">
+    <meta name="theme-color" content="#09090b">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
+    <!-- Carica i dati locali direttamente -->
+    <script src="dati.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #09090b;
+            --surface: #141417;
+            --surface-card: #1c1c22;
+            --surface-hover: #262630;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(255, 255, 255, 0.16);
+            
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --text-muted: #64748b;
+            
+            --f1: #ef4444;
+            --seriea: #3b82f6;
+            --nfl: #f97316;
+            --champions: #a855f7;
+            --nazionale: #10b981;
+
+            --safe-top: env(safe-area-inset-top, 0px);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding-top: var(--safe-top);
+            padding-bottom: calc(var(--safe-bottom) + 36px);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 90% 20%, rgba(168, 85, 247, 0.08), transparent);
+            background-attachment: fixed;
+        }
+
+        /* --- TOP BAR --- */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(9, 9, 11, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 16px;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .app-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .brand-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        .brand-title {
+            font-size: 19px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .brand-count {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-sub);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-today {
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #60a5fa;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 7px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .btn-today:active {
+            transform: scale(0.92);
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        .btn-pc {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-sub);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 7px 11px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .btn-pc:active {
+            transform: scale(0.92);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Search input */
+        .search-container {
+            margin-top: 4px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 12px 10px 38px;
+            font-size: 14px;
+            color: #fff;
+            outline: none;
+            user-select: text;
+            -webkit-user-select: text;
+        }
+        .search-input:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .clear-search {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 16px;
+            cursor: pointer;
+            display: none;
+            padding: 4px;
+        }
+
+        /* --- HERO BANNER --- */
+        .hero-banner-container {
+            padding: 0 16px 10px 16px;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 14px 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        .hero-banner:active {
+            transform: scale(0.98);
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #ef4444, #10b981);
+        }
+
+        .hero-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .hero-badge {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-countdown {
+            font-size: 12px;
+            font-weight: 800;
+            color: #60a5fa;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 3px 9px;
+            border-radius: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-faceoff {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 8px 0 10px 0;
+            gap: 10px;
+        }
+
+        .hero-team {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+        .hero-team.away {
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        .hero-team-name {
+            font-size: 15.5px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .hero-crest {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+            flex-shrink: 0;
+        }
+
+        .hero-vs {
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            flex-shrink: 0;
+        }
+
+        .hero-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-sub);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 8px;
+        }
+
+        .hero-cta {
+            font-size: 12px;
+            font-weight: 700;
+            color: #60a5fa;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* --- FILTERS (HORIZONTAL CHIPS) --- */
+        .filters-container {
+            display: flex;
+            gap: 8px;
+            padding: 6px 16px 12px 16px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        .filters-container::-webkit-scrollbar { display: none; }
+
+        .chip {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-sub);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .chip:active {
+            transform: scale(0.94);
+        }
+
+        .chip.active {
+            color: #fff;
+            background: #2563eb;
+            border-color: #3b82f6;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        /* --- NAVIGATION & VIEW CONTROLS --- */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px 16px 12px 16px;
+        }
+
+        .month-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .nav-btn:active {
+            transform: scale(0.9);
+            background: var(--surface-hover);
+        }
+
+        .current-month-text {
+            font-size: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .view-switcher {
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 3px;
+            border-radius: 12px;
+        }
+
+        .view-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            padding: 7px 11px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .view-btn.active {
+            background: var(--surface-card);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* --- DATE STRIP --- */
+        .date-strip-wrapper {
+            padding: 0 16px 14px 16px;
+            position: relative;
+        }
+
+        .date-strip {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            background: var(--surface);
+            padding: 8px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            touch-action: pan-y;
+        }
+
+        .strip-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 4px;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+        .strip-day:active {
+            transform: scale(0.92);
+        }
+
+        .strip-day.selected {
+            background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+            border: 2px solid #93c5fd;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.65), 0 0 12px rgba(147, 197, 253, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .strip-day.is-today:not(.selected) {
+            border: 1.5px solid #3b82f6;
+            background: rgba(59, 130, 246, 0.18);
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.35);
+        }
+
+        .strip-day.selected .strip-name {
+            color: #dbeafe;
+            font-weight: 800;
+        }
+
+        .strip-day.selected .strip-num {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 900;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .strip-name {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .strip-num {
+            font-size: 16px;
+            font-weight: 800;
+            margin: 3px 0 4px 0;
+            color: var(--text-main);
+        }
+
+        .strip-dots {
+            display: flex;
+            gap: 2px;
+            height: 5px;
+        }
+
+        .strip-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            padding: 0 16px;
+        }
+
+        /* --- AGENDA VIEW --- */
+        .day-group {
+            margin-bottom: 24px;
+            animation: fadeInGroup 0.25s ease-out;
+        }
+
+        @keyframes fadeInGroup {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RIQUADRO DEL GIORNO IN EVIDENZA */
+        .day-header {
+            position: sticky;
+            top: 135px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.94) 0%, rgba(15, 23, 42, 0.98) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 16px;
+            border: 1.5px solid rgba(255, 255, 255, 0.12);
+            border-left: 6px solid #3b82f6;
+            margin-bottom: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(59, 130, 246, 0.15);
+        }
+
+        .day-header.today {
+            border: 2px solid #3b82f6;
+            border-left: 6px solid #60a5fa;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.35) 0%, rgba(15, 23, 42, 0.98) 100%);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.4), 0 8px 30px rgba(0,0,0,0.6);
+        }
+
+        .day-header-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .day-date-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            padding: 4px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+        }
+        .day-header.today .day-date-badge {
+            background: #2563eb;
+            border-color: #93c5fd;
+            box-shadow: 0 0 14px rgba(37, 99, 235, 0.7);
+        }
+        .day-date-num {
+            font-size: 18px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+        .day-date-month {
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-sub);
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+        .day-header.today .day-date-month {
+            color: #dbeafe;
+        }
+
+        .day-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .day-weekday-name {
+            font-size: 16px;
+            font-weight: 900;
+            text-transform: capitalize;
+            color: #ffffff;
+            letter-spacing: -0.2px;
+        }
+        .day-subtext {
+            font-size: 11.5px;
+            color: var(--text-sub);
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .day-badge-today {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            font-size: 10px;
+            font-weight: 900;
+            padding: 3px 9px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+            margin-left: 6px;
+        }
+
+        .day-count-badge {
+            font-size: 12px;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 5px 11px;
+            border-radius: 12px;
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* --- EVENT CARD (POST-MATCH SCORE ONLY) --- */
+        .event-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 13px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.15s, border-color 0.15s;
+            cursor: pointer;
+        }
+        .event-card:active {
+            transform: scale(0.97);
+            border-color: var(--border-highlight);
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4.5px;
+        }
+
+        .event-card.f1::before { background: var(--f1); }
+        .event-card.seriea::before { background: var(--seriea); }
+        .event-card.nfl::before { background: var(--nfl); }
+        .event-card.champions::before { background: var(--champions); }
+        .event-card.nazionale::before { background: var(--nazionale); }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sport-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sport-tag.f1 { color: #fca5a5; }
+        .sport-tag.seriea { color: #93c5fd; }
+        .sport-tag.nfl { color: #fdba74; }
+        .sport-tag.champions { color: #d8b4fe; }
+        .sport-tag.nazionale { color: #6ee7b7; }
+
+        .status-badge.finished {
+            background: rgba(100, 116, 139, 0.25);
+            color: #94a3b8;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 2px 7px;
+            border-radius: 6px;
+        }
+
+        .time-pill {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #cbd5e1;
+            letter-spacing: 0.5px;
+        }
+
+        /* Squadre & Stemmi Card */
+        .teams-matchup {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin: 2px 0;
+        }
+
+        .team-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .team-info {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .team-crest-img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .team-name-text {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #f1f5f9;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .team-score-num {
+            font-size: 16px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-left: 8px;
+            min-width: 18px;
+            text-align: right;
+        }
+
+        .generic-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #f8fafc;
+            line-height: 1.35;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 7px;
+            font-size: 11.5px;
+            color: var(--text-sub);
+        }
+
+        /* --- CLASSIFICHE VIEW (STANDINGS) --- */
+        .standings-view-container {
+            display: none;
+            animation: fadeInGroup 0.25s ease-out;
+        }
+
+        .standings-tabs {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            margin-bottom: 14px;
+            padding-bottom: 4px;
+        }
+        .standings-tabs::-webkit-scrollbar { display: none; }
+
+        .standings-tab-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-sub);
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-size: 12.5px;
+            font-weight: 700;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .standings-tab-btn.active {
+            background: #2563eb;
+            color: #fff;
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+        }
+
+        .standings-table-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .standings-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .standings-table th {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .standings-table td {
+            padding: 10px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        .standings-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .standings-pos {
+            font-weight: 900;
+            width: 28px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        .standings-pos.pos-1 { color: #facc15; }
+        .standings-pos.pos-2 { color: #cbd5e1; }
+        .standings-pos.pos-3 { color: #f97316; }
+
+        .standings-team-cell {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .standings-crest {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .standings-pts {
+            font-weight: 900;
+            color: #fff;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .standings-center {
+            text-align: center;
+            color: var(--text-sub);
+        }
+
+        /* --- MONTH GRID VIEW --- */
+        .month-view-container {
+            display: none;
+        }
+
+        .month-grid-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            padding-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            background: var(--surface);
+            padding: 6px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin-bottom: 16px;
+        }
+
+        .month-cell {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.15s;
+        }
+        .month-cell:active { transform: scale(0.92); }
+
+        .month-cell.diff-month { opacity: 0.25; }
+        .month-cell.has-events { font-weight: 700; }
+
+        .month-cell.active-cell {
+            background: #3b82f6;
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .month-cell.active-cell .month-dots span { background: white !important; }
+
+        .month-cell.is-today-cell:not(.active-cell) {
+            border: 1px solid #3b82f6;
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        .cell-num { font-size: 13px; }
+
+        .month-dots {
+            display: flex;
+            gap: 2px;
+            margin-top: 3px;
+            height: 4px;
+        }
+        .month-dots span {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+        }
+
+        /* --- EMPTY STATE --- */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+        .empty-icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+        .empty-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        /* --- ACTION SHEET / MODAL DETTAGLI PARTITA --- */
+        .modal-sheet {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(20, 20, 26, 0.98);
+            border-top: 1px solid var(--border-highlight);
+            border-radius: 24px 24px 0 0;
+            padding: 16px 20px calc(var(--safe-bottom) + 24px) 20px;
+            z-index: 200;
+            box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.85);
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+
+        .modal-sheet.open {
+            transform: translateY(0);
+        }
+
+        .sheet-handle {
+            width: 40px;
+            height: 5px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 16px auto;
+        }
+
+        .sheet-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+
+        .sheet-close {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-sub);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Face-off Box nel Modal */
+        .sheet-faceoff-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            padding: 16px 14px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .sheet-team-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            flex: 1;
+        }
+
+        .sheet-crest {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+        }
+
+        .sheet-team-name {
+            font-size: 13.5px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            max-width: 100px;
+        }
+
+        .sheet-score-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 0 10px;
+        }
+
+        .sheet-score-text {
+            font-size: 26px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* Dettagli Info Box */
+        .sheet-details-list {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sheet-detail-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+        .sheet-detail-label { color: var(--text-sub); }
+        .sheet-detail-val { font-weight: 700; color: #f1f5f9; text-align: right; }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            z-index: 150;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .modal-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Action Sheet Buttons */
+        .action-btns-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 13px 14px;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .action-btn:active {
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .action-btn.primary {
+            background: #2563eb;
+            border-color: #3b82f6;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <header class="top-bar">
+        <div class="header-row">
+            <div class="app-brand" onclick="jumpToToday()">
+                <div class="brand-badge">⚽</div>
+                <div class="brand-title">
+                    <span>Sport OS</span>
+                    <span class="brand-count" id="eventsCountBadge">0</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="calendario_sportivo.html?desktop=1" class="btn-pc" title="Apri versione Desktop per PC">💻 PC</a>
+                <button class="btn-today" onclick="jumpToToday()">Oggi</button>
+                <button class="nav-btn" onclick="openInfoSheet()" title="Info">ℹ️</button>
+            </div>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Cerca squadra o evento..." oninput="handleSearch(this.value)">
+            <button id="clearSearch" class="clear-search" onclick="clearSearch()">✕</button>
+        </div>
+    </header>
+
+    <!-- PROSSIMO EVENTO CLOU / HERO CARD -->
+    <div class="hero-banner-container" id="heroBannerContainer">
+        <!-- Generato via JS -->
+    </div>
+
+    <!-- SPORT FILTERS (HORIZONTAL CHIPS) -->
+    <div class="filters-container">
+        <button class="chip active" data-sport="all" onclick="setSportFilter('all', this)">⚡ Tutti</button>
+        <button class="chip" data-sport="results" onclick="setSportFilter('results', this)">🏁 Risultati</button>
+        <button class="chip" data-sport="weekend" onclick="setSportFilter('weekend', this)">🗓️ Weekend</button>
+        <button class="chip" data-sport="seriea" onclick="setSportFilter('seriea', this)">⚽ Serie A</button>
+        <button class="chip" data-sport="f1" onclick="setSportFilter('f1', this)">🏎️ F1</button>
+        <button class="chip" data-sport="champions" onclick="setSportFilter('champions', this)">🏆 Champions</button>
+        <button class="chip" data-sport="nfl" onclick="setSportFilter('nfl', this)">🏈 NFL</button>
+        <button class="chip" data-sport="nazionale" onclick="setSportFilter('nazionale', this)">🇮🇹 Italia</button>
+    </div>
+
+    <!-- NAVIGATION & VIEW CONTROLS -->
+    <div class="nav-controls">
+        <div class="month-selector" id="monthSelectorGroup">
+            <button class="nav-btn" onclick="navigateTime(-1)">‹</button>
+            <div class="current-month-text" id="monthDisplay">Mese 2026</div>
+            <button class="nav-btn" onclick="navigateTime(1)">›</button>
+        </div>
+        <div class="view-switcher">
+            <button class="view-btn active" id="btnAgendaView" onclick="switchView('agenda')">Agenda</button>
+            <button class="view-btn" id="btnStandingsView" onclick="switchView('standings')">🏆 Classifiche</button>
+            <button class="view-btn" id="btnMonthView" onclick="switchView('month')">Mese</button>
+        </div>
+    </div>
+
+    <!-- DATE STRIP -->
+    <div class="date-strip-wrapper" id="dateStripWrapper">
+        <div class="date-strip" id="dateStrip">
+            <!-- Popolato via JS -->
+        </div>
+    </div>
+
+    <!-- MAIN VIEW CONTAINER -->
+    <main class="main-content">
+        <!-- VISTA 1: AGENDA FEED -->
+        <div id="agendaView">
+            <div id="agendaFeed">
+                <!-- Giorni e Card popolate da JS -->
+            </div>
+        </div>
+
+        <!-- VISTA 2: CLASSIFICHE REALI DELLE COMPETIZIONI -->
+        <div id="standingsView" class="standings-view-container">
+            <div class="standings-tabs">
+                <button class="standings-tab-btn active" onclick="switchStandingsTab('seriea', this)">⚽ Serie A</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('champions', this)">🏆 Champions</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('f1_drivers', this)">🏎️ F1 Piloti</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('f1_constructors', this)">🏎️ F1 Scuderie</button>
+                <button class="standings-tab-btn" onclick="switchStandingsTab('nfl', this)">🏈 NFL</button>
+            </div>
+            <div class="standings-table-card" id="standingsContentBox">
+                <!-- Tabella classifiche popolata via JS -->
+            </div>
+        </div>
+
+        <!-- VISTA 3: GRIGLIA MESE -->
+        <div id="monthView" class="month-view-container">
+            <div class="month-grid-weekdays">
+                <div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div>
+            </div>
+            <div class="month-grid" id="monthGrid">
+                <!-- Griglia mese popolata da JS -->
+            </div>
+            <div id="monthSelectedDayEvents"></div>
+        </div>
+    </main>
+
+    <!-- BACKDROP PER I MODAL -->
+    <div class="modal-backdrop" id="modalBackdrop" onclick="closeAllSheets()"></div>
+
+    <!-- MODAL 1: DETTAGLI PARTITA (POST-MATCH INFO & CALENDAR) -->
+    <div class="modal-sheet" id="eventDetailSheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <div>
+                <div id="sheetSportTag" class="sport-tag" style="margin-bottom: 4px;">⚽ SPORT</div>
+                <div id="sheetEventTitle" style="font-size:15px; font-weight:800; color:#cbd5e1;">Titolo</div>
+            </div>
+            <button class="sheet-close" onclick="closeAllSheets()">✕</button>
+        </div>
+        
+        <!-- Box Stemmi & Risultato Post-Partita -->
+        <div class="sheet-faceoff-card" id="sheetFaceoffBox">
+            <!-- Generato dinamicamente da JS -->
+        </div>
+
+        <!-- Dettagli Info Ufficiali -->
+        <div class="sheet-details-list">
+            <div class="sheet-detail-row">
+                <span class="sheet-detail-label">🗓️ Data:</span>
+                <span id="sheetEventDate" class="sheet-detail-val">--</span>
+            </div>
+            <div class="sheet-detail-row">
+                <span class="sheet-detail-label">⏰ Orario:</span>
+                <span id="sheetEventTime" class="sheet-detail-val">--:--</span>
+            </div>
+            <div class="sheet-detail-row">
+                <span class="sheet-detail-label">🏆 Torneo / Turno:</span>
+                <span id="sheetEventLoc" class="sheet-detail-val">--</span>
+            </div>
+            <div class="sheet-detail-row" id="sheetVenueRow">
+                <span class="sheet-detail-label">🏟️ Stadio / Circuito:</span>
+                <span id="sheetEventVenue" class="sheet-detail-val">--</span>
+            </div>
+            <div class="sheet-detail-row">
+                <span class="sheet-detail-label">📊 Stato Ufficiale:</span>
+                <span id="sheetEventStatus" class="sheet-detail-val">--</span>
+            </div>
+        </div>
+
+        <div class="action-btns-grid">
+            <a id="btnLiveStats" href="#" target="_blank" class="action-btn primary" onclick="haptic(20)">
+                <span>📊 Tabellino & Cronaca</span>
+            </a>
+            <a id="btnGoogleCalendar" href="#" target="_blank" class="action-btn" onclick="haptic(20)">
+                <span>📅 Google Calendar</span>
+            </a>
+            <button class="action-btn" style="grid-column: span 2;" onclick="shareCurrentEvent()">
+                <span>📤 Condividi con Amici</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL 2: INFO SHEET -->
+    <div class="modal-sheet" id="infoSheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <h3 style="font-size:18px; font-weight:900; color:#fff;">Sport OS Mobile</h3>
+            <button class="sheet-close" onclick="closeAllSheets()">✕</button>
+        </div>
+        <div style="font-size: 14px; color: var(--text-sub); line-height: 1.6; display: flex; flex-direction: column; gap: 12px;">
+            <p>⚽ <strong>Dati & Classifiche Reali</strong>: Classifiche ufficiali e calendari con loghi ad alta definizione di Serie A, Champions League, Formula 1 e NFL.</p>
+            <p>🔄 <strong>Aggiornamento Notturno</strong>: I calendari si aggiornano automaticamente ogni notte tramite GitHub Actions.</p>
+            <p>💻 <a href="calendario_sportivo.html?desktop=1" style="color: #60a5fa;">Passa alla versione Desktop per PC</a></p>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // STATO APPLICATIVO
+        // ==========================================
+        let allEvents = [];
+        let standingsData = {};
+        let currentDate = new Date();
+        let selectedDateStr = formatDate(currentDate);
+        let currentSport = 'all';
+        let currentView = 'agenda';
+        let currentStandingsTab = 'seriea';
+        let searchQuery = '';
+        let activeSheetEvent = null;
+        let countdownTimerId = null;
+
+        const SPORT_COLORS = {
+            f1: '#ef4444',
+            seriea: '#3b82f6',
+            nfl: '#f97316',
+            champions: '#a855f7',
+            nazionale: '#10b981'
+        };
+
+        const SPORT_NAMES = {
+            f1: '🏎️ Formula 1',
+            seriea: '⚽ Serie A',
+            nfl: '🏈 NFL',
+            champions: '🏆 Champions League',
+            nazionale: '🇮🇹 Italia'
+        };
+
+        function haptic(ms = 12) {
+            if (window.navigator && window.navigator.vibrate) {
+                try { window.navigator.vibrate(ms); } catch (e) {}
+            }
+        }
+
+        function formatDate(d) {
+            const year = d.getFullYear();
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        // ==========================================
+        // CARICAMENTO DATI
+        // ==========================================
+        function initData() {
+            if (typeof window.calendarData !== 'undefined' && Array.isArray(window.calendarData)) {
+                allEvents = window.calendarData;
+            } else {
+                allEvents = [];
+            }
+
+            if (typeof window.standingsData !== 'undefined') {
+                standingsData = window.standingsData;
+            }
+
+            if (allEvents.length > 0) {
+                const todayStr = formatDate(new Date());
+                const dates = allEvents.map(e => e.date).sort();
+                const minDate = dates[0];
+                const maxDate = dates[dates.length - 1];
+
+                if (todayStr < minDate) {
+                    currentDate = new Date(minDate + 'T00:00:00');
+                    selectedDateStr = minDate;
+                } else if (todayStr > maxDate) {
+                    currentDate = new Date(maxDate + 'T00:00:00');
+                    selectedDateStr = maxDate;
+                }
+            }
+
+            setupGestures();
+            renderHeroBanner();
+            renderAll();
+        }
+
+        // ==========================================
+        // HERO BANNER: PROSSIMO EVENTO CON COUNTDOWN
+        // ==========================================
+        function renderHeroBanner() {
+            const container = document.getElementById('heroBannerContainer');
+            if (allEvents.length === 0) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const todayStr = formatDate(new Date());
+            
+            let upcoming = allEvents
+                .filter(e => e.date >= todayStr && e.status !== 'FINISHED')
+                .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))[0];
+
+            if (!upcoming) {
+                upcoming = allEvents[0];
+            }
+
+            if (!upcoming) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const sportTag = SPORT_NAMES[upcoming.sport] || upcoming.sport.toUpperCase();
+            const dateObj = new Date(upcoming.date + 'T00:00:00');
+            const dateStrFormatted = dateObj.toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short' });
+
+            const safeTitle = (upcoming.title || '').replace(/'/g, "\\'");
+            const eventKey = `${upcoming.date}_${upcoming.time}_${safeTitle}`;
+
+            let faceoffHtml = '';
+            if (upcoming.homeCrest && upcoming.awayCrest) {
+                faceoffHtml = `
+                    <div class="hero-faceoff">
+                        <div class="hero-team">
+                            <img src="${upcoming.homeCrest}" class="hero-crest" alt="">
+                            <span class="hero-team-name">${upcoming.home || 'Casa'}</span>
+                        </div>
+                        <div class="hero-vs">VS</div>
+                        <div class="hero-team away">
+                            <span class="hero-team-name">${upcoming.away || 'Trasferta'}</span>
+                            <img src="${upcoming.awayCrest}" class="hero-crest" alt="">
+                        </div>
+                    </div>
+                `;
+            } else {
+                faceoffHtml = `<div style="font-size:16px; font-weight:900; color:#fff; margin:6px 0;">${upcoming.title}</div>`;
+            }
+
+            container.innerHTML = `
+                <div class="hero-banner" onclick="openEventSheetByKey('${eventKey}')">
+                    <div class="hero-top">
+                        <div class="hero-badge" style="color: ${SPORT_COLORS[upcoming.sport] || '#fff'}">
+                            <span>PROSSIMO IN PROGRAMMA: ${sportTag}</span>
+                        </div>
+                        <div class="hero-countdown" id="heroCountdownTimer">⏳ Calcolo...</div>
+                    </div>
+                    ${faceoffHtml}
+                    <div class="hero-bottom">
+                        <span>🗓️ ${dateStrFormatted} ore ${upcoming.time} • 📍 ${upcoming.loc}</span>
+                        <span class="hero-cta">Dettagli ›</span>
+                    </div>
+                </div>
+            `;
+
+            if (countdownTimerId) clearInterval(countdownTimerId);
+            updateCountdown(upcoming.date, upcoming.time);
+            countdownTimerId = setInterval(() => updateCountdown(upcoming.date, upcoming.time), 1000);
+        }
+
+        function updateCountdown(dateStr, timeStr) {
+            const timerEl = document.getElementById('heroCountdownTimer');
+            if (!timerEl) return;
+
+            const target = new Date(`${dateStr}T${timeStr}:00`);
+            const now = new Date();
+            const diff = target - now;
+
+            if (diff <= 0) {
+                timerEl.textContent = "OGGI";
+                timerEl.style.color = "#60a5fa";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+
+            if (days > 0) {
+                timerEl.textContent = `⏳ Tra ${days}g ${hours}h`;
+            } else {
+                timerEl.textContent = `⏳ Tra ${hours}h ${mins}m`;
+            }
+        }
+
+        // ==========================================
+        // GESTURE TOUCH (SWIPE SETTIMANA)
+        // ==========================================
+        function setupGestures() {
+            const strip = document.getElementById('dateStrip');
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            strip.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            strip.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchEndX - touchStartX;
+                if (Math.abs(diff) > 45) {
+                    haptic(15);
+                    if (diff < 0) {
+                        navigateTime(1);
+                    } else {
+                        navigateTime(-1);
+                    }
+                }
+            }, { passive: true });
+        }
+
+        // ==========================================
+        // NAVIGAZIONE TEMPORALE & VISTE
+        // ==========================================
+        function navigateTime(delta) {
+            haptic(10);
+            if (currentView === 'agenda') {
+                currentDate.setDate(currentDate.getDate() + (delta * 7));
+            } else if (currentView === 'month') {
+                currentDate.setMonth(currentDate.getMonth() + delta);
+            }
+            selectedDateStr = formatDate(currentDate);
+            renderAll();
+        }
+
+        function jumpToToday() {
+            haptic(20);
+            currentDate = new Date();
+            selectedDateStr = formatDate(currentDate);
+            if (currentView === 'standings') {
+                switchView('agenda');
+            } else {
+                renderAll();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function switchView(view) {
+            haptic(15);
+            currentView = view;
+            document.getElementById('btnAgendaView').classList.toggle('active', view === 'agenda');
+            document.getElementById('btnStandingsView').classList.toggle('active', view === 'standings');
+            document.getElementById('btnMonthView').classList.toggle('active', view === 'month');
+            
+            document.getElementById('agendaView').style.display = (view === 'agenda') ? 'block' : 'none';
+            document.getElementById('standingsView').style.display = (view === 'standings') ? 'block' : 'none';
+            document.getElementById('monthView').style.display = (view === 'month') ? 'block' : 'none';
+            
+            document.getElementById('dateStripWrapper').style.display = (view === 'agenda') ? 'block' : 'none';
+            document.getElementById('monthSelectorGroup').style.visibility = (view === 'standings') ? 'hidden' : 'visible';
+
+            renderAll();
+        }
+
+        function setSportFilter(sport, btn) {
+            haptic(15);
+            currentSport = sport;
+            document.querySelectorAll('.filters-container .chip').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            if (currentView === 'standings') {
+                switchView('agenda');
+            } else {
+                renderAll();
+            }
+        }
+
+        function handleSearch(val) {
+            searchQuery = val.trim().toLowerCase();
+            document.getElementById('clearSearch').style.display = searchQuery ? 'block' : 'none';
+            renderAll();
+        }
+
+        function clearSearch() {
+            haptic(10);
+            document.getElementById('searchInput').value = '';
+            searchQuery = '';
+            document.getElementById('clearSearch').style.display = 'none';
+            renderAll();
+        }
+
+        // ==========================================
+        // FILTRAGGIO EVENTI
+        // ==========================================
+        function getFilteredEvents() {
+            return allEvents.filter(e => {
+                if (currentSport === 'results') {
+                    if (e.status !== 'FINISHED' || e.homeScore === null || e.homeScore === undefined) return false;
+                } else if (currentSport === 'weekend') {
+                    const d = new Date(e.date + 'T00:00:00');
+                    const day = d.getDay();
+                    if (day !== 0 && day !== 6) return false;
+                } else if (currentSport !== 'all' && e.sport !== currentSport) {
+                    return false;
+                }
+                
+                if (searchQuery) {
+                    const matchTitle = (e.title || '').toLowerCase().includes(searchQuery);
+                    const matchHome = (e.home || '').toLowerCase().includes(searchQuery);
+                    const matchAway = (e.away || '').toLowerCase().includes(searchQuery);
+                    const matchSport = (e.sport || '').toLowerCase().includes(searchQuery);
+                    const matchLoc = (e.loc || '').toLowerCase().includes(searchQuery);
+                    if (!matchTitle && !matchHome && !matchAway && !matchSport && !matchLoc) return false;
+                }
+                return true;
+            });
+        }
+
+        // ==========================================
+        // RENDERING PRINCIPALE
+        // ==========================================
+        function renderAll() {
+            updateMonthHeader();
+            const filtered = getFilteredEvents();
+            document.getElementById('eventsCountBadge').textContent = filtered.length;
+
+            if (currentView === 'agenda') {
+                renderDateStrip();
+                renderAgendaFeed();
+            } else if (currentView === 'standings') {
+                renderStandings();
+            } else {
+                renderMonthGrid();
+            }
+        }
+
+        function updateMonthHeader() {
+            const months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+            document.getElementById('monthDisplay').textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+        }
+
+        // --- 1. DATE STRIP ---
+        function renderDateStrip() {
+            const strip = document.getElementById('dateStrip');
+            strip.innerHTML = '';
+
+            const dayNames = ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
+            const todayStr = formatDate(new Date());
+
+            const start = new Date(currentDate);
+            const dayOfWeek = start.getDay();
+            const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+            start.setDate(start.getDate() + diffToMonday);
+
+            const filtered = getFilteredEvents();
+
+            for (let i = 0; i < 7; i++) {
+                const dayObj = new Date(start);
+                dayObj.setDate(start.getDate() + i);
+                const dayStr = formatDate(dayObj);
+                const isSelected = dayStr === selectedDateStr;
+                const isToday = dayStr === todayStr;
+
+                const dayEvs = filtered.filter(e => e.date === dayStr);
+                const uniqueSports = [...new Set(dayEvs.map(e => e.sport))];
+
+                let dotsHtml = '';
+                uniqueSports.slice(0, 3).forEach(sp => {
+                    dotsHtml += `<span class="strip-dot" style="background:${SPORT_COLORS[sp] || '#fff'}"></span>`;
+                });
+
+                const el = document.createElement('div');
+                el.className = `strip-day ${isSelected ? 'selected' : ''} ${isToday ? 'is-today' : ''}`;
+                el.innerHTML = `
+                    <div class="strip-name">${dayNames[dayObj.getDay()]}</div>
+                    <div class="strip-num">${dayObj.getDate()}</div>
+                    <div class="strip-dots">${dotsHtml}</div>
+                `;
+                el.onclick = () => {
+                    haptic(15);
+                    selectedDateStr = dayStr;
+                    renderDateStrip();
+                    scrollToDayGroup(dayStr);
+                };
+                strip.appendChild(el);
+            }
+        }
+
+        // --- 2. AGENDA FEED (SOLO RISULTATI POST-PARTITA) ---
+        function renderAgendaFeed() {
+            const container = document.getElementById('agendaFeed');
+            const filtered = getFilteredEvents();
+            const todayStr = formatDate(new Date());
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">📅</div>
+                        <div class="empty-text">Nessun evento trovato per i filtri selezionati.<br>Prova a cambiare filtro o mese in alto!</div>
+                    </div>
+                `;
+                return;
+            }
+
+            const startRange = new Date(currentDate);
+            const dayOfWeek = startRange.getDay();
+            const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+            startRange.setDate(startRange.getDate() + diffToMonday);
+
+            const endRange = new Date(startRange);
+            endRange.setDate(endRange.getDate() + 21);
+
+            const startStr = formatDate(startRange);
+            const endStr = formatDate(endRange);
+
+            const rangeEvents = filtered
+                .filter(e => (searchQuery ? true : (e.date >= startStr && e.date <= endStr)))
+                .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+
+            if (rangeEvents.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">🏁</div>
+                        <div class="empty-text">Nessun match in questa settimana.<br>Usa le frecce ‹ › in alto per navigare tra i mesi!</div>
+                    </div>
+                `;
+                return;
+            }
+
+            const groups = {};
+            rangeEvents.forEach(e => {
+                if (!groups[e.date]) groups[e.date] = [];
+                groups[e.date].push(e);
+            });
+
+            let html = '';
+
+            for (const dateKey of Object.keys(groups)) {
+                const dateObj = new Date(dateKey + 'T00:00:00');
+                const isToday = dateKey === todayStr;
+                const weekdayName = dateObj.toLocaleDateString('it-IT', { weekday: 'long' });
+                const dayNum = dateObj.getDate();
+                const monthShort = dateObj.toLocaleDateString('it-IT', { month: 'short' });
+                const fullDateSub = dateObj.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+                const evs = groups[dateKey];
+
+                html += `
+                    <div class="day-group" id="day-group-${dateKey}">
+                        <div class="day-header ${isToday ? 'today' : ''}">
+                            <div class="day-header-title">
+                                <div class="day-date-badge">
+                                    <span class="day-date-num">${dayNum}</span>
+                                    <span class="day-date-month">${monthShort}</span>
+                                </div>
+                                <div class="day-text-group">
+                                    <div style="display:flex; align-items:center;">
+                                        <span class="day-weekday-name">${weekdayName}</span>
+                                        ${isToday ? '<span class="day-badge-today">OGGI</span>' : ''}
+                                    </div>
+                                    <span class="day-subtext">${fullDateSub}</span>
+                                </div>
+                            </div>
+                            <div class="day-count-badge">${evs.length} ${evs.length === 1 ? 'partita' : 'partite'}</div>
+                        </div>
+                        <div class="events-list">
+                `;
+
+                evs.forEach(e => {
+                    const sportTag = SPORT_NAMES[e.sport] || e.sport.toUpperCase();
+                    const safeTitle = (e.title || '').replace(/'/g, "\\'");
+                    const eventKey = `${e.date}_${e.time}_${safeTitle}`;
+
+                    let statusHtml = '';
+                    if (e.status === 'FINISHED' && e.homeScore !== null && e.homeScore !== undefined) {
+                        statusHtml = `<span class="status-badge finished">FINITA</span>`;
+                    } else {
+                        statusHtml = `<span class="time-pill">⏰ ${e.time || '--:--'}</span>`;
+                    }
+
+                    let bodyHtml = '';
+                    if (e.homeCrest || e.awayCrest) {
+                        const isFin = (e.status === 'FINISHED' && e.homeScore !== null);
+                        const scoreHome = isFin ? e.homeScore : '';
+                        const scoreAway = isFin ? e.awayScore : '';
+
+                        bodyHtml = `
+                            <div class="teams-matchup">
+                                <div class="team-row">
+                                    <div class="team-info">
+                                        ${e.homeCrest ? `<img src="${e.homeCrest}" class="team-crest-img" alt="">` : ''}
+                                        <span class="team-name-text">${e.home || 'Casa'}</span>
+                                    </div>
+                                    <span class="team-score-num">${scoreHome}</span>
+                                </div>
+                                <div class="team-row">
+                                    <div class="team-info">
+                                        ${e.awayCrest ? `<img src="${e.awayCrest}" class="team-crest-img" alt="">` : ''}
+                                        <span class="team-name-text">${e.away || 'Trasferta'}</span>
+                                    </div>
+                                    <span class="team-score-num">${scoreAway}</span>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        bodyHtml = `<div class="generic-title">${e.title}</div>`;
+                    }
+
+                    html += `
+                        <div class="event-card ${e.sport}" onclick="openEventSheetByKey('${eventKey}')">
+                            <div class="card-top">
+                                <div class="sport-tag ${e.sport}"><span>${sportTag}</span></div>
+                                ${statusHtml}
+                            </div>
+                            ${bodyHtml}
+                            <div class="card-footer">
+                                <span>📍 ${e.loc || 'Partita'} ${e.venue ? '• ' + e.venue : ''}</span>
+                                <span style="font-size:11px; font-weight:700; color:#60a5fa;">Info ›</span>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        function scrollToDayGroup(dateStr) {
+            const el = document.getElementById(`day-group-${dateStr}`);
+            if (el) {
+                const offset = 200;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = el.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // --- 3. CLASSIFICHE VIEW (STANDINGS) ---
+        function switchStandingsTab(tab, btn) {
+            haptic(15);
+            currentStandingsTab = tab;
+            document.querySelectorAll('.standings-tabs .standings-tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderStandings();
+        }
+
+        function renderStandings() {
+            const container = document.getElementById('standingsContentBox');
+            if (!standingsData || !standingsData[currentStandingsTab]) {
+                container.innerHTML = `<div class="empty-state"><div class="empty-text">Classifica non disponibile.</div></div>`;
+                return;
+            }
+
+            const data = standingsData[currentStandingsTab];
+
+            if (currentStandingsTab === 'seriea') {
+                let rows = data.map(item => `
+                    <tr>
+                        <td class="standings-pos pos-${item.pos}">${item.pos}</td>
+                        <td>
+                            <div class="standings-team-cell">
+                                ${item.crest ? `<img src="${item.crest}" class="standings-crest" alt="">` : ''}
+                                <span>${item.name}</span>
+                            </div>
+                        </td>
+                        <td class="standings-center">${item.played}</td>
+                        <td class="standings-center">${item.diff > 0 ? '+' + item.diff : item.diff}</td>
+                        <td class="standings-pts">${item.points}</td>
+                    </tr>
+                `).join('');
+
+                container.innerHTML = `
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th style="width:28px; text-align:center;">#</th>
+                                <th>Squadra</th>
+                                <th class="standings-center">PG</th>
+                                <th class="standings-center">DG</th>
+                                <th style="text-align:right;">PT</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                `;
+            } else if (currentStandingsTab === 'champions') {
+                let rows = data.slice(0, 36).map(item => `
+                    <tr>
+                        <td class="standings-pos pos-${item.pos}">${item.pos}</td>
+                        <td>
+                            <div class="standings-team-cell">
+                                ${item.crest ? `<img src="${item.crest}" class="standings-crest" alt="">` : ''}
+                                <span>${item.name}</span>
+                            </div>
+                        </td>
+                        <td class="standings-center">${item.played}</td>
+                        <td class="standings-pts">${item.points}</td>
+                    </tr>
+                `).join('');
+
+                container.innerHTML = `
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th style="width:28px; text-align:center;">#</th>
+                                <th>Squadra</th>
+                                <th class="standings-center">PG</th>
+                                <th style="text-align:right;">PT</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                `;
+            } else if (currentStandingsTab === 'f1_drivers') {
+                let rows = data.map(item => `
+                    <tr>
+                        <td class="standings-pos pos-${item.pos}">${item.pos}</td>
+                        <td>
+                            <div style="display:flex; flex-direction:column;">
+                                <span style="font-weight:800; color:#fff;">${item.name}</span>
+                                <span style="font-size:11px; color:var(--text-sub);">${item.team}</span>
+                            </div>
+                        </td>
+                        <td class="standings-center">${item.wins}</td>
+                        <td class="standings-pts">${item.points}</td>
+                    </tr>
+                `).join('');
+
+                container.innerHTML = `
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th style="width:28px; text-align:center;">#</th>
+                                <th>Pilota / Scuderia</th>
+                                <th class="standings-center">Vittorie</th>
+                                <th style="text-align:right;">PT</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                `;
+            } else if (currentStandingsTab === 'f1_constructors') {
+                let rows = data.map(item => `
+                    <tr>
+                        <td class="standings-pos pos-${item.pos}">${item.pos}</td>
+                        <td><span style="font-weight:800; color:#fff;">${item.name}</span></td>
+                        <td class="standings-center">${item.wins}</td>
+                        <td class="standings-pts">${item.points}</td>
+                    </tr>
+                `).join('');
+
+                container.innerHTML = `
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th style="width:28px; text-align:center;">#</th>
+                                <th>Costruttore</th>
+                                <th class="standings-center">Vittorie</th>
+                                <th style="text-align:right;">PT</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                `;
+            } else if (currentStandingsTab === 'nfl') {
+                let rows = data.map((item, idx) => `
+                    <tr>
+                        <td class="standings-pos" style="font-size:11px; color:#60a5fa;">${item.conf}</td>
+                        <td>
+                            <div class="standings-team-cell">
+                                ${item.logo ? `<img src="${item.logo}" class="standings-crest" alt="">` : ''}
+                                <span>${item.name}</span>
+                            </div>
+                        </td>
+                        <td class="standings-pts" style="text-align:center;">${item.record || (item.wins + '-' + item.losses)}</td>
+                        <td class="standings-center">${item.diff}</td>
+                    </tr>
+                `).join('');
+
+                container.innerHTML = `
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th style="width:36px;">Conf</th>
+                                <th>Franchigia</th>
+                                <th style="text-align:center;">W-L</th>
+                                <th class="standings-center">Diff</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                `;
+            }
+        }
+
+        // --- 4. MONTH GRID VIEW ---
+        function renderMonthGrid() {
+            const grid = document.getElementById('monthGrid');
+            grid.innerHTML = '';
+            
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const todayStr = formatDate(new Date());
+
+            const firstDayOfMonth = new Date(year, month, 1);
+            let startPadding = firstDayOfMonth.getDay() - 1;
+            if (startPadding === -1) startPadding = 6;
+
+            const startDate = new Date(year, month, 1 - startPadding);
+            const filtered = getFilteredEvents();
+
+            for (let i = 0; i < 42; i++) {
+                const cellDate = new Date(startDate);
+                cellDate.setDate(startDate.getDate() + i);
+
+                const cellDateStr = formatDate(cellDate);
+                const isDiffMonth = cellDate.getMonth() !== month;
+                const isToday = cellDateStr === todayStr;
+                const isSelected = cellDateStr === selectedDateStr;
+
+                const dayEvents = filtered.filter(e => e.date === cellDateStr);
+                const sports = [...new Set(dayEvents.map(e => e.sport))];
+
+                let dotsHtml = '';
+                sports.slice(0, 3).forEach(sp => {
+                    dotsHtml += `<span style="background:${SPORT_COLORS[sp] || '#fff'}"></span>`;
+                });
+
+                const cell = document.createElement('div');
+                cell.className = `month-cell ${isDiffMonth ? 'diff-month' : ''} ${isToday ? 'is-today-cell' : ''} ${isSelected ? 'active-cell' : ''} ${dayEvents.length ? 'has-events' : ''}`;
+                cell.innerHTML = `
+                    <span class="cell-num">${cellDate.getDate()}</span>
+                    <div class="month-dots">${dotsHtml}</div>
+                `;
+
+                cell.onclick = () => {
+                    haptic(15);
+                    selectedDateStr = cellDateStr;
+                    document.querySelectorAll('.month-cell').forEach(c => c.classList.remove('active-cell'));
+                    cell.classList.add('active-cell');
+                    renderMonthSelectedDay(cellDateStr, dayEvents);
+                };
+
+                grid.appendChild(cell);
+
+                if (isSelected) {
+                    renderMonthSelectedDay(cellDateStr, dayEvents);
+                }
+            }
+        }
+
+        function renderMonthSelectedDay(dateStr, evs) {
+            const container = document.getElementById('monthSelectedDayEvents');
+            const dateObj = new Date(dateStr + 'T00:00:00');
+            const weekdayName = dateObj.toLocaleDateString('it-IT', { weekday: 'long' });
+            const dayNum = dateObj.getDate();
+            const monthShort = dateObj.toLocaleDateString('it-IT', { month: 'short' });
+            const fullDateSub = dateObj.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+            const isToday = dateStr === formatDate(new Date());
+
+            if (!evs || evs.length === 0) {
+                container.innerHTML = `
+                    <div class="day-header ${isToday ? 'today' : ''}" style="margin-top:10px;">
+                        <div class="day-header-title">
+                            <div class="day-date-badge">
+                                <span class="day-date-num">${dayNum}</span>
+                                <span class="day-date-month">${monthShort}</span>
+                            </div>
+                            <div class="day-text-group">
+                                <span class="day-weekday-name">${weekdayName}</span>
+                                <span class="day-subtext">${fullDateSub}</span>
+                            </div>
+                        </div>
+                        <div class="day-count-badge">0 partite</div>
+                    </div>
+                    <div class="empty-state" style="padding:20px 0;">
+                        <div class="empty-text">Nessun evento in programma per questo giorno.</div>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = `
+                <div class="day-header ${isToday ? 'today' : ''}" style="margin-top:10px;">
+                    <div class="day-header-title">
+                        <div class="day-date-badge">
+                            <span class="day-date-num">${dayNum}</span>
+                            <span class="day-date-month">${monthShort}</span>
+                        </div>
+                        <div class="day-text-group">
+                            <div style="display:flex; align-items:center;">
+                                <span class="day-weekday-name">${weekdayName}</span>
+                                ${isToday ? '<span class="day-badge-today">OGGI</span>' : ''}
+                            </div>
+                            <span class="day-subtext">${fullDateSub}</span>
+                        </div>
+                    </div>
+                    <div class="day-count-badge">${evs.length} ${evs.length === 1 ? 'partita' : 'partite'}</div>
+                </div>
+                <div class="events-list">
+            `;
+
+            evs.forEach(e => {
+                const sportTag = SPORT_NAMES[e.sport] || e.sport.toUpperCase();
+                const safeTitle = (e.title || '').replace(/'/g, "\\'");
+                const eventKey = `${e.date}_${e.time}_${safeTitle}`;
+
+                html += `
+                    <div class="event-card ${e.sport}" onclick="openEventSheetByKey('${eventKey}')">
+                        <div class="card-top">
+                            <div class="sport-tag ${e.sport}"><span>${sportTag}</span></div>
+                            <span class="time-pill">${e.time || '--:--'}</span>
+                        </div>
+                        <div class="generic-title">${e.title}</div>
+                        <div class="card-footer">
+                            <span>📍 ${e.loc || 'Partita'}</span>
+                            <span style="font-size:11px; font-weight:700; color:#60a5fa;">Info ›</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        // ==========================================
+        // ACTION SHEET DETTAGLI EVENTO
+        // ==========================================
+        function openEventSheetByKey(eventKey) {
+            haptic(20);
+            const found = allEvents.find(e => `${e.date}_${e.time}_${e.title}` === eventKey);
+            if (!found) return;
+
+            activeSheetEvent = found;
+
+            document.getElementById('sheetSportTag').textContent = SPORT_NAMES[found.sport] || found.sport.toUpperCase();
+            document.getElementById('sheetSportTag').className = `sport-tag ${found.sport}`;
+            document.getElementById('sheetEventTitle').textContent = found.title;
+
+            const d = new Date(found.date + 'T00:00:00');
+            document.getElementById('sheetEventDate').textContent = d.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+            document.getElementById('sheetEventTime').textContent = found.time || '--:--';
+            document.getElementById('sheetEventLoc').textContent = found.loc || 'Competizione';
+
+            const faceoffEl = document.getElementById('sheetFaceoffBox');
+            if (found.homeCrest || found.awayCrest) {
+                const isFin = (found.status === 'FINISHED' && found.homeScore !== null);
+                const scoreText = isFin ? `${found.homeScore} - ${found.awayScore}` : (found.time || 'VS');
+
+                faceoffEl.style.display = 'flex';
+                faceoffEl.innerHTML = `
+                    <div class="sheet-team-block">
+                        ${found.homeCrest ? `<img src="${found.homeCrest}" class="sheet-crest" alt="">` : ''}
+                        <span class="sheet-team-name">${found.home || 'Casa'}</span>
+                    </div>
+                    <div class="sheet-score-center">
+                        <span class="sheet-score-text">${scoreText}</span>
+                        <span class="status-badge ${isFin ? 'finished' : ''}">${isFin ? 'Terminata' : 'Programmata'}</span>
+                    </div>
+                    <div class="sheet-team-block">
+                        ${found.awayCrest ? `<img src="${found.awayCrest}" class="sheet-crest" alt="">` : ''}
+                        <span class="sheet-team-name">${found.away || 'Trasferta'}</span>
+                    </div>
+                `;
+            } else {
+                faceoffEl.style.display = 'flex';
+                faceoffEl.innerHTML = `
+                    <div style="width:100%; text-align:center; padding:10px 0;">
+                        <div style="font-size:20px; font-weight:900; color:#fff;">${found.title}</div>
+                        <div style="font-size:13px; color:var(--text-sub); margin-top:4px;">${found.loc || 'Evento'}</div>
+                    </div>
+                `;
+            }
+
+            const venueRow = document.getElementById('sheetVenueRow');
+            if (found.venue) {
+                venueRow.style.display = 'flex';
+                document.getElementById('sheetEventVenue').textContent = found.venue;
+            } else {
+                venueRow.style.display = 'none';
+            }
+
+            document.getElementById('sheetEventStatus').textContent = (found.status === 'FINISHED') ? '🏁 Terminata (Finale)' : '⏰ Programmata';
+
+            // Link Diretta Google
+            const searchTerms = found.home && found.away ? `${found.home} ${found.away} cronaca tabellino` : `${found.title} cronaca`;
+            document.getElementById('btnLiveStats').href = `https://www.google.com/search?q=${encodeURIComponent(searchTerms)}`;
+
+            // Google Calendar Link
+            const cleanDate = found.date.replace(/-/g, '');
+            const cleanTime = (found.time || '15:00').replace(':', '') + '00';
+            const startTime = `${cleanDate}T${cleanTime}`;
+            let endHour = parseInt((found.time || '15:00').split(':')[0]) + 2;
+            let endMinute = (found.time || '15:00').split(':')[1];
+            if (endHour >= 24) endHour -= 24;
+            const endTimeStr = String(endHour).padStart(2, '0') + endMinute + '00';
+            const endTime = `${cleanDate}T${endTimeStr}`;
+
+            const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(found.title)}&dates=${startTime}/${endTime}&details=${encodeURIComponent('Sport OS: ' + (found.loc || ''))}&location=${encodeURIComponent(found.venue || 'Stadio')}`;
+            document.getElementById('btnGoogleCalendar').href = googleCalUrl;
+
+            document.getElementById('modalBackdrop').classList.add('open');
+            document.getElementById('eventDetailSheet').classList.add('open');
+        }
+
+        function shareCurrentEvent() {
+            haptic(20);
+            if (!activeSheetEvent) return;
+            const e = activeSheetEvent;
+            let scorePart = '';
+            if (e.status === 'FINISHED' && e.homeScore !== null) {
+                scorePart = `\nRisultato: ${e.homeScore} - ${e.awayScore}`;
+            }
+            const text = `🏆 Match su Sport OS:\n${e.title}${scorePart}\n🗓️ ${e.date} ore ${e.time}\n📍 ${e.loc} ${e.venue ? '• ' + e.venue : ''}\n`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: e.title,
+                    text: text,
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(text);
+                alert("Dettagli copiati negli appunti!");
+            }
+        }
+
+        function openInfoSheet() {
+            haptic(15);
+            document.getElementById('modalBackdrop').classList.add('open');
+            document.getElementById('infoSheet').classList.add('open');
+        }
+
+        function closeAllSheets() {
+            haptic(10);
+            document.getElementById('modalBackdrop').classList.remove('open');
+            document.getElementById('eventDetailSheet').classList.remove('open');
+            document.getElementById('infoSheet').classList.remove('open');
+        }
+
+        // AVVIO
+        window.addEventListener('DOMContentLoaded', initData);
+    </script>
+</body>
+</html>

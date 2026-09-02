@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendario Sportivo Completo 2026/27</title>
+    <script>
+        // Se aperto da telefono, reindirizza automaticamente alla versione mobile
+        if (!location.search.includes('desktop') && (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (window.innerWidth && window.innerWidth < 768))) {
+            location.replace('index.html');
+        }
+    </script>
+    <!-- Carica i dati generati dallo script Python bypassando i blocchi CORS -->
+    <script src="dati.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        /* =========================================
+           BLOCCO 1: STILE E DESIGN PREMIUM (GLASSMORPHISM)
+           ========================================= */
+        :root {
+            --bg-color: #09090b; /* Zinc 950 */
+            --surface: rgba(24, 24, 27, 0.7); /* Zinc 900 */
+            --surface-hover: rgba(39, 39, 42, 0.9); /* Zinc 800 */
+            --text-main: #f8fafc;
+            --text-muted: #a1a1aa;
+            --border: rgba(255, 255, 255, 0.08);
+            
+            --f1: #ef4444;
+            --seriea: #3b82f6;
+            --nfl: #f97316;
+            --champions: #a855f7;
+            --nazionale: #10b981;
+            
+            --accent: #3b82f6; /* Blu elettrico premium */
+            --accent-hover: #2563eb;
+            --today-bg: rgba(59, 130, 246, 0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { 
+            background: #09090b;
+            background-image: radial-gradient(circle at top, rgba(59, 130, 246, 0.08), transparent 60%);
+            color: var(--text-main); 
+            min-height: 100vh;
+        }
+        
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 25px; background: rgba(9, 9, 11, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); }
+        .header h1 { font-size: 28px; font-weight: 800; color: #ffffff; text-shadow: 0 0 15px rgba(255,255,255,0.2); }
+        
+        .controls { display: flex; gap: 12px; align-items: center; }
+        .btn { background: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2); }
+        .btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4); }
+        .btn-outline { background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: #cbd5e1; box-shadow: none; }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.5); }
+        
+        .month-display { font-size: 22px; font-weight: 700; min-width: 280px; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .calendar-container { padding: 30px; }
+        .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: 700; padding-bottom: 15px; color: var(--text-muted); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        
+        .day-cell { background: var(--surface); backdrop-filter: blur(8px); min-height: 140px; min-width: 0; padding: 8px; display: flex; flex-direction: column; cursor: pointer; transition: all 0.2s ease; overflow: hidden; }
+        .day-cell:hover { background: var(--surface-hover); transform: scale(1.02); z-index: 10; box-shadow: 0 0 25px rgba(0,0,0,0.6); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15); }
+        .day-cell.different-month { background: rgba(9, 9, 11, 0.5); color: #52525b; }
+        .day-cell.today { background: var(--today-bg); border: 1px solid var(--accent); box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.15); }
+        
+        .day-number { font-weight: 800; text-align: right; padding: 5px; font-size: 16px; color: #cbd5e1; }
+        .day-cell.today .day-number { color: var(--accent); }
+        
+        .events-container { display: flex; flex-direction: column; gap: 6px; overflow-y: auto; flex-grow: 1; padding-top: 5px; scrollbar-width: none; -ms-overflow-style: none; min-width: 0; }
+        .events-container::-webkit-scrollbar { display: none; }
+        
+        .event { font-size: 12px; padding: 6px 8px; border-radius: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; flex-direction: column; transition: transform 0.2s; backdrop-filter: blur(4px); font-weight: 500; min-width: 0; }
+        .event:hover { transform: translateX(4px); filter: brightness(1.2); }
+        .event .time { font-weight: 800; font-size: 10px; opacity: 0.9; margin-bottom: 2px; letter-spacing: 0.5px; }
+        
+        .event.f1 { background: rgba(255, 42, 42, 0.15); border-left: 3px solid var(--f1); color: #fca5a5; box-shadow: 0 2px 8px rgba(255, 42, 42, 0.1); }
+        .event.seriea { background: rgba(59, 130, 246, 0.15); border-left: 3px solid var(--seriea); color: #93c5fd; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1); }
+        .event.nfl { background: rgba(249, 115, 22, 0.15); border-left: 3px solid var(--nfl); color: #fdba74; box-shadow: 0 2px 8px rgba(249, 115, 22, 0.1); }
+        .event.champions { background: rgba(168, 85, 247, 0.15); border-left: 3px solid var(--champions); color: #d8b4fe; box-shadow: 0 2px 8px rgba(168, 85, 247, 0.1); }
+        .event.nazionale { background: rgba(16, 185, 129, 0.15); border-left: 3px solid var(--nazionale); color: #6ee7b7; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1); }
+        
+        .badge-group { text-align: center; justify-content: center; font-weight: 800; padding: 8px; background: rgba(59,130,246,0.2) !important; color: #fff !important; border-left: none !important; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .badge-group small { font-weight: 500; font-size: 10px; opacity: 0.7; letter-spacing: 1px; }
+        
+        /* Week View Highlights */
+        .event.highlight { padding: 8px; font-size: 14px; border-left-width: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-weight: 700; background-color: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .event.highlight .time { font-size: 12px; }
+        .event.month-highlight { padding: 6px; font-size: 11px; border-left-width: 3px; background-color: rgba(255,255,255,0.05); }
+        .event.month-highlight .time { font-size: 10px; margin-bottom: 2px; }
+        .event.dimmed { padding: 4px 6px; font-size: 10px; opacity: 0.5; flex-direction: row; align-items: center; gap: 6px; border-left-width: 2px; }
+        .event.dimmed:hover { opacity: 1; transform: translateX(2px); }
+        .event.dimmed .time { font-size: 10px; margin-bottom: 0; }
+        .event.dimmed span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-grow: 1; font-weight: 400; }
+        
+        /* Modal Styles */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); justify-content: center; align-items: center; z-index: 1000; }
+        .modal-content { background: rgba(15, 23, 42, 0.95); padding: 30px; border-radius: 16px; width: 90%; max-width: 500px; border: 1px solid rgba(255,255,255,0.1); max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+        .modal-header h2 { font-size: 24px; font-weight: 800; color: #fff; }
+        .close-btn { cursor: pointer; font-size: 28px; color: var(--text-muted); border: none; background: transparent; font-weight: bold; transition: color 0.2s; }
+        .close-btn:hover { color: #ef4444; }
+        
+        .source-box { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-left: 4px solid #fff; padding: 18px; margin-bottom: 15px; border-radius: 10px; transition: transform 0.2s; }
+        .source-box:hover { transform: translateX(5px); background: rgba(255,255,255,0.05); }
+        .source-box h3 { margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 16px; color: #fff; }
+        .source-box h3 span { font-size: 11px; font-weight: 600; background: rgba(16, 185, 129, 0.2); color: #6ee7b7; padding: 4px 10px; border-radius: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
+        .source-box p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+        
+        .source-box.f1 { border-color: var(--f1); }
+        .source-box.seriea { border-color: var(--seriea); }
+        .source-box.nfl { border-color: var(--nfl); }
+        .source-box.champions { border-color: var(--champions); }
+        .source-box.nazionale { border-color: var(--nazionale); }
+    </style>
+</head>
+<body>
+
+    <!-- =========================================
+         BLOCCO 2: STRUTTURA PAGINA HTML
+         ========================================= -->
+    <div class="header">
+        <h1>🏆 Sport OS</h1>
+        <div class="controls">
+            <button class="btn btn-outline" onclick="openSourcesModal()">ℹ️ Fonti</button>
+            <div style="width: 20px;"></div>
+            
+            <button class="btn btn-outline" onclick="setView('month')" id="btn-month">Mese</button>
+            <button class="btn btn-outline" onclick="setView('week')" id="btn-week">Settimana</button>
+            
+            <div style="width: 20px;"></div>
+            <button class="btn" onclick="changeDate(-1)">&#8592;</button>
+            <div class="month-display" id="current-month-display">Mese Anno</div>
+            <button class="btn" onclick="changeDate(1)">&#8594;</button>
+        </div>
+    </div>
+
+    <div class="calendar-container">
+        <div class="weekdays">
+            <div>Lunedì</div><div>Martedì</div><div>Mercoledì</div><div>Giovedì</div>
+            <div>Venerdì</div><div>Sabato</div><div>Domenica</div>
+        </div>
+        <div class="grid" id="calendar-grid">
+            <!-- Griglia generata via JS -->
+        </div>
+    </div>
+
+    <!-- Modal per mostrare le Fonti dei Dati -->
+    <div class="modal-overlay" id="sources-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Database e Sincronizzazione</h2>
+                <button class="close-btn" onclick="closeModal('sources-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="source-box seriea">
+                    <h3>⚽ Lega Serie A <span>Sincronizzato</span></h3>
+                    <p>Dati estratti dal file locale dati.js generato dallo script.</p>
+                </div>
+                <div class="source-box nfl">
+                    <h3>🏈 NFL <span>Sincronizzato</span></h3>
+                    <p>Calendario Regular Season sincronizzato dal file dati.js.</p>
+                </div>
+                <div class="source-box champions">
+                    <h3>🏆 Champions League <span>Sincronizzato</span></h3>
+                    <p>Fase a gironi ufficiale sincronizzata dal file locale.</p>
+                </div>
+                <div class="source-box nazionale">
+                    <h3>🇮🇹 Nazionale Italiana <span>Sincronizzato</span></h3>
+                    <p>Partite ufficiali degli azzurri sincronizzate dal file locale.</p>
+                </div>
+                <div class="source-box f1">
+                    <h3>🏎️ Formula 1 <span>Sincronizzato</span></h3>
+                    <p>Date e circuiti ufficiali prelevati dal file locale.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal per mostrare gli eventi del singolo giorno in dettaglio -->
+    <div class="modal-overlay" id="day-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Giorno</h2>
+                <button class="close-btn" onclick="closeModal('day-modal')">&times;</button>
+            </div>
+            <div class="modal-body" id="modalEvents">
+                <!-- Eventi caricati qui -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // =========================================
+        // BLOCCO 3: LOGICA APPLICATIVA (MOTORE EVENTI)
+        // =========================================
+
+        let events = [];
+        let currentDate = new Date(); 
+        let currentView = 'month';
+
+        // Global highlight logic
+        const isFavorite = (e) => {
+            const t = e.title.toLowerCase();
+            if (e.sport === 'seriea') return t.includes('torino');
+            if (e.sport === 'nfl') return t.includes('denver') || t.includes('broncos') || t.includes('den ');
+            if (e.sport === 'champions') {
+                const italiane = ['inter', 'milan', 'juventus', 'atalanta', 'bologna', 'roma', 'lazio', 'napoli', 'fiorentina'];
+                return italiane.some(sq => t.includes(sq));
+            }
+            return false;
+        };
+
+        const alwaysHighlight = (e) => (e.sport === 'f1' && e.title.toUpperCase().includes('GARA')) || e.sport === 'nazionale';
+
+        function setView(view) {
+            currentView = view;
+            document.getElementById('btn-month').style.background = view === 'month' ? 'var(--accent)' : 'transparent';
+            document.getElementById('btn-month').style.color = view === 'month' ? 'white' : '#cbd5e1';
+            document.getElementById('btn-month').style.borderColor = view === 'month' ? 'transparent' : 'rgba(255, 255, 255, 0.2)';
+            
+            document.getElementById('btn-week').style.background = view === 'week' ? 'var(--accent)' : 'transparent';
+            document.getElementById('btn-week').style.color = view === 'week' ? 'white' : '#cbd5e1';
+            document.getElementById('btn-week').style.borderColor = view === 'week' ? 'transparent' : 'rgba(255, 255, 255, 0.2)';
+            
+            renderCalendar();
+        }
+        
+        // Inizializza bottoni
+        setView('week');
+
+        function changeDate(delta) {
+            if (currentView === 'month') {
+                currentDate.setMonth(currentDate.getMonth() + delta);
+            } else {
+                currentDate.setDate(currentDate.getDate() + (delta * 7));
+            }
+            renderCalendar();
+        }
+
+        // --- GESTIONE FINESTRE A SCOMPARSA (MODAL) ---
+        function openSourcesModal() {
+            document.getElementById('sources-modal').style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Chiude la finestra del giorno e mostra i dettagli
+        function openDayModal(dateString) {
+            const dayEvents = events.filter(e => e.date === dateString).sort((a, b) => a.time.localeCompare(b.time));
+            const dateObj = new Date(dateString);
+            
+            // Scrive la data in italiano es: "Domenica 20 settembre"
+            const options = { weekday: 'long', day: 'numeric', month: 'long' };
+            let titleStr = dateObj.toLocaleDateString('it-IT', options);
+            document.getElementById('modal-title').innerText = titleStr.charAt(0).toUpperCase() + titleStr.slice(1);
+            
+            const modalBody = document.getElementById('modalEvents');
+            
+            if (dayEvents.length === 0) {
+                modalBody.innerHTML = "<p style='color:#94a3b8; text-align:center;'>Nessun evento in programma.</p>";
+            } else {
+                // Raggruppiamo gli eventi per sport nel pop-up per maggior chiarezza
+                let modalHtml = '';
+                const sportsList = [
+                    { id: 'f1', name: '🏎️ Formula 1', color: 'var(--f1)' },
+                    { id: 'champions', name: '🏆 Champions League', color: 'var(--champions)' },
+                    { id: 'nazionale', name: '🇮🇹 Nazionale', color: 'var(--nazionale)' },
+                    { id: 'seriea', name: '⚽ Serie A', color: 'var(--seriea)' },
+                    { id: 'nfl', name: '🏈 NFL', color: 'var(--nfl)' }
+                ];
+
+                sportsList.forEach(sportType => {
+                    const sportEvents = dayEvents.filter(e => e.sport === sportType.id);
+                    if (sportEvents.length > 0) {
+                        modalHtml += `
+                            <div style="margin-top: 15px; margin-bottom: 5px; font-weight: bold; color: ${sportType.color}; border-bottom: 2px solid ${sportType.color}; padding-bottom: 3px; text-transform: uppercase; font-size: 14px;">
+                                ${sportType.name}
+                            </div>
+                        `;
+                        sportEvents.forEach(e => {
+                            modalHtml += `
+                                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 8px 0;">
+                                    <div style="font-weight: bold; width: 60px; color: #e5e7eb;">${e.time}</div>
+                                    <div style="flex-grow: 1;">
+                                        <div style="font-weight: 600; color: #f3f4f6;">${e.title}</div>
+                                        <div style="font-size: 12px; color: #9ca3af;">📍 ${e.loc}</div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+                });
+                modalBody.innerHTML = modalHtml;
+            }
+            document.getElementById('day-modal').style.display = 'flex';
+        }
+
+        // --- MOTORE DI GENERAZIONE DEL CALENDARIO ---
+        function renderCalendar() {
+            const grid = document.getElementById('calendar-grid');
+            grid.innerHTML = ''; 
+            
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const today = new Date(); 
+
+            // Nomi dei mesi per l'intestazione
+            const monthNames = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+            
+            let startDate = new Date(year, month, 1);
+            let endDate = new Date(year, month + 1, 0);
+
+            // Calcolo giorni mostrati in base alla vista (Mese o Settimana)
+            if (currentView === 'week') {
+                const dayOfWeek = currentDate.getDay() === 0 ? 6 : currentDate.getDay() - 1;
+                startDate = new Date(currentDate);
+                startDate.setDate(currentDate.getDate() - dayOfWeek);
+                endDate = new Date(startDate);
+                endDate.setDate(startDate.getDate() + 6);
+                
+                const endMonth = endDate.getMonth();
+                document.getElementById('current-month-display').innerText = 
+                    `${startDate.getDate()} ${monthNames[startDate.getMonth()].substring(0,3)} - ${endDate.getDate()} ${monthNames[endMonth].substring(0,3)} ${year}`;
+            } else {
+                document.getElementById('current-month-display').innerText = `${monthNames[month]} ${year}`;
+                let startDayOffset = startDate.getDay() === 0 ? 6 : startDate.getDay() - 1;
+                startDate.setDate(startDate.getDate() - startDayOffset);
+                let endDayOffset = endDate.getDay() === 0 ? 0 : 7 - endDate.getDay();
+                endDate.setDate(endDate.getDate() + endDayOffset);
+            }
+
+            let loopDate = new Date(startDate);
+
+            // Costruiamo i quadratini giorno per giorno
+            while (loopDate <= endDate) {
+                const cell = document.createElement('div');
+                cell.className = 'day-cell';
+                
+                if (loopDate.getMonth() !== month && currentView === 'month') cell.classList.add('different-month');
+                if (loopDate.getDate() === today.getDate() && loopDate.getMonth() === today.getMonth() && loopDate.getFullYear() === today.getFullYear()) cell.classList.add('today');
+
+                // Trasforma la data in formato "2026-09-06" per cercare gli eventi
+                const dateString = loopDate.getFullYear() + "-" + String(loopDate.getMonth() + 1).padStart(2, '0') + "-" + String(loopDate.getDate()).padStart(2, '0');
+                
+                // Se clicchi la cella, si apre il modal
+                cell.onclick = () => openDayModal(dateString);
+
+                // Estrae le partite di oggi
+                const dayEvents = events.filter(e => e.date === dateString).sort((a, b) => a.time.localeCompare(b.time));
+                let eventsHtml = '';
+
+                const favorites = dayEvents.filter(e => alwaysHighlight(e) || isFavorite(e));
+                const others = dayEvents.filter(e => !(alwaysHighlight(e) || isFavorite(e)));
+
+                if (currentView === 'month') {
+                    // Mese: Mostra i preferiti come box ben formattati (più grandi e leggibili rispetto a prima)
+                    favorites.forEach(e => {
+                        eventsHtml += `<div class="event ${e.sport} highlight month-highlight"><span class="time">${e.time}</span><span>${e.title}</span></div>`;
+                    });
+                    
+                    // Poi raggruppa/dimma gli altri per non intasare il mese
+                    const f1Others = others.filter(e => e.sport === 'f1');
+                    const serieAOthers = others.filter(e => e.sport === 'seriea');
+                    const nflOthers = others.filter(e => e.sport === 'nfl');
+                    const championsOthers = others.filter(e => e.sport === 'champions');
+                    const nazionaleOthers = others.filter(e => e.sport === 'nazionale');
+                    
+                    // F1 (Qualifiche o non preferiti)
+                    f1Others.forEach(e => {
+                        eventsHtml += `<div class="event ${e.sport} dimmed"><span class="time">${e.time}</span><span>${e.title}</span></div>`;
+                    });
+                    
+                    // Serie A
+                    if (serieAOthers.length === 1) {
+                        eventsHtml += `<div class="event seriea dimmed"><span class="time">${serieAOthers[0].time}</span><span>${serieAOthers[0].title}</span></div>`;
+                    } else if (serieAOthers.length > 1) {
+                        eventsHtml += `<div class="event seriea badge-group dimmed" style="padding: 4px !important; border:none !important; color:#93c5fd !important; background:transparent !important; border-bottom:1px solid rgba(59,130,246,0.2) !important;">⚽ SA (${serieAOthers.length})</div>`;
+                    }
+                    
+                    // NFL
+                    if (nflOthers.length === 1) {
+                        eventsHtml += `<div class="event nfl dimmed"><span class="time">${nflOthers[0].time}</span><span>${nflOthers[0].title}</span></div>`;
+                    } else if (nflOthers.length > 1) {
+                        eventsHtml += `<div class="event nfl badge-group dimmed" style="padding: 4px !important; border:none !important; color:#fdba74 !important; background:transparent !important; border-bottom:1px solid rgba(249,115,22,0.2) !important;">🏈 NFL (${nflOthers.length})</div>`;
+                    }
+                    
+                    // Champions League
+                    if (championsOthers.length <= 2) {
+                        championsOthers.forEach(e => {
+                            eventsHtml += `<div class="event champions dimmed"><span class="time">${e.time}</span><span>${e.title}</span></div>`;
+                        });
+                    } else {
+                        eventsHtml += `<div class="event champions badge-group dimmed" style="padding: 4px !important; border:none !important; color:#d8b4fe !important; background:transparent !important; border-bottom:1px solid rgba(168,85,247,0.2) !important;">🏆 CL (${championsOthers.length})</div>`;
+                    }
+                    
+                    // Nazionale
+                    nazionaleOthers.forEach(e => {
+                        eventsHtml += `<div class="event nazionale dimmed"><span class="time">${e.time}</span><span>${e.title}</span></div>`;
+                    });
+                } else {
+                    // Nella vista settimana: diamo priorità assoluta e grandezza alle squadre preferite
+                    favorites.forEach(e => {
+                        eventsHtml += `<div class="event ${e.sport} highlight"><span class="time">${e.time}</span><span>${e.title}</span></div>`;
+                    });
+                    others.forEach(e => {
+                        eventsHtml += `<div class="event ${e.sport} dimmed"><span class="time">${e.time}</span><span>${e.title}</span></div>`;
+                    });
+                }
+
+                cell.innerHTML = `
+                    <div class="day-number">${loopDate.getDate()}</div>
+                    <div class="events-container">${eventsHtml}</div>
+                `;
+                grid.appendChild(cell);
+                
+                loopDate.setDate(loopDate.getDate() + 1);
+            }
+        }
+
+        // =========================================
+        // BLOCCO 4: CARICAMENTO DATI LOCALI (dati.js)
+        // =========================================
+        
+        function loadCalendarData() {
+            if (typeof window.calendarData !== 'undefined') {
+                events = window.calendarData;
+            } else {
+                console.warn("Dati non trovati, il calendario sarà vuoto.");
+            }
+            renderCalendar();
+        }
+
+        // --- AVVIO FINALE ---
+        loadCalendarData(); // Legge l'array JS e poi disegna il calendario
+
+    </script>
+</body>
+</html>
