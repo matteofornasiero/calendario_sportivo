@@ -8,11 +8,26 @@ from datetime import datetime, timedelta
 # ==========================================
 FOOTBALL_DATA_API_KEY = "6538d15985a7467f9213779686609cbf"
 
-# File di output
 OUTPUT_FILE = "dati.js"
 
 def get_dt_str(dt):
     return dt.strftime("%Y-%m-%d")
+
+def is_top_match(sport, title, home="", away=""):
+    """Identifica i TOP MATCH del tifoso: Torino FC, Denver Broncos, F1 Gara, Italiane in Champions, Nazionale."""
+    text = f"{title} {home} {away}".lower()
+    if sport == 'seriea':
+        return 'torino' in text
+    if sport == 'nfl':
+        return 'broncos' in text or 'denver' in text or 'den ' in text
+    if sport == 'f1':
+        return 'gara' in text
+    if sport == 'champions':
+        italiane = ['inter', 'milan', 'juventus', 'atalanta', 'bologna', 'roma', 'lazio', 'napoli', 'fiorentina']
+        return any(sq in text for sq in italiane)
+    if sport == 'nazionale':
+        return True
+    return False
 
 def fetch_api_matches(competition_code, sport_tag):
     """Scarica i match reali dall'API di football-data.org (senza arbitri, risultati solo post-partita)."""
@@ -23,13 +38,13 @@ def fetch_api_matches(competition_code, sport_tag):
     req = urllib.request.Request(url, headers={'X-Auth-Token': FOOTBALL_DATA_API_KEY})
     events = []
     try:
-        print(f"Scaricamento match reali per {competition_code}...")
+        print(f"Scaricamento match per {competition_code}...")
         with urllib.request.urlopen(req) as response:
             data = json.loads(response.read().decode())
             for match in data.get('matches', []):
                 utc_date = match['utcDate']
                 dt = datetime.strptime(utc_date, "%Y-%m-%dT%H:%M:%SZ")
-                dt = dt + timedelta(hours=2) # Ora italiana estiva/solare
+                dt = dt + timedelta(hours=2) # Ora italiana estiva
                 
                 home_data = match.get('homeTeam', {})
                 away_data = match.get('awayTeam', {})
@@ -41,22 +56,21 @@ def fetch_api_matches(competition_code, sport_tag):
                 
                 matchday = match.get('matchday')
                 raw_status = match.get('status', 'SCHEDULED')
-                
-                # Consideriamo FINISHED solo se la partita è terminata
                 is_finished = (raw_status == 'FINISHED')
-                score_data = match.get('score', {}).get('fullTime', {})
                 
+                score_data = match.get('score', {}).get('fullTime', {})
                 home_score = score_data.get('home') if is_finished else None
                 away_score = score_data.get('away') if is_finished else None
                 status = "FINISHED" if is_finished else "SCHEDULED"
                 
                 stage = match.get('stage', 'REGULAR_SEASON')
                 loc = f"Giornata {matchday}" if matchday else stage.replace('_', ' ').title()
+                title = f"{home} - {away}"
                 
                 events.append({
                     "date": get_dt_str(dt),
                     "time": dt.strftime("%H:%M"),
-                    "title": f"{home} - {away}",
+                    "title": title,
                     "sport": sport_tag,
                     "loc": loc,
                     "home": home,
@@ -67,7 +81,7 @@ def fetch_api_matches(competition_code, sport_tag):
                     "awayScore": away_score,
                     "status": status,
                     "matchday": matchday,
-                    "stage": stage
+                    "isTop": is_top_match(sport_tag, title, home, away)
                 })
         print(f"  Trovati {len(events)} match per {competition_code}.")
     except Exception as e:
@@ -75,11 +89,11 @@ def fetch_api_matches(competition_code, sport_tag):
     return events
 
 def fetch_f1_matches():
-    """Scarica il calendario F1 con circuito e paese tramite Ergast / Jolpi API."""
+    """Scarica il calendario F1 con circuito tramite Ergast / Jolpi API."""
     url = "http://api.jolpi.ca/ergast/f1/2026.json"
     events = []
     try:
-        print("Scaricamento gare per Formula 1...")
+        print("Scaricamento sessioni F1...")
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as response:
             data = json.loads(response.read().decode())
@@ -94,7 +108,7 @@ def fetch_f1_matches():
                 venue_str = f"{circuit_name}, {locality} ({country})" if locality else circuit_name
                 race_time = r.get('time', '15:00:00Z')[:5]
                 
-                # Gara (Domenica)
+                # Gara (Domenica - Top Match!)
                 events.append({
                     "date": date_str,
                     "time": race_time or "15:00",
@@ -102,7 +116,8 @@ def fetch_f1_matches():
                     "sport": "f1",
                     "loc": country or "Formula 1",
                     "venue": venue_str,
-                    "status": "SCHEDULED"
+                    "status": "SCHEDULED",
+                    "isTop": True
                 })
                 
                 # Qualifiche (Sabato)
@@ -114,7 +129,8 @@ def fetch_f1_matches():
                     "sport": "f1",
                     "loc": country or "Formula 1",
                     "venue": venue_str,
-                    "status": "SCHEDULED"
+                    "status": "SCHEDULED",
+                    "isTop": False
                 })
         print(f"  Trovate {len(events)} sessioni per F1.")
     except Exception as e:
@@ -126,7 +142,7 @@ def fetch_espn_nfl_matches():
     url = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20260901-20270228&limit=1000"
     events = []
     try:
-        print("Scaricamento match reali NFL da ESPN...")
+        print("Scaricamento match NFL da ESPN...")
         req = urllib.request.Request(url)
         with urllib.request.urlopen(req) as response:
             data = json.loads(response.read().decode())
@@ -188,7 +204,8 @@ def fetch_espn_nfl_matches():
                     "homeScore": home_score,
                     "awayScore": away_score,
                     "venue": venue_str,
-                    "status": status
+                    "status": status,
+                    "isTop": is_top_match('nfl', title, home_name, away_name)
                 })
         print(f"  Trovati {len(events)} match per NFL.")
     except Exception as e:
@@ -224,7 +241,8 @@ def generate_mock_real_data():
                     "home": home,
                     "away": away,
                     "venue": e.get('strVenue', ''),
-                    "status": "SCHEDULED"
+                    "status": "SCHEDULED",
+                    "isTop": True
                 })
     except Exception as e:
         print(f"Errore Nazionale: {e}")
@@ -240,7 +258,7 @@ def generate_mock_real_data():
         ("2027-05-19", "🏆 Finale Coppa Italia (Roma)")
     ]
     for d, t in coppa:
-        events.append({"date": d, "time": "21:00", "title": t, "sport": "seriea", "loc": "Coppa Italia", "venue": "Stadio Olimpico, Roma", "status": "SCHEDULED"})
+        events.append({"date": d, "time": "21:00", "title": t, "sport": "seriea", "loc": "Coppa Italia", "venue": "Stadio Olimpico, Roma", "status": "SCHEDULED", "isTop": False})
 
     # 3. SUPERCOPPA ITALIANA
     supercoppa = [
@@ -249,27 +267,31 @@ def generate_mock_real_data():
         ("2027-01-11", "🏆 Finale Supercoppa Italiana")
     ]
     for d, t in supercoppa:
-        events.append({"date": d, "time": "20:00", "title": t, "sport": "seriea", "loc": "Supercoppa", "venue": "Al-Awwal Park, Riyadh", "status": "SCHEDULED"})
+        events.append({"date": d, "time": "20:00", "title": t, "sport": "seriea", "loc": "Supercoppa", "venue": "Al-Awwal Park, Riyadh", "status": "SCHEDULED", "isTop": False})
 
     return events
 
 # ==========================================
-# SCARICAMENTO CLASSIFICHE REALI
+# SCARICAMENTO & STRUTTURAZIONE CLASSIFICHE REALI
 # ==========================================
-def fetch_all_standings():
-    """Scarica le classifiche ufficiali per Serie A, Champions League, F1 e NFL."""
+def fetch_all_standings(all_events):
+    """Genera le classifiche ufficiali per Serie A, Champions, F1 e NFL."""
     standings = {
         "seriea": [],
         "champions": [],
         "f1_drivers": [],
         "f1_constructors": [],
-        "nfl": []
+        "nfl": {
+            "divisions": {},
+            "conferences": {"AFC": [], "NFC": []},
+            "playoffs": {"AFC": [], "NFC": []}
+        }
     }
     
     # 1. CLASSIFICA SERIE A
     if FOOTBALL_DATA_API_KEY:
         try:
-            print("Scaricamento Classifica Serie A...")
+            print("Caricamento Classifica Serie A...")
             url = "http://api.football-data.org/v4/competitions/SA/standings"
             req = urllib.request.Request(url, headers={'X-Auth-Token': FOOTBALL_DATA_API_KEY})
             with urllib.request.urlopen(req) as r:
@@ -287,40 +309,38 @@ def fetch_all_standings():
                         "points": x.get('points', 0),
                         "diff": x.get('goalDifference', 0)
                     })
-            print(f"  Classifica Serie A caricata: {len(standings['seriea'])} squadre.")
+            print(f"  Classifica Serie A: {len(standings['seriea'])} squadre.")
         except Exception as e:
-            print(f"  Errore Classifica Serie A: {e}")
+            print(f"  Errore Serie A: {e}")
 
-    # 2. CLASSIFICA CHAMPIONS LEAGUE
-    if FOOTBALL_DATA_API_KEY:
-        try:
-            print("Scaricamento Classifica Champions League...")
-            url = "http://api.football-data.org/v4/competitions/CL/standings?season=2024"
-            req = urllib.request.Request(url, headers={'X-Auth-Token': FOOTBALL_DATA_API_KEY})
-            with urllib.request.urlopen(req) as r:
-                data = json.loads(r.read().decode())
-                for grp in data.get('standings', []):
-                    grp_name = grp.get('group', 'Girone Unico')
-                    for x in grp.get('table', []):
-                        standings['champions'].append({
-                            "pos": x.get('position'),
-                            "name": x.get('team', {}).get('shortName') or x.get('team', {}).get('name'),
-                            "crest": x.get('team', {}).get('crest', ''),
-                            "played": x.get('playedGames', 0),
-                            "won": x.get('won', 0),
-                            "draw": x.get('draw', 0),
-                            "lost": x.get('lost', 0),
-                            "points": x.get('points', 0),
-                            "diff": x.get('goalDifference', 0),
-                            "group": grp_name
-                        })
-            print(f"  Classifica Champions League caricata: {len(standings['champions'])} squadre.")
-        except Exception as e:
-            print(f"  Errore Classifica Champions: {e}")
+    # 2. CLASSIFICA CHAMPIONS LEAGUE (Nuova stagione a Girone Unico da 36 squadre - tutte a 0 punti all'inizio!)
+    print("Inizializzazione Classifica Champions League 2026/27 (Fase a Girone Unico a 0 punti)...")
+    cl_teams_map = {}
+    for e in all_events:
+        if e.get('sport') == 'champions':
+            if e.get('home') and e.get('homeCrest'):
+                cl_teams_map[e['home']] = e['homeCrest']
+            if e.get('away') and e.get('awayCrest'):
+                cl_teams_map[e['away']] = e['awayCrest']
+    
+    sorted_cl_teams = sorted(cl_teams_map.keys())
+    for idx, tname in enumerate(sorted_cl_teams, start=1):
+        standings['champions'].append({
+            "pos": idx,
+            "name": tname,
+            "crest": cl_teams_map[tname],
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
+        })
+    print(f"  Classifica Champions League: {len(standings['champions'])} squadre a 0 punti.")
 
     # 3. F1 PILOTI
     try:
-        print("Scaricamento Classifica F1 Piloti...")
+        print("Caricamento Classifica F1 Piloti...")
         url = "http://api.jolpi.ca/ergast/f1/current/driverStandings.json"
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as r:
@@ -337,13 +357,13 @@ def fetch_all_standings():
                     "points": d.get('points', '0'),
                     "wins": d.get('wins', '0')
                 })
-        print(f"  Classifica F1 Piloti caricata: {len(standings['f1_drivers'])} piloti.")
+        print(f"  F1 Piloti: {len(standings['f1_drivers'])} piloti.")
     except Exception as e:
         print(f"  Errore F1 Piloti: {e}")
 
     # 4. F1 COSTRUTTORI
     try:
-        print("Scaricamento Classifica F1 Costruttori...")
+        print("Caricamento Classifica F1 Costruttori...")
         url = "http://api.jolpi.ca/ergast/f1/current/constructorStandings.json"
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as r:
@@ -357,35 +377,59 @@ def fetch_all_standings():
                     "points": c.get('points', '0'),
                     "wins": c.get('wins', '0')
                 })
-        print(f"  Classifica F1 Costruttori caricata: {len(standings['f1_constructors'])} scuderie.")
+        print(f"  F1 Costruttori: {len(standings['f1_constructors'])} scuderie.")
     except Exception as e:
         print(f"  Errore F1 Costruttori: {e}")
 
-    # 5. NFL STANDINGS
-    try:
-        print("Scaricamento Classifica NFL da ESPN...")
-        url = "https://site.api.espn.com/apis/v2/sports/football/nfl/standings"
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req) as r:
-            data = json.loads(r.read().decode())
-            for conf in data.get('children', []):
-                conf_name = "AFC" if "American" in conf.get('name', '') else "NFC"
-                for entry in conf.get('standings', {}).get('entries', []):
-                    stats = {s['name']: s['displayValue'] for s in entry.get('stats', [])}
-                    logos = entry.get('team', {}).get('logos', [{}])
-                    standings['nfl'].append({
-                        "conf": conf_name,
-                        "name": entry.get('team', {}).get('displayName', ''),
-                        "logo": logos[0].get('href', '') if logos else '',
-                        "record": stats.get('overall', ''),
-                        "wins": stats.get('wins', '0'),
-                        "losses": stats.get('losses', '0'),
-                        "diff": stats.get('pointDifferential', '0'),
-                        "streak": stats.get('streak', '')
-                    })
-        print(f"  Classifica NFL caricata: {len(standings['nfl'])} squadre.")
-    except Exception as e:
-        print(f"  Errore NFL Standings: {e}")
+    # 5. CLASSIFICHE NFL UFFICIALI (Divisioni a Gruppi, Conferences AFC/NFC e Playoff)
+    print("Generazione Classifiche NFL (Divisioni, Conference e Playoff)...")
+    NFL_DIVISIONS_MAP = {
+        "AFC East": ["Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets"],
+        "AFC North": ["Baltimore Ravens", "Cincinnati Bengals", "Cleveland Browns", "Pittsburgh Steelers"],
+        "AFC South": ["Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans"],
+        "AFC West": ["Kansas City Chiefs", "Denver Broncos", "Los Angeles Chargers", "Las Vegas Raiders"],
+        "NFC East": ["Dallas Cowboys", "Philadelphia Eagles", "New York Giants", "Washington Commanders"],
+        "NFC North": ["Detroit Lions", "Green Bay Packers", "Minnesota Vikings", "Chicago Bears"],
+        "NFC South": ["Tampa Bay Buccaneers", "Atlanta Falcons", "New Orleans Saints", "Carolina Panthers"],
+        "NFC West": ["San Francisco 49ers", "Los Angeles Rams", "Seattle Seahawks", "Arizona Cardinals"]
+    }
+    
+    # Raccogli loghi delle 32 squadre NFL da all_events
+    nfl_logos = {}
+    for e in all_events:
+        if e.get('sport') == 'nfl':
+            if e.get('home') and e.get('homeCrest'):
+                nfl_logos[e['home']] = e['homeCrest']
+            if e.get('away') and e.get('awayCrest'):
+                nfl_logos[e['away']] = e['awayCrest']
+
+    for div_name, team_list in NFL_DIVISIONS_MAP.items():
+        conf = "AFC" if "AFC" in div_name else "NFC"
+        standings['nfl']['divisions'][div_name] = []
+        for idx, tname in enumerate(team_list, start=1):
+            team_entry = {
+                "pos": idx,
+                "name": tname,
+                "logo": nfl_logos.get(tname, ''),
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "pct": ".000",
+                "diff": 0,
+                "div": div_name,
+                "conf": conf
+            }
+            standings['nfl']['divisions'][div_name].append(team_entry)
+            standings['nfl']['conferences'][conf].append(team_entry)
+
+    # Ordina le conference e imposta i seed playoff (i primi 7 accedono ai playoff)
+    for conf in ["AFC", "NFC"]:
+        standings['nfl']['conferences'][conf] = sorted(standings['nfl']['conferences'][conf], key=lambda x: x['name'])
+        for seed, entry in enumerate(standings['nfl']['conferences'][conf], start=1):
+            entry['seed'] = seed
+        standings['nfl']['playoffs'][conf] = standings['nfl']['conferences'][conf][:7]
+
+    print(f"  Classifiche NFL: 8 divisioni, 2 conference e 14 squadre ai playoff configurate.")
 
     return standings
 
@@ -393,24 +437,17 @@ def main():
     print("--- Sport OS Data & Standings Fetcher ---")
     all_events = []
     
-    # 1. SERIE A & CHAMPIONS LEAGUE
     if FOOTBALL_DATA_API_KEY:
         all_events.extend(fetch_api_matches("SA", "seriea"))
         all_events.extend(fetch_api_matches("CL", "champions"))
 
-    # 2. NFL
     all_events.extend(fetch_espn_nfl_matches())
-
-    # 3. FORMULA 1
     all_events.extend(fetch_f1_matches())
-
-    # 4. NAZIONALE E COPPE
     all_events.extend(generate_mock_real_data())
     
     all_events.sort(key=lambda x: (x.get('date', ''), x.get('time', '')))
     
-    # 5. CLASSIFICHE UFFICIALI
-    standings = fetch_all_standings()
+    standings = fetch_all_standings(all_events)
 
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write("window.calendarData = ")

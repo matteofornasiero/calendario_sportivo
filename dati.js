@@ -6,7 +6,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Australia",
         "venue": "Albert Park Grand Prix Circuit, Melbourne (Australia)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-03-08",
@@ -15,7 +16,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Australia",
         "venue": "Albert Park Grand Prix Circuit, Melbourne (Australia)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-03-14",
@@ -24,7 +26,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "China",
         "venue": "Shanghai International Circuit, Shanghai (China)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-03-15",
@@ -33,7 +36,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "China",
         "venue": "Shanghai International Circuit, Shanghai (China)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-03-28",
@@ -42,7 +46,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Japan",
         "venue": "Suzuka Circuit, Suzuka (Japan)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-03-29",
@@ -51,7 +56,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Japan",
         "venue": "Suzuka Circuit, Suzuka (Japan)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-05-02",
@@ -60,7 +66,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "USA",
         "venue": "Miami International Autodrome, Miami (USA)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-05-03",
@@ -69,7 +76,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "USA",
         "venue": "Miami International Autodrome, Miami (USA)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-05-23",
@@ -78,7 +86,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Canada",
         "venue": "Circuit Gilles Villeneuve, Montreal (Canada)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-05-24",
@@ -87,7 +96,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Canada",
         "venue": "Circuit Gilles Villeneuve, Montreal (Canada)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-06-06",
@@ -96,7 +106,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Monaco",
         "venue": "Circuit de Monaco, Monte Carlo (Monaco)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-06-07",
@@ -105,7 +116,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Monaco",
         "venue": "Circuit de Monaco, Monte Carlo (Monaco)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-06-13",
@@ -114,7 +126,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Spain",
         "venue": "Circuit de Barcelona-Catalunya, Barcelona (Spain)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-06-14",
@@ -123,7 +136,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Spain",
         "venue": "Circuit de Barcelona-Catalunya, Barcelona (Spain)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-06-27",
@@ -132,7 +146,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Austria",
         "venue": "Red Bull Ring, Spielberg (Austria)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-06-28",
@@ -141,7 +156,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Austria",
         "venue": "Red Bull Ring, Spielberg (Austria)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-07-04",
@@ -150,7 +166,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "UK",
         "venue": "Silverstone Circuit, Silverstone (UK)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-07-05",
@@ -159,7 +176,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "UK",
         "venue": "Silverstone Circuit, Silverstone (UK)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-07-18",
@@ -168,7 +186,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Belgium",
         "venue": "Circuit de Spa-Francorchamps, Spa (Belgium)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-07-19",
@@ -177,7 +196,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Belgium",
         "venue": "Circuit de Spa-Francorchamps, Spa (Belgium)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-07-25",
@@ -186,7 +206,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Hungary",
         "venue": "Hungaroring, Budapest (Hungary)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-07-26",
@@ -195,7 +216,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Hungary",
         "venue": "Hungaroring, Budapest (Hungary)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-08-22",
@@ -204,7 +226,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Netherlands",
         "venue": "Circuit Park Zandvoort, Zandvoort (Netherlands)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-08-22",
@@ -220,7 +243,7 @@ window.calendarData = [
         "awayScore": 1,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-22",
@@ -236,7 +259,7 @@ window.calendarData = [
         "awayScore": 1,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-22",
@@ -252,7 +275,7 @@ window.calendarData = [
         "awayScore": 2,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-22",
@@ -268,7 +291,7 @@ window.calendarData = [
         "awayScore": 1,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-23",
@@ -277,7 +300,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Netherlands",
         "venue": "Circuit Park Zandvoort, Zandvoort (Netherlands)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-08-23",
@@ -293,7 +317,7 @@ window.calendarData = [
         "awayScore": 1,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-23",
@@ -309,7 +333,7 @@ window.calendarData = [
         "awayScore": 2,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-23",
@@ -325,7 +349,7 @@ window.calendarData = [
         "awayScore": 1,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-23",
@@ -341,7 +365,7 @@ window.calendarData = [
         "awayScore": 2,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-08-24",
@@ -357,7 +381,7 @@ window.calendarData = [
         "awayScore": 1,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-24",
@@ -373,7 +397,7 @@ window.calendarData = [
         "awayScore": 0,
         "status": "FINISHED",
         "matchday": 1,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-28",
@@ -389,7 +413,7 @@ window.calendarData = [
         "awayScore": 0,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-29",
@@ -405,7 +429,7 @@ window.calendarData = [
         "awayScore": 1,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-08-29",
@@ -421,7 +445,7 @@ window.calendarData = [
         "awayScore": 3,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-29",
@@ -437,7 +461,7 @@ window.calendarData = [
         "awayScore": 3,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-29",
@@ -453,7 +477,7 @@ window.calendarData = [
         "awayScore": 0,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-30",
@@ -469,7 +493,7 @@ window.calendarData = [
         "awayScore": 2,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-30",
@@ -485,7 +509,7 @@ window.calendarData = [
         "awayScore": 0,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-30",
@@ -501,7 +525,7 @@ window.calendarData = [
         "awayScore": 1,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-31",
@@ -517,7 +541,7 @@ window.calendarData = [
         "awayScore": 4,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-08-31",
@@ -533,7 +557,7 @@ window.calendarData = [
         "awayScore": 0,
         "status": "FINISHED",
         "matchday": 2,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-04",
@@ -549,7 +573,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-05",
@@ -565,7 +589,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-09-05",
@@ -574,7 +598,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Italy",
         "venue": "Autodromo Nazionale di Monza, Monza (Italy)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-05",
@@ -590,7 +615,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-05",
@@ -606,7 +631,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-06",
@@ -615,7 +640,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Italy",
         "venue": "Autodromo Nazionale di Monza, Monza (Italy)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-09-06",
@@ -631,7 +657,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-06",
@@ -647,7 +673,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-06",
@@ -663,7 +689,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-06",
@@ -679,7 +705,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-07",
@@ -695,7 +721,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-07",
@@ -711,7 +737,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-08",
@@ -727,7 +753,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-08",
@@ -743,7 +769,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-08",
@@ -759,7 +785,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-09-08",
@@ -775,7 +801,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-08",
@@ -791,7 +817,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-08",
@@ -807,7 +833,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-09",
@@ -823,7 +849,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-09",
@@ -839,7 +865,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-09",
@@ -855,7 +881,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-09",
@@ -871,7 +897,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-09",
@@ -887,7 +913,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-09-09",
@@ -903,7 +929,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-10",
@@ -918,7 +944,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-10",
@@ -934,7 +961,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-09-10",
@@ -950,7 +977,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-10",
@@ -966,7 +993,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-10",
@@ -982,7 +1009,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-10",
@@ -998,7 +1025,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-10",
@@ -1014,7 +1041,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 1,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-09-11",
@@ -1029,7 +1056,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Melbourne Cricket Ground, Melbourne",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-11",
@@ -1045,7 +1073,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-12",
@@ -1061,7 +1089,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-12",
@@ -1070,7 +1098,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Spain",
         "venue": "Madring, Madrid (Spain)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-12",
@@ -1086,7 +1115,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-12",
@@ -1102,7 +1131,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1111,7 +1140,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Spain",
         "venue": "Madring, Madrid (Spain)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-09-13",
@@ -1127,7 +1157,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1143,7 +1173,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1158,7 +1188,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Paycor Stadium, Cincinnati",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1173,7 +1204,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Ford Field, Detroit",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1188,7 +1220,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Nissan Stadium, Nashville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1203,7 +1236,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lucas Oil Stadium, Indianapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1218,7 +1252,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Acrisure Stadium, Pittsburgh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1233,7 +1268,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1248,7 +1284,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "EverBank Stadium, Jacksonville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1263,7 +1300,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Reliant Stadium, Houston",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1279,7 +1317,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1294,7 +1332,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Allegiant Stadium, Las Vegas",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1309,7 +1348,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1324,7 +1364,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-13",
@@ -1339,7 +1380,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-14",
@@ -1354,7 +1396,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-14",
@@ -1370,7 +1413,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-14",
@@ -1386,7 +1429,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-09-14",
@@ -1402,7 +1445,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-15",
@@ -1417,7 +1460,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Arrowhead Stadium, Kansas City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-09-18",
@@ -1432,7 +1476,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Highmark Stadium, Orchard Park",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-18",
@@ -1448,7 +1493,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-19",
@@ -1464,7 +1509,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-09-19",
@@ -1480,7 +1525,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-19",
@@ -1496,7 +1541,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-19",
@@ -1512,7 +1557,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1528,7 +1573,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1544,7 +1589,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1560,7 +1605,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1576,7 +1621,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1591,7 +1636,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Mercedes-Benz Stadium, Atlanta",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1606,7 +1652,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1621,7 +1668,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Nissan Stadium, Nashville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1636,7 +1684,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Gillette Stadium, Foxborough",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1651,7 +1700,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1666,7 +1716,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1681,7 +1732,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "M&T Bank Stadium, Baltimore",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1696,7 +1748,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Reliant Stadium, Houston",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1712,7 +1765,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1727,7 +1780,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Empower Field at Mile High, Denver",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-09-20",
@@ -1742,7 +1796,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1757,7 +1812,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "AT&T Stadium, Arlington",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1772,7 +1828,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-20",
@@ -1787,7 +1844,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Levi's Stadium, Santa Clara",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-21",
@@ -1802,7 +1860,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Arrowhead Stadium, Kansas City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-22",
@@ -1817,7 +1876,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-25",
@@ -1832,7 +1892,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-25",
@@ -1841,7 +1902,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Azerbaijan",
         "venue": "Baku City Circuit, Baku (Azerbaijan)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-25",
@@ -1852,7 +1914,8 @@ window.calendarData = [
         "home": "Italia",
         "away": "Belgium",
         "venue": "Stadio Olimpico",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-09-26",
@@ -1861,7 +1924,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Azerbaijan",
         "venue": "Baku City Circuit, Baku (Azerbaijan)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-09-27",
@@ -1876,7 +1940,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Highmark Stadium, Orchard Park",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -1891,7 +1956,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Huntington Bank Field, Cleveland",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -1906,7 +1972,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Ford Field, Detroit",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -1921,7 +1988,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lucas Oil Stadium, Indianapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -1936,7 +2004,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Hard Rock Stadium, Miami Gardens",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -1951,7 +2020,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -1966,7 +2036,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Acrisure Stadium, Pittsburgh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -1981,7 +2052,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Northwest Stadium, Landover",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -1996,7 +2068,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "EverBank Stadium, Jacksonville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -2011,7 +2084,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Levi's Stadium, Santa Clara",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -2026,7 +2100,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -2041,7 +2116,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Maracanã Stadium, Rio De Janeiro",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-27",
@@ -2056,7 +2132,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Caesars Superdome, New Orleans",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-09-28",
@@ -2071,7 +2148,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Empower Field at Mile High, Denver",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-09-29",
@@ -2086,7 +2164,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-02",
@@ -2101,7 +2180,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Huntington Bank Field, Cleveland",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-03",
@@ -2110,7 +2190,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Malaysia",
         "venue": "Sepang International Circuit, Kuala Lumpur (Malaysia)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2119,7 +2200,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Malaysia",
         "venue": "Sepang International Circuit, Kuala Lumpur (Malaysia)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-10-04",
@@ -2134,7 +2216,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Tottenham Hotspur Stadium, London",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2149,7 +2232,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Highmark Stadium, Orchard Park",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2164,7 +2248,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2179,7 +2264,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Paycor Stadium, Cincinnati",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2194,7 +2280,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2209,7 +2296,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2224,7 +2312,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2239,7 +2328,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "M&T Bank Stadium, Baltimore",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2254,7 +2344,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Reliant Stadium, Houston",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2269,7 +2360,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2284,7 +2376,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Allegiant Stadium, Las Vegas",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-04",
@@ -2299,7 +2392,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Levi's Stadium, Santa Clara",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-10-04",
@@ -2314,7 +2408,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-05",
@@ -2329,7 +2424,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-06",
@@ -2344,7 +2440,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Caesars Superdome, New Orleans",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-09",
@@ -2359,7 +2456,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "AT&T Stadium, Arlington",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-10",
@@ -2368,7 +2466,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Singapore",
         "venue": "Marina Bay Street Circuit, Marina Bay (Singapore)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2384,7 +2483,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2400,7 +2499,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2416,7 +2515,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2432,7 +2531,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2448,7 +2547,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2464,7 +2563,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2480,7 +2579,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2496,7 +2595,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2512,7 +2611,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-10-11",
@@ -2528,7 +2627,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2537,7 +2636,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Singapore",
         "venue": "Marina Bay Street Circuit, Marina Bay (Singapore)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-10-11",
@@ -2552,7 +2652,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Tottenham Hotspur Stadium, London",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2567,7 +2668,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Nissan Stadium, Nashville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2582,7 +2684,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Hard Rock Stadium, Miami Gardens",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2597,7 +2700,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Gillette Stadium, Foxborough",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2612,7 +2716,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Caesars Superdome, New Orleans",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2627,7 +2732,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2642,7 +2748,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Acrisure Stadium, Pittsburgh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2657,7 +2764,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Northwest Stadium, Landover",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2672,7 +2780,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-10-11",
@@ -2687,7 +2796,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2702,7 +2812,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-11",
@@ -2717,7 +2828,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-12",
@@ -2732,7 +2844,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Mercedes-Benz Stadium, Atlanta",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2747,7 +2860,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2763,7 +2877,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2779,7 +2893,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2795,7 +2909,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-10-13",
@@ -2811,7 +2925,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2827,7 +2941,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2843,7 +2957,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2859,7 +2973,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2875,7 +2989,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-13",
@@ -2891,7 +3005,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-10-14",
@@ -2907,7 +3021,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-14",
@@ -2923,7 +3037,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-14",
@@ -2939,7 +3053,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-10-14",
@@ -2955,7 +3069,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-14",
@@ -2971,7 +3085,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-14",
@@ -2987,7 +3101,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-14",
@@ -3003,7 +3117,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-14",
@@ -3019,7 +3133,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-14",
@@ -3035,7 +3149,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 2,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-16",
@@ -3050,7 +3164,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Empower Field at Mile High, Denver",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-10-17",
@@ -3066,7 +3181,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3082,7 +3197,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3098,7 +3213,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3114,7 +3229,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3130,7 +3245,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3146,7 +3261,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3162,7 +3277,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3178,7 +3293,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3194,7 +3309,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-17",
@@ -3210,7 +3325,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-10-18",
@@ -3225,7 +3340,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Wembley Stadium, London",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3240,7 +3356,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Mercedes-Benz Stadium, Atlanta",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3255,7 +3372,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Huntington Bank Field, Cleveland",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3270,7 +3388,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lucas Oil Stadium, Indianapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3285,7 +3404,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Gillette Stadium, Foxborough",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3300,7 +3420,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3315,7 +3436,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3330,7 +3452,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3345,7 +3468,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3360,7 +3484,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Arrowhead Stadium, Kansas City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-18",
@@ -3375,7 +3500,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Allegiant Stadium, Las Vegas",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-19",
@@ -3390,7 +3516,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-20",
@@ -3405,7 +3532,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Levi's Stadium, Santa Clara",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-20",
@@ -3421,7 +3549,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-20",
@@ -3437,7 +3565,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-20",
@@ -3453,7 +3581,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-20",
@@ -3469,7 +3597,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-20",
@@ -3485,7 +3613,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-20",
@@ -3501,7 +3629,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-10-20",
@@ -3517,7 +3645,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-20",
@@ -3533,7 +3661,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-10-20",
@@ -3549,7 +3677,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-21",
@@ -3565,7 +3693,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-21",
@@ -3581,7 +3709,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-21",
@@ -3597,7 +3725,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-21",
@@ -3613,7 +3741,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-10-21",
@@ -3629,7 +3757,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-21",
@@ -3645,7 +3773,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-21",
@@ -3661,7 +3789,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-21",
@@ -3677,7 +3805,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-21",
@@ -3693,7 +3821,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 3,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-10-23",
@@ -3708,7 +3836,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-24",
@@ -3717,7 +3846,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "USA",
         "venue": "Circuit of the Americas, Austin (USA)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3733,7 +3863,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3749,7 +3879,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3765,7 +3895,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3781,7 +3911,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3797,7 +3927,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3813,7 +3943,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3829,7 +3959,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3845,7 +3975,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3861,7 +3991,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-10-25",
@@ -3877,7 +4007,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3892,7 +4022,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Stade de France, Saint-Denis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3907,7 +4038,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Mercedes-Benz Stadium, Atlanta",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3922,7 +4054,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Nissan Stadium, Nashville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3937,7 +4070,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3952,7 +4086,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3967,7 +4102,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3982,7 +4118,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "M&T Bank Stadium, Baltimore",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -3997,7 +4134,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Reliant Stadium, Houston",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -4006,7 +4144,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "USA",
         "venue": "Circuit of the Americas, Austin (USA)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-10-25",
@@ -4021,7 +4160,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-10-25",
@@ -4036,7 +4176,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Ford Field, Detroit",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-25",
@@ -4051,7 +4192,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Allegiant Stadium, Las Vegas",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-26",
@@ -4066,7 +4208,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-27",
@@ -4081,7 +4224,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4097,7 +4241,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4113,7 +4257,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4129,7 +4273,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4145,7 +4289,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4161,7 +4305,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4177,7 +4321,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4193,7 +4337,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4209,7 +4353,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-28",
@@ -4225,7 +4369,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-10-28",
@@ -4241,7 +4385,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 9,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-10-30",
@@ -4256,7 +4400,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-10-31",
@@ -4265,7 +4410,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Mexico",
         "venue": "Autódromo Hermanos Rodríguez, Mexico City (Mexico)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4281,7 +4427,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4297,7 +4443,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4313,7 +4459,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4329,7 +4475,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4345,7 +4491,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4361,7 +4507,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-11-01",
@@ -4377,7 +4523,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4393,7 +4539,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4409,7 +4555,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4425,7 +4571,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 10,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4440,7 +4586,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Highmark Stadium, Orchard Park",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4455,7 +4602,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Paycor Stadium, Cincinnati",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4470,7 +4618,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "AT&T Stadium, Arlington",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4485,7 +4634,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Ford Field, Detroit",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4500,7 +4650,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4515,7 +4666,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Acrisure Stadium, Pittsburgh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4530,7 +4682,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4545,7 +4698,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "EverBank Stadium, Jacksonville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4554,7 +4708,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Mexico",
         "venue": "Autódromo Hermanos Rodríguez, Mexico City (Mexico)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-11-01",
@@ -4569,7 +4724,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-01",
@@ -4584,7 +4740,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Empower Field at Mile High, Denver",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-11-01",
@@ -4599,7 +4756,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Hard Rock Stadium, Miami Gardens",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-02",
@@ -4614,7 +4772,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Northwest Stadium, Landover",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-03",
@@ -4629,7 +4788,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-03",
@@ -4645,7 +4805,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-03",
@@ -4661,7 +4821,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-03",
@@ -4677,7 +4837,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-11-03",
@@ -4693,7 +4853,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-03",
@@ -4709,7 +4869,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-03",
@@ -4725,7 +4885,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-03",
@@ -4741,7 +4901,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-11-03",
@@ -4757,7 +4917,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-03",
@@ -4773,7 +4933,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-04",
@@ -4789,7 +4949,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-04",
@@ -4805,7 +4965,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-04",
@@ -4821,7 +4981,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-04",
@@ -4837,7 +4997,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-04",
@@ -4853,7 +5013,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-04",
@@ -4869,7 +5029,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-04",
@@ -4885,7 +5045,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-11-04",
@@ -4901,7 +5061,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-04",
@@ -4917,7 +5077,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 4,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-06",
@@ -4932,7 +5092,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "M&T Bank Stadium, Baltimore",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-07",
@@ -4941,7 +5102,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Brazil",
         "venue": "Autódromo José Carlos Pace, São Paulo (Brazil)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -4957,7 +5119,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -4973,7 +5135,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -4989,7 +5151,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5005,7 +5167,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-11-08",
@@ -5021,7 +5183,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5037,7 +5199,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5053,7 +5215,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5069,7 +5231,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5085,7 +5247,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5101,7 +5263,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 11,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5116,7 +5278,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Santiago Bernabéu, Madrid",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5125,7 +5288,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Brazil",
         "venue": "Autódromo José Carlos Pace, São Paulo (Brazil)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-11-08",
@@ -5140,7 +5304,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lucas Oil Stadium, Indianapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5155,7 +5320,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Arrowhead Stadium, Kansas City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5170,7 +5336,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Hard Rock Stadium, Miami Gardens",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5185,7 +5352,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Caesars Superdome, New Orleans",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5200,7 +5368,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5215,7 +5384,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Northwest Stadium, Landover",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5230,7 +5400,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-11-08",
@@ -5245,7 +5416,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5260,7 +5432,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Levi's Stadium, Santa Clara",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5275,7 +5448,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Gillette Stadium, Foxborough",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-08",
@@ -5290,7 +5464,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-09",
@@ -5305,7 +5480,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-10",
@@ -5320,7 +5496,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-13",
@@ -5335,7 +5512,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5350,7 +5528,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "FC Bayern Munich Stadium, Munich",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5365,7 +5544,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Mercedes-Benz Stadium, Atlanta",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5380,7 +5560,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Huntington Bank Field, Cleveland",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5395,7 +5576,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5410,7 +5592,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Nissan Stadium, Nashville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5425,7 +5608,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lucas Oil Stadium, Indianapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5440,7 +5624,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Caesars Superdome, New Orleans",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5455,7 +5640,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5470,7 +5656,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Allegiant Stadium, Las Vegas",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5485,7 +5672,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-15",
@@ -5500,7 +5688,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "AT&T Stadium, Arlington",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-16",
@@ -5515,7 +5704,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Paycor Stadium, Cincinnati",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-17",
@@ -5530,7 +5720,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "M&T Bank Stadium, Baltimore",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-20",
@@ -5545,7 +5736,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Reliant Stadium, Houston",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-21",
@@ -5554,7 +5746,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "USA",
         "venue": "Las Vegas Strip Street Circuit, Las Vegas (USA)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5570,7 +5763,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5586,7 +5779,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5602,7 +5795,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5618,7 +5811,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5634,7 +5827,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5650,7 +5843,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5666,7 +5859,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5682,7 +5875,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5698,7 +5891,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-11-22",
@@ -5714,7 +5907,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 12,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5723,7 +5916,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "USA",
         "venue": "Las Vegas Strip Street Circuit, Las Vegas (USA)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-11-22",
@@ -5738,7 +5932,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Highmark Stadium, Orchard Park",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5753,7 +5948,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5768,7 +5964,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "AT&T Stadium, Arlington",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5783,7 +5980,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Ford Field, Detroit",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5798,7 +5996,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Arrowhead Stadium, Kansas City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5813,7 +6012,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5828,7 +6028,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5843,7 +6044,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-22",
@@ -5858,7 +6060,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Empower Field at Mile High, Denver",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-11-22",
@@ -5873,7 +6076,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-23",
@@ -5888,7 +6092,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Estadio Banorte, Mexico City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -5903,7 +6108,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Northwest Stadium, Landover",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -5919,7 +6125,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -5935,7 +6141,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -5951,7 +6157,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -5967,7 +6173,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-11-24",
@@ -5983,7 +6189,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -5999,7 +6205,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -6015,7 +6221,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -6031,7 +6237,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-24",
@@ -6047,7 +6253,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-25",
@@ -6063,7 +6269,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-25",
@@ -6079,7 +6285,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-25",
@@ -6095,7 +6301,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-11-25",
@@ -6111,7 +6317,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-25",
@@ -6127,7 +6333,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-11-25",
@@ -6143,7 +6349,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-25",
@@ -6159,7 +6365,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-25",
@@ -6175,7 +6381,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-25",
@@ -6191,7 +6397,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 5,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-11-26",
@@ -6206,7 +6412,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-26",
@@ -6221,7 +6428,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Ford Field, Detroit",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-26",
@@ -6236,7 +6444,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "AT&T Stadium, Arlington",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-27",
@@ -6251,7 +6460,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Highmark Stadium, Orchard Park",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-27",
@@ -6266,7 +6476,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Acrisure Stadium, Pittsburgh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-11-28",
@@ -6275,7 +6486,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Qatar",
         "venue": "Losail International Circuit, Lusail (Qatar)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6291,7 +6503,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6307,7 +6519,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6323,7 +6535,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6339,7 +6551,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6355,7 +6567,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6371,7 +6583,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-11-29",
@@ -6387,7 +6599,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6403,7 +6615,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6419,7 +6631,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6435,7 +6647,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 13,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6444,7 +6656,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "Qatar",
         "venue": "Losail International Circuit, Lusail (Qatar)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-11-29",
@@ -6459,7 +6672,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Paycor Stadium, Cincinnati",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6474,7 +6688,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Huntington Bank Field, Cleveland",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6489,7 +6704,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lucas Oil Stadium, Indianapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6504,7 +6720,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Hard Rock Stadium, Miami Gardens",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6519,7 +6736,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6534,7 +6752,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Reliant Stadium, Houston",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6549,7 +6768,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "EverBank Stadium, Jacksonville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6564,7 +6784,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-29",
@@ -6579,7 +6800,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Levi's Stadium, Santa Clara",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-11-30",
@@ -6594,7 +6816,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-01",
@@ -6609,7 +6832,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-02",
@@ -6618,7 +6842,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Coppa Italia",
         "venue": "Stadio Olimpico, Roma",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-04",
@@ -6633,7 +6858,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-05",
@@ -6642,7 +6868,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "UAE",
         "venue": "Yas Marina Circuit, Abu Dhabi (UAE)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6658,7 +6885,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-12-06",
@@ -6674,7 +6901,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6690,7 +6917,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6706,7 +6933,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6722,7 +6949,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6738,7 +6965,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6754,7 +6981,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6770,7 +6997,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6786,7 +7013,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6802,7 +7029,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 14,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6811,7 +7038,8 @@ window.calendarData = [
         "sport": "f1",
         "loc": "UAE",
         "venue": "Yas Marina Circuit, Abu Dhabi (UAE)",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-12-06",
@@ -6826,7 +7054,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Mercedes-Benz Stadium, Atlanta",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6841,7 +7070,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6856,7 +7086,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Huntington Bank Field, Cleveland",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6871,7 +7102,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Nissan Stadium, Nashville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6886,7 +7118,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Caesars Superdome, New Orleans",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6901,7 +7134,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6916,7 +7150,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6931,7 +7166,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Empower Field at Mile High, Denver",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-12-06",
@@ -6946,7 +7182,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6961,7 +7198,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-06",
@@ -6976,7 +7214,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Gillette Stadium, Foxborough",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-07",
@@ -6991,7 +7230,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Acrisure Stadium, Pittsburgh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-08",
@@ -7006,7 +7246,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-08",
@@ -7022,7 +7263,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-08",
@@ -7038,7 +7279,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-08",
@@ -7054,7 +7295,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-08",
@@ -7070,7 +7311,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-08",
@@ -7086,7 +7327,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-08",
@@ -7102,7 +7343,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-12-08",
@@ -7118,7 +7359,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-12-08",
@@ -7134,7 +7375,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-08",
@@ -7150,7 +7391,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-09",
@@ -7166,7 +7407,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-09",
@@ -7182,7 +7423,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-09",
@@ -7198,7 +7439,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-09",
@@ -7214,7 +7455,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2026-12-09",
@@ -7230,7 +7471,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-09",
@@ -7246,7 +7487,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-09",
@@ -7262,7 +7503,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-09",
@@ -7278,7 +7519,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-09",
@@ -7294,7 +7535,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 6,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2026-12-11",
@@ -7309,7 +7550,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Gillette Stadium, Foxborough",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7325,7 +7567,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7341,7 +7583,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7357,7 +7599,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7373,7 +7615,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7389,7 +7631,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7405,7 +7647,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7421,7 +7663,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-12-13",
@@ -7437,7 +7679,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7453,7 +7695,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7469,7 +7711,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 15,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7484,7 +7726,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Huntington Bank Field, Cleveland",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7499,7 +7742,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Ford Field, Detroit",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7514,7 +7758,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Hard Rock Stadium, Miami Gardens",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7529,7 +7774,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-12-13",
@@ -7544,7 +7790,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7559,7 +7806,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Northwest Stadium, Landover",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7574,7 +7822,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7589,7 +7838,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "M&T Bank Stadium, Baltimore",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7604,7 +7854,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Allegiant Stadium, Las Vegas",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7619,7 +7870,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Paycor Stadium, Cincinnati",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7634,7 +7886,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Levi's Stadium, Santa Clara",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-13",
@@ -7649,7 +7902,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-14",
@@ -7664,7 +7918,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-15",
@@ -7679,7 +7934,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "EverBank Stadium, Jacksonville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-16",
@@ -7688,7 +7944,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Coppa Italia",
         "venue": "Stadio Olimpico, Roma",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-18",
@@ -7703,7 +7960,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7718,7 +7976,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7734,7 +7993,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7750,7 +8009,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7766,7 +8025,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7782,7 +8041,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7798,7 +8057,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7814,7 +8073,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7830,7 +8089,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7846,7 +8105,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7862,7 +8121,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2026-12-20",
@@ -7878,7 +8137,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 16,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7893,7 +8152,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Highmark Stadium, Orchard Park",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7908,7 +8168,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7923,7 +8184,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Nissan Stadium, Nashville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7938,7 +8200,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7953,7 +8216,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Acrisure Stadium, Pittsburgh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7968,7 +8232,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7983,7 +8248,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Northwest Stadium, Landover",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -7998,7 +8264,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -8013,7 +8280,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Reliant Stadium, Houston",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -8028,7 +8296,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-20",
@@ -8043,7 +8312,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Allegiant Stadium, Las Vegas",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-12-20",
@@ -8058,7 +8328,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-21",
@@ -8073,7 +8344,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-22",
@@ -8088,7 +8360,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Arrowhead Stadium, Kansas City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-25",
@@ -8103,7 +8376,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lincoln Financial Field, Philadelphia",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-25",
@@ -8118,7 +8392,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-25",
@@ -8133,7 +8408,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Empower Field at Mile High, Denver",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2026-12-26",
@@ -8148,7 +8424,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lumen Field, Seattle",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8163,7 +8440,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Mercedes-Benz Stadium, Atlanta",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8178,7 +8456,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lucas Oil Stadium, Indianapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8193,7 +8472,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8208,7 +8488,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Acrisure Stadium, Pittsburgh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8223,7 +8504,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Hard Rock Stadium, Miami Gardens",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8238,7 +8520,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Caesars Superdome, New Orleans",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8253,7 +8536,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8268,7 +8552,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "M&T Bank Stadium, Baltimore",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8283,7 +8568,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Allegiant Stadium, Las Vegas",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-27",
@@ -8298,7 +8584,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Arrowhead Stadium, Kansas City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-28",
@@ -8313,7 +8600,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "AT&T Stadium, Arlington",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2026-12-29",
@@ -8328,7 +8616,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Ford Field, Detroit",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-01",
@@ -8343,7 +8632,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Paycor Stadium, Cincinnati",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8359,7 +8649,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8375,7 +8665,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8391,7 +8681,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8407,7 +8697,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8423,7 +8713,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8439,7 +8729,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-01-03",
@@ -8455,7 +8745,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8471,7 +8761,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8487,7 +8777,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8503,7 +8793,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 17,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8518,7 +8808,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Gillette Stadium, Foxborough",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2027-01-03",
@@ -8533,7 +8824,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8548,7 +8840,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Raymond James Stadium, Tampa",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8563,7 +8856,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "EverBank Stadium, Jacksonville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8578,7 +8872,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Mercedes-Benz Stadium, Atlanta",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8593,7 +8888,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Huntington Bank Field, Cleveland",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8608,7 +8904,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "AT&T Stadium, Arlington",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8623,7 +8920,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Nissan Stadium, Nashville",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8638,7 +8936,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Hard Rock Stadium, Miami Gardens",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8653,7 +8952,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8668,7 +8968,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8683,7 +8984,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-03",
@@ -8698,7 +9000,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Soldier Field, Chicago",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-04",
@@ -8713,7 +9016,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Levi's Stadium, Santa Clara",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-05",
@@ -8728,7 +9032,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8744,7 +9049,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8760,7 +9065,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8776,7 +9081,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8792,7 +9097,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8808,7 +9113,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8824,7 +9129,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8840,7 +9145,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-01-06",
@@ -8856,7 +9161,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8872,7 +9177,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-06",
@@ -8888,7 +9193,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 18,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-07",
@@ -8897,7 +9202,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Supercoppa",
         "venue": "Al-Awwal Park, Riyadh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-08",
@@ -8906,7 +9212,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Supercoppa",
         "venue": "Al-Awwal Park, Riyadh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -8922,7 +9229,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -8938,7 +9245,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -8954,7 +9261,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-01-10",
@@ -8970,7 +9277,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -8986,7 +9293,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9002,7 +9309,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9018,7 +9325,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9034,7 +9341,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9050,7 +9357,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9066,7 +9373,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 19,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9081,7 +9388,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Highmark Stadium, Orchard Park",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9096,7 +9404,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Paycor Stadium, Cincinnati",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9111,7 +9420,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Empower Field at Mile High, Denver",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": true
     },
     {
         "date": "2027-01-10",
@@ -9126,7 +9436,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lambeau Field, Green Bay",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9141,7 +9452,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Lucas Oil Stadium, Indianapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9156,7 +9468,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Arrowhead Stadium, Kansas City",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9171,7 +9484,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9186,7 +9500,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "U.S. Bank Stadium, Minneapolis",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9201,7 +9516,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Gillette Stadium, Foxborough",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9216,7 +9532,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Caesars Superdome, New Orleans",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9231,7 +9548,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "MetLife Stadium, East Rutherford",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9246,7 +9564,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "State Farm Stadium, Glendale",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9261,7 +9580,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Northwest Stadium, Landover",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9276,7 +9596,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Bank of America Stadium, Charlotte",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9291,7 +9612,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "M&T Bank Stadium, Baltimore",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-10",
@@ -9306,7 +9628,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "Reliant Stadium, Houston",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-11",
@@ -9315,7 +9638,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Supercoppa",
         "venue": "Al-Awwal Park, Riyadh",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-16",
@@ -9330,7 +9654,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-16",
@@ -9345,7 +9670,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9361,7 +9687,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-01-17",
@@ -9377,7 +9703,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9393,7 +9719,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9409,7 +9735,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9425,7 +9751,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9441,7 +9767,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9457,7 +9783,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9473,7 +9799,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9489,7 +9815,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9505,7 +9831,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 20,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9520,7 +9846,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9535,7 +9862,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-17",
@@ -9550,7 +9878,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-18",
@@ -9565,7 +9894,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-19",
@@ -9581,7 +9911,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-19",
@@ -9597,7 +9927,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-19",
@@ -9613,7 +9943,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-19",
@@ -9629,7 +9959,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2027-01-19",
@@ -9645,7 +9975,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-19",
@@ -9661,7 +9991,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-19",
@@ -9677,7 +10007,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2027-01-19",
@@ -9693,7 +10023,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-19",
@@ -9709,7 +10039,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9725,7 +10055,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9741,7 +10071,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2027-01-20",
@@ -9750,7 +10080,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Coppa Italia",
         "venue": "Stadio Olimpico, Roma",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9766,7 +10097,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9782,7 +10113,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9798,7 +10129,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9814,7 +10145,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9830,7 +10161,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9846,7 +10177,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-20",
@@ -9862,7 +10193,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 7,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-23",
@@ -9877,7 +10208,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-23",
@@ -9892,7 +10224,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -9908,7 +10241,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-01-24",
@@ -9924,7 +10257,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -9940,7 +10273,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -9956,7 +10289,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -9972,7 +10305,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -9988,7 +10321,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -10004,7 +10337,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -10020,7 +10353,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -10036,7 +10369,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -10052,7 +10385,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 21,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -10067,7 +10400,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-24",
@@ -10082,7 +10416,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10098,7 +10433,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10114,7 +10449,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10130,7 +10465,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2027-01-27",
@@ -10146,7 +10481,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10162,7 +10497,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10178,7 +10513,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10194,7 +10529,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10210,7 +10545,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10226,7 +10561,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10242,7 +10577,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10258,7 +10593,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10274,7 +10609,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10290,7 +10625,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2027-01-27",
@@ -10306,7 +10641,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10322,7 +10657,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10338,7 +10673,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10354,7 +10689,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": false
     },
     {
         "date": "2027-01-27",
@@ -10370,7 +10705,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 8,
-        "stage": "LEAGUE_STAGE"
+        "isTop": true
     },
     {
         "date": "2027-01-31",
@@ -10386,7 +10721,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10402,7 +10737,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10418,7 +10753,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-01-31",
@@ -10434,7 +10769,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10450,7 +10785,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10466,7 +10801,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10482,7 +10817,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10498,7 +10833,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10514,7 +10849,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10530,7 +10865,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 22,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10545,7 +10880,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-01-31",
@@ -10560,7 +10896,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-02-03",
@@ -10569,7 +10906,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Coppa Italia",
         "venue": "Stadio Olimpico, Roma",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10585,7 +10923,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10601,7 +10939,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10617,7 +10955,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10633,7 +10971,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10649,7 +10987,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10665,7 +11003,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-02-07",
@@ -10681,7 +11019,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10697,7 +11035,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10713,7 +11051,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-07",
@@ -10729,7 +11067,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 23,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10745,7 +11083,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10761,7 +11099,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10777,7 +11115,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-02-14",
@@ -10793,7 +11131,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10809,7 +11147,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10825,7 +11163,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10841,7 +11179,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10857,7 +11195,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10873,7 +11211,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-14",
@@ -10889,7 +11227,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 24,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-15",
@@ -10904,7 +11242,8 @@ window.calendarData = [
         "homeScore": null,
         "awayScore": null,
         "venue": "SoFi Stadium, Inglewood",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -10920,7 +11259,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-02-21",
@@ -10936,7 +11275,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -10952,7 +11291,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -10968,7 +11307,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -10984,7 +11323,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -11000,7 +11339,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -11016,7 +11355,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -11032,7 +11371,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -11048,7 +11387,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-21",
@@ -11064,7 +11403,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 25,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11080,7 +11419,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11096,7 +11435,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11112,7 +11451,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11128,7 +11467,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11144,7 +11483,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11160,7 +11499,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11176,7 +11515,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-02-28",
@@ -11192,7 +11531,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11208,7 +11547,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-02-28",
@@ -11224,7 +11563,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 26,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-03",
@@ -11233,7 +11572,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Coppa Italia",
         "venue": "Stadio Olimpico, Roma",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11249,7 +11589,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11265,7 +11605,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-03-07",
@@ -11281,7 +11621,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11297,7 +11637,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11313,7 +11653,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11329,7 +11669,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11345,7 +11685,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11361,7 +11701,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11377,7 +11717,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-07",
@@ -11393,7 +11733,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 27,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11409,7 +11749,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11425,7 +11765,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11441,7 +11781,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11457,7 +11797,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11473,7 +11813,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11489,7 +11829,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-03-14",
@@ -11505,7 +11845,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11521,7 +11861,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11537,7 +11877,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-14",
@@ -11553,7 +11893,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 28,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11569,7 +11909,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11585,7 +11925,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-03-21",
@@ -11601,7 +11941,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11617,7 +11957,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11633,7 +11973,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11649,7 +11989,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11665,7 +12005,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11681,7 +12021,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11697,7 +12037,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-03-21",
@@ -11713,7 +12053,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 29,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11729,7 +12069,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11745,7 +12085,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11761,7 +12101,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11777,7 +12117,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11793,7 +12133,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11809,7 +12149,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11825,7 +12165,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11841,7 +12181,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-04-04",
@@ -11857,7 +12197,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-04",
@@ -11873,7 +12213,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 30,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -11889,7 +12229,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -11905,7 +12245,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -11921,7 +12261,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -11937,7 +12277,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-04-11",
@@ -11953,7 +12293,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -11969,7 +12309,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -11985,7 +12325,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -12001,7 +12341,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -12017,7 +12357,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-11",
@@ -12033,7 +12373,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 31,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12049,7 +12389,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12065,7 +12405,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12081,7 +12421,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12097,7 +12437,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12113,7 +12453,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12129,7 +12469,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12145,7 +12485,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12161,7 +12501,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12177,7 +12517,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-18",
@@ -12193,7 +12533,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 32,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-04-21",
@@ -12202,7 +12542,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Coppa Italia",
         "venue": "Stadio Olimpico, Roma",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12218,7 +12559,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12234,7 +12575,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12250,7 +12591,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12266,7 +12607,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12282,7 +12623,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12298,7 +12639,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12314,7 +12655,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12330,7 +12671,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-04-25",
@@ -12346,7 +12687,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-04-25",
@@ -12362,7 +12703,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 33,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12378,7 +12719,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12394,7 +12735,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-05-02",
@@ -12410,7 +12751,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12426,7 +12767,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12442,7 +12783,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12458,7 +12799,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12474,7 +12815,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12490,7 +12831,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12506,7 +12847,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-02",
@@ -12522,7 +12863,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 34,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12538,7 +12879,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12554,7 +12895,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12570,7 +12911,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12586,7 +12927,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12602,7 +12943,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12618,7 +12959,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12634,7 +12975,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12650,7 +12991,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-05-09",
@@ -12666,7 +13007,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-09",
@@ -12682,7 +13023,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 35,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12698,7 +13039,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12714,7 +13055,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12730,7 +13071,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12746,7 +13087,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12762,7 +13103,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12778,7 +13119,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12794,7 +13135,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12810,7 +13151,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12826,7 +13167,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-16",
@@ -12842,7 +13183,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 36,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-05-19",
@@ -12851,7 +13192,8 @@ window.calendarData = [
         "sport": "seriea",
         "loc": "Coppa Italia",
         "venue": "Stadio Olimpico, Roma",
-        "status": "SCHEDULED"
+        "status": "SCHEDULED",
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -12867,7 +13209,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -12883,7 +13225,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -12899,7 +13241,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-05-23",
@@ -12915,7 +13257,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -12931,7 +13273,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -12947,7 +13289,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -12963,7 +13305,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -12979,7 +13321,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -12995,7 +13337,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-23",
@@ -13011,7 +13353,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 37,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13027,7 +13369,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13043,7 +13385,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13059,7 +13401,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": true
     },
     {
         "date": "2027-05-30",
@@ -13075,7 +13417,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13091,7 +13433,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13107,7 +13449,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13123,7 +13465,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13139,7 +13481,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13155,7 +13497,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     },
     {
         "date": "2027-05-30",
@@ -13171,7 +13513,7 @@ window.calendarData = [
         "awayScore": null,
         "status": "SCHEDULED",
         "matchday": 38,
-        "stage": "REGULAR_SEASON"
+        "isTop": false
     }
 ];
 
@@ -13401,1299 +13743,399 @@ window.standingsData = {
     "champions": [
         {
             "pos": 1,
-            "name": "Liverpool",
-            "crest": "https://crests.football-data.org/64.png",
-            "played": 8,
-            "won": 7,
+            "name": "Arsenal",
+            "crest": "https://crests.football-data.org/57.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 1,
-            "points": 21,
-            "diff": 12,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 2,
-            "name": "Barça",
-            "crest": "https://crests.football-data.org/81.png",
-            "played": 8,
-            "won": 6,
-            "draw": 1,
-            "lost": 1,
-            "points": 19,
-            "diff": 15,
-            "group": null
+            "name": "Aston Villa",
+            "crest": "https://crests.football-data.org/58.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 3,
-            "name": "Arsenal",
-            "crest": "https://crests.football-data.org/57.png",
-            "played": 8,
-            "won": 6,
-            "draw": 1,
-            "lost": 1,
-            "points": 19,
-            "diff": 13,
-            "group": null
+            "name": "Atleti",
+            "crest": "https://crests.football-data.org/78.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 4,
-            "name": "Inter",
-            "crest": "https://crests.football-data.org/108.png",
-            "played": 8,
-            "won": 6,
-            "draw": 1,
-            "lost": 1,
-            "points": 19,
-            "diff": 10,
-            "group": null
+            "name": "Barça",
+            "crest": "https://crests.football-data.org/81.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 5,
-            "name": "Atleti",
-            "crest": "https://crests.football-data.org/78.png",
-            "played": 8,
-            "won": 6,
-            "draw": 0,
-            "lost": 2,
-            "points": 18,
-            "diff": 8,
-            "group": null
-        },
-        {
-            "pos": 6,
-            "name": "Leverkusen",
-            "crest": "https://crests.football-data.org/3.png",
-            "played": 8,
-            "won": 5,
-            "draw": 1,
-            "lost": 2,
-            "points": 16,
-            "diff": 8,
-            "group": null
-        },
-        {
-            "pos": 7,
-            "name": "Lille",
-            "crest": "https://crests.football-data.org/521.png",
-            "played": 8,
-            "won": 5,
-            "draw": 1,
-            "lost": 2,
-            "points": 16,
-            "diff": 7,
-            "group": null
-        },
-        {
-            "pos": 8,
-            "name": "Aston Villa",
-            "crest": "https://crests.football-data.org/58.png",
-            "played": 8,
-            "won": 5,
-            "draw": 1,
-            "lost": 2,
-            "points": 16,
-            "diff": 7,
-            "group": null
-        },
-        {
-            "pos": 9,
-            "name": "Atalanta",
-            "crest": "https://crests.football-data.org/102.png",
-            "played": 8,
-            "won": 4,
-            "draw": 3,
-            "lost": 1,
-            "points": 15,
-            "diff": 14,
-            "group": null
-        },
-        {
-            "pos": 10,
-            "name": "Dortmund",
-            "crest": "https://crests.football-data.org/4.png",
-            "played": 8,
-            "won": 5,
-            "draw": 0,
-            "lost": 3,
-            "points": 15,
-            "diff": 10,
-            "group": null
-        },
-        {
-            "pos": 11,
             "name": "Bayern",
             "crest": "https://crests.football-data.org/5.png",
-            "played": 8,
-            "won": 5,
-            "draw": 0,
-            "lost": 3,
-            "points": 15,
-            "diff": 8,
-            "group": null
-        },
-        {
-            "pos": 12,
-            "name": "Real Madrid",
-            "crest": "https://crests.football-data.org/86.png",
-            "played": 8,
-            "won": 5,
-            "draw": 0,
-            "lost": 3,
-            "points": 15,
-            "diff": 8,
-            "group": null
-        },
-        {
-            "pos": 13,
-            "name": "Milan",
-            "crest": "https://crests.football-data.org/98.png",
-            "played": 8,
-            "won": 5,
-            "draw": 0,
-            "lost": 3,
-            "points": 15,
-            "diff": 3,
-            "group": null
-        },
-        {
-            "pos": 14,
-            "name": "PSV",
-            "crest": "https://crests.football-data.org/674.png",
-            "played": 8,
-            "won": 4,
-            "draw": 2,
-            "lost": 2,
-            "points": 14,
-            "diff": 4,
-            "group": null
-        },
-        {
-            "pos": 15,
-            "name": "PSG",
-            "crest": "https://crests.football-data.org/524.png",
-            "played": 8,
-            "won": 4,
-            "draw": 1,
-            "lost": 3,
-            "points": 13,
-            "diff": 5,
-            "group": null
-        },
-        {
-            "pos": 16,
-            "name": "SL Benfica",
-            "crest": "https://crests.football-data.org/1903.png",
-            "played": 8,
-            "won": 4,
-            "draw": 1,
-            "lost": 3,
-            "points": 13,
-            "diff": 4,
-            "group": null
-        },
-        {
-            "pos": 17,
-            "name": "Monaco",
-            "crest": "https://crests.football-data.org/548.png",
-            "played": 8,
-            "won": 4,
-            "draw": 1,
-            "lost": 3,
-            "points": 13,
-            "diff": 0,
-            "group": null
-        },
-        {
-            "pos": 18,
-            "name": "Brest",
-            "crest": "https://crests.football-data.org/512.png",
-            "played": 8,
-            "won": 4,
-            "draw": 1,
-            "lost": 3,
-            "points": 13,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 19,
-            "name": "Feyenoord",
-            "crest": "https://crests.football-data.org/675.png",
-            "played": 8,
-            "won": 4,
-            "draw": 1,
-            "lost": 3,
-            "points": 13,
-            "diff": -3,
-            "group": null
-        },
-        {
-            "pos": 20,
-            "name": "Juventus",
-            "crest": "https://crests.football-data.org/109.png",
-            "played": 8,
-            "won": 3,
-            "draw": 3,
-            "lost": 2,
-            "points": 12,
-            "diff": 2,
-            "group": null
-        },
-        {
-            "pos": 21,
-            "name": "Celtic",
-            "crest": "https://crests.football-data.org/732.png",
-            "played": 8,
-            "won": 3,
-            "draw": 3,
-            "lost": 2,
-            "points": 12,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 22,
-            "name": "Man City",
-            "crest": "https://crests.football-data.org/65.png",
-            "played": 8,
-            "won": 3,
-            "draw": 2,
-            "lost": 3,
-            "points": 11,
-            "diff": 4,
-            "group": null
-        },
-        {
-            "pos": 23,
-            "name": "Sporting CP",
-            "crest": "https://crests.football-data.org/498.png",
-            "played": 8,
-            "won": 3,
-            "draw": 2,
-            "lost": 3,
-            "points": 11,
-            "diff": 1,
-            "group": null
-        },
-        {
-            "pos": 24,
-            "name": "Club Brugge",
-            "crest": "https://crests.football-data.org/851.png",
-            "played": 8,
-            "won": 3,
-            "draw": 2,
-            "lost": 3,
-            "points": 11,
-            "diff": -4,
-            "group": null
-        },
-        {
-            "pos": 25,
-            "name": "Dinamo Zagreb",
-            "crest": "https://crests.football-data.org/755.png",
-            "played": 8,
-            "won": 3,
-            "draw": 2,
-            "lost": 3,
-            "points": 11,
-            "diff": -7,
-            "group": null
-        },
-        {
-            "pos": 26,
-            "name": "Stuttgart",
-            "crest": "https://crests.football-data.org/10.png",
-            "played": 8,
-            "won": 3,
-            "draw": 1,
-            "lost": 4,
-            "points": 10,
-            "diff": -4,
-            "group": null
-        },
-        {
-            "pos": 27,
-            "name": "Shaktar",
-            "crest": "https://crests.football-data.org/1887.png",
-            "played": 8,
-            "won": 2,
-            "draw": 1,
-            "lost": 5,
-            "points": 7,
-            "diff": -8,
-            "group": null
-        },
-        {
-            "pos": 28,
-            "name": "Bologna",
-            "crest": "https://crests.football-data.org/103.png",
-            "played": 8,
-            "won": 1,
-            "draw": 3,
-            "lost": 4,
-            "points": 6,
-            "diff": -5,
-            "group": null
-        },
-        {
-            "pos": 29,
-            "name": "Crvena Zvedza",
-            "crest": "https://crests.football-data.org/7283.png",
-            "played": 8,
-            "won": 2,
-            "draw": 0,
-            "lost": 6,
-            "points": 6,
-            "diff": -9,
-            "group": null
-        },
-        {
-            "pos": 30,
-            "name": "Sturm Graz",
-            "crest": "https://crests.football-data.org/2021.png",
-            "played": 8,
-            "won": 2,
-            "draw": 0,
-            "lost": 6,
-            "points": 6,
-            "diff": -9,
-            "group": null
-        },
-        {
-            "pos": 31,
-            "name": "Sparta Praha",
-            "crest": "https://crests.football-data.org/907.png",
-            "played": 8,
-            "won": 1,
-            "draw": 1,
-            "lost": 6,
-            "points": 4,
-            "diff": -14,
-            "group": null
-        },
-        {
-            "pos": 32,
-            "name": "RB Leipzig",
-            "crest": "https://crests.football-data.org/721.png",
-            "played": 8,
-            "won": 1,
-            "draw": 0,
-            "lost": 7,
-            "points": 3,
-            "diff": -7,
-            "group": null
-        },
-        {
-            "pos": 33,
-            "name": "Girona",
-            "crest": "https://crests.football-data.org/298.png",
-            "played": 8,
-            "won": 1,
-            "draw": 0,
-            "lost": 7,
-            "points": 3,
-            "diff": -8,
-            "group": null
-        },
-        {
-            "pos": 34,
-            "name": "RB Salzburg",
-            "crest": "https://crests.football-data.org/1877.png",
-            "played": 8,
-            "won": 1,
-            "draw": 0,
-            "lost": 7,
-            "points": 3,
-            "diff": -22,
-            "group": null
-        },
-        {
-            "pos": 35,
-            "name": "Sl. Bratislava",
-            "crest": "https://crests.football-data.org/7509.png",
-            "played": 8,
+            "played": 0,
             "won": 0,
             "draw": 0,
-            "lost": 8,
+            "lost": 0,
             "points": 0,
-            "diff": -20,
-            "group": null
-        },
-        {
-            "pos": 36,
-            "name": "Young Boys",
-            "crest": "https://crests.football-data.org/1871.png",
-            "played": 8,
-            "won": 0,
-            "draw": 0,
-            "lost": 8,
-            "points": 0,
-            "diff": -21,
-            "group": null
-        },
-        {
-            "pos": 1,
-            "name": "Bayern",
-            "crest": "https://crests.football-data.org/5.png",
-            "played": 4,
-            "won": 4,
-            "draw": 0,
-            "lost": 0,
-            "points": 12,
-            "diff": 11,
-            "group": null
-        },
-        {
-            "pos": 2,
-            "name": "Liverpool",
-            "crest": "https://crests.football-data.org/64.png",
-            "played": 4,
-            "won": 4,
-            "draw": 0,
-            "lost": 0,
-            "points": 12,
-            "diff": 9,
-            "group": null
-        },
-        {
-            "pos": 3,
-            "name": "Inter",
-            "crest": "https://crests.football-data.org/108.png",
-            "played": 4,
-            "won": 4,
-            "draw": 0,
-            "lost": 0,
-            "points": 12,
-            "diff": 9,
-            "group": null
-        },
-        {
-            "pos": 4,
-            "name": "Leverkusen",
-            "crest": "https://crests.football-data.org/3.png",
-            "played": 4,
-            "won": 4,
-            "draw": 0,
-            "lost": 0,
-            "points": 12,
-            "diff": 9,
-            "group": null
-        },
-        {
-            "pos": 5,
-            "name": "Arsenal",
-            "crest": "https://crests.football-data.org/57.png",
-            "played": 4,
-            "won": 4,
-            "draw": 0,
-            "lost": 0,
-            "points": 12,
-            "diff": 9,
-            "group": null
+            "diff": 0
         },
         {
             "pos": 6,
-            "name": "Barça",
-            "crest": "https://crests.football-data.org/81.png",
-            "played": 4,
-            "won": 3,
-            "draw": 1,
+            "name": "Bodø/Glimt",
+            "crest": "https://crests.football-data.org/5721.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
             "lost": 0,
-            "points": 10,
-            "diff": 11,
-            "group": null
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 7,
-            "name": "Lille",
-            "crest": "https://crests.football-data.org/521.png",
-            "played": 4,
-            "won": 3,
-            "draw": 1,
-            "lost": 0,
-            "points": 10,
-            "diff": 7,
-            "group": null
-        },
-        {
-            "pos": 8,
-            "name": "Celtic",
-            "crest": "https://crests.football-data.org/732.png",
-            "played": 4,
-            "won": 3,
-            "draw": 1,
-            "lost": 0,
-            "points": 10,
-            "diff": 7,
-            "group": null
-        },
-        {
-            "pos": 9,
-            "name": "PSV",
-            "crest": "https://crests.football-data.org/674.png",
-            "played": 4,
-            "won": 3,
-            "draw": 1,
-            "lost": 0,
-            "points": 10,
-            "diff": 6,
-            "group": null
-        },
-        {
-            "pos": 10,
-            "name": "Aston Villa",
-            "crest": "https://crests.football-data.org/58.png",
-            "played": 4,
-            "won": 3,
-            "draw": 1,
-            "lost": 0,
-            "points": 10,
-            "diff": 5,
-            "group": null
-        },
-        {
-            "pos": 11,
-            "name": "Dortmund",
-            "crest": "https://crests.football-data.org/4.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 8,
-            "group": null
-        },
-        {
-            "pos": 12,
-            "name": "Real Madrid",
-            "crest": "https://crests.football-data.org/86.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 7,
-            "group": null
-        },
-        {
-            "pos": 13,
-            "name": "Monaco",
-            "crest": "https://crests.football-data.org/548.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 5,
-            "group": null
-        },
-        {
-            "pos": 14,
-            "name": "Atleti",
-            "crest": "https://crests.football-data.org/78.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 2,
-            "group": null
-        },
-        {
-            "pos": 15,
-            "name": "Milan",
-            "crest": "https://crests.football-data.org/98.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 2,
-            "group": null
-        },
-        {
-            "pos": 16,
-            "name": "Man City",
-            "crest": "https://crests.football-data.org/65.png",
-            "played": 4,
-            "won": 2,
-            "draw": 2,
-            "lost": 0,
-            "points": 8,
-            "diff": 7,
-            "group": null
-        },
-        {
-            "pos": 17,
-            "name": "PSG",
-            "crest": "https://crests.football-data.org/524.png",
-            "played": 4,
-            "won": 2,
-            "draw": 1,
-            "lost": 1,
-            "points": 7,
-            "diff": 2,
-            "group": null
-        },
-        {
-            "pos": 18,
-            "name": "Sporting CP",
-            "crest": "https://crests.football-data.org/498.png",
-            "played": 4,
-            "won": 2,
-            "draw": 1,
-            "lost": 1,
-            "points": 7,
-            "diff": 1,
-            "group": null
-        },
-        {
-            "pos": 19,
-            "name": "Brest",
-            "crest": "https://crests.football-data.org/512.png",
-            "played": 4,
-            "won": 2,
-            "draw": 1,
-            "lost": 1,
-            "points": 7,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 20,
             "name": "Club Brugge",
             "crest": "https://crests.football-data.org/851.png",
-            "played": 4,
-            "won": 2,
-            "draw": 1,
-            "lost": 1,
-            "points": 7,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 21,
-            "name": "Juventus",
-            "crest": "https://crests.football-data.org/109.png",
-            "played": 4,
-            "won": 2,
-            "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": 1,
-            "group": null
-        },
-        {
-            "pos": 22,
-            "name": "Feyenoord",
-            "crest": "https://crests.football-data.org/675.png",
-            "played": 4,
-            "won": 2,
-            "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 23,
-            "name": "Sturm Graz",
-            "crest": "https://crests.football-data.org/2021.png",
-            "played": 4,
-            "won": 2,
-            "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 24,
-            "name": "Shaktar",
-            "crest": "https://crests.football-data.org/1887.png",
-            "played": 4,
-            "won": 2,
-            "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": -4,
-            "group": null
-        },
-        {
-            "pos": 25,
-            "name": "Atalanta",
-            "crest": "https://crests.football-data.org/102.png",
-            "played": 4,
-            "won": 1,
-            "draw": 2,
-            "lost": 1,
-            "points": 5,
-            "diff": 4,
-            "group": null
-        },
-        {
-            "pos": 26,
-            "name": "Dinamo Zagreb",
-            "crest": "https://crests.football-data.org/755.png",
-            "played": 4,
-            "won": 1,
-            "draw": 2,
-            "lost": 1,
-            "points": 5,
-            "diff": -2,
-            "group": null
-        },
-        {
-            "pos": 27,
-            "name": "SL Benfica",
-            "crest": "https://crests.football-data.org/1903.png",
-            "played": 4,
-            "won": 1,
-            "draw": 1,
-            "lost": 2,
-            "points": 4,
-            "diff": 1,
-            "group": null
-        },
-        {
-            "pos": 28,
-            "name": "Stuttgart",
-            "crest": "https://crests.football-data.org/10.png",
-            "played": 4,
-            "won": 1,
-            "draw": 1,
-            "lost": 2,
-            "points": 4,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 29,
-            "name": "Bologna",
-            "crest": "https://crests.football-data.org/103.png",
-            "played": 4,
-            "won": 1,
-            "draw": 1,
-            "lost": 2,
-            "points": 4,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 30,
-            "name": "Crvena Zvedza",
-            "crest": "https://crests.football-data.org/7283.png",
-            "played": 4,
-            "won": 1,
-            "draw": 0,
-            "lost": 3,
-            "points": 3,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 31,
-            "name": "Girona",
-            "crest": "https://crests.football-data.org/298.png",
-            "played": 4,
-            "won": 1,
-            "draw": 0,
-            "lost": 3,
-            "points": 3,
-            "diff": -1,
-            "group": null
-        },
-        {
-            "pos": 32,
-            "name": "RB Leipzig",
-            "crest": "https://crests.football-data.org/721.png",
-            "played": 4,
-            "won": 1,
-            "draw": 0,
-            "lost": 3,
-            "points": 3,
-            "diff": -2,
-            "group": null
-        },
-        {
-            "pos": 33,
-            "name": "Sparta Praha",
-            "crest": "https://crests.football-data.org/907.png",
-            "played": 4,
-            "won": 1,
-            "draw": 0,
-            "lost": 3,
-            "points": 3,
-            "diff": -5,
-            "group": null
-        },
-        {
-            "pos": 34,
-            "name": "Sl. Bratislava",
-            "crest": "https://crests.football-data.org/7509.png",
-            "played": 4,
+            "played": 0,
             "won": 0,
             "draw": 0,
-            "lost": 4,
-            "points": 0,
-            "diff": -10,
-            "group": null
-        },
-        {
-            "pos": 35,
-            "name": "Young Boys",
-            "crest": "https://crests.football-data.org/1871.png",
-            "played": 4,
-            "won": 0,
-            "draw": 0,
-            "lost": 4,
-            "points": 0,
-            "diff": -10,
-            "group": null
-        },
-        {
-            "pos": 36,
-            "name": "RB Salzburg",
-            "crest": "https://crests.football-data.org/1877.png",
-            "played": 4,
-            "won": 0,
-            "draw": 0,
-            "lost": 4,
-            "points": 0,
-            "diff": -12,
-            "group": null
-        },
-        {
-            "pos": 1,
-            "name": "Atalanta",
-            "crest": "https://crests.football-data.org/102.png",
-            "played": 4,
-            "won": 3,
-            "draw": 1,
             "lost": 0,
-            "points": 10,
-            "diff": 10,
-            "group": null
-        },
-        {
-            "pos": 2,
-            "name": "Atleti",
-            "crest": "https://crests.football-data.org/78.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 6,
-            "group": null
-        },
-        {
-            "pos": 3,
-            "name": "Barça",
-            "crest": "https://crests.football-data.org/81.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 4,
-            "group": null
-        },
-        {
-            "pos": 4,
-            "name": "Liverpool",
-            "crest": "https://crests.football-data.org/64.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 3,
-            "group": null
-        },
-        {
-            "pos": 5,
-            "name": "SL Benfica",
-            "crest": "https://crests.football-data.org/1903.png",
-            "played": 4,
-            "won": 3,
-            "draw": 0,
-            "lost": 1,
-            "points": 9,
-            "diff": 3,
-            "group": null
-        },
-        {
-            "pos": 6,
-            "name": "Arsenal",
-            "crest": "https://crests.football-data.org/57.png",
-            "played": 4,
-            "won": 2,
-            "draw": 1,
-            "lost": 1,
-            "points": 7,
-            "diff": 4,
-            "group": null
-        },
-        {
-            "pos": 7,
-            "name": "Inter",
-            "crest": "https://crests.football-data.org/108.png",
-            "played": 4,
-            "won": 2,
-            "draw": 1,
-            "lost": 1,
-            "points": 7,
-            "diff": 1,
-            "group": null
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 8,
-            "name": "Feyenoord",
-            "crest": "https://crests.football-data.org/675.png",
-            "played": 4,
-            "won": 2,
-            "draw": 1,
-            "lost": 1,
-            "points": 7,
-            "diff": -2,
-            "group": null
+            "name": "Como 1907",
+            "crest": "https://crests.football-data.org/7397.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 9,
-            "name": "PSG",
-            "crest": "https://crests.football-data.org/524.png",
-            "played": 4,
-            "won": 2,
+            "name": "Dortmund",
+            "crest": "https://crests.football-data.org/4.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": 3,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 10,
-            "name": "Dortmund",
-            "crest": "https://crests.football-data.org/4.png",
-            "played": 4,
-            "won": 2,
+            "name": "Fenerbahçe",
+            "crest": "https://crests.football-data.org/613.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": 2,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 11,
-            "name": "Aston Villa",
-            "crest": "https://crests.football-data.org/58.png",
-            "played": 4,
-            "won": 2,
+            "name": "Feyenoord",
+            "crest": "https://crests.football-data.org/675.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": 2,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 12,
-            "name": "Milan",
-            "crest": "https://crests.football-data.org/98.png",
-            "played": 4,
-            "won": 2,
+            "name": "Galatasaray",
+            "crest": "https://crests.football-data.org/610.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": 1,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 13,
-            "name": "Real Madrid",
-            "crest": "https://crests.football-data.org/86.png",
-            "played": 4,
-            "won": 2,
+            "name": "Inter",
+            "crest": "https://crests.football-data.org/108.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": 1,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 14,
-            "name": "Juventus",
-            "crest": "https://crests.football-data.org/109.png",
-            "played": 4,
-            "won": 1,
-            "draw": 3,
+            "name": "LASK",
+            "crest": "https://crests.football-data.org/2016.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
             "lost": 0,
-            "points": 6,
-            "diff": 1,
-            "group": null
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 15,
             "name": "Lille",
             "crest": "https://crests.football-data.org/521.png",
-            "played": 4,
-            "won": 2,
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": 0,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 16,
-            "name": "Brest",
-            "crest": "https://crests.football-data.org/512.png",
-            "played": 4,
-            "won": 2,
+            "name": "Liverpool",
+            "crest": "https://crests.football-data.org/64.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": 0,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 17,
-            "name": "Stuttgart",
-            "crest": "https://crests.football-data.org/10.png",
-            "played": 4,
-            "won": 2,
+            "name": "Man City",
+            "crest": "https://crests.football-data.org/65.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": -3,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 18,
-            "name": "Dinamo Zagreb",
-            "crest": "https://crests.football-data.org/755.png",
-            "played": 4,
-            "won": 2,
+            "name": "Man United",
+            "crest": "https://crests.football-data.org/66.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 2,
-            "points": 6,
-            "diff": -5,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 19,
-            "name": "Sporting CP",
-            "crest": "https://crests.football-data.org/498.png",
-            "played": 4,
-            "won": 1,
-            "draw": 1,
-            "lost": 2,
-            "points": 4,
-            "diff": 0,
-            "group": null
+            "name": "Napoli",
+            "crest": "https://crests.football-data.org/113.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 20,
-            "name": "Leverkusen",
-            "crest": "https://crests.football-data.org/3.png",
-            "played": 4,
-            "won": 1,
-            "draw": 1,
-            "lost": 2,
-            "points": 4,
-            "diff": -1,
-            "group": null
+            "name": "PAE AEK",
+            "crest": "https://crests.football-data.org/1899.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 21,
-            "name": "PSV",
-            "crest": "https://crests.football-data.org/674.png",
-            "played": 4,
-            "won": 1,
-            "draw": 1,
-            "lost": 2,
-            "points": 4,
-            "diff": -2,
-            "group": null
+            "name": "PSG",
+            "crest": "https://crests.football-data.org/524.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 22,
-            "name": "Club Brugge",
-            "crest": "https://crests.football-data.org/851.png",
-            "played": 4,
-            "won": 1,
-            "draw": 1,
-            "lost": 2,
-            "points": 4,
-            "diff": -3,
-            "group": null
+            "name": "PSV",
+            "crest": "https://crests.football-data.org/674.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 23,
-            "name": "Monaco",
-            "crest": "https://crests.football-data.org/548.png",
-            "played": 4,
-            "won": 1,
-            "draw": 1,
-            "lost": 2,
-            "points": 4,
-            "diff": -5,
-            "group": null
+            "name": "Porto",
+            "crest": "https://crests.football-data.org/503.png",
+            "played": 0,
+            "won": 0,
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 24,
-            "name": "Man City",
-            "crest": "https://crests.football-data.org/65.png",
-            "played": 4,
-            "won": 1,
+            "name": "RB Leipzig",
+            "crest": "https://crests.football-data.org/721.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 3,
-            "points": 3,
-            "diff": -3,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 25,
-            "name": "Bayern",
-            "crest": "https://crests.football-data.org/5.png",
-            "played": 4,
-            "won": 1,
+            "name": "RC Lens",
+            "crest": "https://crests.football-data.org/546.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 3,
-            "points": 3,
-            "diff": -3,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 26,
-            "name": "Crvena Zvedza",
-            "crest": "https://crests.football-data.org/7283.png",
-            "played": 4,
-            "won": 1,
+            "name": "Real Betis",
+            "crest": "https://crests.football-data.org/90.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 3,
-            "points": 3,
-            "diff": -8,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 27,
-            "name": "RB Salzburg",
-            "crest": "https://crests.football-data.org/1877.png",
-            "played": 4,
-            "won": 1,
+            "name": "Real Madrid",
+            "crest": "https://crests.football-data.org/86.png",
+            "played": 0,
+            "won": 0,
             "draw": 0,
-            "lost": 3,
-            "points": 3,
-            "diff": -10,
-            "group": null
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 28,
-            "name": "Bologna",
-            "crest": "https://crests.football-data.org/103.png",
-            "played": 4,
+            "name": "Roma",
+            "crest": "https://crests.football-data.org/100.png",
+            "played": 0,
             "won": 0,
-            "draw": 2,
-            "lost": 2,
-            "points": 2,
-            "diff": -4,
-            "group": null
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 29,
-            "name": "Celtic",
-            "crest": "https://crests.football-data.org/732.png",
-            "played": 4,
+            "name": "Sabah FK",
+            "crest": "https://crests.football-data.org/10233.png",
+            "played": 0,
             "won": 0,
-            "draw": 2,
-            "lost": 2,
-            "points": 2,
-            "diff": -8,
-            "group": null
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 30,
             "name": "Shaktar",
             "crest": "https://crests.football-data.org/1887.png",
-            "played": 4,
+            "played": 0,
             "won": 0,
-            "draw": 1,
-            "lost": 3,
-            "points": 1,
-            "diff": -4,
-            "group": null
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 31,
-            "name": "Sparta Praha",
-            "crest": "https://crests.football-data.org/907.png",
-            "played": 4,
+            "name": "Sl. Bratislava",
+            "crest": "https://crests.football-data.org/7509.png",
+            "played": 0,
             "won": 0,
-            "draw": 1,
-            "lost": 3,
-            "points": 1,
-            "diff": -9,
-            "group": null
+            "draw": 0,
+            "lost": 0,
+            "points": 0,
+            "diff": 0
         },
         {
             "pos": 32,
-            "name": "RB Leipzig",
-            "crest": "https://crests.football-data.org/721.png",
-            "played": 4,
+            "name": "Slavia Praha",
+            "crest": "https://crests.football-data.org/930.png",
+            "played": 0,
             "won": 0,
             "draw": 0,
-            "lost": 4,
+            "lost": 0,
             "points": 0,
-            "diff": -5,
-            "group": null
+            "diff": 0
         },
         {
             "pos": 33,
-            "name": "Girona",
-            "crest": "https://crests.football-data.org/298.png",
-            "played": 4,
+            "name": "Sporting CP",
+            "crest": "https://crests.football-data.org/498.png",
+            "played": 0,
             "won": 0,
             "draw": 0,
-            "lost": 4,
+            "lost": 0,
             "points": 0,
-            "diff": -7,
-            "group": null
+            "diff": 0
         },
         {
             "pos": 34,
-            "name": "Sturm Graz",
-            "crest": "https://crests.football-data.org/2021.png",
-            "played": 4,
+            "name": "Stuttgart",
+            "crest": "https://crests.football-data.org/10.png",
+            "played": 0,
             "won": 0,
             "draw": 0,
-            "lost": 4,
+            "lost": 0,
             "points": 0,
-            "diff": -8,
-            "group": null
+            "diff": 0
         },
         {
             "pos": 35,
-            "name": "Sl. Bratislava",
-            "crest": "https://crests.football-data.org/7509.png",
-            "played": 4,
+            "name": "Viking",
+            "crest": "https://crests.football-data.org/5720.png",
+            "played": 0,
             "won": 0,
             "draw": 0,
-            "lost": 4,
+            "lost": 0,
             "points": 0,
-            "diff": -10,
-            "group": null
+            "diff": 0
         },
         {
             "pos": 36,
-            "name": "Young Boys",
-            "crest": "https://crests.football-data.org/1871.png",
-            "played": 4,
+            "name": "Villarreal",
+            "crest": "https://crests.football-data.org/94.png",
+            "played": 0,
             "won": 0,
             "draw": 0,
-            "lost": 4,
+            "lost": 0,
             "points": 0,
-            "diff": -11,
-            "group": null
+            "diff": 0
         }
     ],
     "f1_drivers": [
@@ -14927,326 +14369,1050 @@ window.standingsData = {
             "wins": "0"
         }
     ],
-    "nfl": [
-        {
-            "conf": "AFC",
-            "name": "Buffalo Bills",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-            "record": "3-0",
-            "wins": "3",
-            "losses": "0",
-            "diff": "+40",
-            "streak": "W3"
+    "nfl": {
+        "divisions": {
+            "AFC East": [
+                {
+                    "pos": 1,
+                    "name": "Buffalo Bills",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 2
+                },
+                {
+                    "pos": 2,
+                    "name": "Miami Dolphins",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 12
+                },
+                {
+                    "pos": 3,
+                    "name": "New England Patriots",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 13
+                },
+                {
+                    "pos": 4,
+                    "name": "New York Jets",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 14
+                }
+            ],
+            "AFC North": [
+                {
+                    "pos": 1,
+                    "name": "Baltimore Ravens",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 1
+                },
+                {
+                    "pos": 2,
+                    "name": "Cincinnati Bengals",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 3
+                },
+                {
+                    "pos": 3,
+                    "name": "Cleveland Browns",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 4
+                },
+                {
+                    "pos": 4,
+                    "name": "Pittsburgh Steelers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 15
+                }
+            ],
+            "AFC South": [
+                {
+                    "pos": 1,
+                    "name": "Houston Texans",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 6
+                },
+                {
+                    "pos": 2,
+                    "name": "Indianapolis Colts",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 7
+                },
+                {
+                    "pos": 3,
+                    "name": "Jacksonville Jaguars",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 8
+                },
+                {
+                    "pos": 4,
+                    "name": "Tennessee Titans",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 16
+                }
+            ],
+            "AFC West": [
+                {
+                    "pos": 1,
+                    "name": "Kansas City Chiefs",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 9
+                },
+                {
+                    "pos": 2,
+                    "name": "Denver Broncos",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 5
+                },
+                {
+                    "pos": 3,
+                    "name": "Los Angeles Chargers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 11
+                },
+                {
+                    "pos": 4,
+                    "name": "Las Vegas Raiders",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 10
+                }
+            ],
+            "NFC East": [
+                {
+                    "pos": 1,
+                    "name": "Dallas Cowboys",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 5
+                },
+                {
+                    "pos": 2,
+                    "name": "Philadelphia Eagles",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 12
+                },
+                {
+                    "pos": 3,
+                    "name": "New York Giants",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 11
+                },
+                {
+                    "pos": 4,
+                    "name": "Washington Commanders",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 16
+                }
+            ],
+            "NFC North": [
+                {
+                    "pos": 1,
+                    "name": "Detroit Lions",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 6
+                },
+                {
+                    "pos": 2,
+                    "name": "Green Bay Packers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 7
+                },
+                {
+                    "pos": 3,
+                    "name": "Minnesota Vikings",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 9
+                },
+                {
+                    "pos": 4,
+                    "name": "Chicago Bears",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 4
+                }
+            ],
+            "NFC South": [
+                {
+                    "pos": 1,
+                    "name": "Tampa Bay Buccaneers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 15
+                },
+                {
+                    "pos": 2,
+                    "name": "Atlanta Falcons",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 2
+                },
+                {
+                    "pos": 3,
+                    "name": "New Orleans Saints",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 10
+                },
+                {
+                    "pos": 4,
+                    "name": "Carolina Panthers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 3
+                }
+            ],
+            "NFC West": [
+                {
+                    "pos": 1,
+                    "name": "San Francisco 49ers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 13
+                },
+                {
+                    "pos": 2,
+                    "name": "Los Angeles Rams",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 8
+                },
+                {
+                    "pos": 3,
+                    "name": "Seattle Seahawks",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 14
+                },
+                {
+                    "pos": 4,
+                    "name": "Arizona Cardinals",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 1
+                }
+            ]
         },
-        {
-            "conf": "AFC",
-            "name": "Cincinnati Bengals",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-            "record": "3-0",
-            "wins": "3",
-            "losses": "0",
-            "diff": "+37",
-            "streak": "W3"
+        "conferences": {
+            "AFC": [
+                {
+                    "pos": 1,
+                    "name": "Baltimore Ravens",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 1
+                },
+                {
+                    "pos": 1,
+                    "name": "Buffalo Bills",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 2
+                },
+                {
+                    "pos": 2,
+                    "name": "Cincinnati Bengals",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 3
+                },
+                {
+                    "pos": 3,
+                    "name": "Cleveland Browns",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 4
+                },
+                {
+                    "pos": 2,
+                    "name": "Denver Broncos",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 5
+                },
+                {
+                    "pos": 1,
+                    "name": "Houston Texans",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 6
+                },
+                {
+                    "pos": 2,
+                    "name": "Indianapolis Colts",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 7
+                },
+                {
+                    "pos": 3,
+                    "name": "Jacksonville Jaguars",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 8
+                },
+                {
+                    "pos": 1,
+                    "name": "Kansas City Chiefs",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 9
+                },
+                {
+                    "pos": 4,
+                    "name": "Las Vegas Raiders",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 10
+                },
+                {
+                    "pos": 3,
+                    "name": "Los Angeles Chargers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 11
+                },
+                {
+                    "pos": 2,
+                    "name": "Miami Dolphins",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 12
+                },
+                {
+                    "pos": 3,
+                    "name": "New England Patriots",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 13
+                },
+                {
+                    "pos": 4,
+                    "name": "New York Jets",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 14
+                },
+                {
+                    "pos": 4,
+                    "name": "Pittsburgh Steelers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 15
+                },
+                {
+                    "pos": 4,
+                    "name": "Tennessee Titans",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 16
+                }
+            ],
+            "NFC": [
+                {
+                    "pos": 4,
+                    "name": "Arizona Cardinals",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 1
+                },
+                {
+                    "pos": 2,
+                    "name": "Atlanta Falcons",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 2
+                },
+                {
+                    "pos": 4,
+                    "name": "Carolina Panthers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 3
+                },
+                {
+                    "pos": 4,
+                    "name": "Chicago Bears",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 4
+                },
+                {
+                    "pos": 1,
+                    "name": "Dallas Cowboys",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 5
+                },
+                {
+                    "pos": 1,
+                    "name": "Detroit Lions",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 6
+                },
+                {
+                    "pos": 2,
+                    "name": "Green Bay Packers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 7
+                },
+                {
+                    "pos": 2,
+                    "name": "Los Angeles Rams",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 8
+                },
+                {
+                    "pos": 3,
+                    "name": "Minnesota Vikings",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 9
+                },
+                {
+                    "pos": 3,
+                    "name": "New Orleans Saints",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 10
+                },
+                {
+                    "pos": 3,
+                    "name": "New York Giants",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 11
+                },
+                {
+                    "pos": 2,
+                    "name": "Philadelphia Eagles",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 12
+                },
+                {
+                    "pos": 1,
+                    "name": "San Francisco 49ers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 13
+                },
+                {
+                    "pos": 3,
+                    "name": "Seattle Seahawks",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 14
+                },
+                {
+                    "pos": 1,
+                    "name": "Tampa Bay Buccaneers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/tb.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 15
+                },
+                {
+                    "pos": 4,
+                    "name": "Washington Commanders",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 16
+                }
+            ]
         },
-        {
-            "conf": "AFC",
-            "name": "Baltimore Ravens",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-            "record": "3-0",
-            "wins": "3",
-            "losses": "0",
-            "diff": "+65",
-            "streak": "W3"
-        },
-        {
-            "conf": "AFC",
-            "name": "Jacksonville Jaguars",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+6",
-            "streak": "W1"
-        },
-        {
-            "conf": "AFC",
-            "name": "Denver Broncos",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+28",
-            "streak": "W1"
-        },
-        {
-            "conf": "AFC",
-            "name": "Tennessee Titans",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "0",
-            "streak": "L1"
-        },
-        {
-            "conf": "AFC",
-            "name": "New England Patriots",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-            "record": "1-1-1",
-            "wins": "1",
-            "losses": "1",
-            "diff": "-21",
-            "streak": "L1"
-        },
-        {
-            "conf": "AFC",
-            "name": "New York Jets",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
-            "record": "1-2",
-            "wins": "1",
-            "losses": "2",
-            "diff": "-8",
-            "streak": "L1"
-        },
-        {
-            "conf": "AFC",
-            "name": "Los Angeles Chargers",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
-            "record": "1-2",
-            "wins": "1",
-            "losses": "2",
-            "diff": "-6",
-            "streak": "L2"
-        },
-        {
-            "conf": "AFC",
-            "name": "Las Vegas Raiders",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
-            "record": "1-2",
-            "wins": "1",
-            "losses": "2",
-            "diff": "-17",
-            "streak": "L1"
-        },
-        {
-            "conf": "AFC",
-            "name": "Cleveland Browns",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-            "record": "1-2",
-            "wins": "1",
-            "losses": "2",
-            "diff": "-24",
-            "streak": "W1"
-        },
-        {
-            "conf": "AFC",
-            "name": "Pittsburgh Steelers",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-            "record": "1-2",
-            "wins": "1",
-            "losses": "2",
-            "diff": "+1",
-            "streak": "L2"
-        },
-        {
-            "conf": "AFC",
-            "name": "Indianapolis Colts",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-            "record": "0-2-1",
-            "wins": "0",
-            "losses": "2",
-            "diff": "-37",
-            "streak": "L2"
-        },
-        {
-            "conf": "AFC",
-            "name": "Kansas City Chiefs",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
-            "record": "0-2-1",
-            "wins": "0",
-            "losses": "2",
-            "diff": "-9",
-            "streak": "-"
-        },
-        {
-            "conf": "AFC",
-            "name": "Miami Dolphins",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
-            "record": "0-3",
-            "wins": "0",
-            "losses": "3",
-            "diff": "-41",
-            "streak": "L3"
-        },
-        {
-            "conf": "AFC",
-            "name": "Houston Texans",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-            "record": "0-3",
-            "wins": "0",
-            "losses": "3",
-            "diff": "-25",
-            "streak": "L3"
-        },
-        {
-            "conf": "NFC",
-            "name": "Los Angeles Rams",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
-            "record": "3-0",
-            "wins": "3",
-            "losses": "0",
-            "diff": "+44",
-            "streak": "W3"
-        },
-        {
-            "conf": "NFC",
-            "name": "Carolina Panthers",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
-            "record": "3-1",
-            "wins": "3",
-            "losses": "1",
-            "diff": "+8",
-            "streak": "W2"
-        },
-        {
-            "conf": "NFC",
-            "name": "Green Bay Packers",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+5",
-            "streak": "W2"
-        },
-        {
-            "conf": "NFC",
-            "name": "Dallas Cowboys",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+28",
-            "streak": "L1"
-        },
-        {
-            "conf": "NFC",
-            "name": "Detroit Lions",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+11",
-            "streak": "W2"
-        },
-        {
-            "conf": "NFC",
-            "name": "Chicago Bears",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+15",
-            "streak": "W1"
-        },
-        {
-            "conf": "NFC",
-            "name": "San Francisco 49ers",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+24",
-            "streak": "W2"
-        },
-        {
-            "conf": "NFC",
-            "name": "Tampa Bay Buccaneers",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "-10",
-            "streak": "L1"
-        },
-        {
-            "conf": "NFC",
-            "name": "New York Giants",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+37",
-            "streak": "W2"
-        },
-        {
-            "conf": "NFC",
-            "name": "Atlanta Falcons",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
-            "record": "2-1",
-            "wins": "2",
-            "losses": "1",
-            "diff": "+13",
-            "streak": "W2"
-        },
-        {
-            "conf": "NFC",
-            "name": "Minnesota Vikings",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
-            "record": "1-2",
-            "wins": "1",
-            "losses": "2",
-            "diff": "-35",
-            "streak": "L2"
-        },
-        {
-            "conf": "NFC",
-            "name": "New Orleans Saints",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
-            "record": "1-2",
-            "wins": "1",
-            "losses": "2",
-            "diff": "-35",
-            "streak": "W1"
-        },
-        {
-            "conf": "NFC",
-            "name": "Washington Commanders",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-            "record": "1-2",
-            "wins": "1",
-            "losses": "2",
-            "diff": "-29",
-            "streak": "L2"
-        },
-        {
-            "conf": "NFC",
-            "name": "Arizona Cardinals",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
-            "record": "1-3",
-            "wins": "1",
-            "losses": "3",
-            "diff": "-15",
-            "streak": "L2"
-        },
-        {
-            "conf": "NFC",
-            "name": "Seattle Seahawks",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-            "record": "0-2-1",
-            "wins": "0",
-            "losses": "2",
-            "diff": "-13",
-            "streak": "-"
-        },
-        {
-            "conf": "NFC",
-            "name": "Philadelphia Eagles",
-            "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-            "record": "0-3",
-            "wins": "0",
-            "losses": "3",
-            "diff": "-37",
-            "streak": "L3"
+        "playoffs": {
+            "AFC": [
+                {
+                    "pos": 1,
+                    "name": "Baltimore Ravens",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 1
+                },
+                {
+                    "pos": 1,
+                    "name": "Buffalo Bills",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC East",
+                    "conf": "AFC",
+                    "seed": 2
+                },
+                {
+                    "pos": 2,
+                    "name": "Cincinnati Bengals",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 3
+                },
+                {
+                    "pos": 3,
+                    "name": "Cleveland Browns",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC North",
+                    "conf": "AFC",
+                    "seed": 4
+                },
+                {
+                    "pos": 2,
+                    "name": "Denver Broncos",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC West",
+                    "conf": "AFC",
+                    "seed": 5
+                },
+                {
+                    "pos": 1,
+                    "name": "Houston Texans",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 6
+                },
+                {
+                    "pos": 2,
+                    "name": "Indianapolis Colts",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "AFC South",
+                    "conf": "AFC",
+                    "seed": 7
+                }
+            ],
+            "NFC": [
+                {
+                    "pos": 4,
+                    "name": "Arizona Cardinals",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC West",
+                    "conf": "NFC",
+                    "seed": 1
+                },
+                {
+                    "pos": 2,
+                    "name": "Atlanta Falcons",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 2
+                },
+                {
+                    "pos": 4,
+                    "name": "Carolina Panthers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC South",
+                    "conf": "NFC",
+                    "seed": 3
+                },
+                {
+                    "pos": 4,
+                    "name": "Chicago Bears",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 4
+                },
+                {
+                    "pos": 1,
+                    "name": "Dallas Cowboys",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC East",
+                    "conf": "NFC",
+                    "seed": 5
+                },
+                {
+                    "pos": 1,
+                    "name": "Detroit Lions",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 6
+                },
+                {
+                    "pos": 2,
+                    "name": "Green Bay Packers",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
+                    "wins": 0,
+                    "losses": 0,
+                    "ties": 0,
+                    "pct": ".000",
+                    "diff": 0,
+                    "div": "NFC North",
+                    "conf": "NFC",
+                    "seed": 7
+                }
+            ]
         }
-    ]
+    }
 };
