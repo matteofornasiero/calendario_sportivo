@@ -274,7 +274,7 @@
             color: #fff;
         }
 
-        /* --- RESPONSIVE DESKTOP ADAPTATION (PC VIEW) --- */
+        /* --- RESPONSIVE DESKTOP ADAPTATION (PC VIEW PROFESSIONALE) --- */
         .app-container {
             width: 100%;
             margin: 0 auto;
@@ -285,59 +285,110 @@
                 display: flex;
                 justify-content: center;
                 background-color: #060608;
+                padding-top: 14px;
+                padding-bottom: 30px;
             }
             .app-container {
-                max-width: 1060px;
-                background-color: #09090b;
-                border-left: 1px solid rgba(255, 255, 255, 0.08);
-                border-right: 1px solid rgba(255, 255, 255, 0.08);
-                min-height: 100vh;
-                box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+                max-width: 1280px;
+                width: 95%;
+                background-color: #0c0c0f;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 16px;
+                min-height: calc(100vh - 44px);
+                box-shadow: 0 16px 60px rgba(0, 0, 0, 0.85);
+                overflow: hidden;
             }
             .main-content {
-                padding: 0 24px;
+                padding: 0 28px;
             }
             .top-bar {
-                padding: 14px 24px;
+                padding: 16px 28px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+            .header-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+            }
+            .search-container {
+                margin-top: 0;
+                max-width: 440px;
+                flex: 1;
             }
             .nav-controls-box {
-                padding: 4px 24px 10px 24px;
+                padding: 14px 28px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
             }
-            .date-strip-wrapper {
-                padding: 0 24px 12px 24px;
-            }
-            .hero-container {
-                padding: 0 24px 12px 24px;
-            }
-            .regular-matches-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-                gap: 12px !important;
+            .month-selector-row {
+                min-width: 220px;
             }
             .view-switcher-grid {
                 grid-template-columns: 1fr 1fr 1fr !important;
+                min-width: 320px;
+                max-width: 420px;
             }
             #btnMonthView {
                 display: block !important;
             }
-            .featured-match-card {
-                padding: 16px 20px;
+            .date-strip-wrapper {
+                padding: 0 28px 14px 28px;
             }
-            .featured-crest {
+            .date-strip {
+                gap: 8px;
+                padding: 8px 10px;
+            }
+            .hero-container {
+                padding: 0 28px 16px 28px;
+            }
+            .hero-banner {
+                padding: 18px 24px;
+            }
+            .hero-crest {
                 width: 38px;
                 height: 38px;
             }
-            .featured-team-name {
-                font-size: 17px;
+            .hero-team-name {
+                font-size: 18px;
+            }
+            /* Su PC le partite si distribuiscono su 3-4 colonne eleganti */
+            .regular-matches-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+                gap: 12px !important;
+            }
+            .compact-card {
+                padding: 10px 14px;
+                min-height: 80px;
+            }
+            .compact-crest {
+                width: 20px;
+                height: 20px;
+            }
+            .compact-team-name {
+                font-size: 13.5px;
+            }
+            .compact-time {
+                font-size: 12px;
+                padding: 2px 7px;
             }
         }
 
-        @media (min-width: 1200px) {
-            .app-container {
-                max-width: 1240px;
+        @media (hover: hover) and (min-width: 768px) {
+            .compact-card:hover {
+                border-color: rgba(255, 255, 255, 0.22);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
             }
-            .regular-matches-grid {
-                grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-                gap: 14px !important;
+            .nav-btn:hover {
+                background: rgba(255, 255, 255, 0.12);
+            }
+            .view-btn:hover:not(.active) {
+                color: #ffffff;
+                background: rgba(255, 255, 255, 0.08);
             }
         }
 
@@ -728,29 +779,29 @@
             margin-right: 4px;
         }
 
-        /* --- PICCOLA SCRITTA CENTRATA: SERIE A, F1, NFL (LIQUID GLASS COLORATO) --- */
+        /* --- PICCOLA SCRITTA CENTRATA: SERIE A, F1, NFL (PULITA, NO EMOJI, ZERO SCATTI) --- */
         .sport-section-divider {
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 14px 0 8px 0;
             width: 100%;
+            contain: layout style;
         }
 
         .sport-divider-pill {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
             padding: 3px 12px;
-            border-radius: 20px;
-            font-size: 10.5px;
+            border-radius: 12px;
+            font-size: 10px;
             font-weight: 800;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
             border: 1px solid transparent;
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            transform: translateZ(0);
         }
 
         /* --- 7. SEZIONE CLASSIFICHE --- */
@@ -1032,6 +1083,13 @@
         let searchQuery = '';
         let activeSheetEvent = null;
         let heroUpcomingKey = null;
+        let countdownTimerId = null;
+
+        function getCardBackground(home, away) {
+            const hColor = getTeamColor(home);
+            const aColor = getTeamColor(away);
+            return `linear-gradient(135deg, ${hexToRgba(hColor, 0.45)} 0%, rgba(20, 20, 26, 0.95) 50%, ${hexToRgba(aColor, 0.45)} 100%)`;
+        }
 
         // ==========================================
         // MAPPA DEI COLORI SOCIALI DELLE SQUADRE
@@ -1063,51 +1121,26 @@
             'broncos': '#fb4f14',     // Denver Broncos Orange
             'denver': '#fb4f14',
             'ferrari': '#d2143a',     // Rosso Ciliegia F1
-            'f1': '#d2143a',          // Rosso Ciliegia F1
-            'formula 1': '#d2143a',
-            'red bull': '#0f172a',
-            'mercedes': '#0d9488',
-            'mclaren': '#f97316',
+            'torino': '#681019', 'toro': '#681019',
+            'fiorentina': '#5c2d91', 'juventus': '#e2e8f0', 'inter': '#0057b8',
+            'milan': '#d31126', 'roma': '#991b1b', 'lazio': '#38bdf8',
+            'napoli': '#0284c7', 'atalanta': '#1d4ed8', 'bologna': '#dc2626',
+            'genoa': '#991b1b', 'como': '#0284c7', 'monza': '#e11d48',
+            'verona': '#2563eb', 'udinese': '#e2e8f0', 'parma': '#2563eb',
+            'cagliari': '#991b1b', 'lecce': '#dc2626', 'empoli': '#2563eb',
+            'venezia': '#059669', 'frosinone': '#f59e0b', 'sassuolo': '#10b981',
+            'broncos': '#fb4f14', 'denver': '#fb4f14',
+            'ferrari': '#d2143a', 'f1': '#d2143a', 'formula 1': '#d2143a',
+            'red bull': '#0f172a', 'mercedes': '#0d9488', 'mclaren': '#f97316',
             'italia': '#004ea2'
         };
 
-        // TEMI GRAFICI PER I DIVISORI DI SPORT (LIQUID GLASS COLORATO)
         const SPORT_BADGE_THEMES = {
-            'seriea': {
-                name: 'Serie A',
-                icon: '⚽',
-                color: '#38bdf8',
-                bg: 'rgba(2, 132, 199, 0.16)',
-                border: 'rgba(2, 132, 199, 0.38)'
-            },
-            'f1': {
-                name: 'Formula 1',
-                icon: '🏎️',
-                color: '#ff6b8b', // Rosso ciliegia brillante
-                bg: 'rgba(210, 20, 58, 0.18)',
-                border: 'rgba(210, 20, 58, 0.42)'
-            },
-            'nfl': {
-                name: 'NFL Football',
-                icon: '🏈',
-                color: '#fb923c',
-                bg: 'rgba(251, 79, 20, 0.16)',
-                border: 'rgba(251, 79, 20, 0.38)'
-            },
-            'champions': {
-                name: 'Champions League',
-                icon: '⭐',
-                color: '#818cf8',
-                bg: 'rgba(37, 99, 235, 0.16)',
-                border: 'rgba(37, 99, 235, 0.38)'
-            },
-            'nazionale': {
-                name: 'Italia',
-                icon: '🇮🇹',
-                color: '#60a5fa',
-                bg: 'rgba(0, 78, 162, 0.16)',
-                border: 'rgba(0, 78, 162, 0.38)'
-            }
+            'seriea': { name: 'SERIE A', color: '#38bdf8', bg: '#18181b', border: 'rgba(2, 132, 199, 0.45)' },
+            'f1': { name: 'FORMULA 1', color: '#ff6b8b', bg: '#18181b', border: 'rgba(210, 20, 58, 0.50)' },
+            'nfl': { name: 'NFL', color: '#fb923c', bg: '#18181b', border: 'rgba(251, 79, 20, 0.45)' },
+            'champions': { name: 'CHAMPIONS LEAGUE', color: '#818cf8', bg: '#18181b', border: 'rgba(37, 99, 235, 0.45)' },
+            'nazionale': { name: 'ITALIA', color: '#60a5fa', bg: '#18181b', border: 'rgba(0, 78, 162, 0.45)' }
         };
 
         function hexToRgba(hex, alpha) {
@@ -1129,7 +1162,6 @@
             return '#52525b';
         }
 
-        // TEMA TOP MATCH (SFUMATURA PIÙ COPRENTE PER TORINO E BRONCOS, ROSSO CILIEGIA PER F1)
         function getTopMatchTheme(e) {
             const t = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
             const homeStr = (e.home || '').toLowerCase();
@@ -1144,7 +1176,6 @@
             if (isToro) {
                 color = '#681019'; // Granata autentico del Torino
                 isAway = awayStr.includes('torino') || awayStr.includes('toro');
-                // Sfumatura Granata più ricca, coprente e visibile
                 const bg = isAway
                     ? `linear-gradient(225deg, rgba(125, 18, 28, 0.88) 0%, rgba(95, 14, 22, 0.65) 45%, rgba(18, 12, 16, 0.96) 100%)`
                     : `linear-gradient(135deg, rgba(125, 18, 28, 0.88) 0%, rgba(95, 14, 22, 0.65) 45%, rgba(18, 12, 16, 0.96) 100%)`;
@@ -1155,7 +1186,6 @@
             } else if (isBroncos) {
                 color = '#fb4f14'; // Arancio Broncos
                 isAway = awayStr.includes('broncos') || awayStr.includes('denver');
-                // Sfumatura arancione viva e coprente
                 const bg = isAway
                     ? `linear-gradient(225deg, rgba(251, 79, 20, 0.80) 0%, rgba(195, 55, 10, 0.55) 45%, rgba(12, 18, 28, 0.96) 100%)`
                     : `linear-gradient(135deg, rgba(251, 79, 20, 0.80) 0%, rgba(195, 55, 10, 0.55) 45%, rgba(12, 18, 28, 0.96) 100%)`;
@@ -1190,13 +1220,7 @@
             }
         }
 
-        const SPORT_NAMES = {
-            f1: 'Formula 1',
-            seriea: 'Serie A',
-            nfl: 'NFL',
-            champions: 'Champions League',
-            nazionale: 'Italia'
-        };
+        const SPORT_NAMES = { f1: 'Formula 1', seriea: 'Serie A', nfl: 'NFL', champions: 'Champions League', nazionale: 'Italia' };
 
         function formatDate(d) {
             const year = d.getFullYear();
@@ -1211,69 +1235,43 @@
             if (e.sport === 'seriea' && (t.includes('torino') || t.includes('toro'))) return true;
             if (e.sport === 'nfl' && (t.includes('broncos') || t.includes('denver'))) return true;
             if (e.sport === 'f1' && t.includes('gara')) return true;
-            if (e.sport === 'champions') {
-                const it = ['inter', 'milan', 'juventus', 'atalanta', 'bologna', 'roma', 'lazio', 'napoli', 'fiorentina'];
-                return it.some(sq => t.includes(sq));
-            }
+            if (e.sport === 'champions') return ['inter', 'milan', 'juventus', 'atalanta', 'bologna', 'roma', 'lazio', 'napoli', 'fiorentina'].some(sq => t.includes(sq));
             if (e.sport === 'nazionale') return true;
             return false;
+        }
+
+        function getUpcomingHeroMatch() {
+            if (!allEvents || allEvents.length === 0) return null;
+            const todayStr = formatDate(new Date());
+            let upcoming = allEvents
+                .filter(e => isTop(e) && e.date >= todayStr)
+                .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))[0];
+            if (!upcoming) upcoming = allEvents.filter(e => isTop(e))[0];
+            return upcoming || null;
         }
 
         function initData() {
             if (typeof window.calendarData !== 'undefined') allEvents = window.calendarData;
             if (typeof window.standingsData !== 'undefined') standingsData = window.standingsData;
-
-            // Se i dati non sono ancora stati caricati in memoria, riprova brevemente
             if ((!allEvents || allEvents.length === 0) && typeof window.calendarData === 'undefined') {
                 setTimeout(initData, 40);
                 return;
             }
-
-            const todayStr = formatDate(new Date());
-            if (allEvents && allEvents.length > 0) {
-                const dates = allEvents.map(e => e.date).sort();
-                if (todayStr < dates[0]) {
-                    currentDate = new Date(dates[0] + 'T00:00:00');
-                    selectedDateStr = dates[0];
-                } else {
-                    currentDate = new Date();
-                    selectedDateStr = todayStr;
-                }
-            }
-
-            // Assicura l'apertura immediata e affidabile dell'Agenda
-            switchView(currentView || 'agenda');
             renderHeroBanner();
-            renderAll();
+            switchView(currentView || 'agenda');
         }
 
-        // --- HERO BANNER IN ALTO (TEMA SQUADRA DELL'UTENTE + STANGHETTE) ---
         function renderHeroBanner() {
             const container = document.getElementById('heroBannerContainer');
-            if (!allEvents || allEvents.length === 0) {
-                container.innerHTML = '';
-                heroUpcomingKey = null;
-                return;
-            }
-            const todayStr = formatDate(new Date());
-            let upcoming = allEvents
-                .filter(e => isTop(e) && e.date >= todayStr)
-                .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))[0];
-
-            if (!upcoming) upcoming = allEvents.filter(e => isTop(e))[0];
-            if (!upcoming) {
-                container.innerHTML = '';
-                heroUpcomingKey = null;
-                return;
-            }
+            if (!container) return;
+            const upcoming = getUpcomingHeroMatch();
+            if (!upcoming) { container.innerHTML = ''; return; }
 
             const safeTitle = (upcoming.title || '').replace(/'/g, "\\'");
-            heroUpcomingKey = `${upcoming.date}_${upcoming.time}_${safeTitle}`;
-
             const sportTag = SPORT_NAMES[upcoming.sport] || upcoming.sport.toUpperCase();
             const dObj = new Date(upcoming.date + 'T00:00:00');
             const dStr = dObj.toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short' });
-            const key = heroUpcomingKey;
+            const key = `${upcoming.date}_${upcoming.time}_${safeTitle}`;
             const theme = getTopMatchTheme(upcoming);
 
             let faceoffHtml = '';
@@ -1281,7 +1279,7 @@
                 faceoffHtml = `
                     <div class="hero-faceoff">
                         <div class="hero-team">
-                            <span class="team-stanghetta" style="height:20px; width:4px; background: ${getTeamColor(upcoming.home)};"></span>
+                            <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(upcoming.home)};"></span>
                             <img src="${upcoming.homeCrest}" class="hero-crest" alt="">
                             <span class="hero-team-name">${upcoming.home || 'Casa'}</span>
                         </div>
@@ -1289,7 +1287,7 @@
                         <div class="hero-team away">
                             <span class="hero-team-name">${upcoming.away || 'Trasferta'}</span>
                             <img src="${upcoming.awayCrest}" class="hero-crest" alt="">
-                            <span class="team-stanghetta" style="height:20px; width:4px; background: ${getTeamColor(upcoming.away)};"></span>
+                            <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(upcoming.away)};"></span>
                         </div>
                     </div>
                 `;
@@ -1299,18 +1297,11 @@
 
             container.innerHTML = `
                 <div class="hero-banner" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
-                    <div class="hero-top">
-                        <div class="hero-badge">🏆 ${sportTag} • ${upcoming.loc || 'In programma'}</div>
-                        <div class="hero-countdown" id="heroCountdownTimer">⏳ Calcolo...</div>
-                    </div>
+                    <div class="hero-top"><div class="hero-badge">${sportTag} • ${upcoming.loc || ''}</div><div class="hero-countdown" id="heroCountdownTimer">In arrivo</div></div>
                     ${faceoffHtml}
-                    <div class="hero-bottom">
-                        <span>🗓️ ${dStr} ore ${upcoming.time} ${upcoming.venue ? '• 🏟️ ' + upcoming.venue : ''}</span>
-                        <span class="hero-cta">Dettagli ›</span>
-                    </div>
+                    <div class="hero-bottom"><span>${dStr} ore ${upcoming.time} ${upcoming.venue ? '• ' + upcoming.venue : ''}</span><span class="hero-cta">Dettagli ›</span></div>
                 </div>
             `;
-
             if (countdownTimerId) clearInterval(countdownTimerId);
             updateCountdown(upcoming.date, upcoming.time);
             countdownTimerId = setInterval(() => updateCountdown(upcoming.date, upcoming.time), 1000);
@@ -1321,19 +1312,13 @@
             if (!el) return;
             const diff = new Date(`${dateStr}T${timeStr}:00`) - new Date();
             if (diff <= 0) { el.textContent = "OGGI"; return; }
-            const d = Math.floor(diff / (86400000));
-            const h = Math.floor((diff % 86400000) / 3600000);
-            const m = Math.floor((diff % 3600000) / 60000);
-            el.textContent = d > 0 ? `Tra ${d}g ${h}h` : `Tra ${h}h ${m}m`;
+            const d = Math.floor(diff / 86400000), h = Math.floor((diff % 86400000) / 3600000);
+            el.textContent = d > 0 ? `Tra ${d}g ${h}h` : `Tra ${h}h ${Math.floor((diff % 3600000) / 60000)}m`;
         }
 
-        // --- NAVIGAZIONE & VISTE ---
         function navigateTime(delta) {
-            if (currentView === 'month') {
-                currentDate.setMonth(currentDate.getMonth() + delta);
-            } else {
-                currentDate.setDate(currentDate.getDate() + (delta * 7));
-            }
+            if (currentView === 'month') currentDate.setMonth(currentDate.getMonth() + delta);
+            else currentDate.setDate(currentDate.getDate() + (delta * 7));
             selectedDateStr = formatDate(currentDate);
             renderAll();
         }
@@ -1343,7 +1328,6 @@
             selectedDateStr = formatDate(currentDate);
             if (currentView !== 'agenda') switchView('agenda');
             renderAll();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function switchView(view) {
@@ -1405,7 +1389,6 @@
             if (el) el.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
         }
 
-        // --- STRIP DATA SETTIMANALE ---
         function renderDateStrip() {
             const strip = document.getElementById('dateStrip');
             if (!strip) return;
@@ -1439,13 +1422,11 @@
                     selectedDateStr = dStr;
                     renderDateStrip();
                     renderAgendaFeed();
-                    window.scrollTo({ top: 110, behavior: 'smooth' });
                 };
                 strip.appendChild(el);
             }
         }
 
-        // --- AGENDA FEED: DIVISORI SPORT CENTRATI (LIQUID GLASS), PARTITE IN GRIGLIA 2x2 UNIFORME ---
         function renderAgendaFeed() {
             const container = document.getElementById('agendaFeed');
             if (!container) return;
@@ -1472,6 +1453,18 @@
                 groups[e.date].push(e);
             });
 
+            // Recupera la partita attualmente in primo piano in cima
+            const heroMatch = getUpcomingHeroMatch();
+            const isHeroMatch = (e) => {
+                if (!heroMatch) return false;
+                if (e.date !== heroMatch.date || e.time !== heroMatch.time) return false;
+                if (e.title && heroMatch.title && e.title === heroMatch.title) return true;
+                if (e.home && heroMatch.home && e.away && heroMatch.away) {
+                    return e.home.toLowerCase() === heroMatch.home.toLowerCase() && e.away.toLowerCase() === heroMatch.away.toLowerCase();
+                }
+                return false;
+            };
+
             let html = '';
             for (const dKey of Object.keys(groups)) {
                 const dObj = new Date(dKey + 'T00:00:00');
@@ -1479,14 +1472,8 @@
                 const fullDayStr = dObj.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
                 const evs = groups[dKey];
 
-                // LA PARTITA IN PRIMO PIANO NELL'HERO BANNER NON VIENE PIÙ RIPETUTA GIGANTE SOTTO:
-                // SOTTO LA LASCIAMO MA COME PARTITA NORMALE NEL BOX PICCOLO!
-                const isHeroMatch = (e) => {
-                    if (!heroUpcomingKey) return false;
-                    const safeT = (e.title || '').replace(/'/g, "\\'");
-                    return `${e.date}_${e.time}_${safeT}` === heroUpcomingKey;
-                };
-
+                // LA PARTITA IN PRIMO PIANO NELL'HERO BANNER NON DEVE MAI ESSERE DUPLICATA GIGANTE SOTTO:
+                // SOTTO RIMANE MA VIENE MOSTRATA COME PARTITA NORMALE NEL BOX PICCOLO 2x2!
                 const topMatches = evs.filter(e => isTop(e) && !isHeroMatch(e));
                 const regularMatches = evs.filter(e => !isTop(e) || isHeroMatch(e));
 
@@ -1499,7 +1486,7 @@
                         </div>
                 `;
 
-                // 1. I TOP MATCH VERI DEL GIORNO (Solo se non già in hero banner!)
+                // 1. I TOP MATCH VERI DEL GIORNO (Escluso l'hero banner già visibile in cima!)
                 topMatches.forEach(e => {
                     const safeTitle = (e.title || '').replace(/'/g, "\\'");
                     const key = `${e.date}_${e.time}_${safeTitle}`;
@@ -1530,19 +1517,19 @@
                     html += `
                         <div class="featured-match-card" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
                             <div class="featured-match-header">
-                                <span>🏆 ${sportTag} • ${e.loc || 'Ufficiale'}</span>
-                                <span style="color:#fff; font-weight:800; font-size:12.5px;">⏰ ${e.time || '--:--'}</span>
+                                <span>${sportTag} • ${e.loc || 'Ufficiale'}</span>
+                                <span style="color:#fff; font-weight:800; font-size:12.5px;">${e.time || '--:--'}</span>
                             </div>
                             ${faceoffHtml}
                             <div class="featured-match-footer">
-                                <span>${e.venue ? '🏟️ ' + e.venue : (e.loc || '')}</span>
+                                <span>${e.venue || e.loc || ''}</span>
                                 <span style="color:#fff; font-weight:700;">Dettagli ›</span>
                             </div>
                         </div>
                     `;
                 });
 
-                // 2. LE ALTRE PARTITE RAGGRUPPATE PER COMPETIZIONE CON SCRITTA CENTRATA IN LIQUID GLASS
+                // 2. LE ALTRE PARTITE (INCLUSA LA PARTITA HERO NEL BOX PICCOLO) RAGGRUPPATE PER COMPETIZIONE
                 if (regularMatches.length > 0) {
                     const sportOrder = ['seriea', 'f1', 'champions', 'nfl', 'nazionale'];
                     const sportGroups = {};
@@ -1561,19 +1548,17 @@
                     sortedSports.forEach(sp => {
                         const spEvents = sportGroups[sp];
                         const badgeTheme = SPORT_BADGE_THEMES[sp] || {
-                            name: SPORT_NAMES[sp] || sp.toUpperCase(),
-                            icon: '🏆',
+                            name: (SPORT_NAMES[sp] || sp).toUpperCase(),
                             color: '#94a3b8',
-                            bg: 'rgba(255, 255, 255, 0.08)',
-                            border: 'rgba(255, 255, 255, 0.2)'
+                            bg: '#18181b',
+                            border: 'rgba(255, 255, 255, 0.25)'
                         };
 
-                        // Piccola scritta centrata in liquid glass con i colori dello sport
+                        // Piccola scritta centrata pulita, senza emoji
                         html += `
                             <div class="sport-section-divider">
-                                <div class="sport-divider-pill" style="color: ${badgeTheme.color}; background: ${badgeTheme.bg}; border-color: ${badgeTheme.border};">
-                                    <span>${badgeTheme.icon}</span>
-                                    <span>${badgeTheme.name}</span>
+                                <div class="sport-divider-pill" style="color: ${badgeTheme.color}; border-color: ${badgeTheme.border};">
+                                    ${badgeTheme.name}
                                 </div>
                             </div>
                             <div class="regular-matches-grid">
@@ -1585,26 +1570,26 @@
                             const isF1Session = e.sport === 'f1';
 
                             if (isF1Session) {
-                                // Sessione Formula 1: no stanghette, badge rosso ciliegia e dettagli circuito
+                                // Sessione Formula 1: no stanghette, badge rosso ciliegia e dettagli circuito, senza emoji
                                 const sessionTag = e.title.toUpperCase().includes('QUALIFICHE') ? 'QUALIFICHE' : (e.title.toUpperCase().includes('PROVE') ? 'PROVE LIBERE' : (e.title.toUpperCase().includes('GARA') ? 'GARA' : 'SESSIONE F1'));
                                 html += `
                                     <div class="compact-card" onclick="openEventSheetByKey('${key}')">
                                         <div style="display:flex; flex-direction:column; gap:2px; overflow:hidden; min-width:0;">
                                             <div style="display:flex; align-items:center; gap:5px;">
                                                 <span style="font-size:9px; font-weight:800; color:#ff6b8b; text-transform:uppercase; background:rgba(210,20,58,0.22); padding:1px 5px; border-radius:4px; border:1px solid rgba(210,20,58,0.45); flex-shrink:0;">
-                                                    🏎️ ${sessionTag}
+                                                    ${sessionTag}
                                                 </span>
                                             </div>
                                             <div class="compact-team-name" style="font-size:12px; font-weight:800; color:#fff; margin-top:2px;">
                                                 ${e.title}
                                             </div>
                                             <div class="compact-subloc" style="font-size:9.5px; color:#94a3b8; max-width:100%;">
-                                                📍 ${e.loc || 'Circuito'}
+                                                ${e.loc || 'Circuito'}
                                             </div>
                                         </div>
                                         <div class="compact-bottom-row">
                                             <span class="compact-subloc" style="max-width:65px;">${e.venue ? e.venue.split(',')[0] : (e.loc || 'GP')}</span>
-                                            <span class="compact-time">⏰ ${e.time || '--:--'}</span>
+                                            <span class="compact-time">${e.time || '--:--'}</span>
                                         </div>
                                     </div>
                                 `;
@@ -1649,7 +1634,7 @@
         function switchStandingsTab(tab, btn) {
             currentStandingsTab = tab;
             document.querySelectorAll('.standings-tabs .standings-tab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            if (btn) btn.classList.add('active');
             renderStandings();
         }
 
