@@ -1,0 +1,97 @@
+name: Aggiorna e pubblica Sport OS
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Ogni ora, evitando l'inizio dell'ora.
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: sport-os-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Scarica il codice
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa il database dei fusi orari
+        run: python -m pip install -r requirements.txt
+
+      - name: Verifica il programma
+        run: |
+          python -m unittest discover -s tests -v
+          node tests/test_app.cjs
+
+      - name: Aggiorna calendari e classifiche
+        id: dati
+        continue-on-error: true
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: python aggiorna_calendario.py
+
+      - name: Controlla i dati da pubblicare
+        run: python verifica_dati.py
+
+      - name: Salva i dati aggiornati
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dati.js
+          if ! git diff --staged --quiet; then
+            git commit -m "Aggiorna calendari e classifiche"
+            git push
+          fi
+
+      - name: Prepara soltanto i file pubblici
+        run: |
+          mkdir -p _site
+          cp index.html calendario_sportivo.html dati.js manifest.json icon-192.png icon-512.png sw.js _site/
+
+      - name: Carica il sito per GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Registra eventuali fonti non aggiornate
+        if: steps.dati.outcome == 'failure'
+        run: echo '::warning::Alcune fonti non si sono aggiornate. Verranno pubblicati i dati disponibili con il relativo avviso.'
+
+    outputs:
+      dati_outcome: ${{ steps.dati.outcome }}
+
+  pubblica:
+    needs: aggiorna
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Pubblica la versione aggiornata
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Segnala il fallimento dell'aggiornamento
+        if: needs.aggiorna.outputs.dati_outcome == 'failure'
+        run: |
+          echo '::error::Sito pubblicato con dati parziali o precedenti. Controlla gli errori delle fonti nel job aggiorna.'
+          exit 1
