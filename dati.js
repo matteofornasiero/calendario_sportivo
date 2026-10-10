@@ -4272,9 +4272,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/113.png",
     "awayCrest": "https://crests.football-data.org/470.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 3,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 6,
     "isTop": false
   },
@@ -18341,6 +18341,17 @@ window.standingsData = {
     },
     {
       "pos": 6,
+      "name": "Napoli",
+      "crest": "https://crests.football-data.org/113.png",
+      "played": 6,
+      "won": 3,
+      "draw": 1,
+      "lost": 2,
+      "points": 10,
+      "diff": 4
+    },
+    {
+      "pos": 7,
       "name": "Juventus",
       "crest": "https://crests.football-data.org/109.png",
       "played": 5,
@@ -18351,7 +18362,7 @@ window.standingsData = {
       "diff": 4
     },
     {
-      "pos": 7,
+      "pos": 8,
       "name": "Como 1907",
       "crest": "https://crests.football-data.org/7397.png",
       "played": 5,
@@ -18362,7 +18373,7 @@ window.standingsData = {
       "diff": 3
     },
     {
-      "pos": 7,
+      "pos": 9,
       "name": "Frosinone",
       "crest": "https://crests.football-data.org/470.png",
       "played": 6,
@@ -18370,18 +18381,7 @@ window.standingsData = {
       "draw": 1,
       "lost": 2,
       "points": 10,
-      "diff": 3
-    },
-    {
-      "pos": 7,
-      "name": "Napoli",
-      "crest": "https://crests.football-data.org/113.png",
-      "played": 6,
-      "won": 3,
-      "draw": 1,
-      "lost": 2,
-      "points": 10,
-      "diff": 3
+      "diff": 2
     },
     {
       "pos": 10,
@@ -18908,7 +18908,7 @@ window.standingsData = {
       "pos": "1",
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
-      "points": "320",
+      "points": "325",
       "wins": "8"
     },
     {
@@ -18922,29 +18922,29 @@ window.standingsData = {
       "pos": "3",
       "name": "Lewis Hamilton",
       "team": "Ferrari",
-      "points": "214",
+      "points": "221",
       "wins": "1"
     },
     {
       "pos": "4",
       "name": "Charles Leclerc",
       "team": "Ferrari",
-      "points": "191",
+      "points": "197",
       "wins": "1"
     },
     {
       "pos": "5",
-      "name": "Lando Norris",
-      "team": "McLaren",
-      "points": "188",
-      "wins": "2"
+      "name": "Max Verstappen",
+      "team": "Red Bull",
+      "points": "196",
+      "wins": "1"
     },
     {
       "pos": "6",
-      "name": "Max Verstappen",
-      "team": "Red Bull",
-      "points": "188",
-      "wins": "1"
+      "name": "Lando Norris",
+      "team": "McLaren",
+      "points": "189",
+      "wins": "2"
     },
     {
       "pos": "7",
@@ -18964,7 +18964,7 @@ window.standingsData = {
       "pos": "9",
       "name": "Liam Lawson",
       "team": "RB F1 Team, Red Bull",
-      "points": "65",
+      "points": "69",
       "wins": "0"
     },
     {
@@ -18992,7 +18992,7 @@ window.standingsData = {
       "pos": "13",
       "name": "Oliver Bearman",
       "team": "Haas F1 Team",
-      "points": "20",
+      "points": "23",
       "wins": "0"
     },
     {
@@ -19006,7 +19006,7 @@ window.standingsData = {
       "pos": "15",
       "name": "Nico Hülkenberg",
       "team": "Audi",
-      "points": "7",
+      "points": "9",
       "wins": "0"
     },
     {
@@ -19071,35 +19071,35 @@ window.standingsData = {
       "pos": "1",
       "name": "Mercedes",
       "team": "",
-      "points": "556",
+      "points": "561",
       "wins": "11"
     },
     {
       "pos": "2",
       "name": "Ferrari",
       "team": "",
-      "points": "405",
+      "points": "418",
       "wins": "2"
     },
     {
       "pos": "3",
       "name": "McLaren",
       "team": "",
-      "points": "316",
+      "points": "317",
       "wins": "2"
     },
     {
       "pos": "4",
       "name": "Red Bull",
       "team": "",
-      "points": "298",
+      "points": "306",
       "wins": "1"
     },
     {
       "pos": "5",
       "name": "RB F1 Team",
       "team": "",
-      "points": "90",
+      "points": "94",
       "wins": "0"
     },
     {
@@ -19113,14 +19113,14 @@ window.standingsData = {
       "pos": "7",
       "name": "Haas F1 Team",
       "team": "",
-      "points": "27",
+      "points": "30",
       "wins": "0"
     },
     {
       "pos": "8",
       "name": "Audi",
       "team": "",
-      "points": "17",
+      "points": "19",
       "wins": "0"
     },
     {
@@ -20195,57 +20195,57 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-10T20:04:54.780216+00:00",
+  "generatedAt": "2026-10-10T23:34:50.390928+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-10T20:04:54.780216+00:00"
+      "updatedAt": "2026-10-10T23:34:50.390928+00:00"
     }
   },
   "partial": false
