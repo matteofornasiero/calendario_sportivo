@@ -4384,9 +4384,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/471.png",
     "awayCrest": "https://crests.football-data.org/98.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 1,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 6,
     "isTop": false
   },
@@ -4404,9 +4404,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
     "venue": "Lambeau Field, Green Bay",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "31",
+    "awayScore": "7",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -4423,9 +4423,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
     "venue": "Hard Rock Stadium, Miami Gardens",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "24",
+    "awayScore": "31",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -4442,9 +4442,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyj.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
     "venue": "MetLife Stadium, East Rutherford",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "17",
+    "awayScore": "12",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -4461,9 +4461,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
     "venue": "Nissan Stadium, Nashville",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "3",
+    "awayScore": "26",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -4480,9 +4480,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
     "venue": "Acrisure Stadium, Pittsburgh",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "34",
+    "awayScore": "22",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -4499,9 +4499,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ne.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
     "venue": "Gillette Stadium, Foxborough",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "45",
+    "awayScore": "17",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -4518,9 +4518,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
     "venue": "Caesars Superdome, New Orleans",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "13",
+    "awayScore": "23",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -4537,9 +4537,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
     "venue": "Northwest Stadium, Landover",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "27",
+    "awayScore": "27",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -4556,9 +4556,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/104.png",
     "awayCrest": "https://crests.football-data.org/109.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 1,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 6,
     "isTop": false
   },
@@ -4578,7 +4578,7 @@ window.calendarData = [
     "venue": "SoFi Stadium, Inglewood",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": true
   },
   {
@@ -4597,7 +4597,7 @@ window.calendarData = [
     "venue": "State Farm Stadium, Glendale",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -4616,7 +4616,7 @@ window.calendarData = [
     "venue": "Lumen Field, Seattle",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -18319,6 +18319,17 @@ window.standingsData = {
     },
     {
       "pos": 4,
+      "name": "Cagliari",
+      "crest": "https://crests.football-data.org/104.png",
+      "played": 6,
+      "won": 4,
+      "draw": 1,
+      "lost": 1,
+      "points": 13,
+      "diff": 3
+    },
+    {
+      "pos": 5,
       "name": "Milan",
       "crest": "https://crests.football-data.org/98.png",
       "played": 6,
@@ -18329,18 +18340,18 @@ window.standingsData = {
       "diff": 6
     },
     {
-      "pos": 5,
-      "name": "Cagliari",
-      "crest": "https://crests.football-data.org/104.png",
-      "played": 5,
-      "won": 4,
-      "draw": 0,
+      "pos": 6,
+      "name": "Juventus",
+      "crest": "https://crests.football-data.org/109.png",
+      "played": 6,
+      "won": 3,
+      "draw": 2,
       "lost": 1,
-      "points": 12,
-      "diff": 3
+      "points": 11,
+      "diff": 4
     },
     {
-      "pos": 6,
+      "pos": 7,
       "name": "Como 1907",
       "crest": "https://crests.football-data.org/7397.png",
       "played": 6,
@@ -18351,24 +18362,13 @@ window.standingsData = {
       "diff": 3
     },
     {
-      "pos": 7,
+      "pos": 8,
       "name": "Napoli",
       "crest": "https://crests.football-data.org/113.png",
       "played": 6,
       "won": 3,
       "draw": 1,
       "lost": 2,
-      "points": 10,
-      "diff": 4
-    },
-    {
-      "pos": 8,
-      "name": "Juventus",
-      "crest": "https://crests.football-data.org/109.png",
-      "played": 5,
-      "won": 3,
-      "draw": 1,
-      "lost": 1,
       "points": 10,
       "diff": 4
     },
@@ -19156,7 +19156,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".750",
           "diff": 20,
-          "seed": 3,
+          "seed": 4,
           "div": "AFC East",
           "conf": "AFC",
           "pos": 1
@@ -19164,12 +19164,12 @@ window.standingsData = {
         {
           "name": "New England Patriots",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-          "wins": 2,
+          "wins": 3,
           "losses": 2,
           "ties": 0,
-          "pct": ".500",
-          "diff": -12,
-          "seed": 7,
+          "pct": ".600",
+          "diff": 16,
+          "seed": 5,
           "div": "AFC East",
           "conf": "AFC",
           "pos": 2
@@ -19177,12 +19177,12 @@ window.standingsData = {
         {
           "name": "New York Jets",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
-          "wins": 1,
+          "wins": 2,
           "losses": 3,
           "ties": 0,
-          "pct": ".250",
-          "diff": -8,
-          "seed": 12,
+          "pct": ".400",
+          "diff": -3,
+          "seed": 11,
           "div": "AFC East",
           "conf": "AFC",
           "pos": 3
@@ -19191,30 +19191,17 @@ window.standingsData = {
           "name": "Miami Dolphins",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
           "wins": 0,
-          "losses": 4,
+          "losses": 5,
           "ties": 0,
           "pct": ".000",
-          "diff": -55,
-          "seed": 13,
+          "diff": -62,
+          "seed": 15,
           "div": "AFC East",
           "conf": "AFC",
           "pos": 4
         }
       ],
       "AFC North": [
-        {
-          "name": "Cleveland Browns",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": -14,
-          "seed": 4,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 1
-        },
         {
           "name": "Baltimore Ravens",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
@@ -19223,7 +19210,20 @@ window.standingsData = {
           "ties": 0,
           "pct": ".750",
           "diff": 20,
-          "seed": 5,
+          "seed": 3,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
+          "name": "Cleveland Browns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": -19,
+          "seed": 7,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 2
@@ -19231,12 +19231,12 @@ window.standingsData = {
         {
           "name": "Pittsburgh Steelers",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-          "wins": 2,
+          "wins": 3,
           "losses": 2,
           "ties": 0,
-          "pct": ".500",
-          "diff": -10,
-          "seed": 9,
+          "pct": ".600",
+          "diff": 2,
+          "seed": 8,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 3
@@ -19244,12 +19244,12 @@ window.standingsData = {
         {
           "name": "Cincinnati Bengals",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-          "wins": 2,
+          "wins": 3,
           "losses": 2,
           "ties": 0,
-          "pct": ".500",
-          "diff": 12,
-          "seed": 11,
+          "pct": ".600",
+          "diff": 19,
+          "seed": 9,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 4
@@ -19273,11 +19273,11 @@ window.standingsData = {
           "name": "Indianapolis Colts",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
           "wins": 2,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": -2,
-          "seed": 10,
+          "pct": ".400",
+          "diff": -14,
+          "seed": 12,
           "div": "AFC South",
           "conf": "AFC",
           "pos": 2
@@ -19285,12 +19285,12 @@ window.standingsData = {
         {
           "name": "Houston Texans",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-          "wins": 0,
+          "wins": 1,
           "losses": 4,
           "ties": 0,
-          "pct": ".000",
-          "diff": -25,
-          "seed": 15,
+          "pct": ".200",
+          "diff": -2,
+          "seed": 13,
           "div": "AFC South",
           "conf": "AFC",
           "pos": 3
@@ -19299,10 +19299,10 @@ window.standingsData = {
           "name": "Tennessee Titans",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
           "wins": 0,
-          "losses": 4,
+          "losses": 5,
           "ties": 0,
           "pct": ".000",
-          "diff": -28,
+          "diff": -51,
           "seed": 16,
           "div": "AFC South",
           "conf": "AFC",
@@ -19327,10 +19327,10 @@ window.standingsData = {
           "name": "Las Vegas Raiders",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
           "wins": 3,
-          "losses": 1,
+          "losses": 2,
           "ties": 0,
-          "pct": ".750",
-          "diff": 31,
+          "pct": ".600",
+          "diff": 3,
           "seed": 6,
           "div": "AFC West",
           "conf": "AFC",
@@ -19344,7 +19344,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".500",
           "diff": -20,
-          "seed": 8,
+          "seed": 10,
           "div": "AFC West",
           "conf": "AFC",
           "pos": 3
@@ -19369,8 +19369,8 @@ window.standingsData = {
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
           "wins": 3,
           "losses": 1,
-          "ties": 0,
-          "pct": ".750",
+          "ties": 1,
+          "pct": ".700",
           "diff": 3,
           "seed": 3,
           "div": "NFC East",
@@ -19408,8 +19408,8 @@ window.standingsData = {
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
           "wins": 1,
           "losses": 3,
-          "ties": 0,
-          "pct": ".250",
+          "ties": 1,
+          "pct": ".300",
           "diff": -34,
           "seed": 13,
           "div": "NFC East",
@@ -19421,28 +19421,41 @@ window.standingsData = {
         {
           "name": "Minnesota Vikings",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
-          "wins": 4,
+          "wins": 5,
           "losses": 0,
           "ties": 0,
           "pct": "1.000",
-          "diff": 35,
+          "diff": 45,
           "seed": 1,
           "div": "NFC North",
           "conf": "NFC",
           "pos": 1
         },
         {
-          "name": "Chicago Bears",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+          "name": "Green Bay Packers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
           "wins": 3,
-          "losses": 1,
+          "losses": 2,
           "ties": 0,
-          "pct": ".750",
-          "diff": 47,
-          "seed": 5,
+          "pct": ".600",
+          "diff": -8,
+          "seed": 6,
           "div": "NFC North",
           "conf": "NFC",
           "pos": 2
+        },
+        {
+          "name": "Chicago Bears",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 23,
+          "seed": 7,
+          "div": "NFC North",
+          "conf": "NFC",
+          "pos": 3
         },
         {
           "name": "Detroit Lions",
@@ -19452,19 +19465,6 @@ window.standingsData = {
           "ties": 0,
           "pct": ".500",
           "diff": -8,
-          "seed": 9,
-          "div": "NFC North",
-          "conf": "NFC",
-          "pos": 3
-        },
-        {
-          "name": "Green Bay Packers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-          "wins": 2,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".500",
-          "diff": -32,
           "seed": 10,
           "div": "NFC North",
           "conf": "NFC",
@@ -19493,23 +19493,10 @@ window.standingsData = {
           "ties": 0,
           "pct": ".500",
           "diff": 4,
-          "seed": 8,
+          "seed": 9,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 2
-        },
-        {
-          "name": "New Orleans Saints",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
-          "wins": 1,
-          "losses": 3,
-          "ties": 0,
-          "pct": ".250",
-          "diff": -23,
-          "seed": 14,
-          "div": "NFC South",
-          "conf": "NFC",
-          "pos": 3
         },
         {
           "name": "Tampa Bay Buccaneers",
@@ -19519,6 +19506,19 @@ window.standingsData = {
           "ties": 0,
           "pct": ".200",
           "diff": -12,
+          "seed": 15,
+          "div": "NFC South",
+          "conf": "NFC",
+          "pos": 3
+        },
+        {
+          "name": "New Orleans Saints",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+          "wins": 1,
+          "losses": 4,
+          "ties": 0,
+          "pct": ".200",
+          "diff": -33,
           "seed": 16,
           "div": "NFC South",
           "conf": "NFC",
@@ -19547,7 +19547,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".750",
           "diff": 32,
-          "seed": 6,
+          "seed": 5,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 2
@@ -19560,7 +19560,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".500",
           "diff": 2,
-          "seed": 7,
+          "seed": 8,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 3
@@ -19573,7 +19573,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".250",
           "diff": -30,
-          "seed": 15,
+          "seed": 14,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 4
@@ -19609,32 +19609,6 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Buffalo Bills",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": 20,
-          "seed": 3,
-          "div": "AFC East",
-          "conf": "AFC",
-          "pos": 1
-        },
-        {
-          "name": "Cleveland Browns",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": -14,
-          "seed": 4,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 1
-        },
-        {
           "name": "Baltimore Ravens",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
           "wins": 3,
@@ -19642,8 +19616,34 @@ window.standingsData = {
           "ties": 0,
           "pct": ".750",
           "diff": 20,
-          "seed": 5,
+          "seed": 3,
           "div": "AFC North",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
+          "name": "Buffalo Bills",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+          "wins": 3,
+          "losses": 1,
+          "ties": 0,
+          "pct": ".750",
+          "diff": 20,
+          "seed": 4,
+          "div": "AFC East",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
+          "name": "New England Patriots",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 16,
+          "seed": 5,
+          "div": "AFC East",
           "conf": "AFC",
           "pos": 2
         },
@@ -19651,27 +19651,53 @@ window.standingsData = {
           "name": "Las Vegas Raiders",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
           "wins": 3,
-          "losses": 1,
+          "losses": 2,
           "ties": 0,
-          "pct": ".750",
-          "diff": 31,
+          "pct": ".600",
+          "diff": 3,
           "seed": 6,
           "div": "AFC West",
           "conf": "AFC",
           "pos": 2
         },
         {
-          "name": "New England Patriots",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-          "wins": 2,
+          "name": "Cleveland Browns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+          "wins": 3,
           "losses": 2,
           "ties": 0,
-          "pct": ".500",
-          "diff": -12,
+          "pct": ".600",
+          "diff": -19,
           "seed": 7,
-          "div": "AFC East",
+          "div": "AFC North",
           "conf": "AFC",
           "pos": 2
+        },
+        {
+          "name": "Pittsburgh Steelers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 2,
+          "seed": 8,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 3
+        },
+        {
+          "name": "Cincinnati Bengals",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 19,
+          "seed": 9,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 4
         },
         {
           "name": "Denver Broncos",
@@ -19681,21 +19707,21 @@ window.standingsData = {
           "ties": 0,
           "pct": ".500",
           "diff": -20,
-          "seed": 8,
+          "seed": 10,
           "div": "AFC West",
           "conf": "AFC",
           "pos": 3
         },
         {
-          "name": "Pittsburgh Steelers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "name": "New York Jets",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
           "wins": 2,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": -10,
-          "seed": 9,
-          "div": "AFC North",
+          "pct": ".400",
+          "diff": -3,
+          "seed": 11,
+          "div": "AFC East",
           "conf": "AFC",
           "pos": 3
         },
@@ -19703,53 +19729,27 @@ window.standingsData = {
           "name": "Indianapolis Colts",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
           "wins": 2,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": -2,
-          "seed": 10,
+          "pct": ".400",
+          "diff": -14,
+          "seed": 12,
           "div": "AFC South",
           "conf": "AFC",
           "pos": 2
         },
         {
-          "name": "Cincinnati Bengals",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-          "wins": 2,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".500",
-          "diff": 12,
-          "seed": 11,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 4
-        },
-        {
-          "name": "New York Jets",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
+          "name": "Houston Texans",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
           "wins": 1,
-          "losses": 3,
-          "ties": 0,
-          "pct": ".250",
-          "diff": -8,
-          "seed": 12,
-          "div": "AFC East",
-          "conf": "AFC",
-          "pos": 3
-        },
-        {
-          "name": "Miami Dolphins",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
-          "wins": 0,
           "losses": 4,
           "ties": 0,
-          "pct": ".000",
-          "diff": -55,
+          "pct": ".200",
+          "diff": -2,
           "seed": 13,
-          "div": "AFC East",
+          "div": "AFC South",
           "conf": "AFC",
-          "pos": 4
+          "pos": 3
         },
         {
           "name": "Los Angeles Chargers",
@@ -19765,26 +19765,26 @@ window.standingsData = {
           "pos": 4
         },
         {
-          "name": "Houston Texans",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+          "name": "Miami Dolphins",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
           "wins": 0,
-          "losses": 4,
+          "losses": 5,
           "ties": 0,
           "pct": ".000",
-          "diff": -25,
+          "diff": -62,
           "seed": 15,
-          "div": "AFC South",
+          "div": "AFC East",
           "conf": "AFC",
-          "pos": 3
+          "pos": 4
         },
         {
           "name": "Tennessee Titans",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
           "wins": 0,
-          "losses": 4,
+          "losses": 5,
           "ties": 0,
           "pct": ".000",
-          "diff": -28,
+          "diff": -51,
           "seed": 16,
           "div": "AFC South",
           "conf": "AFC",
@@ -19795,11 +19795,11 @@ window.standingsData = {
         {
           "name": "Minnesota Vikings",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
-          "wins": 4,
+          "wins": 5,
           "losses": 0,
           "ties": 0,
           "pct": "1.000",
-          "diff": 35,
+          "diff": 45,
           "seed": 1,
           "div": "NFC North",
           "conf": "NFC",
@@ -19823,8 +19823,8 @@ window.standingsData = {
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
           "wins": 3,
           "losses": 1,
-          "ties": 0,
-          "pct": ".750",
+          "ties": 1,
+          "pct": ".700",
           "diff": 3,
           "seed": 3,
           "div": "NFC East",
@@ -19845,19 +19845,6 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Chicago Bears",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": 47,
-          "seed": 5,
-          "div": "NFC North",
-          "conf": "NFC",
-          "pos": 2
-        },
-        {
           "name": "Seattle Seahawks",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
           "wins": 3,
@@ -19865,10 +19852,36 @@ window.standingsData = {
           "ties": 0,
           "pct": ".750",
           "diff": 32,
-          "seed": 6,
+          "seed": 5,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 2
+        },
+        {
+          "name": "Green Bay Packers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": -8,
+          "seed": 6,
+          "div": "NFC North",
+          "conf": "NFC",
+          "pos": 2
+        },
+        {
+          "name": "Chicago Bears",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 23,
+          "seed": 7,
+          "div": "NFC North",
+          "conf": "NFC",
+          "pos": 3
         },
         {
           "name": "Los Angeles Rams",
@@ -19878,7 +19891,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".500",
           "diff": 2,
-          "seed": 7,
+          "seed": 8,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 3
@@ -19891,7 +19904,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".500",
           "diff": 4,
-          "seed": 8,
+          "seed": 9,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 2
@@ -19904,19 +19917,6 @@ window.standingsData = {
           "ties": 0,
           "pct": ".500",
           "diff": -8,
-          "seed": 9,
-          "div": "NFC North",
-          "conf": "NFC",
-          "pos": 3
-        },
-        {
-          "name": "Green Bay Packers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-          "wins": 2,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".500",
-          "diff": -32,
           "seed": 10,
           "div": "NFC North",
           "conf": "NFC",
@@ -19953,26 +19953,13 @@ window.standingsData = {
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
           "wins": 1,
           "losses": 3,
-          "ties": 0,
-          "pct": ".250",
+          "ties": 1,
+          "pct": ".300",
           "diff": -34,
           "seed": 13,
           "div": "NFC East",
           "conf": "NFC",
           "pos": 4
-        },
-        {
-          "name": "New Orleans Saints",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
-          "wins": 1,
-          "losses": 3,
-          "ties": 0,
-          "pct": ".250",
-          "diff": -23,
-          "seed": 14,
-          "div": "NFC South",
-          "conf": "NFC",
-          "pos": 3
         },
         {
           "name": "Arizona Cardinals",
@@ -19982,7 +19969,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".250",
           "diff": -30,
-          "seed": 15,
+          "seed": 14,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 4
@@ -19995,6 +19982,19 @@ window.standingsData = {
           "ties": 0,
           "pct": ".200",
           "diff": -12,
+          "seed": 15,
+          "div": "NFC South",
+          "conf": "NFC",
+          "pos": 3
+        },
+        {
+          "name": "New Orleans Saints",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+          "wins": 1,
+          "losses": 4,
+          "ties": 0,
+          "pct": ".200",
+          "diff": -33,
           "seed": 16,
           "div": "NFC South",
           "conf": "NFC",
@@ -20031,32 +20031,6 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Buffalo Bills",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": 20,
-          "seed": 3,
-          "div": "AFC East",
-          "conf": "AFC",
-          "pos": 1
-        },
-        {
-          "name": "Cleveland Browns",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": -14,
-          "seed": 4,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 1
-        },
-        {
           "name": "Baltimore Ravens",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
           "wins": 3,
@@ -20064,8 +20038,34 @@ window.standingsData = {
           "ties": 0,
           "pct": ".750",
           "diff": 20,
-          "seed": 5,
+          "seed": 3,
           "div": "AFC North",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
+          "name": "Buffalo Bills",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+          "wins": 3,
+          "losses": 1,
+          "ties": 0,
+          "pct": ".750",
+          "diff": 20,
+          "seed": 4,
+          "div": "AFC East",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
+          "name": "New England Patriots",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 16,
+          "seed": 5,
+          "div": "AFC East",
           "conf": "AFC",
           "pos": 2
         },
@@ -20073,25 +20073,25 @@ window.standingsData = {
           "name": "Las Vegas Raiders",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
           "wins": 3,
-          "losses": 1,
+          "losses": 2,
           "ties": 0,
-          "pct": ".750",
-          "diff": 31,
+          "pct": ".600",
+          "diff": 3,
           "seed": 6,
           "div": "AFC West",
           "conf": "AFC",
           "pos": 2
         },
         {
-          "name": "New England Patriots",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-          "wins": 2,
+          "name": "Cleveland Browns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+          "wins": 3,
           "losses": 2,
           "ties": 0,
-          "pct": ".500",
-          "diff": -12,
+          "pct": ".600",
+          "diff": -19,
           "seed": 7,
-          "div": "AFC East",
+          "div": "AFC North",
           "conf": "AFC",
           "pos": 2
         }
@@ -20100,11 +20100,11 @@ window.standingsData = {
         {
           "name": "Minnesota Vikings",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
-          "wins": 4,
+          "wins": 5,
           "losses": 0,
           "ties": 0,
           "pct": "1.000",
-          "diff": 35,
+          "diff": 45,
           "seed": 1,
           "div": "NFC North",
           "conf": "NFC",
@@ -20128,8 +20128,8 @@ window.standingsData = {
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
           "wins": 3,
           "losses": 1,
-          "ties": 0,
-          "pct": ".750",
+          "ties": 1,
+          "pct": ".700",
           "diff": 3,
           "seed": 3,
           "div": "NFC East",
@@ -20150,19 +20150,6 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Chicago Bears",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": 47,
-          "seed": 5,
-          "div": "NFC North",
-          "conf": "NFC",
-          "pos": 2
-        },
-        {
           "name": "Seattle Seahawks",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
           "wins": 3,
@@ -20170,21 +20157,34 @@ window.standingsData = {
           "ties": 0,
           "pct": ".750",
           "diff": 32,
-          "seed": 6,
+          "seed": 5,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 2
         },
         {
-          "name": "Los Angeles Rams",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
-          "wins": 2,
+          "name": "Green Bay Packers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+          "wins": 3,
           "losses": 2,
           "ties": 0,
-          "pct": ".500",
-          "diff": 2,
+          "pct": ".600",
+          "diff": -8,
+          "seed": 6,
+          "div": "NFC North",
+          "conf": "NFC",
+          "pos": 2
+        },
+        {
+          "name": "Chicago Bears",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 23,
           "seed": 7,
-          "div": "NFC West",
+          "div": "NFC North",
           "conf": "NFC",
           "pos": 3
         }
@@ -20195,57 +20195,57 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-11T18:05:48.102566+00:00",
+  "generatedAt": "2026-10-11T21:59:36.416170+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-11T18:05:48.102566+00:00"
+      "updatedAt": "2026-10-11T21:59:36.416170+00:00"
     }
   },
   "partial": false
