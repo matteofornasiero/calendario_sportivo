@@ -4633,9 +4633,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
     "venue": "Mercedes-Benz Stadium, Atlanta",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "23",
+    "awayScore": "30",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -19205,12 +19205,12 @@ window.standingsData = {
         {
           "name": "Baltimore Ravens",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 1,
           "ties": 0,
-          "pct": ".750",
-          "diff": 20,
-          "seed": 3,
+          "pct": ".800",
+          "diff": 27,
+          "seed": 2,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 1
@@ -19264,7 +19264,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".800",
           "diff": 53,
-          "seed": 2,
+          "seed": 3,
           "div": "AFC South",
           "conf": "AFC",
           "pos": 1
@@ -19489,10 +19489,10 @@ window.standingsData = {
           "name": "Atlanta Falcons",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
           "wins": 2,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": 4,
+          "pct": ".400",
+          "diff": -3,
           "seed": 10,
           "div": "NFC South",
           "conf": "NFC",
@@ -19596,6 +19596,19 @@ window.standingsData = {
           "pos": 1
         },
         {
+          "name": "Baltimore Ravens",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+          "wins": 4,
+          "losses": 1,
+          "ties": 0,
+          "pct": ".800",
+          "diff": 27,
+          "seed": 2,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
           "name": "Jacksonville Jaguars",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
           "wins": 4,
@@ -19603,21 +19616,8 @@ window.standingsData = {
           "ties": 0,
           "pct": ".800",
           "diff": 53,
-          "seed": 2,
-          "div": "AFC South",
-          "conf": "AFC",
-          "pos": 1
-        },
-        {
-          "name": "Baltimore Ravens",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": 20,
           "seed": 3,
-          "div": "AFC North",
+          "div": "AFC South",
           "conf": "AFC",
           "pos": 1
         },
@@ -19913,10 +19913,10 @@ window.standingsData = {
           "name": "Atlanta Falcons",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
           "wins": 2,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": 4,
+          "pct": ".400",
+          "diff": -3,
           "seed": 10,
           "div": "NFC South",
           "conf": "NFC",
@@ -20018,6 +20018,19 @@ window.standingsData = {
           "pos": 1
         },
         {
+          "name": "Baltimore Ravens",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+          "wins": 4,
+          "losses": 1,
+          "ties": 0,
+          "pct": ".800",
+          "diff": 27,
+          "seed": 2,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
           "name": "Jacksonville Jaguars",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
           "wins": 4,
@@ -20025,21 +20038,8 @@ window.standingsData = {
           "ties": 0,
           "pct": ".800",
           "diff": 53,
-          "seed": 2,
-          "div": "AFC South",
-          "conf": "AFC",
-          "pos": 1
-        },
-        {
-          "name": "Baltimore Ravens",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-          "wins": 3,
-          "losses": 1,
-          "ties": 0,
-          "pct": ".750",
-          "diff": 20,
           "seed": 3,
-          "div": "AFC North",
+          "div": "AFC South",
           "conf": "AFC",
           "pos": 1
         },
@@ -20195,57 +20195,57 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-12T01:20:42.807953+00:00",
+  "generatedAt": "2026-10-12T09:15:10.140463+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-12T01:20:42.807953+00:00"
+      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
     }
   },
   "partial": false
