@@ -4652,9 +4652,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/102.png",
     "awayCrest": "https://crests.football-data.org/454.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 3,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 6,
     "isTop": false
   },
@@ -4674,7 +4674,7 @@ window.calendarData = [
     "venue": "",
     "homeScore": null,
     "awayScore": null,
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "matchday": 6,
     "isTop": true
   },
@@ -18385,6 +18385,17 @@ window.standingsData = {
     },
     {
       "pos": 10,
+      "name": "Atalanta",
+      "crest": "https://crests.football-data.org/102.png",
+      "played": 6,
+      "won": 3,
+      "draw": 0,
+      "lost": 3,
+      "points": 9,
+      "diff": 0
+    },
+    {
+      "pos": 11,
       "name": "Sassuolo",
       "crest": "https://crests.football-data.org/471.png",
       "played": 6,
@@ -18393,17 +18404,6 @@ window.standingsData = {
       "lost": 2,
       "points": 8,
       "diff": 0
-    },
-    {
-      "pos": 11,
-      "name": "Atalanta",
-      "crest": "https://crests.football-data.org/102.png",
-      "played": 5,
-      "won": 2,
-      "draw": 0,
-      "lost": 3,
-      "points": 6,
-      "diff": -2
     },
     {
       "pos": 12,
@@ -18431,22 +18431,22 @@ window.standingsData = {
       "pos": 14,
       "name": "Udinese",
       "crest": "https://crests.football-data.org/115.png",
-      "played": 5,
+      "played": 6,
       "won": 1,
-      "draw": 1,
+      "draw": 2,
       "lost": 3,
-      "points": 4,
+      "points": 5,
       "diff": -3
     },
     {
       "pos": 15,
       "name": "Torino",
       "crest": "https://crests.football-data.org/586.png",
-      "played": 5,
+      "played": 6,
       "won": 1,
-      "draw": 1,
+      "draw": 2,
       "lost": 3,
-      "points": 4,
+      "points": 5,
       "diff": -3
     },
     {
@@ -18497,12 +18497,12 @@ window.standingsData = {
       "pos": 20,
       "name": "Venezia FC",
       "crest": "https://crests.football-data.org/454.png",
-      "played": 5,
+      "played": 6,
       "won": 0,
       "draw": 0,
-      "lost": 5,
+      "lost": 6,
       "points": 0,
-      "diff": -9
+      "diff": -11
     }
   ],
   "champions": [
@@ -20195,57 +20195,57 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-12T09:15:10.140463+00:00",
+  "generatedAt": "2026-10-12T19:07:20.310866+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-12T09:15:10.140463+00:00"
+      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
     }
   },
   "partial": false
