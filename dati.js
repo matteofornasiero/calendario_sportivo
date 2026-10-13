@@ -4672,9 +4672,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/586.png",
     "awayCrest": "https://crests.football-data.org/115.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 6,
     "isTop": true
   },
@@ -4694,7 +4694,7 @@ window.calendarData = [
     "venue": "SoFi Stadium, Inglewood",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -18407,6 +18407,17 @@ window.standingsData = {
     },
     {
       "pos": 12,
+      "name": "Torino",
+      "crest": "https://crests.football-data.org/586.png",
+      "played": 6,
+      "won": 2,
+      "draw": 1,
+      "lost": 3,
+      "points": 7,
+      "diff": -2
+    },
+    {
+      "pos": 13,
       "name": "Lecce",
       "crest": "https://crests.football-data.org/5890.png",
       "played": 6,
@@ -18417,7 +18428,7 @@ window.standingsData = {
       "diff": -6
     },
     {
-      "pos": 13,
+      "pos": 14,
       "name": "Bologna",
       "crest": "https://crests.football-data.org/103.png",
       "played": 6,
@@ -18428,26 +18439,15 @@ window.standingsData = {
       "diff": -2
     },
     {
-      "pos": 14,
+      "pos": 15,
       "name": "Udinese",
       "crest": "https://crests.football-data.org/115.png",
       "played": 6,
       "won": 1,
-      "draw": 2,
-      "lost": 3,
-      "points": 5,
-      "diff": -3
-    },
-    {
-      "pos": 15,
-      "name": "Torino",
-      "crest": "https://crests.football-data.org/586.png",
-      "played": 6,
-      "won": 1,
-      "draw": 2,
-      "lost": 3,
-      "points": 5,
-      "diff": -3
+      "draw": 1,
+      "lost": 4,
+      "points": 4,
+      "diff": -4
     },
     {
       "pos": 16,
@@ -20195,57 +20195,57 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-12T19:07:20.310866+00:00",
+  "generatedAt": "2026-10-13T01:22:41.243018+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-12T19:07:20.310866+00:00"
+      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
     }
   },
   "partial": false
