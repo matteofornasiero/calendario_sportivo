@@ -4692,9 +4692,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
     "venue": "SoFi Stadium, Inglewood",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "34",
+    "awayScore": "37",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -19151,11 +19151,11 @@ window.standingsData = {
         {
           "name": "Buffalo Bills",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 1,
           "ties": 0,
-          "pct": ".750",
-          "diff": 20,
+          "pct": ".800",
+          "diff": 23,
           "seed": 4,
           "div": "AFC East",
           "conf": "AFC",
@@ -19445,19 +19445,6 @@ window.standingsData = {
           "pos": 2
         },
         {
-          "name": "Chicago Bears",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-          "wins": 3,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".600",
-          "diff": 23,
-          "seed": 6,
-          "div": "NFC North",
-          "conf": "NFC",
-          "pos": 3
-        },
-        {
           "name": "Detroit Lions",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
           "wins": 3,
@@ -19465,6 +19452,19 @@ window.standingsData = {
           "ties": 0,
           "pct": ".600",
           "diff": 16,
+          "seed": 6,
+          "div": "NFC North",
+          "conf": "NFC",
+          "pos": 3
+        },
+        {
+          "name": "Chicago Bears",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 23,
           "seed": 7,
           "div": "NFC North",
           "conf": "NFC",
@@ -19556,10 +19556,10 @@ window.standingsData = {
           "name": "Los Angeles Rams",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
           "wins": 2,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": 2,
+          "pct": ".400",
+          "diff": -1,
           "seed": 9,
           "div": "NFC West",
           "conf": "NFC",
@@ -19624,11 +19624,11 @@ window.standingsData = {
         {
           "name": "Buffalo Bills",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 1,
           "ties": 0,
-          "pct": ".750",
-          "diff": 20,
+          "pct": ".800",
+          "diff": 23,
           "seed": 4,
           "div": "AFC East",
           "conf": "AFC",
@@ -19858,19 +19858,6 @@ window.standingsData = {
           "pos": 2
         },
         {
-          "name": "Chicago Bears",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-          "wins": 3,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".600",
-          "diff": 23,
-          "seed": 6,
-          "div": "NFC North",
-          "conf": "NFC",
-          "pos": 3
-        },
-        {
           "name": "Detroit Lions",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
           "wins": 3,
@@ -19878,6 +19865,19 @@ window.standingsData = {
           "ties": 0,
           "pct": ".600",
           "diff": 16,
+          "seed": 6,
+          "div": "NFC North",
+          "conf": "NFC",
+          "pos": 3
+        },
+        {
+          "name": "Chicago Bears",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 23,
           "seed": 7,
           "div": "NFC North",
           "conf": "NFC",
@@ -19900,10 +19900,10 @@ window.standingsData = {
           "name": "Los Angeles Rams",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
           "wins": 2,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": 2,
+          "pct": ".400",
+          "diff": -1,
           "seed": 9,
           "div": "NFC West",
           "conf": "NFC",
@@ -20046,11 +20046,11 @@ window.standingsData = {
         {
           "name": "Buffalo Bills",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 1,
           "ties": 0,
-          "pct": ".750",
-          "diff": 20,
+          "pct": ".800",
+          "diff": 23,
           "seed": 4,
           "div": "AFC East",
           "conf": "AFC",
@@ -20163,19 +20163,6 @@ window.standingsData = {
           "pos": 2
         },
         {
-          "name": "Chicago Bears",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-          "wins": 3,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".600",
-          "diff": 23,
-          "seed": 6,
-          "div": "NFC North",
-          "conf": "NFC",
-          "pos": 3
-        },
-        {
           "name": "Detroit Lions",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
           "wins": 3,
@@ -20183,6 +20170,19 @@ window.standingsData = {
           "ties": 0,
           "pct": ".600",
           "diff": 16,
+          "seed": 6,
+          "div": "NFC North",
+          "conf": "NFC",
+          "pos": 3
+        },
+        {
+          "name": "Chicago Bears",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+          "wins": 3,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".600",
+          "diff": 23,
           "seed": 7,
           "div": "NFC North",
           "conf": "NFC",
@@ -20195,57 +20195,57 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-13T01:22:41.243018+00:00",
+  "generatedAt": "2026-10-13T09:27:03.904440+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-13T01:22:41.243018+00:00"
+      "updatedAt": "2026-10-13T09:27:03.904440+00:00"
     }
   },
   "partial": false
