@@ -4891,9 +4891,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/675.png",
     "awayCrest": "https://crests.football-data.org/7397.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 3,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": false
   },
@@ -4911,9 +4911,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/2016.png",
     "awayCrest": "https://crests.football-data.org/64.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 3,
+    "awayScore": 6,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": false
   },
@@ -4931,9 +4931,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/58.png",
     "awayCrest": "https://crests.football-data.org/613.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 6,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": false
   },
@@ -4951,9 +4951,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/5721.png",
     "awayCrest": "https://crests.football-data.org/4.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 1,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": false
   },
@@ -4971,9 +4971,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/65.png",
     "awayCrest": "https://crests.football-data.org/524.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 2,
+    "awayScore": 4,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": false
   },
@@ -4991,9 +4991,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/90.png",
     "awayCrest": "https://crests.football-data.org/503.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 3,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": false
   },
@@ -5011,9 +5011,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/100.png",
     "awayCrest": "https://crests.football-data.org/86.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 3,
+    "awayScore": 4,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": true
   },
@@ -5031,9 +5031,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/1887.png",
     "awayCrest": "https://crests.football-data.org/1899.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 3,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": false
   },
@@ -5051,9 +5051,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/7509.png",
     "awayCrest": "https://crests.football-data.org/10.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 0,
+    "awayScore": 3,
+    "status": "FINISHED",
     "matchday": 2,
     "isTop": false
   },
@@ -18508,6 +18508,17 @@ window.standingsData = {
   "champions": [
     {
       "pos": 1,
+      "name": "PSG",
+      "crest": "https://crests.football-data.org/524.png",
+      "played": 2,
+      "won": 2,
+      "draw": 0,
+      "lost": 0,
+      "points": 6,
+      "diff": 7
+    },
+    {
+      "pos": 2,
       "name": "Barça",
       "crest": "https://crests.football-data.org/81.png",
       "played": 2,
@@ -18518,7 +18529,29 @@ window.standingsData = {
       "diff": 7
     },
     {
-      "pos": 2,
+      "pos": 3,
+      "name": "Aston Villa",
+      "crest": "https://crests.football-data.org/58.png",
+      "played": 2,
+      "won": 2,
+      "draw": 0,
+      "lost": 0,
+      "points": 6,
+      "diff": 7
+    },
+    {
+      "pos": 4,
+      "name": "Stuttgart",
+      "crest": "https://crests.football-data.org/10.png",
+      "played": 2,
+      "won": 2,
+      "draw": 0,
+      "lost": 0,
+      "points": 6,
+      "diff": 5
+    },
+    {
+      "pos": 5,
       "name": "Liverpool",
       "crest": "https://crests.football-data.org/64.png",
       "played": 2,
@@ -18529,7 +18562,7 @@ window.standingsData = {
       "diff": 4
     },
     {
-      "pos": 3,
+      "pos": 6,
       "name": "Sporting CP",
       "crest": "https://crests.football-data.org/498.png",
       "played": 2,
@@ -18540,7 +18573,7 @@ window.standingsData = {
       "diff": 4
     },
     {
-      "pos": 4,
+      "pos": 7,
       "name": "Arsenal",
       "crest": "https://crests.football-data.org/57.png",
       "played": 2,
@@ -18551,7 +18584,29 @@ window.standingsData = {
       "diff": 4
     },
     {
-      "pos": 5,
+      "pos": 8,
+      "name": "Real Madrid",
+      "crest": "https://crests.football-data.org/86.png",
+      "played": 2,
+      "won": 2,
+      "draw": 0,
+      "lost": 0,
+      "points": 6,
+      "diff": 2
+    },
+    {
+      "pos": 9,
+      "name": "Real Betis",
+      "crest": "https://crests.football-data.org/90.png",
+      "played": 2,
+      "won": 2,
+      "draw": 0,
+      "lost": 0,
+      "points": 6,
+      "diff": 2
+    },
+    {
+      "pos": 10,
       "name": "Bayern",
       "crest": "https://crests.football-data.org/5.png",
       "played": 2,
@@ -18562,18 +18617,18 @@ window.standingsData = {
       "diff": 5
     },
     {
-      "pos": 6,
-      "name": "PSG",
-      "crest": "https://crests.football-data.org/524.png",
-      "played": 1,
+      "pos": 11,
+      "name": "Shaktar",
+      "crest": "https://crests.football-data.org/1887.png",
+      "played": 2,
       "won": 1,
-      "draw": 0,
+      "draw": 1,
       "lost": 0,
-      "points": 3,
-      "diff": 5
+      "points": 4,
+      "diff": 2
     },
     {
-      "pos": 7,
+      "pos": 12,
       "name": "Como 1907",
       "crest": "https://crests.football-data.org/7397.png",
       "played": 2,
@@ -18584,7 +18639,7 @@ window.standingsData = {
       "diff": 2
     },
     {
-      "pos": 8,
+      "pos": 13,
       "name": "Man United",
       "crest": "https://crests.football-data.org/66.png",
       "played": 2,
@@ -18595,29 +18650,7 @@ window.standingsData = {
       "diff": 2
     },
     {
-      "pos": 9,
-      "name": "Stuttgart",
-      "crest": "https://crests.football-data.org/10.png",
-      "played": 1,
-      "won": 1,
-      "draw": 0,
-      "lost": 0,
-      "points": 3,
-      "diff": 2
-    },
-    {
-      "pos": 10,
-      "name": "Man City",
-      "crest": "https://crests.football-data.org/65.png",
-      "played": 1,
-      "won": 1,
-      "draw": 0,
-      "lost": 0,
-      "points": 3,
-      "diff": 2
-    },
-    {
-      "pos": 11,
+      "pos": 14,
       "name": "Villarreal",
       "crest": "https://crests.football-data.org/94.png",
       "played": 2,
@@ -18628,29 +18661,7 @@ window.standingsData = {
       "diff": 1
     },
     {
-      "pos": 12,
-      "name": "Aston Villa",
-      "crest": "https://crests.football-data.org/58.png",
-      "played": 1,
-      "won": 1,
-      "draw": 0,
-      "lost": 0,
-      "points": 3,
-      "diff": 1
-    },
-    {
-      "pos": 12,
-      "name": "Real Betis",
-      "crest": "https://crests.football-data.org/90.png",
-      "played": 1,
-      "won": 1,
-      "draw": 0,
-      "lost": 0,
-      "points": 3,
-      "diff": 1
-    },
-    {
-      "pos": 14,
+      "pos": 15,
       "name": "Atleti",
       "crest": "https://crests.football-data.org/78.png",
       "played": 2,
@@ -18661,42 +18672,31 @@ window.standingsData = {
       "diff": 1
     },
     {
-      "pos": 15,
-      "name": "Dortmund",
-      "crest": "https://crests.football-data.org/4.png",
-      "played": 1,
-      "won": 1,
-      "draw": 0,
-      "lost": 0,
-      "points": 3,
-      "diff": 1
-    },
-    {
       "pos": 16,
-      "name": "Real Madrid",
-      "crest": "https://crests.football-data.org/86.png",
-      "played": 1,
+      "name": "Club Brugge",
+      "crest": "https://crests.football-data.org/851.png",
+      "played": 2,
       "won": 1,
       "draw": 0,
-      "lost": 0,
+      "lost": 1,
       "points": 3,
-      "diff": 1
+      "diff": 0
     },
     {
       "pos": 17,
-      "name": "PAE AEK",
-      "crest": "https://crests.football-data.org/1899.png",
-      "played": 1,
+      "name": "Man City",
+      "crest": "https://crests.football-data.org/65.png",
+      "played": 2,
       "won": 1,
       "draw": 0,
-      "lost": 0,
+      "lost": 1,
       "points": 3,
-      "diff": 1
+      "diff": 0
     },
     {
       "pos": 18,
-      "name": "Club Brugge",
-      "crest": "https://crests.football-data.org/851.png",
+      "name": "Dortmund",
+      "crest": "https://crests.football-data.org/4.png",
       "played": 2,
       "won": 1,
       "draw": 0,
@@ -18717,6 +18717,17 @@ window.standingsData = {
     },
     {
       "pos": 20,
+      "name": "PAE AEK",
+      "crest": "https://crests.football-data.org/1899.png",
+      "played": 2,
+      "won": 1,
+      "draw": 0,
+      "lost": 1,
+      "points": 3,
+      "diff": -1
+    },
+    {
+      "pos": 21,
       "name": "RB Leipzig",
       "crest": "https://crests.football-data.org/721.png",
       "played": 2,
@@ -18727,7 +18738,7 @@ window.standingsData = {
       "diff": -2
     },
     {
-      "pos": 21,
+      "pos": 22,
       "name": "Sabah FK",
       "crest": "https://crests.football-data.org/10233.png",
       "played": 2,
@@ -18738,7 +18749,7 @@ window.standingsData = {
       "diff": -2
     },
     {
-      "pos": 22,
+      "pos": 23,
       "name": "Feyenoord",
       "crest": "https://crests.football-data.org/675.png",
       "played": 2,
@@ -18749,37 +18760,26 @@ window.standingsData = {
       "diff": -3
     },
     {
-      "pos": 23,
-      "name": "Roma",
-      "crest": "https://crests.football-data.org/100.png",
-      "played": 1,
-      "won": 0,
-      "draw": 1,
-      "lost": 0,
-      "points": 1,
-      "diff": 0
-    },
-    {
-      "pos": 23,
-      "name": "Shaktar",
-      "crest": "https://crests.football-data.org/1887.png",
-      "played": 1,
-      "won": 0,
-      "draw": 1,
-      "lost": 0,
-      "points": 1,
-      "diff": 0
+      "pos": 24,
+      "name": "Bodø/Glimt",
+      "crest": "https://crests.football-data.org/5721.png",
+      "played": 2,
+      "won": 1,
+      "draw": 0,
+      "lost": 1,
+      "points": 3,
+      "diff": -4
     },
     {
       "pos": 25,
-      "name": "Fenerbahçe",
-      "crest": "https://crests.football-data.org/613.png",
-      "played": 1,
+      "name": "Roma",
+      "crest": "https://crests.football-data.org/100.png",
+      "played": 2,
       "won": 0,
       "draw": 1,
-      "lost": 0,
+      "lost": 1,
       "points": 1,
-      "diff": 0
+      "diff": -1
     },
     {
       "pos": 26,
@@ -18805,6 +18805,17 @@ window.standingsData = {
     },
     {
       "pos": 28,
+      "name": "Fenerbahçe",
+      "crest": "https://crests.football-data.org/613.png",
+      "played": 2,
+      "won": 0,
+      "draw": 1,
+      "lost": 1,
+      "points": 1,
+      "diff": -6
+    },
+    {
+      "pos": 29,
       "name": "Inter",
       "crest": "https://crests.football-data.org/108.png",
       "played": 2,
@@ -18815,18 +18826,18 @@ window.standingsData = {
       "diff": -2
     },
     {
-      "pos": 29,
+      "pos": 30,
       "name": "Porto",
       "crest": "https://crests.football-data.org/503.png",
-      "played": 1,
+      "played": 2,
       "won": 0,
       "draw": 0,
-      "lost": 1,
+      "lost": 2,
       "points": 0,
-      "diff": -2
+      "diff": -3
     },
     {
-      "pos": 30,
+      "pos": 31,
       "name": "Slavia Praha",
       "crest": "https://crests.football-data.org/930.png",
       "played": 2,
@@ -18837,7 +18848,7 @@ window.standingsData = {
       "diff": -3
     },
     {
-      "pos": 31,
+      "pos": 32,
       "name": "Napoli",
       "crest": "https://crests.football-data.org/113.png",
       "played": 2,
@@ -18848,7 +18859,7 @@ window.standingsData = {
       "diff": -3
     },
     {
-      "pos": 32,
+      "pos": 33,
       "name": "LASK",
       "crest": "https://crests.football-data.org/2016.png",
       "played": 2,
@@ -18859,7 +18870,7 @@ window.standingsData = {
       "diff": -4
     },
     {
-      "pos": 33,
+      "pos": 34,
       "name": "Lille",
       "crest": "https://crests.football-data.org/521.png",
       "played": 2,
@@ -18870,7 +18881,7 @@ window.standingsData = {
       "diff": -4
     },
     {
-      "pos": 34,
+      "pos": 35,
       "name": "Galatasaray",
       "crest": "https://crests.football-data.org/610.png",
       "played": 2,
@@ -18881,26 +18892,15 @@ window.standingsData = {
       "diff": -5
     },
     {
-      "pos": 35,
+      "pos": 36,
       "name": "Sl. Bratislava",
       "crest": "https://crests.football-data.org/7509.png",
-      "played": 1,
+      "played": 2,
       "won": 0,
       "draw": 0,
-      "lost": 1,
+      "lost": 2,
       "points": 0,
-      "diff": -5
-    },
-    {
-      "pos": 36,
-      "name": "Bodø/Glimt",
-      "crest": "https://crests.football-data.org/5721.png",
-      "played": 1,
-      "won": 0,
-      "draw": 0,
-      "lost": 1,
-      "points": 0,
-      "diff": -5
+      "diff": -8
     }
   ],
   "f1_drivers": [
@@ -20195,57 +20195,57 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T18:39:10.616538+00:00",
+  "generatedAt": "2026-10-14T22:18:48.814283+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-14T18:39:10.616538+00:00"
+      "updatedAt": "2026-10-14T22:18:48.814283+00:00"
     }
   },
   "partial": false
