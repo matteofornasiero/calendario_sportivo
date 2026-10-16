@@ -20195,58 +20195,58 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-16T12:27:26.637034+00:00",
+  "generatedAt": "2026-10-16T17:26:06.795974+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "nfl": {
-      "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "status": "error",
+      "updatedAt": "2026-10-16T12:27:26.637034+00:00",
+      "error": "Fonte dati non raggiungibile"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "nazionale": {
-      "status": "error",
-      "updatedAt": "2026-10-15T18:19:24.568445+00:00",
-      "error": "HTTP 522 dalla fonte dati"
+      "status": "ok",
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-16T12:27:26.637034+00:00"
+      "updatedAt": "2026-10-16T17:26:06.795974+00:00"
     }
   },
   "partial": true
