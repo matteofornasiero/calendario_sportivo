@@ -5172,7 +5172,7 @@ window.calendarData = [
     "venue": "",
     "homeScore": null,
     "awayScore": null,
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "matchday": 7,
     "isTop": false
   },
@@ -18396,6 +18396,17 @@ window.standingsData = {
     },
     {
       "pos": 11,
+      "name": "Lecce",
+      "crest": "https://crests.football-data.org/5890.png",
+      "played": 7,
+      "won": 3,
+      "draw": 0,
+      "lost": 4,
+      "points": 9,
+      "diff": -5
+    },
+    {
+      "pos": 12,
       "name": "Sassuolo",
       "crest": "https://crests.football-data.org/471.png",
       "played": 7,
@@ -18406,7 +18417,7 @@ window.standingsData = {
       "diff": -2
     },
     {
-      "pos": 12,
+      "pos": 13,
       "name": "Torino",
       "crest": "https://crests.football-data.org/586.png",
       "played": 6,
@@ -18415,17 +18426,6 @@ window.standingsData = {
       "lost": 3,
       "points": 7,
       "diff": -2
-    },
-    {
-      "pos": 13,
-      "name": "Lecce",
-      "crest": "https://crests.football-data.org/5890.png",
-      "played": 6,
-      "won": 2,
-      "draw": 0,
-      "lost": 4,
-      "points": 6,
-      "diff": -6
     },
     {
       "pos": 14,
@@ -18442,12 +18442,12 @@ window.standingsData = {
       "pos": 15,
       "name": "Udinese",
       "crest": "https://crests.football-data.org/115.png",
-      "played": 6,
+      "played": 7,
       "won": 1,
       "draw": 1,
-      "lost": 4,
+      "lost": 5,
       "points": 4,
-      "diff": -4
+      "diff": -5
     },
     {
       "pos": 16,
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T05:56:03.610842+00:00",
+  "generatedAt": "2026-10-18T11:08:32.447333+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-18T05:56:03.610842+00:00"
+      "updatedAt": "2026-10-18T11:08:32.447333+00:00"
     }
   },
   "partial": true
