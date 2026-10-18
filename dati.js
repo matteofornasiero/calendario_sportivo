@@ -5190,9 +5190,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/99.png",
     "awayCrest": "https://crests.football-data.org/7397.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 1,
+    "awayScore": 3,
+    "status": "FINISHED",
     "matchday": 7,
     "isTop": false
   },
@@ -5210,9 +5210,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
     "venue": "Wembley Stadium, London",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "31",
+    "awayScore": "34",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -5229,9 +5229,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/98.png",
     "awayCrest": "https://crests.football-data.org/102.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 3,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 7,
     "isTop": false
   },
@@ -5251,7 +5251,7 @@ window.calendarData = [
     "venue": "Huntington Bank Field, Cleveland",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -5270,7 +5270,7 @@ window.calendarData = [
     "venue": "Lincoln Financial Field, Philadelphia",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -5289,7 +5289,7 @@ window.calendarData = [
     "venue": "Mercedes-Benz Stadium, Atlanta",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -5308,7 +5308,7 @@ window.calendarData = [
     "venue": "MetLife Stadium, East Rutherford",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -5327,7 +5327,7 @@ window.calendarData = [
     "venue": "Gillette Stadium, Foxborough",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -5346,7 +5346,7 @@ window.calendarData = [
     "venue": "Raymond James Stadium, Tampa",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -5365,7 +5365,7 @@ window.calendarData = [
     "venue": "Lucas Oil Stadium, Indianapolis",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -18319,6 +18319,17 @@ window.standingsData = {
     },
     {
       "pos": 4,
+      "name": "Milan",
+      "crest": "https://crests.football-data.org/98.png",
+      "played": 7,
+      "won": 4,
+      "draw": 3,
+      "lost": 0,
+      "points": 15,
+      "diff": 7
+    },
+    {
+      "pos": 5,
       "name": "Como 1907",
       "crest": "https://crests.football-data.org/7397.png",
       "played": 7,
@@ -18329,7 +18340,7 @@ window.standingsData = {
       "diff": 5
     },
     {
-      "pos": 5,
+      "pos": 6,
       "name": "Frosinone",
       "crest": "https://crests.football-data.org/470.png",
       "played": 7,
@@ -18340,7 +18351,7 @@ window.standingsData = {
       "diff": 4
     },
     {
-      "pos": 6,
+      "pos": 7,
       "name": "Cagliari",
       "crest": "https://crests.football-data.org/104.png",
       "played": 6,
@@ -18349,17 +18360,6 @@ window.standingsData = {
       "lost": 1,
       "points": 13,
       "diff": 3
-    },
-    {
-      "pos": 7,
-      "name": "Milan",
-      "crest": "https://crests.football-data.org/98.png",
-      "played": 6,
-      "won": 3,
-      "draw": 3,
-      "lost": 0,
-      "points": 12,
-      "diff": 6
     },
     {
       "pos": 8,
@@ -18387,12 +18387,12 @@ window.standingsData = {
       "pos": 10,
       "name": "Atalanta",
       "crest": "https://crests.football-data.org/102.png",
-      "played": 6,
+      "played": 7,
       "won": 3,
       "draw": 0,
-      "lost": 3,
+      "lost": 4,
       "points": 9,
-      "diff": 0
+      "diff": -1
     },
     {
       "pos": 11,
@@ -19260,10 +19260,10 @@ window.standingsData = {
           "name": "Jacksonville Jaguars",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
           "wins": 4,
-          "losses": 1,
+          "losses": 2,
           "ties": 0,
-          "pct": ".800",
-          "diff": 53,
+          "pct": ".667",
+          "diff": 50,
           "seed": 3,
           "div": "AFC South",
           "conf": "AFC",
@@ -19285,11 +19285,11 @@ window.standingsData = {
         {
           "name": "Houston Texans",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-          "wins": 1,
+          "wins": 2,
           "losses": 4,
           "ties": 0,
-          "pct": ".200",
-          "diff": -2,
+          "pct": ".333",
+          "diff": 1,
           "seed": 13,
           "div": "AFC South",
           "conf": "AFC",
@@ -19612,10 +19612,10 @@ window.standingsData = {
           "name": "Jacksonville Jaguars",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
           "wins": 4,
-          "losses": 1,
+          "losses": 2,
           "ties": 0,
-          "pct": ".800",
-          "diff": 53,
+          "pct": ".667",
+          "diff": 50,
           "seed": 3,
           "div": "AFC South",
           "conf": "AFC",
@@ -19741,11 +19741,11 @@ window.standingsData = {
         {
           "name": "Houston Texans",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-          "wins": 1,
+          "wins": 2,
           "losses": 4,
           "ties": 0,
-          "pct": ".200",
-          "diff": -2,
+          "pct": ".333",
+          "diff": 1,
           "seed": 13,
           "div": "AFC South",
           "conf": "AFC",
@@ -20034,10 +20034,10 @@ window.standingsData = {
           "name": "Jacksonville Jaguars",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
           "wins": 4,
-          "losses": 1,
+          "losses": 2,
           "ties": 0,
-          "pct": ".800",
-          "diff": 53,
+          "pct": ".667",
+          "diff": 50,
           "seed": 3,
           "div": "AFC South",
           "conf": "AFC",
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T14:36:27.002231+00:00",
+  "generatedAt": "2026-10-18T18:07:17.045023+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-18T14:36:27.002231+00:00"
+      "updatedAt": "2026-10-18T18:07:17.045023+00:00"
     }
   },
   "partial": true
