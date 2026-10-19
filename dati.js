@@ -5478,9 +5478,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/5911.png",
     "awayCrest": "https://crests.football-data.org/104.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 4,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 7,
     "isTop": false
   },
@@ -5498,9 +5498,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/112.png",
     "awayCrest": "https://crests.football-data.org/586.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 1,
+    "awayScore": 3,
+    "status": "FINISHED",
     "matchday": 7,
     "isTop": true
   },
@@ -18354,12 +18354,12 @@ window.standingsData = {
       "pos": 7,
       "name": "Cagliari",
       "crest": "https://crests.football-data.org/104.png",
-      "played": 6,
+      "played": 7,
       "won": 4,
       "draw": 1,
-      "lost": 1,
+      "lost": 2,
       "points": 13,
-      "diff": 3
+      "diff": -1
     },
     {
       "pos": 8,
@@ -18385,6 +18385,17 @@ window.standingsData = {
     },
     {
       "pos": 10,
+      "name": "Torino",
+      "crest": "https://crests.football-data.org/586.png",
+      "played": 7,
+      "won": 3,
+      "draw": 1,
+      "lost": 3,
+      "points": 10,
+      "diff": 1
+    },
+    {
+      "pos": 11,
       "name": "Atalanta",
       "crest": "https://crests.football-data.org/102.png",
       "played": 7,
@@ -18395,7 +18406,7 @@ window.standingsData = {
       "diff": -1
     },
     {
-      "pos": 11,
+      "pos": 12,
       "name": "Lecce",
       "crest": "https://crests.football-data.org/5890.png",
       "played": 7,
@@ -18406,7 +18417,7 @@ window.standingsData = {
       "diff": -3
     },
     {
-      "pos": 12,
+      "pos": 13,
       "name": "Sassuolo",
       "crest": "https://crests.football-data.org/471.png",
       "played": 7,
@@ -18417,18 +18428,18 @@ window.standingsData = {
       "diff": -2
     },
     {
-      "pos": 13,
-      "name": "Torino",
-      "crest": "https://crests.football-data.org/586.png",
-      "played": 6,
+      "pos": 14,
+      "name": "Monza",
+      "crest": "https://crests.football-data.org/5911.png",
+      "played": 7,
       "won": 2,
       "draw": 1,
-      "lost": 3,
+      "lost": 4,
       "points": 7,
       "diff": -2
     },
     {
-      "pos": 14,
+      "pos": 15,
       "name": "Bologna",
       "crest": "https://crests.football-data.org/103.png",
       "played": 7,
@@ -18439,29 +18450,7 @@ window.standingsData = {
       "diff": -4
     },
     {
-      "pos": 15,
-      "name": "Monza",
-      "crest": "https://crests.football-data.org/5911.png",
-      "played": 6,
-      "won": 1,
-      "draw": 1,
-      "lost": 4,
-      "points": 4,
-      "diff": -6
-    },
-    {
       "pos": 16,
-      "name": "Parma",
-      "crest": "https://crests.football-data.org/112.png",
-      "played": 6,
-      "won": 1,
-      "draw": 1,
-      "lost": 4,
-      "points": 4,
-      "diff": -6
-    },
-    {
-      "pos": 17,
       "name": "Udinese",
       "crest": "https://crests.football-data.org/115.png",
       "played": 7,
@@ -18472,7 +18461,7 @@ window.standingsData = {
       "diff": -7
     },
     {
-      "pos": 18,
+      "pos": 17,
       "name": "Genoa",
       "crest": "https://crests.football-data.org/107.png",
       "played": 7,
@@ -18483,9 +18472,20 @@ window.standingsData = {
       "diff": -8
     },
     {
-      "pos": 19,
+      "pos": 18,
       "name": "Fiorentina",
       "crest": "https://crests.football-data.org/99.png",
+      "played": 7,
+      "won": 1,
+      "draw": 1,
+      "lost": 5,
+      "points": 4,
+      "diff": -9
+    },
+    {
+      "pos": 19,
+      "name": "Parma",
+      "crest": "https://crests.football-data.org/112.png",
       "played": 7,
       "won": 1,
       "draw": 1,
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-19T15:37:56.015877+00:00",
+  "generatedAt": "2026-10-19T21:04:52.466351+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-19T15:37:56.015877+00:00"
+      "updatedAt": "2026-10-19T21:04:52.466351+00:00"
     }
   },
   "partial": true
