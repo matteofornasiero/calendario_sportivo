@@ -5929,9 +5929,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/586.png",
     "awayCrest": "https://crests.football-data.org/5911.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 3,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 8,
     "isTop": true
   },
@@ -18352,6 +18352,17 @@ window.standingsData = {
     },
     {
       "pos": 7,
+      "name": "Torino",
+      "crest": "https://crests.football-data.org/586.png",
+      "played": 8,
+      "won": 4,
+      "draw": 1,
+      "lost": 3,
+      "points": 13,
+      "diff": 2
+    },
+    {
+      "pos": 8,
       "name": "Cagliari",
       "crest": "https://crests.football-data.org/104.png",
       "played": 7,
@@ -18360,17 +18371,6 @@ window.standingsData = {
       "lost": 2,
       "points": 13,
       "diff": -1
-    },
-    {
-      "pos": 8,
-      "name": "Torino",
-      "crest": "https://crests.football-data.org/586.png",
-      "played": 8,
-      "won": 3,
-      "draw": 2,
-      "lost": 3,
-      "points": 11,
-      "diff": 1
     },
     {
       "pos": 9,
@@ -18418,17 +18418,6 @@ window.standingsData = {
     },
     {
       "pos": 13,
-      "name": "Monza",
-      "crest": "https://crests.football-data.org/5911.png",
-      "played": 8,
-      "won": 2,
-      "draw": 2,
-      "lost": 4,
-      "points": 8,
-      "diff": -2
-    },
-    {
-      "pos": 14,
       "name": "Sassuolo",
       "crest": "https://crests.football-data.org/471.png",
       "played": 7,
@@ -18437,6 +18426,17 @@ window.standingsData = {
       "lost": 3,
       "points": 8,
       "diff": -2
+    },
+    {
+      "pos": 14,
+      "name": "Monza",
+      "crest": "https://crests.football-data.org/5911.png",
+      "played": 8,
+      "won": 2,
+      "draw": 1,
+      "lost": 5,
+      "points": 7,
+      "diff": -3
     },
     {
       "pos": 15,
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-23T19:15:26.665019+00:00",
+  "generatedAt": "2026-10-23T22:18:57.581161+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-23T19:15:26.665019+00:00"
+      "updatedAt": "2026-10-23T22:18:57.581161+00:00"
     }
   },
   "partial": true
