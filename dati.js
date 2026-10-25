@@ -5962,9 +5962,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/104.png",
     "awayCrest": "https://crests.football-data.org/103.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 0,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 8,
     "isTop": false
   },
@@ -5982,9 +5982,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/7397.png",
     "awayCrest": "https://crests.football-data.org/471.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 2,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 8,
     "isTop": false
   },
@@ -6002,9 +6002,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/113.png",
     "awayCrest": "https://crests.football-data.org/100.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 3,
+    "awayScore": 3,
+    "status": "FINISHED",
     "matchday": 8,
     "isTop": false
   },
@@ -6035,9 +6035,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/110.png",
     "awayCrest": "https://crests.football-data.org/112.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 8,
     "isTop": false
   },
@@ -6068,9 +6068,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/108.png",
     "awayCrest": "https://crests.football-data.org/99.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 8,
     "isTop": false
   },
@@ -6090,7 +6090,7 @@ window.calendarData = [
     "venue": "Stade de France, Saint-Denis",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -6107,9 +6107,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/102.png",
     "awayCrest": "https://crests.football-data.org/470.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 4,
+    "awayScore": 4,
+    "status": "FINISHED",
     "matchday": 8,
     "isTop": false
   },
@@ -6127,9 +6127,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/107.png",
     "awayCrest": "https://crests.football-data.org/454.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 1,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 8,
     "isTop": false
   },
@@ -18286,6 +18286,17 @@ window.standingsData = {
   "seriea": [
     {
       "pos": 1,
+      "name": "Inter",
+      "crest": "https://crests.football-data.org/108.png",
+      "played": 8,
+      "won": 7,
+      "draw": 1,
+      "lost": 0,
+      "points": 22,
+      "diff": 13
+    },
+    {
+      "pos": 2,
       "name": "Lazio",
       "crest": "https://crests.football-data.org/110.png",
       "played": 8,
@@ -18294,17 +18305,6 @@ window.standingsData = {
       "lost": 0,
       "points": 22,
       "diff": 11
-    },
-    {
-      "pos": 2,
-      "name": "Inter",
-      "crest": "https://crests.football-data.org/108.png",
-      "played": 8,
-      "won": 6,
-      "draw": 2,
-      "lost": 0,
-      "points": 20,
-      "diff": 12
     },
     {
       "pos": 3,
@@ -18343,11 +18343,11 @@ window.standingsData = {
       "pos": 6,
       "name": "Frosinone",
       "crest": "https://crests.football-data.org/470.png",
-      "played": 7,
+      "played": 8,
       "won": 4,
-      "draw": 1,
+      "draw": 2,
       "lost": 2,
-      "points": 13,
+      "points": 14,
       "diff": 4
     },
     {
@@ -18398,11 +18398,11 @@ window.standingsData = {
       "pos": 11,
       "name": "Atalanta",
       "crest": "https://crests.football-data.org/102.png",
-      "played": 7,
+      "played": 8,
       "won": 3,
-      "draw": 0,
+      "draw": 1,
       "lost": 4,
-      "points": 9,
+      "points": 10,
       "diff": -1
     },
     {
@@ -18451,14 +18451,14 @@ window.standingsData = {
     },
     {
       "pos": 16,
-      "name": "Fiorentina",
-      "crest": "https://crests.football-data.org/99.png",
+      "name": "Genoa",
+      "crest": "https://crests.football-data.org/107.png",
       "played": 8,
-      "won": 1,
-      "draw": 2,
+      "won": 2,
+      "draw": 1,
       "lost": 5,
-      "points": 5,
-      "diff": -9
+      "points": 7,
+      "diff": -7
     },
     {
       "pos": 17,
@@ -18473,14 +18473,14 @@ window.standingsData = {
     },
     {
       "pos": 18,
-      "name": "Genoa",
-      "crest": "https://crests.football-data.org/107.png",
-      "played": 7,
+      "name": "Fiorentina",
+      "crest": "https://crests.football-data.org/99.png",
+      "played": 8,
       "won": 1,
       "draw": 1,
-      "lost": 5,
+      "lost": 6,
       "points": 4,
-      "diff": -8
+      "diff": -10
     },
     {
       "pos": 19,
@@ -18497,12 +18497,12 @@ window.standingsData = {
       "pos": 20,
       "name": "Venezia FC",
       "crest": "https://crests.football-data.org/454.png",
-      "played": 7,
+      "played": 8,
       "won": 1,
       "draw": 0,
-      "lost": 6,
+      "lost": 7,
       "points": 3,
-      "diff": -10
+      "diff": -11
     }
   ],
   "champions": [
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-25T11:33:28.812671+00:00",
+  "generatedAt": "2026-10-25T16:23:56.991605+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
+      "updatedAt": "2026-10-25T16:23:56.991605+00:00"
     }
   },
   "partial": true
