@@ -18299,11 +18299,11 @@ window.standingsData = {
       "pos": 2,
       "name": "Inter",
       "crest": "https://crests.football-data.org/108.png",
-      "played": 7,
+      "played": 8,
       "won": 6,
-      "draw": 1,
+      "draw": 2,
       "lost": 0,
-      "points": 19,
+      "points": 20,
       "diff": 12
     },
     {
@@ -18451,6 +18451,17 @@ window.standingsData = {
     },
     {
       "pos": 16,
+      "name": "Fiorentina",
+      "crest": "https://crests.football-data.org/99.png",
+      "played": 8,
+      "won": 1,
+      "draw": 2,
+      "lost": 5,
+      "points": 5,
+      "diff": -9
+    },
+    {
+      "pos": 17,
       "name": "Udinese",
       "crest": "https://crests.football-data.org/115.png",
       "played": 7,
@@ -18461,7 +18472,7 @@ window.standingsData = {
       "diff": -7
     },
     {
-      "pos": 17,
+      "pos": 18,
       "name": "Genoa",
       "crest": "https://crests.football-data.org/107.png",
       "played": 7,
@@ -18470,17 +18481,6 @@ window.standingsData = {
       "lost": 5,
       "points": 4,
       "diff": -8
-    },
-    {
-      "pos": 18,
-      "name": "Fiorentina",
-      "crest": "https://crests.football-data.org/99.png",
-      "played": 7,
-      "won": 1,
-      "draw": 1,
-      "lost": 5,
-      "points": 4,
-      "diff": -9
     },
     {
       "pos": 19,
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-25T06:09:56.139279+00:00",
+  "generatedAt": "2026-10-25T11:33:28.812671+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-25T06:09:56.139279+00:00"
+      "updatedAt": "2026-10-25T11:33:28.812671+00:00"
     }
   },
   "partial": true
