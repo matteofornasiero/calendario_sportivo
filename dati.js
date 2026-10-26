@@ -6390,9 +6390,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
     "venue": "Lumen Field, Seattle",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "20",
+    "awayScore": "3",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -19314,10 +19314,10 @@ window.standingsData = {
           "name": "Kansas City Chiefs",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
           "wins": 5,
-          "losses": 0,
+          "losses": 1,
           "ties": 0,
-          "pct": "1.000",
-          "diff": 57,
+          "pct": ".833",
+          "diff": 40,
           "seed": 1,
           "div": "AFC West",
           "conf": "AFC",
@@ -19542,11 +19542,11 @@ window.standingsData = {
         {
           "name": "Seattle Seahawks",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": 26,
+          "pct": ".571",
+          "diff": 43,
           "seed": 8,
           "div": "NFC West",
           "conf": "NFC",
@@ -19586,10 +19586,10 @@ window.standingsData = {
           "name": "Kansas City Chiefs",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
           "wins": 5,
-          "losses": 0,
+          "losses": 1,
           "ties": 0,
-          "pct": "1.000",
-          "diff": 57,
+          "pct": ".833",
+          "diff": 40,
           "seed": 1,
           "div": "AFC West",
           "conf": "AFC",
@@ -19886,11 +19886,11 @@ window.standingsData = {
         {
           "name": "Seattle Seahawks",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 3,
           "ties": 0,
-          "pct": ".500",
-          "diff": 26,
+          "pct": ".571",
+          "diff": 43,
           "seed": 8,
           "div": "NFC West",
           "conf": "NFC",
@@ -20008,10 +20008,10 @@ window.standingsData = {
           "name": "Kansas City Chiefs",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
           "wins": 5,
-          "losses": 0,
+          "losses": 1,
           "ties": 0,
-          "pct": "1.000",
-          "diff": 57,
+          "pct": ".833",
+          "diff": 40,
           "seed": 1,
           "div": "AFC West",
           "conf": "AFC",
@@ -20195,26 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-26T01:12:39.153408+00:00",
+  "generatedAt": "2026-10-26T06:17:18.344425+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "champions": {
-      "status": "error",
-      "updatedAt": "2026-10-25T22:34:46.083323+00:00",
-      "error": "Calendario calcio vuoto"
+      "status": "ok",
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20223,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-26T01:12:39.153408+00:00"
+      "updatedAt": "2026-10-26T06:17:18.344425+00:00"
     }
   },
   "partial": true
