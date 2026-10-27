@@ -6409,9 +6409,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
     "venue": "Lincoln Financial Field, Philadelphia",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "21",
+    "awayScore": "38",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -19378,27 +19378,27 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Philadelphia Eagles",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-          "wins": 2,
+          "name": "Dallas Cowboys",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+          "wins": 3,
           "losses": 4,
           "ties": 0,
-          "pct": ".333",
-          "diff": -31,
+          "pct": ".429",
+          "diff": 9,
           "seed": 11,
           "div": "NFC East",
           "conf": "NFC",
           "pos": 2
         },
         {
-          "name": "Dallas Cowboys",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+          "name": "Philadelphia Eagles",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
           "wins": 2,
-          "losses": 4,
+          "losses": 5,
           "ties": 0,
-          "pct": ".333",
-          "diff": -8,
-          "seed": 12,
+          "pct": ".286",
+          "diff": -48,
+          "seed": 15,
           "div": "NFC East",
           "conf": "NFC",
           "pos": 3
@@ -19506,7 +19506,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".286",
           "diff": 11,
-          "seed": 13,
+          "seed": 12,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 3
@@ -19519,7 +19519,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".286",
           "diff": -32,
-          "seed": 14,
+          "seed": 13,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 4
@@ -19573,7 +19573,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".286",
           "diff": -66,
-          "seed": 15,
+          "seed": 14,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 4
@@ -19923,30 +19923,17 @@ window.standingsData = {
           "pos": 3
         },
         {
-          "name": "Philadelphia Eagles",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-          "wins": 2,
+          "name": "Dallas Cowboys",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+          "wins": 3,
           "losses": 4,
           "ties": 0,
-          "pct": ".333",
-          "diff": -31,
+          "pct": ".429",
+          "diff": 9,
           "seed": 11,
           "div": "NFC East",
           "conf": "NFC",
           "pos": 2
-        },
-        {
-          "name": "Dallas Cowboys",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-          "wins": 2,
-          "losses": 4,
-          "ties": 0,
-          "pct": ".333",
-          "diff": -8,
-          "seed": 12,
-          "div": "NFC East",
-          "conf": "NFC",
-          "pos": 3
         },
         {
           "name": "Tampa Bay Buccaneers",
@@ -19956,7 +19943,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".286",
           "diff": 11,
-          "seed": 13,
+          "seed": 12,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 3
@@ -19969,7 +19956,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".286",
           "diff": -32,
-          "seed": 14,
+          "seed": 13,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 4
@@ -19982,10 +19969,23 @@ window.standingsData = {
           "ties": 0,
           "pct": ".286",
           "diff": -66,
-          "seed": 15,
+          "seed": 14,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 4
+        },
+        {
+          "name": "Philadelphia Eagles",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+          "wins": 2,
+          "losses": 5,
+          "ties": 0,
+          "pct": ".286",
+          "diff": -48,
+          "seed": 15,
+          "div": "NFC East",
+          "conf": "NFC",
+          "pos": 3
         },
         {
           "name": "Washington Commanders",
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-27T00:27:16.000416+00:00",
+  "generatedAt": "2026-10-27T06:18:27.424064+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-27T00:27:16.000416+00:00"
+      "updatedAt": "2026-10-27T06:18:27.424064+00:00"
     }
   },
   "partial": true
