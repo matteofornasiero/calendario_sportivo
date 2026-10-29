@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-29T08:31:02.755536+00:00",
+  "generatedAt": "2026-10-29T16:09:07.523840+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-29T08:31:02.755536+00:00"
+      "updatedAt": "2026-10-29T16:09:07.523840+00:00"
     }
   },
   "partial": true
