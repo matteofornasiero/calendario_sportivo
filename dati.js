@@ -6628,9 +6628,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
     "venue": "Lambeau Field, Green Bay",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "27",
+    "awayScore": "19",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -19460,11 +19460,11 @@ window.standingsData = {
         {
           "name": "Green Bay Packers",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-          "wins": 4,
+          "wins": 5,
           "losses": 3,
           "ties": 0,
-          "pct": ".571",
-          "diff": -1,
+          "pct": ".625",
+          "diff": 7,
           "seed": 7,
           "div": "NFC North",
           "conf": "NFC",
@@ -19476,10 +19476,10 @@ window.standingsData = {
           "name": "Carolina Panthers",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
           "wins": 3,
-          "losses": 3,
+          "losses": 4,
           "ties": 0,
-          "pct": ".500",
-          "diff": -7,
+          "pct": ".429",
+          "diff": -15,
           "seed": 4,
           "div": "NFC South",
           "conf": "NFC",
@@ -19835,10 +19835,10 @@ window.standingsData = {
           "name": "Carolina Panthers",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
           "wins": 3,
-          "losses": 3,
+          "losses": 4,
           "ties": 0,
-          "pct": ".500",
-          "diff": -7,
+          "pct": ".429",
+          "diff": -15,
           "seed": 4,
           "div": "NFC South",
           "conf": "NFC",
@@ -19873,11 +19873,11 @@ window.standingsData = {
         {
           "name": "Green Bay Packers",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-          "wins": 4,
+          "wins": 5,
           "losses": 3,
           "ties": 0,
-          "pct": ".571",
-          "diff": -1,
+          "pct": ".625",
+          "diff": 7,
           "seed": 7,
           "div": "NFC North",
           "conf": "NFC",
@@ -20140,10 +20140,10 @@ window.standingsData = {
           "name": "Carolina Panthers",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/car.png",
           "wins": 3,
-          "losses": 3,
+          "losses": 4,
           "ties": 0,
-          "pct": ".500",
-          "diff": -7,
+          "pct": ".429",
+          "diff": -15,
           "seed": 4,
           "div": "NFC South",
           "conf": "NFC",
@@ -20178,11 +20178,11 @@ window.standingsData = {
         {
           "name": "Green Bay Packers",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-          "wins": 4,
+          "wins": 5,
           "losses": 3,
           "ties": 0,
-          "pct": ".571",
-          "diff": -1,
+          "pct": ".625",
+          "diff": 7,
           "seed": 7,
           "div": "NFC North",
           "conf": "NFC",
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-30T01:01:59.576324+00:00",
+  "generatedAt": "2026-10-30T07:08:55.545843+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
+      "updatedAt": "2026-10-30T07:08:55.545843+00:00"
     }
   },
   "partial": true
