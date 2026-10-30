@@ -6608,9 +6608,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/99.png",
     "awayCrest": "https://crests.football-data.org/102.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 2,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 9,
     "isTop": false
   },
@@ -6630,7 +6630,7 @@ window.calendarData = [
     "venue": "Lambeau Field, Green Bay",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -18374,17 +18374,6 @@ window.standingsData = {
     },
     {
       "pos": 9,
-      "name": "Atalanta",
-      "crest": "https://crests.football-data.org/102.png",
-      "played": 9,
-      "won": 4,
-      "draw": 1,
-      "lost": 4,
-      "points": 13,
-      "diff": 0
-    },
-    {
-      "pos": 10,
       "name": "Torino",
       "crest": "https://crests.football-data.org/586.png",
       "played": 9,
@@ -18395,7 +18384,7 @@ window.standingsData = {
       "diff": 0
     },
     {
-      "pos": 11,
+      "pos": 10,
       "name": "Cagliari",
       "crest": "https://crests.football-data.org/104.png",
       "played": 9,
@@ -18406,7 +18395,7 @@ window.standingsData = {
       "diff": -5
     },
     {
-      "pos": 12,
+      "pos": 11,
       "name": "Bologna",
       "crest": "https://crests.football-data.org/103.png",
       "played": 9,
@@ -18415,6 +18404,17 @@ window.standingsData = {
       "lost": 4,
       "points": 11,
       "diff": 0
+    },
+    {
+      "pos": 12,
+      "name": "Atalanta",
+      "crest": "https://crests.football-data.org/102.png",
+      "played": 9,
+      "won": 3,
+      "draw": 2,
+      "lost": 4,
+      "points": 11,
+      "diff": -1
     },
     {
       "pos": 13,
@@ -18473,8 +18473,8 @@ window.standingsData = {
     },
     {
       "pos": 18,
-      "name": "Parma",
-      "crest": "https://crests.football-data.org/112.png",
+      "name": "Fiorentina",
+      "crest": "https://crests.football-data.org/99.png",
       "played": 9,
       "won": 1,
       "draw": 2,
@@ -18484,14 +18484,14 @@ window.standingsData = {
     },
     {
       "pos": 19,
-      "name": "Fiorentina",
-      "crest": "https://crests.football-data.org/99.png",
+      "name": "Parma",
+      "crest": "https://crests.football-data.org/112.png",
       "played": 9,
       "won": 1,
-      "draw": 1,
-      "lost": 7,
-      "points": 4,
-      "diff": -11
+      "draw": 2,
+      "lost": 6,
+      "points": 5,
+      "diff": -10
     },
     {
       "pos": 20,
@@ -20195,25 +20195,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-29T21:08:21.367360+00:00",
+  "generatedAt": "2026-10-30T01:01:59.576324+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20222,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-29T21:08:21.367360+00:00"
+      "updatedAt": "2026-10-30T01:01:59.576324+00:00"
     }
   },
   "partial": true
