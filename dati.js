@@ -6726,9 +6726,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/98.png",
     "awayCrest": "https://crests.football-data.org/108.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 3,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 10,
     "isTop": false
   },
@@ -19064,6 +19064,13 @@ window.standingsData = {
       "team": "Cadillac F1 Team",
       "points": "0",
       "wins": "0"
+    },
+    {
+      "pos": "24",
+      "name": "Ryo Hirakawa",
+      "team": "Haas F1 Team",
+      "points": "0",
+      "wins": "0"
     }
   ],
   "f1_constructors": [
@@ -20195,25 +20202,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-31T21:37:08.215224+00:00",
+  "generatedAt": "2026-11-01T01:12:19.268593+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20222,31 +20229,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-10-31T21:37:08.215224+00:00"
+      "updatedAt": "2026-11-01T01:12:19.268593+00:00"
     }
   },
   "partial": true
