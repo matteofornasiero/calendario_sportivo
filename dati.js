@@ -6779,9 +6779,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/470.png",
     "awayCrest": "https://crests.football-data.org/586.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 2,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 10,
     "isTop": true
   },
@@ -6799,9 +6799,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/110.png",
     "awayCrest": "https://crests.football-data.org/104.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 2,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 10,
     "isTop": false
   },
@@ -6819,9 +6819,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/5890.png",
     "awayCrest": "https://crests.football-data.org/107.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 1,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 10,
     "isTop": false
   },
@@ -6841,7 +6841,7 @@ window.calendarData = [
     "venue": "AT\u0026T Stadium, Arlington",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -6860,7 +6860,7 @@ window.calendarData = [
     "venue": "Raymond James Stadium, Tampa",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -6879,7 +6879,7 @@ window.calendarData = [
     "venue": "Highmark Stadium, Orchard Park",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -6898,7 +6898,7 @@ window.calendarData = [
     "venue": "Acrisure Stadium, Pittsburgh",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -6917,7 +6917,7 @@ window.calendarData = [
     "venue": "EverBank Stadium, Jacksonville",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -6936,7 +6936,7 @@ window.calendarData = [
     "venue": "MetLife Stadium, East Rutherford",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -6955,7 +6955,7 @@ window.calendarData = [
     "venue": "Ford Field, Detroit",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -6974,7 +6974,7 @@ window.calendarData = [
     "venue": "Paycor Stadium, Cincinnati",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -18289,11 +18289,11 @@ window.standingsData = {
       "name": "Lazio",
       "crest": "https://crests.football-data.org/110.png",
       "played": 10,
-      "won": 8,
-      "draw": 2,
+      "won": 9,
+      "draw": 1,
       "lost": 0,
-      "points": 26,
-      "diff": 15
+      "points": 28,
+      "diff": 16
     },
     {
       "pos": 2,
@@ -18344,11 +18344,11 @@ window.standingsData = {
       "name": "Frosinone",
       "crest": "https://crests.football-data.org/470.png",
       "played": 10,
-      "won": 5,
-      "draw": 3,
+      "won": 6,
+      "draw": 2,
       "lost": 2,
-      "points": 18,
-      "diff": 8
+      "points": 20,
+      "diff": 10
     },
     {
       "pos": 7,
@@ -18389,24 +18389,35 @@ window.standingsData = {
       "crest": "https://crests.football-data.org/586.png",
       "played": 10,
       "won": 4,
-      "draw": 2,
-      "lost": 4,
-      "points": 14,
-      "diff": 0
+      "draw": 1,
+      "lost": 5,
+      "points": 13,
+      "diff": -2
     },
     {
       "pos": 11,
+      "name": "Genoa",
+      "crest": "https://crests.football-data.org/107.png",
+      "played": 10,
+      "won": 4,
+      "draw": 1,
+      "lost": 5,
+      "points": 13,
+      "diff": -4
+    },
+    {
+      "pos": 12,
       "name": "Cagliari",
       "crest": "https://crests.football-data.org/104.png",
       "played": 10,
       "won": 4,
-      "draw": 2,
-      "lost": 4,
-      "points": 14,
-      "diff": -5
+      "draw": 1,
+      "lost": 5,
+      "points": 13,
+      "diff": -6
     },
     {
-      "pos": 12,
+      "pos": 13,
       "name": "Atalanta",
       "crest": "https://crests.football-data.org/102.png",
       "played": 9,
@@ -18417,26 +18428,15 @@ window.standingsData = {
       "diff": -1
     },
     {
-      "pos": 13,
-      "name": "Genoa",
-      "crest": "https://crests.football-data.org/107.png",
-      "played": 9,
-      "won": 3,
-      "draw": 1,
-      "lost": 5,
-      "points": 10,
-      "diff": -5
-    },
-    {
       "pos": 14,
       "name": "Lecce",
       "crest": "https://crests.football-data.org/5890.png",
-      "played": 9,
+      "played": 10,
       "won": 3,
       "draw": 0,
-      "lost": 6,
+      "lost": 7,
       "points": 9,
-      "diff": -9
+      "diff": -10
     },
     {
       "pos": 15,
@@ -20202,25 +20202,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T15:12:08.161566+00:00",
+  "generatedAt": "2026-11-01T19:42:27.068404+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20229,31 +20229,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-01T15:12:08.161566+00:00"
+      "updatedAt": "2026-11-01T19:42:27.068404+00:00"
     }
   },
   "partial": true
