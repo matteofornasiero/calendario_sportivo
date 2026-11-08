@@ -7670,9 +7670,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/100.png",
     "awayCrest": "https://crests.football-data.org/471.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 3,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 11,
     "isTop": false
   },
@@ -18304,7 +18304,7 @@ window.standingsData = {
       "draw": 3,
       "lost": 0,
       "points": 27,
-      "diff": 20
+      "diff": 21
     },
     {
       "pos": 3,
@@ -18469,7 +18469,7 @@ window.standingsData = {
       "draw": 2,
       "lost": 7,
       "points": 8,
-      "diff": -12
+      "diff": -13
     },
     {
       "pos": 18,
@@ -19069,6 +19069,13 @@ window.standingsData = {
       "pos": "24",
       "name": "Sergio Pérez",
       "team": "Cadillac F1 Team",
+      "points": "0",
+      "wins": "0"
+    },
+    {
+      "pos": "25",
+      "name": "Rafael Camara",
+      "team": "Haas F1 Team",
       "points": "0",
       "wins": "0"
     }
@@ -20202,25 +20209,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-07T20:54:05.713531+00:00",
+  "generatedAt": "2026-11-08T00:38:39.488030+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20229,31 +20236,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-07T20:54:05.713531+00:00"
+      "updatedAt": "2026-11-08T00:38:39.488030+00:00"
     }
   },
   "partial": true
