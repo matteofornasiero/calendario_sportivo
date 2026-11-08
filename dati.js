@@ -7710,9 +7710,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/107.png",
     "awayCrest": "https://crests.football-data.org/98.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 1,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 11,
     "isTop": false
   },
@@ -7730,9 +7730,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/5911.png",
     "awayCrest": "https://crests.football-data.org/102.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 0,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 11,
     "isTop": false
   },
@@ -7750,9 +7750,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
     "venue": "Santiago Bernabéu, Madrid",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "17",
+    "awayScore": "34",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -7782,9 +7782,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/108.png",
     "awayCrest": "https://crests.football-data.org/7397.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 2,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 11,
     "isTop": false
   },
@@ -7804,7 +7804,7 @@ window.calendarData = [
     "venue": "Caesars Superdome, New Orleans",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -7823,7 +7823,7 @@ window.calendarData = [
     "venue": "Lucas Oil Stadium, Indianapolis",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -7842,7 +7842,7 @@ window.calendarData = [
     "venue": "Bank of America Stadium, Charlotte",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": true
   },
   {
@@ -7861,7 +7861,7 @@ window.calendarData = [
     "venue": "Hard Rock Stadium, Miami Gardens",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -7880,7 +7880,7 @@ window.calendarData = [
     "venue": "Northwest Stadium, Landover",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -7899,7 +7899,7 @@ window.calendarData = [
     "venue": "Lincoln Financial Field, Philadelphia",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -7918,7 +7918,7 @@ window.calendarData = [
     "venue": "Arrowhead Stadium, Kansas City",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -18297,6 +18297,17 @@ window.standingsData = {
     },
     {
       "pos": 2,
+      "name": "Inter",
+      "crest": "https://crests.football-data.org/108.png",
+      "played": 11,
+      "won": 9,
+      "draw": 1,
+      "lost": 1,
+      "points": 28,
+      "diff": 15
+    },
+    {
+      "pos": 3,
       "name": "Roma",
       "crest": "https://crests.football-data.org/100.png",
       "played": 11,
@@ -18307,17 +18318,6 @@ window.standingsData = {
       "diff": 21
     },
     {
-      "pos": 3,
-      "name": "Inter",
-      "crest": "https://crests.football-data.org/108.png",
-      "played": 10,
-      "won": 8,
-      "draw": 1,
-      "lost": 1,
-      "points": 25,
-      "diff": 13
-    },
-    {
       "pos": 4,
       "name": "Milan",
       "crest": "https://crests.football-data.org/98.png",
@@ -18326,18 +18326,18 @@ window.standingsData = {
       "draw": 3,
       "lost": 1,
       "points": 24,
-      "diff": 11
+      "diff": 10
     },
     {
       "pos": 5,
       "name": "Como 1907",
       "crest": "https://crests.football-data.org/7397.png",
-      "played": 10,
+      "played": 11,
       "won": 7,
       "draw": 2,
-      "lost": 1,
+      "lost": 2,
       "points": 23,
-      "diff": 10
+      "diff": 8
     },
     {
       "pos": 6,
@@ -18425,7 +18425,7 @@ window.standingsData = {
       "draw": 1,
       "lost": 6,
       "points": 13,
-      "diff": -6
+      "diff": -5
     },
     {
       "pos": 14,
@@ -18908,63 +18908,63 @@ window.standingsData = {
       "pos": "1",
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
-      "points": "380",
+      "points": "390",
       "wins": "9"
     },
     {
       "pos": "2",
       "name": "Max Verstappen",
       "team": "Red Bull",
-      "points": "261",
+      "points": "279",
       "wins": "3"
     },
     {
       "pos": "3",
-      "name": "Lewis Hamilton",
-      "team": "Ferrari",
-      "points": "259",
-      "wins": "1"
+      "name": "George Russell",
+      "team": "Mercedes",
+      "points": "262",
+      "wins": "3"
     },
     {
       "pos": "4",
-      "name": "George Russell",
-      "team": "Mercedes",
-      "points": "250",
-      "wins": "3"
+      "name": "Lewis Hamilton",
+      "team": "Ferrari",
+      "points": "261",
+      "wins": "1"
     },
     {
       "pos": "5",
       "name": "Charles Leclerc",
       "team": "Ferrari",
-      "points": "245",
+      "points": "251",
       "wins": "1"
     },
     {
       "pos": "6",
       "name": "Lando Norris",
       "team": "McLaren",
-      "points": "221",
-      "wins": "2"
+      "points": "246",
+      "wins": "3"
     },
     {
       "pos": "7",
       "name": "Oscar Piastri",
       "team": "McLaren",
-      "points": "144",
+      "points": "152",
       "wins": "0"
     },
     {
       "pos": "8",
       "name": "Isack Hadjar",
       "team": "Red Bull",
-      "points": "107",
+      "points": "122",
       "wins": "0"
     },
     {
       "pos": "9",
       "name": "Liam Lawson",
       "team": "RB F1 Team, Red Bull",
-      "points": "83",
+      "points": "87",
       "wins": "0"
     },
     {
@@ -19006,7 +19006,7 @@ window.standingsData = {
       "pos": "15",
       "name": "Nico Hülkenberg",
       "team": "Audi",
-      "points": "13",
+      "points": "14",
       "wins": "0"
     },
     {
@@ -19085,35 +19085,35 @@ window.standingsData = {
       "pos": "1",
       "name": "Mercedes",
       "team": "",
-      "points": "630",
+      "points": "652",
       "wins": "12"
     },
     {
       "pos": "2",
       "name": "Ferrari",
       "team": "",
-      "points": "504",
+      "points": "512",
       "wins": "2"
     },
     {
       "pos": "3",
       "name": "Red Bull",
       "team": "",
-      "points": "382",
+      "points": "415",
       "wins": "3"
     },
     {
       "pos": "4",
       "name": "McLaren",
       "team": "",
-      "points": "365",
-      "wins": "2"
+      "points": "398",
+      "wins": "3"
     },
     {
       "pos": "5",
       "name": "RB F1 Team",
       "team": "",
-      "points": "108",
+      "points": "112",
       "wins": "0"
     },
     {
@@ -19134,7 +19134,7 @@ window.standingsData = {
       "pos": "8",
       "name": "Audi",
       "team": "",
-      "points": "27",
+      "points": "28",
       "wins": "0"
     },
     {
@@ -19232,12 +19232,12 @@ window.standingsData = {
         {
           "name": "Cincinnati Bengals",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-          "wins": 5,
+          "wins": 6,
           "losses": 2,
           "ties": 0,
-          "pct": ".714",
-          "diff": 48,
-          "seed": 6,
+          "pct": ".750",
+          "diff": 65,
+          "seed": 5,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 2
@@ -19345,7 +19345,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".714",
           "diff": 36,
-          "seed": 5,
+          "seed": 6,
           "div": "AFC West",
           "conf": "AFC",
           "pos": 2
@@ -19399,7 +19399,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".375",
           "diff": 6,
-          "seed": 13,
+          "seed": 12,
           "div": "NFC East",
           "conf": "NFC",
           "pos": 2
@@ -19412,7 +19412,7 @@ window.standingsData = {
           "ties": 1,
           "pct": ".357",
           "diff": -23,
-          "seed": 14,
+          "seed": 13,
           "div": "NFC East",
           "conf": "NFC",
           "pos": 3
@@ -19516,11 +19516,11 @@ window.standingsData = {
           "name": "Atlanta Falcons",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
           "wins": 3,
-          "losses": 5,
+          "losses": 6,
           "ties": 0,
-          "pct": ".375",
-          "diff": -18,
-          "seed": 11,
+          "pct": ".333",
+          "diff": -35,
+          "seed": 14,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 3
@@ -19587,7 +19587,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".375",
           "diff": -63,
-          "seed": 12,
+          "seed": 11,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 4
@@ -19649,6 +19649,19 @@ window.standingsData = {
           "pos": 1
         },
         {
+          "name": "Cincinnati Bengals",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "wins": 6,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".750",
+          "diff": 65,
+          "seed": 5,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 2
+        },
+        {
           "name": "Kansas City Chiefs",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
           "wins": 5,
@@ -19656,21 +19669,8 @@ window.standingsData = {
           "ties": 0,
           "pct": ".714",
           "diff": 36,
-          "seed": 5,
-          "div": "AFC West",
-          "conf": "AFC",
-          "pos": 2
-        },
-        {
-          "name": "Cincinnati Bengals",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-          "wins": 5,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".714",
-          "diff": 48,
           "seed": 6,
-          "div": "AFC North",
+          "div": "AFC West",
           "conf": "AFC",
           "pos": 2
         },
@@ -19937,19 +19937,6 @@ window.standingsData = {
           "pos": 2
         },
         {
-          "name": "Atlanta Falcons",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
-          "wins": 3,
-          "losses": 5,
-          "ties": 0,
-          "pct": ".375",
-          "diff": -18,
-          "seed": 11,
-          "div": "NFC South",
-          "conf": "NFC",
-          "pos": 3
-        },
-        {
           "name": "Arizona Cardinals",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
           "wins": 3,
@@ -19957,7 +19944,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".375",
           "diff": -63,
-          "seed": 12,
+          "seed": 11,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 4
@@ -19970,7 +19957,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".375",
           "diff": 6,
-          "seed": 13,
+          "seed": 12,
           "div": "NFC East",
           "conf": "NFC",
           "pos": 2
@@ -19983,8 +19970,21 @@ window.standingsData = {
           "ties": 1,
           "pct": ".357",
           "diff": -23,
-          "seed": 14,
+          "seed": 13,
           "div": "NFC East",
+          "conf": "NFC",
+          "pos": 3
+        },
+        {
+          "name": "Atlanta Falcons",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+          "wins": 3,
+          "losses": 6,
+          "ties": 0,
+          "pct": ".333",
+          "diff": -35,
+          "seed": 14,
+          "div": "NFC South",
           "conf": "NFC",
           "pos": 3
         },
@@ -20071,6 +20071,19 @@ window.standingsData = {
           "pos": 1
         },
         {
+          "name": "Cincinnati Bengals",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "wins": 6,
+          "losses": 2,
+          "ties": 0,
+          "pct": ".750",
+          "diff": 65,
+          "seed": 5,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 2
+        },
+        {
           "name": "Kansas City Chiefs",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
           "wins": 5,
@@ -20078,21 +20091,8 @@ window.standingsData = {
           "ties": 0,
           "pct": ".714",
           "diff": 36,
-          "seed": 5,
-          "div": "AFC West",
-          "conf": "AFC",
-          "pos": 2
-        },
-        {
-          "name": "Cincinnati Bengals",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-          "wins": 5,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".714",
-          "diff": 48,
           "seed": 6,
-          "div": "AFC North",
+          "div": "AFC West",
           "conf": "AFC",
           "pos": 2
         },
@@ -20209,25 +20209,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-08T15:14:14.847040+00:00",
+  "generatedAt": "2026-11-08T19:44:10.021498+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20236,31 +20236,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-08T15:14:14.847040+00:00"
+      "updatedAt": "2026-11-08T19:44:10.021498+00:00"
     }
   },
   "partial": true
