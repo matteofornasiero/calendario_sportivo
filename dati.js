@@ -8052,7 +8052,7 @@ window.calendarData = [
     "venue": "U.S. Bank Stadium, Minneapolis",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -8625,25 +8625,6 @@ window.calendarData = [
     "time": "19:00",
     "timeConfirmed": true,
     "startUtc": "2026-11-22T18:00:00+00:00",
-    "id": "espn-nfl-401873069",
-    "title": "JAX @ NYG",
-    "sport": "nfl",
-    "loc": "Week 11",
-    "home": "New York Giants",
-    "away": "Jacksonville Jaguars",
-    "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
-    "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
-    "venue": "MetLife Stadium, East Rutherford",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "SCHEDULED",
-    "isTop": false
-  },
-  {
-    "date": "2026-11-22",
-    "time": "19:00",
-    "timeConfirmed": true,
-    "startUtc": "2026-11-22T18:00:00+00:00",
     "id": "espn-nfl-401873070",
     "title": "MIA @ BUF",
     "sport": "nfl",
@@ -8672,6 +8653,25 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
     "venue": "Soldier Field, Chicago",
+    "homeScore": null,
+    "awayScore": null,
+    "status": "SCHEDULED",
+    "isTop": false
+  },
+  {
+    "date": "2026-11-22",
+    "time": "19:00",
+    "timeConfirmed": true,
+    "startUtc": "2026-11-22T18:00:00+00:00",
+    "id": "espn-nfl-401873076",
+    "title": "PIT @ PHI",
+    "sport": "nfl",
+    "loc": "Week 11",
+    "home": "Philadelphia Eagles",
+    "away": "Pittsburgh Steelers",
+    "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
+    "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
+    "venue": "Lincoln Financial Field, Philadelphia",
     "homeScore": null,
     "awayScore": null,
     "status": "SCHEDULED",
@@ -8759,6 +8759,25 @@ window.calendarData = [
     "time": "22:25",
     "timeConfirmed": true,
     "startUtc": "2026-11-22T21:25:00+00:00",
+    "id": "espn-nfl-401873069",
+    "title": "JAX @ NYG",
+    "sport": "nfl",
+    "loc": "Week 11",
+    "home": "New York Giants",
+    "away": "Jacksonville Jaguars",
+    "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
+    "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
+    "venue": "MetLife Stadium, East Rutherford",
+    "homeScore": null,
+    "awayScore": null,
+    "status": "SCHEDULED",
+    "isTop": false
+  },
+  {
+    "date": "2026-11-22",
+    "time": "22:25",
+    "timeConfirmed": true,
+    "startUtc": "2026-11-22T21:25:00+00:00",
     "id": "espn-nfl-401873075",
     "title": "LV @ DEN",
     "sport": "nfl",
@@ -8772,25 +8791,6 @@ window.calendarData = [
     "awayScore": null,
     "status": "SCHEDULED",
     "isTop": true
-  },
-  {
-    "date": "2026-11-22",
-    "time": "22:25",
-    "timeConfirmed": true,
-    "startUtc": "2026-11-22T21:25:00+00:00",
-    "id": "espn-nfl-401873076",
-    "title": "PIT @ PHI",
-    "sport": "nfl",
-    "loc": "Week 11",
-    "home": "Philadelphia Eagles",
-    "away": "Pittsburgh Steelers",
-    "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
-    "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
-    "venue": "Lincoln Financial Field, Philadelphia",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "SCHEDULED",
-    "isTop": false
   },
   {
     "date": "2026-11-23",
@@ -20209,25 +20209,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-09T17:31:43.113725+00:00",
+  "generatedAt": "2026-11-10T01:33:50.634501+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20236,31 +20236,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-09T17:31:43.113725+00:00"
+      "updatedAt": "2026-11-10T01:33:50.634501+00:00"
     }
   },
   "partial": true
