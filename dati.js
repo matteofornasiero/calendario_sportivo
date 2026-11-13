@@ -8086,9 +8086,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
     "venue": "MetLife Stadium, East Rutherford",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "SCHEDULED",
+    "homeScore": "21",
+    "awayScore": "24",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -19382,10 +19382,10 @@ window.standingsData = {
           "name": "New York Giants",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
           "wins": 5,
-          "losses": 2,
+          "losses": 3,
           "ties": 1,
-          "pct": ".688",
-          "diff": 10,
+          "pct": ".611",
+          "diff": 7,
           "seed": 3,
           "div": "NFC East",
           "conf": "NFC",
@@ -19407,12 +19407,12 @@ window.standingsData = {
         {
           "name": "Washington Commanders",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-          "wins": 2,
+          "wins": 3,
           "losses": 5,
           "ties": 1,
-          "pct": ".313",
-          "diff": -30,
-          "seed": 15,
+          "pct": ".389",
+          "diff": -27,
+          "seed": 11,
           "div": "NFC East",
           "conf": "NFC",
           "pos": 3
@@ -19507,7 +19507,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".375",
           "diff": -31,
-          "seed": 11,
+          "seed": 12,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 2
@@ -19520,7 +19520,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".333",
           "diff": 24,
-          "seed": 12,
+          "seed": 13,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 3
@@ -19533,7 +19533,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".333",
           "diff": -35,
-          "seed": 13,
+          "seed": 14,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 4
@@ -19587,7 +19587,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".333",
           "diff": -77,
-          "seed": 14,
+          "seed": 15,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 4
@@ -19836,10 +19836,10 @@ window.standingsData = {
           "name": "New York Giants",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
           "wins": 5,
-          "losses": 2,
+          "losses": 3,
           "ties": 1,
-          "pct": ".688",
-          "diff": 10,
+          "pct": ".611",
+          "diff": 7,
           "seed": 3,
           "div": "NFC East",
           "conf": "NFC",
@@ -19937,6 +19937,19 @@ window.standingsData = {
           "pos": 2
         },
         {
+          "name": "Washington Commanders",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+          "wins": 3,
+          "losses": 5,
+          "ties": 1,
+          "pct": ".389",
+          "diff": -27,
+          "seed": 11,
+          "div": "NFC East",
+          "conf": "NFC",
+          "pos": 3
+        },
+        {
           "name": "New Orleans Saints",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
           "wins": 3,
@@ -19944,7 +19957,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".375",
           "diff": -31,
-          "seed": 11,
+          "seed": 12,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 2
@@ -19957,7 +19970,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".333",
           "diff": 24,
-          "seed": 12,
+          "seed": 13,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 3
@@ -19970,7 +19983,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".333",
           "diff": -35,
-          "seed": 13,
+          "seed": 14,
           "div": "NFC South",
           "conf": "NFC",
           "pos": 4
@@ -19983,23 +19996,10 @@ window.standingsData = {
           "ties": 0,
           "pct": ".333",
           "diff": -77,
-          "seed": 14,
+          "seed": 15,
           "div": "NFC West",
           "conf": "NFC",
           "pos": 4
-        },
-        {
-          "name": "Washington Commanders",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-          "wins": 2,
-          "losses": 5,
-          "ties": 1,
-          "pct": ".313",
-          "diff": -30,
-          "seed": 15,
-          "div": "NFC East",
-          "conf": "NFC",
-          "pos": 3
         },
         {
           "name": "Philadelphia Eagles",
@@ -20141,10 +20141,10 @@ window.standingsData = {
           "name": "New York Giants",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
           "wins": 5,
-          "losses": 2,
+          "losses": 3,
           "ties": 1,
-          "pct": ".688",
-          "diff": 10,
+          "pct": ".611",
+          "diff": 7,
           "seed": 3,
           "div": "NFC East",
           "conf": "NFC",
@@ -20209,25 +20209,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-13T00:27:29.975440+00:00",
+  "generatedAt": "2026-11-13T08:00:00.678012+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20236,31 +20236,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-13T00:27:29.975440+00:00"
+      "updatedAt": "2026-11-13T08:00:00.678012+00:00"
     }
   },
   "partial": true
