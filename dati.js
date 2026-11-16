@@ -8314,9 +8314,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
     "venue": "Paycor Stadium, Cincinnati",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "38",
+    "awayScore": "18",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -19217,26 +19217,26 @@ window.standingsData = {
       ],
       "AFC North": [
         {
-          "name": "Pittsburgh Steelers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-          "wins": 6,
+          "name": "Cincinnati Bengals",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "wins": 7,
           "losses": 2,
           "ties": 0,
-          "pct": ".750",
-          "diff": 36,
+          "pct": ".778",
+          "diff": 85,
           "seed": 4,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 1
         },
         {
-          "name": "Cincinnati Bengals",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "name": "Pittsburgh Steelers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
           "wins": 6,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".750",
-          "diff": 65,
+          "pct": ".667",
+          "diff": 16,
           "seed": 6,
           "div": "AFC North",
           "conf": "AFC",
@@ -19636,13 +19636,13 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Pittsburgh Steelers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-          "wins": 6,
+          "name": "Cincinnati Bengals",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "wins": 7,
           "losses": 2,
           "ties": 0,
-          "pct": ".750",
-          "diff": 36,
+          "pct": ".778",
+          "diff": 85,
           "seed": 4,
           "div": "AFC North",
           "conf": "AFC",
@@ -19662,13 +19662,13 @@ window.standingsData = {
           "pos": 2
         },
         {
-          "name": "Cincinnati Bengals",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "name": "Pittsburgh Steelers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
           "wins": 6,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".750",
-          "diff": 65,
+          "pct": ".667",
+          "diff": 16,
           "seed": 6,
           "div": "AFC North",
           "conf": "AFC",
@@ -20058,13 +20058,13 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Pittsburgh Steelers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-          "wins": 6,
+          "name": "Cincinnati Bengals",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "wins": 7,
           "losses": 2,
           "ties": 0,
-          "pct": ".750",
-          "diff": 36,
+          "pct": ".778",
+          "diff": 85,
           "seed": 4,
           "div": "AFC North",
           "conf": "AFC",
@@ -20084,13 +20084,13 @@ window.standingsData = {
           "pos": 2
         },
         {
-          "name": "Cincinnati Bengals",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "name": "Pittsburgh Steelers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
           "wins": 6,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".750",
-          "diff": 65,
+          "pct": ".667",
+          "diff": 16,
           "seed": 6,
           "div": "AFC North",
           "conf": "AFC",
@@ -20209,25 +20209,25 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-16T02:44:59.052519+00:00",
+  "generatedAt": "2026-11-16T11:23:26.479074+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "nazionale": {
       "status": "error",
@@ -20236,31 +20236,31 @@ window.calendarMeta = {
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-16T02:44:59.052519+00:00"
+      "updatedAt": "2026-11-16T11:23:26.479074+00:00"
     }
   },
   "partial": true
