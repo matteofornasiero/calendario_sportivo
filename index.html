@@ -58,6 +58,7 @@
             --detail-card-bg: #d5d0c8;
             --badge-bg: rgba(20, 20, 19, 0.085);
             --today-accent: #45403b;
+            --warning-color: #684126;
             --featured-bg: #e0dbd3;
             --featured-text: #262320;
             --featured-sub: #514a45;
@@ -87,6 +88,7 @@
             --detail-card-bg: linear-gradient(130deg, #dbc9ad, #c5b395);
             --badge-bg: rgba(54, 36, 22, 0.09);
             --today-accent: #62451f;
+            --warning-color: #70421e;
             --featured-bg: #e2d0b7;
             --featured-text: #2a211b;
             --featured-sub: #594a3c;
@@ -114,6 +116,7 @@
             --detail-card-bg: linear-gradient(130deg, #40403d, #2b2b29);
             --badge-bg: rgba(239, 238, 233, 0.10);
             --today-accent: #d2c7a6;
+            --warning-color: #e8bd83;
             --featured-bg: #3c3b38;
             --featured-text: #f4f1eb;
             --featured-sub: #d0c9bd;
@@ -1311,13 +1314,39 @@
                 <span class="theme-swatch" aria-hidden="true"></span>Scura
             </button>
         </div>
-        <div style="font-size:11px; line-height:1.5; color:var(--text-muted); margin:8px 0 14px;">
-            Il tema scelto rimane salvato su questo dispositivo.
-        </div>
-        <div style="font-size:13px; color:var(--text-sub); line-height:1.5;">
-            Gli orari sono espressi nel fuso italiano. Le partite con orario da definire possono avere una data provvisoria. I dati vengono controllati periodicamente; il pulsante Aggiorna ricarica l’ultima versione pubblicata. I risultati vengono mostrati a partita conclusa. Dopo una prima apertura online, puoi consultare l’ultima copia salvata anche senza connessione.
-            <div id="sourceStatusDetails" style="margin-top:12px;"></div>
-        </div>
+        <hr class="settings-divider">
+        <details class="settings-accordion" id="calendarSubscriptionsPanel">
+            <summary>Abbonamenti calendario</summary>
+            <div style="margin:8px 0 12px;">
+                <div class="settings-subtle">Scegli una squadra o una competizione. Il calendario si aggiorna da solo.</div>
+                <label for="subscriptionKind" class="settings-subtle" style="display:block;margin-top:10px;">Tipo di calendario</label>
+                <select id="subscriptionKind" class="settings-field" onchange="renderSubscriptionOptions()">
+                    <option value="teams">Singola squadra</option>
+                    <option value="competitions">Competizione</option>
+                </select>
+                <label for="subscriptionChoice" class="settings-subtle" style="display:block;margin-top:9px;">Scegli</label>
+                <select id="subscriptionChoice" class="settings-field" onchange="updateSubscriptionLink()" disabled>
+                    <option value="">Caricamento…</option>
+                </select>
+                <div class="settings-actions">
+                    <button type="button" class="settings-button" id="subscriptionCopy" onclick="copySubscriptionLink()" disabled>Copia link</button>
+                    <a class="settings-button secondary" id="subscriptionOpen" href="#" style="text-align:center;text-decoration:none;pointer-events:none;opacity:0.45;" aria-disabled="true">Abbonati</a>
+                </div>
+                <input id="subscriptionUrl" class="settings-url" type="text" value="" readonly
+                    aria-label="Indirizzo del calendario in abbonamento" style="display:none;">
+                <div class="settings-subtle" id="subscriptionFeedback" role="status" aria-live="polite" style="margin-top:7px;"></div>
+                <div class="settings-subtle" style="margin-top:8px;">
+                    Google: copia il link e aggiungilo da computer in Calendario → Altri calendari → Da URL.
+                    Apple: tocca Abbonati. La sincronizzazione dipende dall'app calendario, non è in diretta.
+                </div>
+            </div>
+        </details>
+        <hr class="settings-divider">
+        <details class="settings-accordion" id="sourceStatusPanel">
+            <summary>Stato dati <span id="sourceStatusSummary" class="settings-subtle" style="margin-left:auto;margin-right:8px;">—</span></summary>
+            <div id="sourceStatusDetails" class="settings-subtle" style="white-space:pre-line;margin:10px 0 5px;"></div>
+        </details>
+        <div class="settings-subtle" style="margin-top:12px;">Orari italiani · Consultazione offline disponibile</div>
     </div>
 
     <script>
@@ -1547,15 +1576,18 @@
                 ? updated.toLocaleString('it-IT', { timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : null;
             el.textContent = error || (!stamp ? 'Data dell’aggiornamento non disponibile.'
                 : `Aggiornato: ${stamp} · ${stale.length ? `${stale.length} ${stale.length === 1 ? 'fonte' : 'fonti'} da verificare (ℹ️)` : 'Dati disponibili'}`);
-            el.style.color = error || stale.length || !stamp ? '#fbbf24' : 'var(--text-sub)';
+            el.style.color = error || stale.length || !stamp ? 'var(--warning-color)' : 'var(--text-sub)';
             if (window.navigator?.onLine === false && stamp) {
                 el.textContent = `Offline · dati salvati del ${stamp}`;
-                el.style.color = '#fbbf24';
+                el.style.color = 'var(--warning-color)';
             }
-            document.getElementById('sourceStatusDetails').textContent = sources.map(([k, s]) => {
-                const when = s.updatedAt ? new Date(s.updatedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }) : 'mai verificata';
-                return `${SOURCE_NAMES[k] || k}: ${s.status === 'ok' ? 'aggiornata' : 'aggiornamento fallito'}, ${when}`;
-            }).join(' • ');
+            const sourceLabel = document.getElementById('sourceStatusSummary');
+            if (sourceLabel) sourceLabel.textContent = !sources.length ? 'Non disponibili'
+                : stale.length ? `${stale.length} da verificare` : `${sources.length} fonti OK`;
+            const sourceDetail = document.getElementById('sourceStatusDetails');
+            if (sourceDetail) sourceDetail.textContent = sources.map(([k, s]) =>
+                `${s.status === 'ok' ? '✓' : '•'} ${SOURCE_NAMES[k] || k}${s.status === 'ok' ? '' : ' · aggiornamento da verificare'}`
+            ).join('\n');
         }
 
         async function refreshData() {
