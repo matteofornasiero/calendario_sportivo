@@ -6,7 +6,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -352,6 +352,28 @@ def write_data(path, events, standings, meta):
     temporary.replace(path)
 
 
+
+def check_calendar_quality(key, events, now):
+    """Una risposta formalmente valida non deve cancellare un campionato quasi intero."""
+    minima = {"seriea": 100, "champions": 32, "nfl": 50, "f1": 15}
+    if key not in minima:
+        return
+    if not isinstance(events, list) or len(events) < minima[key]:
+        raise ValueError(f"{key}: calendario troppo corto ({len(events) if isinstance(events, list) else 0} eventi)")
+    active_months = {
+        "seriea": {1, 2, 3, 4, 9, 10, 11, 12},
+        "champions": {1, 2, 3, 4, 9, 10, 11, 12},
+        "nfl": {1, 9, 10, 11, 12},
+        "f1": {3, 4, 5, 6, 7, 8, 9, 10},
+    }
+    if now.month in active_months[key]:
+        today = now.date().isoformat()
+        horizon = (now + timedelta(days=45)).date().isoformat()
+        if not any(today <= event.get("date", "") <= horizon for event in events):
+            raise ValueError(f"{key}: nessun evento nei prossimi 45 giorni durante la stagione attiva")
+
+
+
 def update(output=OUTPUT_FILE, now=None):
     now = now or datetime.now(ROME)
     year = now.year
@@ -369,6 +391,7 @@ def update(output=OUTPUT_FILE, now=None):
         previous = old_meta.get("sources", {}).get(key, {})
         try:
             value = fetch()
+            check_calendar_quality(key, value, now)
             meta["sources"][key] = {"status": "ok", "updatedAt": stamp}
             print(f"OK: {key}")
             return value
