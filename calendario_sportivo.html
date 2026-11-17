@@ -1599,6 +1599,23 @@
             .hero-crest { width: 74px; height: 74px; }
             .hero-faceoff { gap: 4px; }
         }
+        /* Preferenze visibili solo quando l'utente apre la relativa sezione. */
+        .featured-settings-body { padding: 9px 0 6px; }
+        .featured-settings-body > .settings-subtle:first-child { margin: 0 0 12px; }
+        .featured-settings-body .settings-theme-label { display: block; font-size: 12px; margin: 11px 0 5px; }
+        .featured-add-row { display: flex; gap: 8px; align-items: stretch; }
+        .featured-add-row .settings-field { margin: 0; min-width: 0; flex: 1 1 auto; }
+        .featured-add-row .settings-button { flex: 0 0 auto; padding: 0 11px; }
+        .featured-tags { display: flex; flex-wrap: wrap; gap: 6px; min-height: 16px; margin: 9px 0 12px; }
+        .featured-tag { display: inline-flex; align-items: center; gap: 7px; min-width: 0;
+            background: var(--surface); border: 1px solid var(--border-highlight);
+            border-radius: 8px; padding: 5px 5px 5px 9px;
+            color: var(--text-main); font-size: 11px; font-weight: 650; }
+        .featured-tag button { background: transparent; border: 0; color: var(--text-muted);
+            font-size: 15px; font-weight: 700; cursor: pointer; padding: 0 4px;
+            line-height: 1.2; border-radius: 4px; }
+        .featured-tag button:focus-visible { outline: 2px solid var(--text-main); }
+        .featured-settings-body #featuredSaveFeedback { margin: 6px 0 0; min-height: 0; }
     </style>
 </head>
 <body>
@@ -1710,6 +1727,28 @@
                 <span class="theme-swatch" aria-hidden="true"></span>Scura
             </button>
         </div>
+        <hr class="settings-divider">
+        <details class="settings-accordion" id="featuredPreferencesPanel">
+            <summary>In evidenza</summary>
+            <div class="featured-settings-body">
+                <p class="settings-subtle">Scegli quali partite mettere in primo piano. Le preferenze restano salvate su questo dispositivo.</p>
+                <label class="settings-theme-label" for="featuredTeamSelect">Squadre</label>
+                <div class="featured-add-row">
+                    <select id="featuredTeamSelect" class="settings-field" aria-label="Squadra da aggiungere">
+                        <option value="">Seleziona una squadra</option>
+                    </select>
+                    <button type="button" class="settings-button" onclick="addFeaturedTeam()">Aggiungi</button>
+                </div>
+                <div id="featuredTeamTags" class="featured-tags" aria-label="Squadre in evidenza"></div>
+                <label class="settings-theme-label" for="featuredCompetitionSelect">Competizioni</label>
+                <div class="featured-add-row">
+                    <select id="featuredCompetitionSelect" class="settings-field" aria-label="Competizione da aggiungere"></select>
+                    <button type="button" class="settings-button" onclick="addFeaturedCompetition()">Aggiungi</button>
+                </div>
+                <div id="featuredCompetitionTags" class="featured-tags" aria-label="Competizioni in evidenza"></div>
+                <p class="settings-subtle" id="featuredSaveFeedback" role="status" aria-live="polite"></p>
+            </div>
+        </details>
         <hr class="settings-divider">
         <details class="settings-accordion" id="calendarSubscriptionsPanel">
             <summary>Abbonamenti calendario</summary>
