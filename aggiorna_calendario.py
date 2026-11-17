@@ -138,11 +138,14 @@ def parse_f1_calendar(data):
             session = race if field is None else race.get(field)
             if not session or not session.get("date"):
                 continue
-            events.append({**event_clock(session["date"], session.get("time")),
+            clock = event_clock(session["date"], session.get("time"))
+            # 'PAST' significa solo che l'orario di inizio e' trascorso: non inventa un risultato.
+            status = "PAST" if clock["startUtc"] and parse_utc(clock["startUtc"]) < datetime.now(timezone.utc) else "SCHEDULED"
+            events.append({**clock,
                            "id": f"f1-{race['season']}-{race['round']}-{field or 'Race'}",
                            "title": f"{label}: {race['raceName']}", "sport": "f1",
                            "loc": location.get("country", "Formula 1"), "venue": venue,
-                           "status": "SCHEDULED", "isTop": field is None})
+                           "status": status, "isTop": field is None})
     if not events:
         raise ValueError("Calendario F1 vuoto")
     return events
@@ -246,8 +249,24 @@ def parse_nfl_standings(data):
 
 
 def fetch_italy():
+    """Prima ESPN (anche trasferte), poi la chiave pubblica ufficiale TheSportsDB."""
+    try:
+        now = datetime.now(ROME)
+        season_year = now.year if now.month >= 7 else now.year - 1
+        url = (f"https://site.api.espn.com/apis/site/v2/sports/soccer/"
+               f"uefa.nations/teams/162/schedule?season={season_year}")
+        data = get_json(url)
+        fixtures = parse_espn_events(data, "nazionale", season_year, "Nations League")
+        fixtures = [event for event in fixtures if any(
+            name in (event.get("home", "") + " " + event.get("away", "")).lower()
+            for name in ("italy", "italia"))]
+        if fixtures:
+            return fixtures
+    except (KeyError, IndexError, TypeError, ValueError, RuntimeError) as exc:
+        print(f"Fonte ESPN Nazionale non disponibile: {exc}", file=sys.stderr)
+
     events = []
-    data = get_json("https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id=133910")
+    data = get_json("https://www.thesportsdb.com/api/v1/json/123/eventsnext.php?id=133910")
     for event in data["events"] or []:
         home = (event.get("strHomeTeam") or "").replace("Italy", "Italia")
         away = (event.get("strAwayTeam") or "").replace("Italy", "Italia")
@@ -256,8 +275,9 @@ def fetch_italy():
                        "loc": event.get("strLeague") or "Internazionale", "home": home, "away": away,
                        "homeCrest": event.get("strHomeTeamBadge") or "", "awayCrest": event.get("strAwayTeamBadge") or "",
                        "venue": event.get("strVenue") or "", "status": "SCHEDULED", "isTop": True})
+    if not events:
+        raise ValueError("Nessuna partita della Nazionale nella risposta della fonte")
     return events
-
 
 def load_previous(path):
     if not path.exists():

@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Sport OS">
-    <meta name="theme-color" content="#09090b">
+    <meta name="theme-color" content="#151e28">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
@@ -24,14 +24,14 @@
 
     <style>
         :root {
-            --bg: #09090b;
-            --surface: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-highlight: rgba(255, 255, 255, 0.18);
+            --bg: #151e28;
+            --surface: rgba(255, 255, 255, 0.045);
+            --border: rgba(180, 200, 220, 0.14);
+            --border-highlight: rgba(180, 200, 220, 0.22);
             
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --text-muted: #64748b;
+            --text-main: #f1f5f9;
+            --text-sub: #a8b9ca;
+            --text-muted: #8195aa;
 
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -63,7 +63,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(9, 9, 12, 0.85);
+            background: rgba(24, 35, 47, 0.94);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
@@ -284,14 +284,14 @@
             body {
                 display: flex;
                 justify-content: center;
-                background-color: #060608;
+                background-color: #111a24;
                 padding-top: 14px;
                 padding-bottom: 30px;
             }
             .app-container {
                 max-width: 1280px;
                 width: 95%;
-                background-color: #0c0c0f;
+                background-color: #192430;
                 border: 1px solid rgba(255, 255, 255, 0.08);
                 border-radius: 16px;
                 min-height: calc(100vh - 44px);
@@ -536,7 +536,8 @@
             opacity: 0;
         }
         .strip-day.has-events .strip-dot { opacity: 0.7; }
-        .strip-day.selected .strip-dot { background: #000; opacity: 1; }
+        .strip-day.selected.has-events .strip-dot { background: #000; opacity: 1; }
+        .strip-day.selected:not(.has-events) .strip-dot { opacity: 0; }
 
         /* --- 6. AGENDA FEED (CARD CON COLORI DELLE SQUADRE & LIQUID GLASS) --- */
         .main-content {
@@ -692,7 +693,7 @@
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
-            background: #141417; /* Solido opaco, senza riflessi o blur */
+            background: #202d3b; /* Superficie neutra e leggibile, senza colori casuali */
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
             transition: transform 0.1s;
@@ -910,13 +911,14 @@
         }
         .month-cell.diff-month { opacity: 0.2; }
         .month-cell.active-cell { background: #ffffff; color: #000000 !important; font-weight: 800; }
+        .month-cell.active-cell .strip-dot { background: #000 !important; }
         .cell-num { font-size: 12.5px; font-weight: 600; }
 
         /* --- MODAL SCHEDA DETTAGLI --- */
         .modal-sheet {
             position: fixed;
             bottom: 0; left: 0; right: 0;
-            background: rgba(16, 16, 20, 0.92);
+            background: rgba(26, 37, 49, 0.96);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             border-top: 1px solid var(--border-highlight);
@@ -926,6 +928,9 @@
             z-index: 200;
             transform: translateY(100%);
             transition: transform 0.22s ease-out;
+            max-height: calc(100dvh - var(--safe-top) - 12px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
         }
         .modal-sheet.open { transform: translateY(0); }
 
@@ -989,9 +994,9 @@
             </div>
         </div>
         <div id="dataStatus" role="status" aria-live="polite" style="font-size:11px;color:var(--text-sub);margin:6px 0;line-height:1.5;">Caricamento partite…</div>
-        <div class="search-container">
+        <div class="search-container" id="searchContainer">
             <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" placeholder="Cerca squadra o evento..." oninput="handleSearch(this.value)">
+            <input type="text" class="search-input" aria-label="Cerca squadra o evento" placeholder="Cerca squadra o evento..." oninput="handleSearch(this.value)">
         </div>
     </header>
 
@@ -1049,11 +1054,11 @@
 
     <!-- MODAL DETTAGLI PARTITA -->
     <div class="modal-backdrop" id="modalBackdrop" onclick="closeAllSheets()"></div>
-    <div class="modal-sheet" id="eventDetailSheet">
+    <div class="modal-sheet" id="eventDetailSheet" role="dialog" aria-modal="true" aria-label="Dettagli evento" tabindex="-1">
         <div class="sheet-handle"></div>
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
             <span id="sheetSportTag" style="font-size:11px; font-weight:800; color:#fff; text-transform:uppercase;">SPORT</span>
-            <button onclick="closeAllSheets()" style="background:none; border:none; color:var(--text-muted); font-size:16px;">✕</button>
+            <button onclick="closeAllSheets()" aria-label="Chiudi dettagli" style="background:none; border:none; color:var(--text-muted); font-size:16px;">✕</button>
         </div>
         <div class="sheet-faceoff-card" id="sheetFaceoffBox"></div>
         <div style="font-size:12.5px; color:var(--text-sub); line-height:1.6; margin-bottom:10px;">
@@ -1066,11 +1071,11 @@
     </div>
 
     <!-- INFO SHEET -->
-    <div class="modal-sheet" id="infoSheet">
+    <div class="modal-sheet" id="infoSheet" role="dialog" aria-modal="true" aria-label="Informazioni e stato delle fonti" tabindex="-1">
         <div class="sheet-handle"></div>
         <div style="font-size:16px; font-weight:800; color:#fff; margin-bottom:8px;">Sport OS</div>
         <div style="font-size:13px; color:var(--text-sub); line-height:1.5;">
-            Gli orari sono espressi nel fuso italiano. Le partite con orario da definire possono avere una data provvisoria. I dati vengono aggiornati automaticamente ogni ora; il pulsante Aggiorna ricarica l’ultima versione pubblicata. I risultati vengono mostrati a partita conclusa. Dopo una prima apertura online, puoi consultare l’ultima copia salvata anche senza connessione.
+            Gli orari sono espressi nel fuso italiano. Le partite con orario da definire possono avere una data provvisoria. I dati vengono controllati periodicamente; il pulsante Aggiorna ricarica l’ultima versione pubblicata. I risultati vengono mostrati a partita conclusa. Dopo una prima apertura online, puoi consultare l’ultima copia salvata anche senza connessione.
             <div id="sourceStatusDetails" style="margin-top:12px;"></div>
         </div>
     </div>
@@ -1087,9 +1092,7 @@
         let countdownTimerId = null;
 
         function getCardBackground(home, away) {
-            const hColor = getTeamColor(home);
-            const aColor = getTeamColor(away);
-            return `linear-gradient(135deg, ${hexToRgba(hColor, 0.45)} 0%, rgba(20, 20, 26, 0.95) 50%, ${hexToRgba(aColor, 0.45)} 100%)`;
+            return 'linear-gradient(135deg, #293746, #1b2836)';
         }
 
         // ==========================================
@@ -1137,11 +1140,11 @@
         };
 
         const SPORT_BADGE_THEMES = {
-            'seriea': { name: 'SERIE A', color: '#38bdf8', bg: '#18181b', border: 'rgba(2, 132, 199, 0.45)' },
-            'f1': { name: 'FORMULA 1', color: '#ff6b8b', bg: '#18181b', border: 'rgba(210, 20, 58, 0.50)' },
-            'nfl': { name: 'NFL', color: '#fb923c', bg: '#18181b', border: 'rgba(251, 79, 20, 0.45)' },
-            'champions': { name: 'CHAMPIONS LEAGUE', color: '#818cf8', bg: '#18181b', border: 'rgba(37, 99, 235, 0.45)' },
-            'nazionale': { name: 'ITALIA', color: '#60a5fa', bg: '#18181b', border: 'rgba(0, 78, 162, 0.45)' }
+            seriea: { name: 'SERIE A', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
+            f1: { name: 'FORMULA 1', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
+            nfl: { name: 'NFL', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
+            champions: { name: 'CHAMPIONS LEAGUE', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
+            nazionale: { name: 'ITALIA', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' }
         };
 
         function hexToRgba(hex, alpha) {
@@ -1164,61 +1167,20 @@
         }
 
         function getTopMatchTheme(e) {
-            const t = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
-            const homeStr = (e.home || '').toLowerCase();
-            const awayStr = (e.away || '').toLowerCase();
-
-            const isToro = t.includes('torino') || t.includes('toro');
-            const isBroncos = t.includes('broncos') || t.includes('denver');
-
-            let color = '#ffffff';
-            let isAway = false;
-
-            if (isToro) {
-                color = '#681019'; // Granata autentico del Torino
-                isAway = awayStr.includes('torino') || awayStr.includes('toro');
-                const bg = isAway
-                    ? `linear-gradient(225deg, rgba(125, 18, 28, 0.88) 0%, rgba(95, 14, 22, 0.65) 45%, rgba(18, 12, 16, 0.96) 100%)`
-                    : `linear-gradient(135deg, rgba(125, 18, 28, 0.88) 0%, rgba(95, 14, 22, 0.65) 45%, rgba(18, 12, 16, 0.96) 100%)`;
-                const border = isAway
-                    ? `border-right: 6px solid #821520; border-left: 1px solid var(--border);`
-                    : `border-left: 6px solid #821520; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else if (isBroncos) {
-                color = '#fb4f14'; // Arancio Broncos
-                isAway = awayStr.includes('broncos') || awayStr.includes('denver');
-                const bg = isAway
-                    ? `linear-gradient(225deg, rgba(251, 79, 20, 0.80) 0%, rgba(195, 55, 10, 0.55) 45%, rgba(12, 18, 28, 0.96) 100%)`
-                    : `linear-gradient(135deg, rgba(251, 79, 20, 0.80) 0%, rgba(195, 55, 10, 0.55) 45%, rgba(12, 18, 28, 0.96) 100%)`;
-                const border = isAway
-                    ? `border-right: 6px solid #fb4f14; border-left: 1px solid var(--border);`
-                    : `border-left: 6px solid #fb4f14; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else if (e.sport === 'f1') {
-                color = '#d2143a'; // Rosso Ciliegia F1
-                isAway = false;
-                const bg = `linear-gradient(135deg, rgba(210, 20, 58, 0.82) 0%, rgba(160, 14, 42, 0.55) 45%, rgba(24, 10, 16, 0.96) 100%)`;
-                const border = `border-left: 6px solid #d2143a; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else if (e.sport === 'nazionale') {
-                color = '#004ea2';
-                isAway = false;
-                const bg = `linear-gradient(135deg, rgba(0, 78, 162, 0.75) 0%, rgba(0, 55, 120, 0.50) 45%, rgba(10, 16, 28, 0.96) 100%)`;
-                const border = `border-left: 6px solid #004ea2; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else if (e.sport === 'champions') {
-                color = '#2563eb';
-                isAway = false;
-                const bg = `linear-gradient(135deg, rgba(37, 99, 235, 0.75) 0%, rgba(25, 70, 175, 0.50) 45%, rgba(12, 16, 30, 0.96) 100%)`;
-                const border = `border-left: 6px solid #2563eb; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else {
-                color = getTeamColor(e.home);
-                isAway = false;
-                const bg = `linear-gradient(135deg, ${hexToRgba(color, 0.65)} 0%, rgba(20, 20, 26, 0.95) 100%)`;
-                const border = `border-left: 5px solid ${color}; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            }
+            const text = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
+            const away = (e.away || '').toLowerCase();
+            const isToro = text.includes('torino') || text.includes('toro');
+            const isBroncos = text.includes('broncos') || text.includes('denver');
+            const isAway = isToro ? (away.includes('torino') || away.includes('toro')) :
+                isBroncos ? (away.includes('broncos') || away.includes('denver')) : false;
+            const accent = isToro ? '#93505a' : isBroncos ? '#b87850' :
+                e.sport === 'f1' ? '#a75568' : e.sport === 'nazionale' ? '#5682ab' :
+                e.sport === 'champions' ? '#667bb4' : getTeamColor(e.home);
+            const bg = 'linear-gradient(135deg, #273646 0%, #1c2937 100%)';
+            const edge = isAway ? 'right' : 'left';
+            const opposite = isAway ? 'left' : 'right';
+            const border = `border-${edge}: 6px solid ${accent}; border-${opposite}: 1px solid var(--border);`;
+            return { color: accent, isAway, bg, border };
         }
 
         const SPORT_NAMES = { f1: 'Formula 1', seriea: 'Serie A', nfl: 'NFL', champions: 'Champions League', nazionale: 'Italia' };
@@ -1299,12 +1261,12 @@
         function renderDataStatus(error = '') {
             const el = document.getElementById('dataStatus');
             const sources = Object.entries(calendarMeta.sources || {});
-            const stale = sources.filter(([, s]) => s.status !== 'ok' || !s.updatedAt || Date.now() - Date.parse(s.updatedAt) > 3 * 3600000);
+            const stale = sources.filter(([, s]) => s.status !== 'ok' || !s.updatedAt || Date.now() - Date.parse(s.updatedAt) > 6 * 3600000);
             const updated = calendarMeta.generatedAt && new Date(calendarMeta.generatedAt);
             const stamp = updated && !Number.isNaN(updated.getTime())
                 ? updated.toLocaleString('it-IT', { timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : null;
             el.textContent = error || (!stamp ? 'Data dell’aggiornamento non disponibile.'
-                : `Ultimo aggiornamento: ${stamp} · Ora italiana${stale.length ? ' · Dati da verificare: ' + stale.map(([k]) => SOURCE_NAMES[k] || k).join(', ') : ''}`);
+                : `Aggiornato: ${stamp} · ${stale.length ? `${stale.length} ${stale.length === 1 ? 'fonte' : 'fonti'} da verificare (ℹ️)` : 'Dati disponibili'}`);
             el.style.color = error || stale.length || !stamp ? '#fbbf24' : 'var(--text-sub)';
             if (window.navigator?.onLine === false && stamp) {
                 el.textContent = `Offline · dati salvati del ${stamp}`;
@@ -1371,7 +1333,7 @@
             if (!container) return;
             const upcoming = getUpcomingHeroMatch();
             if (countdownTimerId) { clearInterval(countdownTimerId); countdownTimerId = null; }
-            if (!upcoming) { container.innerHTML = ''; return; }
+            if (!upcoming || searchQuery) { container.innerHTML = ''; return; }
 
             const sportTag = SPORT_NAMES[upcoming.sport] || upcoming.sport.toUpperCase();
             const dObj = new Date(upcoming.date + 'T00:00:00');
@@ -1401,7 +1363,7 @@
             }
 
             container.innerHTML = `
-                <div class="hero-banner" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
+                <div class="hero-banner" role="button" tabindex="0" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
                     <div class="hero-top"><div class="hero-badge">${escapeHtml(sportTag)} • ${escapeHtml(upcoming.loc || '')}</div><div class="hero-countdown" id="heroCountdownTimer">In arrivo</div></div>
                     ${faceoffHtml}
                     <div class="hero-bottom"><span>${dStr} · ${timeLabel(upcoming)} ${upcoming.venue ? '• ' + escapeHtml(upcoming.venue) : ''}</span><span class="hero-cta">Dettagli ›</span></div>
@@ -1464,19 +1426,26 @@
 
             if (dateStripEl) dateStripEl.style.display = (view === 'agenda') ? 'block' : 'none';
             if (monthGroupEl) monthGroupEl.style.display = (view === 'standings') ? 'none' : 'flex';
+            const searchContainer = document.getElementById('searchContainer');
+            if (searchContainer) searchContainer.style.display = view === 'standings' ? 'none' : '';
+            if (btnAgenda) btnAgenda.ariaPressed = String(view === 'agenda');
+            if (btnStandings) btnStandings.ariaPressed = String(view === 'standings');
+            if (btnMonth) btnMonth.ariaPressed = String(view === 'month');
 
+            renderHeroBanner();
             renderAll();
         }
 
         function handleSearch(val) {
             searchQuery = val.trim().toLowerCase();
+            renderHeroBanner();
             renderAll();
         }
 
         function getFilteredEvents() {
             return allEvents.filter(e => {
                 if (searchQuery) {
-                    const match = `${e.title || ''} ${e.home || ''} ${e.away || ''} ${e.loc || ''}`.toLowerCase();
+                    const match = `${e.title || ''} ${e.home || ''} ${e.away || ''} ${e.loc || ''} ${e.venue || ''} ${SPORT_NAMES[e.sport] || ''}`.toLowerCase();
                     if (!match.includes(searchQuery)) return false;
                 }
                 return true;
@@ -1530,6 +1499,9 @@
                     <div class="strip-num">${d.getDate()}</div>
                     <span class="strip-dot"></span>
                 `;
+                el.tabIndex = 0;
+                el.setAttribute('role', 'button');
+                el.setAttribute('aria-label', `Mostra eventi di ${dStr}`);
                 el.onclick = () => {
                     selectedDateStr = dStr;
                     renderDateStrip();
@@ -1627,7 +1599,7 @@
                     }
 
                     html += `
-                        <div class="featured-match-card" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
+                        <div class="featured-match-card" role="button" tabindex="0" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
                             <div class="featured-match-header">
                                 <span>${escapeHtml(sportTag)} • ${escapeHtml(e.loc || 'Ufficiale')}</span>
                                 <span style="color:#fff; font-weight:800; font-size:12.5px;">${timeLabel(e)}${e.status === "FINISHED" && e.homeScore != null ? " · " + resultLabel(e) : ""}</span>
@@ -1685,10 +1657,10 @@
                                 // Sessione Formula 1: no stanghette, badge rosso ciliegia e dettagli circuito, senza emoji
                                 const sessionTag = e.title.toUpperCase().includes('QUALIFICHE') ? 'QUALIFICHE' : (e.title.toUpperCase().includes('PROVE') ? 'PROVE LIBERE' : (e.title.toUpperCase().includes('GARA') ? 'GARA' : 'SESSIONE F1'));
                                 html += `
-                                    <div class="compact-card" onclick="openEventSheetByKey('${key}')">
+                                    <div class="compact-card" role="button" tabindex="0" onclick="openEventSheetByKey('${key}')">
                                         <div style="display:flex; flex-direction:column; gap:2px; overflow:hidden; min-width:0;">
                                             <div style="display:flex; align-items:center; gap:5px;">
-                                                <span style="font-size:9px; font-weight:800; color:#ff6b8b; text-transform:uppercase; background:rgba(210,20,58,0.22); padding:1px 5px; border-radius:4px; border:1px solid rgba(210,20,58,0.45); flex-shrink:0;">
+                                                <span style="font-size:9px; font-weight:800; color:#c0d0de; text-transform:uppercase; background:rgba(180,200,220,0.12); padding:1px 5px; border-radius:4px; border:1px solid rgba(180,200,220,0.25); flex-shrink:0;">
                                                     ${sessionTag}
                                                 </span>
                                             </div>
@@ -1710,7 +1682,7 @@
                                 const homeColor = getTeamColor(e.home || e.title);
                                 const awayColor = getTeamColor(e.away || '');
                                 html += `
-                                    <div class="compact-card" onclick="openEventSheetByKey('${key}')">
+                                    <div class="compact-card" role="button" tabindex="0" onclick="openEventSheetByKey('${key}')">
                                         <div class="compact-teams-col">
                                             <div class="compact-team-row">
                                                 <span class="team-stanghetta" style="background: ${homeColor};"></span>
@@ -1892,6 +1864,9 @@
                     <span class="cell-num" style="${isTod ? 'color:#38bdf8; font-weight:800;' : ''}">${cellD.getDate()}</span>
                     ${hasEv ? '<span class="strip-dot" style="display:inline-block; margin-top:2px; background:#fff;"></span>' : ''}
                 `;
+                cell.tabIndex = 0;
+                cell.setAttribute('role', 'button');
+                cell.setAttribute('aria-label', `Mostra eventi del ${cellStr}`);
                 cell.onclick = () => {
                     selectedDateStr = cellStr;
                     document.querySelectorAll('.month-cell').forEach(c => c.classList.remove('active-cell'));
@@ -1919,7 +1894,7 @@
 
                 const key = eventKey(e);
                 html += `
-                    <div class="compact-card" onclick="openEventSheetByKey('${key}')">
+                    <div class="compact-card" role="button" tabindex="0" onclick="openEventSheetByKey('${key}')">
                         <span class="compact-team-name">${escapeHtml(e.title)}</span>
                         <span class="compact-time">${timeLabel(e)}${e.status === "FINISHED" && e.homeScore != null ? " · " + resultLabel(e) : ""}</span>
                     </div>
@@ -1927,6 +1902,17 @@
             });
             html += `</div>`;
             container.innerHTML = html;
+        }
+
+        // Le durate sono stime per gli eventi privi di ora finale ufficiale.
+        function eventDurationMinutes(event) {
+            if (event.sport === 'nfl') return 210;
+            if (event.sport !== 'f1') return 120;
+            const title = (event.title || '').toLowerCase();
+            if (title.includes('prove libere')) return 90;
+            if (title.includes('qualifiche')) return 75;
+            if (title.includes('sprint')) return 60;
+            return 150;
         }
 
         // --- SCHEDA DETTAGLI PARTITA ---
@@ -1977,7 +1963,7 @@
             calendarButton.removeAttribute('href');
             if (canExport) {
                 const start = new Date(found.startUtc);
-                const end = new Date(start.getTime() + 2 * 3600000);
+                const end = new Date(start.getTime() + eventDurationMinutes(found) * 60000);
                 const compactUtc = date => date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
                 const params = new URLSearchParams({ action: 'TEMPLATE', text: found.title,
                     dates: `${compactUtc(start)}/${compactUtc(end)}`, ctz: 'Europe/Rome',
@@ -1987,11 +1973,15 @@
 
             document.getElementById('modalBackdrop').classList.add('open');
             document.getElementById('eventDetailSheet').classList.add('open');
+            document.getElementById('eventDetailSheet').focus?.();
+            if (document.body) document.body.style.overflow = 'hidden';
         }
 
         function openInfoSheet() {
             document.getElementById('modalBackdrop').classList.add('open');
             document.getElementById('infoSheet').classList.add('open');
+            document.getElementById('infoSheet').focus?.();
+            if (document.body) document.body.style.overflow = 'hidden';
         }
 
         function closeAllSheets() {
@@ -1999,7 +1989,15 @@
             document.getElementById('modalBackdrop').classList.remove('open');
             document.getElementById('eventDetailSheet').classList.remove('open');
             document.getElementById('infoSheet').classList.remove('open');
+            if (document.body) document.body.style.overflow = '';
         }
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') { closeAllSheets(); return; }
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            const clickable = event.target?.closest?.('[role="button"][tabindex="0"]');
+            if (clickable) { event.preventDefault(); clickable.click(); }
+        });
 
         // Avvio immediato e garantito senza bug di mancato caricamento agenda
         if (document.readyState === 'loading') {
