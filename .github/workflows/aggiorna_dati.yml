@@ -49,11 +49,16 @@ jobs:
       - name: Controlla i dati da pubblicare
         run: python verifica_dati.py
 
-      - name: Salva i dati aggiornati
+      - name: Genera abbonamenti iCalendar gratuiti
+        run: |
+          python genera_abbonamenti.py
+          python -c "import json,pathlib; p=pathlib.Path('calendari'); c=json.loads((p/'catalogo.json').read_text()); assert c['teams'] and c['competitions']; assert all(pathlib.Path(x['path']).is_file() for group in ('teams','competitions') for x in c[group])"
+
+      - name: Salva dati e calendari aggiornati
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dati.js
+          git add dati.js calendari/
           if ! git diff --staged --quiet; then
             git commit -m "Aggiorna calendari e classifiche"
             git push
@@ -63,6 +68,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html calendario_sportivo.html dati.js manifest.json icon-192.png icon-512.png sw.js _site/
+          cp -R calendari _site/
 
       - name: Carica il sito per GitHub Pages
         uses: actions/upload-pages-artifact@v3
