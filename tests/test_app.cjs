@@ -15,7 +15,7 @@ const element = id => {
         removeAttribute(name) { delete this.attributes[name]; }, remove() {}, appendChild() {} });
     return elements.get(id);
 };
-const themeChoices = ['grafite', 'sabbia', 'bosco'].map(theme => {
+const themeChoices = ['sabbia', 'ink', 'scura'].map(theme => {
     const choice = element('theme-choice-' + theme);
     choice.setAttribute('data-theme-choice', theme);
     return choice;
@@ -37,26 +37,29 @@ vm.runInContext(code, context);
 const run = expression => vm.runInContext(expression, context);
 
 // Cambiare tema non richiede una rete o un account; persiste anche con preferenze locali.
-assert.equal(run('currentTheme'), 'grafite');
+assert.equal(run('currentTheme'), 'ink');
 assert.equal(run("setTheme('sabbia')"), true);
 assert.equal(run('currentTheme'), 'sabbia');
 assert.equal(storage.get('sport-os-theme'), 'sabbia');
 assert.equal(document.documentElement.getAttribute('data-theme'), 'sabbia');
 assert.equal(element('metaThemeColor').getAttribute('content'), '#baaa91');
-assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'true');
-assert.equal(themeChoices[0].getAttribute('aria-pressed'), 'false');
+assert.equal(themeChoices[0].getAttribute('aria-pressed'), 'true');
+assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'false');
 assert.equal(run("setTheme('non-esiste')"), false);
 assert.equal(run('currentTheme'), 'sabbia');
-run("setTheme('bosco')");
-assert.equal(storage.get('sport-os-theme'), 'bosco');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#1f2922');
-run("setTheme('grafite')");
-assert.equal(storage.get('sport-os-theme'), 'grafite');
+run("setTheme('scura')");
+assert.equal(storage.get('sport-os-theme'), 'scura');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#212120');
+assert.equal(themeChoices[2].getAttribute('aria-pressed'), 'true');
+run("setTheme('ink')");
+assert.equal(storage.get('sport-os-theme'), 'ink');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#92918d');
+assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'true');
 
 // Verifica numericamente il contrasto WCAG AA del testo in tutte le palette.
 const css = html.match(/<style>([\s\S]*?)<\/style>/)[1];
 const themeBlock = theme => {
-    const pattern = theme === 'grafite'
+    const pattern = theme === 'ink'
         ? /:root\s*\{([^}]+)\}/
         : new RegExp(':root\\[data-theme="' + theme + '"\\]\\s*\\{([^}]+)\\}');
     const found = css.match(pattern);
@@ -79,7 +82,7 @@ const contrast = (a, b) => {
     const x = luminance(a), y = luminance(b);
     return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
 };
-for (const theme of ['grafite', 'sabbia', 'bosco']) {
+for (const theme of ['sabbia', 'ink', 'scura']) {
     const bg = themeColor(theme, 'bg');
     const card = themeColor(theme, 'compact-bg');
     const main = themeColor(theme, 'text-main');
