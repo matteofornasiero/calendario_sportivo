@@ -1567,6 +1567,12 @@
             .hero-crest { width: 51px; height: 51px; }
             .hero-team-name { font-size: 14px; }
         }
+        /* La barra gestisce due settimane sovrapposte durante la transizione,
+           senza salti di contenuto e rispettando riduzione del movimento. */
+        .date-strip-wrapper { position: relative; overflow: hidden; }
+        @media (prefers-reduced-motion: reduce) {
+            .date-strip, .strip-day { animation: none !important; transition: none !important; }
+        }
     </style>
 </head>
 <body>
@@ -2074,15 +2080,13 @@
                 faceoffHtml = `
                     <div class="hero-faceoff">
                         <div class="hero-team">
-                            <span class="team-stanghetta hero-accent-rail" style="background: ${getTeamColor(upcoming.home)};"></span>
                             <img src="${safeImage(upcoming.homeCrest)}" class="hero-crest" alt="">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.home, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.home || 'Casa')}</span>
                         </div>
                         <div class="hero-vs">${resultLabel(upcoming)}</div>
                         <div class="hero-team away">
-                            <span class="hero-team-name${isFeaturedTeam(upcoming.away, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.away || 'Trasferta')}</span>
                             <img src="${safeImage(upcoming.awayCrest)}" class="hero-crest" alt="">
-                            <span class="team-stanghetta hero-accent-rail" style="background: ${getTeamColor(upcoming.away)};"></span>
+                            <span class="hero-team-name${isFeaturedTeam(upcoming.away, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.away || 'Trasferta')}</span>
                         </div>
                     </div>
                 `;
@@ -2199,8 +2203,58 @@
             if (el) el.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
         }
 
-        // La barra dei sette giorni si sfoglia lateralmente: le frecce grandi
-        // del mese non servono più. ArrowLeft/Right resta disponibile da tastiera.
+        // Carousel temporaneo a due settimane. La data cambia subito, mentre
+        // la settimana precedente esce e quella nuova entra realmente da lato.
+        let weekShiftInProgress = false;
+        function animateWeekShift(delta) {
+            if (weekShiftInProgress) return;
+            const wrapper = document.getElementById('dateStripWrapper');
+            const strip = document.getElementById('dateStrip');
+            const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+            if (!wrapper || !strip || reducedMotion ||
+                typeof strip.cloneNode !== 'function' || typeof strip.animate !== 'function') {
+                navigateTime(delta);
+                return;
+            }
+            weekShiftInProgress = true;
+            const previous = strip.cloneNode(true);
+            previous.removeAttribute('id');
+            previous.setAttribute('aria-hidden', 'true');
+            previous.querySelectorAll?.('[tabindex]')?.forEach(day => { day.tabIndex = -1; });
+            previous.style.position = 'absolute';
+            previous.style.top = strip.offsetTop + 'px';
+            previous.style.left = strip.offsetLeft + 'px';
+            previous.style.width = strip.getBoundingClientRect().width + 'px';
+            previous.style.pointerEvents = 'none';
+            wrapper.appendChild(previous);
+
+            navigateTime(delta);
+            const duration = 235;
+            const motion = { duration, easing: 'cubic-bezier(0.22, 0.61, 0.36, 1)' };
+            const offset = delta > 0 ? '100%' : '-100%';
+            const reverse = delta > 0 ? '-100%' : '100%';
+            const reset = () => {
+                previous.remove();
+                strip.style.willChange = '';
+                weekShiftInProgress = false;
+            };
+            try {
+                strip.style.willChange = 'transform';
+                const enter = strip.animate([
+                    { transform: `translateX(${offset})` },
+                    { transform: 'translateX(0)' }
+                ], motion);
+                previous.animate([
+                    { transform: 'translateX(0)' },
+                    { transform: `translateX(${reverse})` }
+                ], motion);
+                enter.finished.then(reset, reset);
+            } catch (error) {
+                reset();
+            }
+        }
+
+        // La barra dei sette giorni si sfoglia lateralmente su touch e tastiera.
         function installWeekNavigation() {
             const wrapper = document.getElementById('dateStripWrapper');
             if (!wrapper || wrapper.dataset?.weekNavigationReady) return;
@@ -2216,12 +2270,12 @@
                 const dy = e.changedTouches[0].clientY - touch.y;
                 touch = null;
                 if (Math.abs(dx) >= 40 && Math.abs(dx) > Math.abs(dy) * 1.25)
-                    navigateTime(dx < 0 ? 1 : -1);
+                    animateWeekShift(dx < 0 ? 1 : -1);
             }, { passive: true });
             wrapper.addEventListener('keydown', e => {
                 if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
                 e.preventDefault();
-                navigateTime(e.key === 'ArrowRight' ? 1 : -1);
+                animateWeekShift(e.key === 'ArrowRight' ? 1 : -1);
             });
         }
 
