@@ -20414,57 +20414,61 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-17T01:59:39.169462+00:00",
+  "generatedAt": "2026-11-17T02:11:03.932801+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00",
+      "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00",
+      "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00",
+      "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
+      "updatedAt": "2026-11-17T02:11:03.932801+00:00",
+      "season": 2026
     }
   },
   "partial": false
