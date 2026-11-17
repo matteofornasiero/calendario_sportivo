@@ -2170,6 +2170,22 @@
             } catch { return ''; }
         }
 
+        // Preferisce le versioni vettoriali o 500px già presenti nei feed.
+        // Non ingrandisce miniature né introduce servizi o download nuovi.
+        function bestHeroCrest(name, fallback) {
+            const target = normalizeTeam(name);
+            if (target) for (const event of allEvents) {
+                for (const [team, crest] of [[event.home, event.homeCrest], [event.away, event.awayCrest]]) {
+                    if (normalizeTeam(team) !== target || typeof crest !== 'string') continue;
+                    if (/\/500\//.test(crest) || /\.svg(?:\?|$)/i.test(crest)) {
+                        const good = safeImage(crest);
+                        if (good) return good;
+                    }
+                }
+            }
+            return safeImage(fallback);
+        }
+
         function eventKey(event) {
             return encodeURIComponent(event.id || JSON.stringify([event.date, event.time, event.title])).replace(/'/g, '%27');
         }
@@ -2299,12 +2315,12 @@
                 faceoffHtml = `
                     <div class="hero-faceoff">
                         <div class="hero-team">
-                            <img src="${safeImage(upcoming.homeCrest)}" class="hero-crest" alt="${escapeHtml(upcoming.home || 'Squadra di casa')}" loading="eager" decoding="async">
+                            <img src="${bestHeroCrest(upcoming.home, upcoming.homeCrest)}" class="hero-crest" alt="${escapeHtml(upcoming.home || 'Squadra di casa')}" loading="eager" decoding="async">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.home, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.home || 'Casa')}</span>
                         </div>
                         <div class="hero-vs">${resultLabel(upcoming)}</div>
                         <div class="hero-team away">
-                            <img src="${safeImage(upcoming.awayCrest)}" class="hero-crest" alt="${escapeHtml(upcoming.away || 'Squadra ospite')}" loading="eager" decoding="async">
+                            <img src="${bestHeroCrest(upcoming.away, upcoming.awayCrest)}" class="hero-crest" alt="${escapeHtml(upcoming.away || 'Squadra ospite')}" loading="eager" decoding="async">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.away, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.away || 'Trasferta')}</span>
                         </div>
                     </div>
