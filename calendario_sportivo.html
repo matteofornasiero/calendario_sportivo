@@ -1581,6 +1581,24 @@
         :root[data-theme="sabbia"] .featured-match-card [style*="color:#fff"] {
             color: var(--featured-text) !important;
         }
+        /* Hero più compatta, protagonisti gli stemmi. Asset SVG/PNG originali,
+           object-fit contain senza sfocatura artificiale né ritagli. */
+        .hero-container { padding-top: 12px; padding-bottom: 17px; }
+        .hero-banner { padding: 15px 16px 13px; min-height: 0; }
+        .hero-top { margin-bottom: 3px; }
+        .hero-faceoff { min-height: 0; margin: 2px 0 8px; gap: 7px; }
+        .hero-team, .hero-team.away { gap: 7px; }
+        .hero-crest { width: 84px; height: 84px; max-width: 100%; object-fit: contain;
+            image-rendering: auto; filter: none; flex-shrink: 0; }
+        .hero-team-name { min-height: 27px; line-height: 1.12;
+            font-size: clamp(14px, 4vw, 18px); }
+        .hero-bottom { display: flex; align-items: center; justify-content: center;
+            text-align: center; padding-top: 9px; }
+        .hero-kickoff { display: block; font-size: 13px; font-weight: 800; }
+        @media (max-width: 365px) {
+            .hero-crest { width: 74px; height: 74px; }
+            .hero-faceoff { gap: 4px; }
+        }
     </style>
 </head>
 <body>
@@ -2088,12 +2106,12 @@
                 faceoffHtml = `
                     <div class="hero-faceoff">
                         <div class="hero-team">
-                            <img src="${safeImage(upcoming.homeCrest)}" class="hero-crest" alt="">
+                            <img src="${safeImage(upcoming.homeCrest)}" class="hero-crest" alt="${escapeHtml(upcoming.home || 'Squadra di casa')}" loading="eager" decoding="async">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.home, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.home || 'Casa')}</span>
                         </div>
                         <div class="hero-vs">${resultLabel(upcoming)}</div>
                         <div class="hero-team away">
-                            <img src="${safeImage(upcoming.awayCrest)}" class="hero-crest" alt="">
+                            <img src="${safeImage(upcoming.awayCrest)}" class="hero-crest" alt="${escapeHtml(upcoming.away || 'Squadra ospite')}" loading="eager" decoding="async">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.away, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.away || 'Trasferta')}</span>
                         </div>
                     </div>
@@ -2109,7 +2127,7 @@
                         <span class="hero-countdown" id="heroCountdownTimer">In arrivo</span>
                     </div>
                     ${faceoffHtml}
-                    <div class="hero-bottom"><span class="hero-kickoff">${dStr} · ${timeLabel(upcoming)}</span><span class="hero-cta">Apri partita <span aria-hidden="true">›</span></span></div>
+                    <div class="hero-bottom"><span class="hero-kickoff">${escapeHtml(dStr)} · ${escapeHtml(timeLabel(upcoming))}</span></div>
                 </div>
             `;
             if (countdownTimerId) clearInterval(countdownTimerId);
