@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Sport OS">
-    <meta name="theme-color" content="#242426">
+    <meta name="theme-color" content="#222327">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
@@ -34,93 +34,96 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* INK — carbone neutro, UI a profondità controllata (default). */
+        /* EDITORIAL SYSTEM: tre temi, una sola gerarchia e un colore d'interfaccia distinto dai club. */
         :root {
             color-scheme: dark;
-            --bg: #242426;
-            --surface: rgba(242, 237, 229, 0.055);
-            --border: rgba(232, 225, 216, 0.12);
-            --border-highlight: rgba(232, 225, 216, 0.20);
-            --text-main: #f2efeb;
-            --text-sub: #cdc7c0;
-            --text-muted: #afa8a0;
-            --header-bg: rgba(33, 33, 35, 0.97);
-            --desktop-bg: #181819;
-            --desktop-panel: #29292b;
-            --compact-bg: #353538;
-            --modal-bg: rgba(40, 40, 42, 0.99);
-            --selected-bg: #514c49;
-            --selected-text: #faf6f0;
-            --search-bg: rgba(242, 237, 229, 0.065);
-            --detail-card-bg: #353236;
-            --badge-bg: rgba(242, 237, 229, 0.085);
-            --today-accent: #e2c5a4;
+            --bg: #222327;
+            --surface: rgba(243, 239, 233, 0.045);
+            --border: rgba(243, 239, 233, 0.12);
+            --border-highlight: rgba(243, 239, 233, 0.21);
+            --text-main: #f3f0ea;
+            --text-sub: #c9c6bf;
+            --text-muted: #afa9a2;
+            --header-bg: #1e1f22;
+            --desktop-bg: #151619;
+            --desktop-panel: #222327;
+            --compact-bg: #303137;
+            --modal-bg: rgba(36, 37, 40, 0.99);
+            --selected-bg: #e9d2a6;
+            --selected-text: #202125;
+            --search-bg: #2b2c31;
+            --detail-card-bg: #313238;
+            --badge-bg: rgba(243, 239, 233, 0.08);
+            --today-accent: #d6ab78;
+            --ui-accent: #d6ab78;
             --warning-color: #f0bf84;
-            --featured-bg: #343034;
-            --featured-text: #f7f1ed;
-            --featured-sub: #d4c6c1;
-            --featured-shadow: 0 4px 15px rgba(0, 0, 0, 0.17);
+            --featured-bg: #34353b;
+            --featured-text: #fbf7f0;
+            --featured-sub: #d5d0c8;
+            --featured-shadow: 0 7px 20px rgba(0, 0, 0, 0.16);
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
 
-        /* SABBIA — taupe medio caldo, senza superfici biancastre. */
+        /* Sabbia: canvas taupe medio, superfici crema-tenue e testo inchiostro. */
         :root[data-theme="sabbia"] {
             color-scheme: light;
-            --bg: #9e907f;
-            --surface: rgba(51, 38, 29, 0.075);
-            --border: rgba(58, 43, 33, 0.22);
-            --border-highlight: rgba(58, 43, 33, 0.31);
-            --text-main: #261f1a;
-            --text-sub: #332920;
-            --text-muted: #30271f;
-            --header-bg: rgba(174, 161, 143, 0.97);
-            --desktop-bg: #897b6b;
-            --desktop-panel: #ae9d88;
-            --compact-bg: #c0b19d;
-            --modal-bg: rgba(187, 173, 153, 0.99);
-            --selected-bg: #3e332b;
-            --selected-text: #f7eee1;
-            --search-bg: rgba(238, 225, 205, 0.24);
-            --detail-card-bg: #c2b4a1;
-            --badge-bg: rgba(60, 42, 29, 0.10);
-            --today-accent: #5b3a2d;
+            --bg: #a89984;
+            --surface: rgba(46, 34, 24, 0.055);
+            --border: rgba(58, 43, 30, 0.19);
+            --border-highlight: rgba(58, 43, 30, 0.25);
+            --text-main: #26211c;
+            --text-sub: #392e25;
+            --text-muted: #3b3027;
+            --header-bg: #bbaa94;
+            --desktop-bg: #867767;
+            --desktop-panel: #a89984;
+            --compact-bg: #d0bea7;
+            --modal-bg: rgba(216, 202, 180, 0.99);
+            --selected-bg: #3f342b;
+            --selected-text: #fff3e1;
+            --search-bg: #cbb9a2;
+            --detail-card-bg: #c7b59f;
+            --badge-bg: rgba(46, 34, 24, 0.075);
+            --today-accent: #754433;
+            --ui-accent: #754433;
             --warning-color: #693818;
-            --featured-bg: #392d30;
-            --featured-text: #fbf1ed;
-            --featured-sub: #d9c9c4;
-            --featured-shadow: 0 4px 15px rgba(37, 25, 18, 0.19);
+            --featured-bg: #e3d2b9;
+            --featured-text: #28201c;
+            --featured-sub: #594c40;
+            --featured-shadow: 0 6px 17px rgba(44, 31, 22, 0.12);
         }
 
-        /* SCURA — nero grafite morbido, mai blu puro. */
+        /* Scura: profondità pulita e contrasto più elevato rispetto a Ink. */
         :root[data-theme="scura"] {
             color-scheme: dark;
-            --bg: #171718;
-            --surface: rgba(243, 240, 235, 0.058);
-            --border: rgba(234, 229, 222, 0.12);
-            --border-highlight: rgba(234, 229, 222, 0.20);
-            --text-main: #f4f1eb;
-            --text-sub: #ccc6bf;
-            --text-muted: #aaa49e;
-            --header-bg: rgba(23, 23, 24, 0.98);
-            --desktop-bg: #101011;
-            --desktop-panel: #1d1d1e;
-            --compact-bg: #29292b;
-            --modal-bg: rgba(31, 31, 33, 0.99);
-            --selected-bg: #424040;
-            --selected-text: #faf6f0;
-            --search-bg: rgba(243, 240, 235, 0.065);
-            --detail-card-bg: #303033;
-            --badge-bg: rgba(243, 240, 235, 0.09);
-            --today-accent: #d8baa0;
+            --bg: #141518;
+            --surface: rgba(243, 239, 233, 0.045);
+            --border: rgba(243, 239, 233, 0.13);
+            --border-highlight: rgba(243, 239, 233, 0.21);
+            --text-main: #f7f1ea;
+            --text-sub: #c9c4bd;
+            --text-muted: #aaa5a0;
+            --header-bg: #16171b;
+            --desktop-bg: #0f1012;
+            --desktop-panel: #1b1d21;
+            --compact-bg: #27292e;
+            --modal-bg: rgba(31, 32, 36, 0.99);
+            --selected-bg: #d1af7e;
+            --selected-text: #15171a;
+            --search-bg: #222328;
+            --detail-card-bg: #303136;
+            --badge-bg: rgba(243, 239, 233, 0.075);
+            --today-accent: #e4b67d;
+            --ui-accent: #e4b67d;
             --warning-color: #f1c28a;
-            --featured-bg: #30292d;
-            --featured-text: #f8f1ed;
-            --featured-sub: #d4c4bf;
-            --featured-shadow: 0 5px 16px rgba(0, 0, 0, 0.22);
+            --featured-bg: #2b2c31;
+            --featured-text: #f8f3ec;
+            --featured-sub: #ccc5be;
+            --featured-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
         }
 
         * {
@@ -1197,9 +1200,9 @@
             width: 48%; height: 58%; border-radius: 4px;
             left: 7px; top: 5px; background: var(--swatch-surface);
         }
-        .theme-option[data-theme-choice="sabbia"] .theme-swatch { background: #9e907f; --swatch-surface: #c0b19d; }
-        .theme-option[data-theme-choice="ink"] .theme-swatch { background: #242426; --swatch-surface: #353538; }
-        .theme-option[data-theme-choice="scura"] .theme-swatch { background: #171718; --swatch-surface: #303033; }
+        .theme-option[data-theme-choice="sabbia"] .theme-swatch { background: #a89984; --swatch-surface: #d0bea7; }
+        .theme-option[data-theme-choice="ink"] .theme-swatch { background: #222327; --swatch-surface: #303137; }
+        .theme-option[data-theme-choice="scura"] .theme-swatch { background: #141518; --swatch-surface: #27292e; }
         /* Elevazione discreta sulle superfici. Il match importante è un unico
            colore pieno (mai gradienti/vignette) e un accento societario deciso. */
         .hero-banner, .featured-match-card {
@@ -1344,6 +1347,176 @@
             font-size: 10px; font-weight: 700; letter-spacing: .35px;
             transform: none; }
         .date-strip-wrapper { touch-action: pan-y; }
+
+        /* ==============================================================
+           SPORT OS / EDITORIAL SCORECARD v2
+           Una sola enfasi: la partita da seguire. Il resto non compete.
+           Spazi, colori e tipografia costituiscono il sistema visivo.
+        ============================================================== */
+        body { background: var(--bg); color: var(--text-main); }
+        .top-bar { background: var(--header-bg); border-bottom: 1px solid var(--border);
+            backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; padding: 12px 14px 13px; }
+        #dataStatus { color: var(--text-muted); font-size: 10.5px;
+            font-weight: 600; letter-spacing: .02em; margin: 0 0 10px; }
+        .header-tools { gap: 8px; align-items: center; }
+        .header-tools .search-container { flex: 1 1 auto; }
+        .header-tools .search-input { border-radius: 10px; height: 40px; background: var(--search-bg);
+            border: 1px solid var(--border); box-shadow: none !important; color: var(--text-main);
+            padding-left: 34px; font-size: 12px; font-weight: 500; }
+        .header-tools .search-icon { left: 11px; color: var(--text-muted); display:flex; align-items:center; }
+        .header-actions { gap: 5px; }
+        .header-actions .btn-today, .header-actions .btn-info {
+            height: 40px; border-radius: 10px; background: var(--search-bg);
+            color: var(--text-main); border: 1px solid var(--border);
+            box-shadow: none; font-size: 11px; font-weight: 750; padding: 0 8px;
+        }
+        .header-actions .btn-info { width: 39px; font-size: 16px; }
+        .header-actions button:active { background: var(--surface); }
+        @media (max-width: 370px) {
+            .header-tools { gap: 5px; }
+            .header-actions { gap: 4px; }
+            .header-actions .btn-today { font-size: 10px; padding: 0 6px; }
+            .header-actions .btn-info { width: 35px; }
+        }
+
+        /* Partita protagonista: surface cromatica del tema, non un rettangolo
+           saturo. Una tinta sportiva controllata vive vicino al team seguito. */
+        .hero-container { padding: 16px 14px 20px; }
+        .hero-banner, .featured-match-card {
+            position: relative; overflow: hidden; border-radius: 14px;
+            box-shadow: var(--featured-shadow); color: var(--featured-text);
+        }
+        .hero-banner { padding: 18px 17px 16px; min-height: 176px;
+            border: 1px solid var(--border-highlight); }
+        .hero-top { align-items: start; gap: 10px; margin-bottom: 14px; }
+        .hero-badge { align-items: flex-start; flex-direction: column; gap: 6px;
+            color: var(--featured-sub); font-size: 9px; font-weight: 700;
+            letter-spacing: .055em; line-height: 1.2; }
+        .hero-kicker { font-size: 10px; font-weight: 850; letter-spacing: .14em;
+            color: var(--match-accent); display: inline-flex; align-items: center; gap: 7px; }
+        .hero-kicker::before { content: ''; width: 18px; height: 3px;
+            border-radius: 3px; background: var(--match-accent); display:inline-block; }
+        .hero-competition { opacity: .92; letter-spacing: .045em; font-size: 9.5px; }
+        .hero-badge::before { display: none !important; }
+        .hero-countdown, .hero-banner .hero-countdown {
+            background: transparent; padding: 2px 0; border: none;
+            color: var(--featured-text) !important; font-family: 'Barlow Semi Condensed', 'Inter', sans-serif;
+            font-size: 15px; font-weight: 800; font-variant-numeric: tabular-nums;
+            white-space: nowrap; }
+        .hero-faceoff { margin: 7px 0 17px; gap: 10px; min-width: 0; }
+        .hero-team { gap: 7px; min-width: 0; }
+        .hero-team-name { font-family: 'Barlow Semi Condensed', 'Inter', sans-serif;
+            font-size: clamp(16px, 4.4vw, 22px); font-weight: 800; letter-spacing: -.01em;
+            line-height: 1; color: var(--featured-text); overflow-wrap: anywhere; }
+        .hero-banner .hero-team-name.focus-team {
+            color: var(--match-highlight) !important; position: relative;
+            text-decoration: underline; text-decoration-color: var(--match-accent);
+            text-decoration-thickness: 2px; text-underline-offset: 5px; }
+        .hero-crest { width: 34px; height: 34px; object-fit: contain; filter: none; }
+        .hero-accent-rail, .hero-banner .team-stanghetta { display: none !important; }
+        .hero-vs { background: transparent !important; border: 0 !important;
+            padding: 0 1px; font-size: 10px; letter-spacing: .04em; font-weight: 700;
+            color: var(--featured-sub); opacity: .8; }
+        .hero-bottom { border-top: 1px solid var(--border); padding-top: 13px;
+            color: var(--featured-sub); font-size: 11px; }
+        .hero-kickoff { color: var(--featured-text); font-size: 12px; font-weight: 750;
+            font-variant-numeric: tabular-nums; }
+        .hero-cta, .hero-banner .hero-cta { color: var(--match-accent) !important;
+            font-size: 11px; font-weight: 800; letter-spacing: .01em; white-space: nowrap; }
+        .hero-banner:focus-visible, .featured-match-card:focus-visible {
+            outline: 2px solid var(--ui-accent); outline-offset: 3px; }
+        .featured-match-card { padding: 14px; }
+        .featured-match-card .featured-match-header { color: var(--featured-sub); }
+        .featured-match-card .featured-match-footer { padding-top: 11px; border-top: 1px solid var(--border); }
+
+        /* Tabs editoriali al posto del doppio pulsante vetrato. */
+        .nav-controls-box { padding: 0 14px 3px; }
+        .view-switcher-grid {
+            display: flex; width: 100%; align-items: stretch; gap: 19px;
+            padding: 0; border: none; border-bottom: 1px solid var(--border);
+            background: transparent !important; border-radius: 0; box-shadow: none;
+            backdrop-filter: none; -webkit-backdrop-filter: none;
+        }
+        .view-btn, .view-btn.active {
+            flex: 0 0 auto; background: transparent !important; box-shadow: none !important;
+            padding: 10px 3px 11px; border: 0; border-bottom: 3px solid transparent;
+            margin-bottom: -1px; border-radius: 0; font-size: 14px;
+            font-family: 'Barlow Semi Condensed', 'Inter', sans-serif;
+            letter-spacing: .015em; font-weight: 750; color: var(--text-muted);
+        }
+        .view-btn.active { color: var(--text-main) !important;
+            border-color: var(--ui-accent); }
+        .view-btn:focus-visible, .strip-day:focus-visible { outline: 2px solid var(--ui-accent);
+            outline-offset: 3px; }
+        @media (min-width: 768px) {
+            .nav-controls-box { padding: 0 28px 3px; }
+            .view-switcher-grid { max-width: none; min-width: 0; }
+        }
+
+        /* Le date sembrano un navigatore, non un settimo contenitore vetro. */
+        .date-strip-wrapper { padding: 13px 14px 9px; }
+        .date-strip {
+            background: transparent !important; border: 0; border-radius: 0;
+            box-shadow: none !important; padding: 0; gap: 3px;
+        }
+        .strip-day { border: 1px solid transparent; border-radius: 9px;
+            padding: 8px 0 7px; min-width: 0; box-shadow: none; }
+        .strip-day.selected { background: var(--selected-bg); border-color: transparent; box-shadow: none; }
+        .strip-day.is-today:not(.selected) { border: 1px solid var(--border-highlight);
+            background: transparent; }
+        .strip-name { font-size: 9.5px; font-weight: 750; letter-spacing: .06em; }
+        .strip-num { margin-top: 4px; font-family: 'Barlow Semi Condensed', 'Inter', sans-serif;
+            font-weight: 800; font-size: 22px; line-height: 1; }
+        .strip-day.selected .strip-name, .strip-day.selected .strip-num {
+            color: var(--selected-text) !important; }
+        .strip-dot { width: 4px; height: 4px; margin-top: 6px; background: var(--text-muted); }
+        .strip-day.selected.has-events .strip-dot { background: var(--selected-text) !important; }
+
+        /* Agenda organizzata per lettura dall'alto: data, sport, poi le card. */
+        .main-content { padding: 0 14px; }
+        .day-group { margin-bottom: 16px; }
+        .day-header { display:flex; align-items:baseline; justify-content: space-between;
+            padding: 0; margin-top: 16px; margin-bottom: 11px; }
+        .day-weekday-name {
+            font-family: 'Barlow Semi Condensed', 'Inter', sans-serif;
+            font-size: 18px; font-weight: 800; letter-spacing: -.012em;
+            line-height: 1.12; color: var(--text-main); text-transform: capitalize; }
+        .day-header.today .day-weekday-name { font-size: 19px; color: var(--text-main); }
+        .day-inline-sport { color: var(--text-muted); font-size: 10px;
+            font-weight: 800; letter-spacing: .07em; white-space: nowrap; }
+        .sport-section-divider { justify-content: stretch; gap: 10px; align-items: center;
+            margin: 14px 0 8px; }
+        .sport-section-divider::after { content: ''; flex: 1;
+            border-top: 1px solid var(--border); }
+        .sport-divider-pill { font-size: 10px; letter-spacing: .075em; color: var(--text-sub);
+            padding: 0; font-weight: 800; border: none; background: none; box-shadow: none; }
+        .regular-matches-grid { gap: 8px; }
+        .compact-card {
+            min-height: 78px; padding: 10px 10px 9px; border-radius: 10px;
+            background: var(--compact-bg); border: 1px solid var(--border);
+            box-shadow: none; transition: background .12s ease, transform .1s ease;
+        }
+        .compact-card .compact-team-name { font-size: 12px; color: var(--text-main);
+            font-weight: 750; }
+        .compact-card .compact-subloc { color: var(--text-muted); }
+        .compact-card .compact-bottom-row { border-top-color: var(--border); }
+        .compact-time { background: var(--badge-bg); border: 0;
+            color: var(--text-main); font-size: 11px; font-weight: 850;
+            font-variant-numeric: tabular-nums; }
+        .team-stanghetta { box-shadow: none; border-radius: 2px; }
+        .compact-crest { width: 17px; height: 17px; filter: none; }
+        .compact-card:hover { box-shadow: none; }
+        @media (hover:hover) and (min-width:768px) {
+            .compact-card:hover { transform: translateY(-1px); border-color: var(--border-highlight); }
+        }
+
+        /* Gli stati di ricerca e le impostazioni restano funzionali e sobri. */
+        .modal-sheet { backdrop-filter: none; -webkit-backdrop-filter: none; }
+        :root[data-theme="sabbia"] .compact-team-name,
+        :root[data-theme="sabbia"] .compact-time,
+        :root[data-theme="sabbia"] .day-weekday-name { color: var(--text-main); }
+        :root[data-theme="sabbia"] .hero-banner .hero-kicker,
+        :root[data-theme="sabbia"] .hero-banner .hero-cta { color: var(--match-accent) !important; }
     </style>
 </head>
 <body>
@@ -1354,9 +1527,9 @@
         <div id="dataStatus" role="status" aria-live="polite">Caricamento partite…</div>
         <div class="header-tools">
             <div class="search-container" id="searchContainer">
-                <span class="search-icon" aria-hidden="true">🔍</span>
+                <span class="search-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m16 16 5 5"/></svg></span>
                 <input type="search" class="search-input" aria-label="Cerca squadra o evento"
-                    placeholder="Cerca squadra o evento..." oninput="handleSearch(this.value)">
+                    placeholder="Cerca squadra o gara" oninput="handleSearch(this.value)">
             </div>
             <div class="header-actions">
                 <button class="btn-today" id="btnRefresh" onclick="refreshData()" aria-label="Ricarica i dati pubblicati">Aggiorna</button>
@@ -1503,9 +1676,9 @@
 
         const THEME_STORAGE_KEY = 'sport-os-theme';
         const THEME_COLORS = {
-            sabbia: '#9e907f',
-            ink: '#242426',
-            scura: '#171718'
+            sabbia: '#a89984',
+            ink: '#222327',
+            scura: '#141518'
         };
         let currentTheme = 'ink';
 
@@ -1652,16 +1825,30 @@
             const opposite = isAway ? 'left' : 'right';
             // Il colore vive solo nella metà della squadra seguita e sfuma nella
             // superficie propria del tema. Sabbia usa pigmenti meno saturi.
-            const tone = currentTheme === 'sabbia'
-                ? (text.includes('torino') || text.includes('toro') ? '#87485a' : accent)
-                : accent;
-            const alpha = currentTheme === 'sabbia' ? 0.16 : currentTheme === 'scura' ? 0.19 : 0.15;
+            const sabbia = currentTheme === 'sabbia';
+            const tone = sabbia && (text.includes('torino') || text.includes('toro')) ? '#8b314c' : accent;
+            const alpha = sabbia ? .12 : currentTheme === 'scura' ? .19 : .16;
             const gradientSide = isAway ? '270deg' : '90deg';
-            const bg = `linear-gradient(${gradientSide}, ${hexToRgba(tone, alpha)} 0%, ${hexToRgba(tone, alpha * .65)} 25%, ${hexToRgba(tone, 0)} 53%), var(--featured-bg)`;
-            const displayHighlight = currentTheme === 'sabbia' && (text.includes('torino') || text.includes('toro'))
-                ? '#ffd9df' : highlight;
+            const bg = `linear-gradient(${gradientSide}, ${hexToRgba(tone, alpha)} 0%, ${hexToRgba(tone, alpha * .58)} 28%, ${hexToRgba(tone, 0)} 56%), var(--featured-bg)`;
+
+            // Il colore del club sul testo cambia con lo sfondo:
+            // luminoso su Ink/Scura, profondo sulla superficie chiara Sabbia.
+            let displayAccent = accent;
+            if (sabbia) {
+                displayAccent = text.includes('torino') || text.includes('toro') ? '#8b314c' :
+                    text.includes('broncos') || text.includes('denver') ? '#89421f' :
+                    e.sport === 'f1' ? '#902a44' :
+                    e.sport === 'nazionale' ? '#245b50' :
+                    e.sport === 'champions' ? '#3e4e7d' : '#694633';
+            } else {
+                displayAccent = text.includes('torino') || text.includes('toro') ? '#f48daa' :
+                    text.includes('broncos') || text.includes('denver') ? '#ffb472' :
+                    e.sport === 'f1' ? '#ff98ab' :
+                    e.sport === 'nazionale' ? '#a4e2d0' : highlight;
+            }
+            const displayHighlight = sabbia ? displayAccent : highlight;
             return {
-                color: accent, highlight: displayHighlight, teamKeys, isAway, bg,
+                color: displayAccent, highlight: displayHighlight, teamKeys, isAway, bg,
                 border: '1px solid var(--border)'
             };
         }
@@ -1838,7 +2025,7 @@
                 faceoffHtml = `
                     <div class="hero-faceoff">
                         <div class="hero-team">
-                            <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(upcoming.home)};"></span>
+                            <span class="team-stanghetta hero-accent-rail" style="background: ${getTeamColor(upcoming.home)};"></span>
                             <img src="${safeImage(upcoming.homeCrest)}" class="hero-crest" alt="">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.home, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.home || 'Casa')}</span>
                         </div>
@@ -1846,7 +2033,7 @@
                         <div class="hero-team away">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.away, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.away || 'Trasferta')}</span>
                             <img src="${safeImage(upcoming.awayCrest)}" class="hero-crest" alt="">
-                            <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(upcoming.away)};"></span>
+                            <span class="team-stanghetta hero-accent-rail" style="background: ${getTeamColor(upcoming.away)};"></span>
                         </div>
                     </div>
                 `;
@@ -1856,9 +2043,12 @@
 
             container.innerHTML = `
                 <div class="hero-banner" role="button" tabindex="0" style="background: ${theme.bg}; ${theme.border} --match-accent: ${theme.color}; --match-highlight: ${theme.highlight};" onclick="openEventSheetByKey('${key}')">
-                    <div class="hero-top"><div class="hero-badge">${escapeHtml(sportTag)} • ${escapeHtml(upcoming.loc || '')}</div><div class="hero-countdown" id="heroCountdownTimer">In arrivo</div></div>
+                    <div class="hero-top">
+                        <div class="hero-badge"><span class="hero-kicker">DA SEGUIRE</span><span class="hero-competition">${escapeHtml(sportTag)}${upcoming.loc ? ' · ' + escapeHtml(upcoming.loc) : ''}</span></div>
+                        <span class="hero-countdown" id="heroCountdownTimer">In arrivo</span>
+                    </div>
                     ${faceoffHtml}
-                    <div class="hero-bottom"><span>${dStr} · ${timeLabel(upcoming)} ${upcoming.venue ? '• ' + escapeHtml(upcoming.venue) : ''}</span><span class="hero-cta">Dettagli ›</span></div>
+                    <div class="hero-bottom"><span class="hero-kickoff">${dStr} · ${timeLabel(upcoming)}</span><span class="hero-cta">Apri partita <span aria-hidden="true">›</span></span></div>
                 </div>
             `;
             if (countdownTimerId) clearInterval(countdownTimerId);
