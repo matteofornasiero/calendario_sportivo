@@ -33,6 +33,13 @@ const key = run('eventKey(fixture)');
 assert.ok(!key.includes("'"));
 run('renderHeroBanner()');
 assert.ok(element('heroBannerContainer').innerHTML.includes('&lt;img onerror=alert(1)&gt;'));
+run("searchQuery = 'torino'");
+run('renderHeroBanner()');
+assert.equal(element('heroBannerContainer').innerHTML, '', 'La ricerca nasconde la hero non filtrata');
+run("searchQuery = ''");
+assert.equal(run("eventDurationMinutes({ sport: 'nfl' })"), 210);
+assert.equal(run("eventDurationMinutes({ sport: 'f1', title: 'Prove libere 1' })"), 90);
+assert.equal(run("eventDurationMinutes({ sport: 'f1', title: 'GARA: Italia' })"), 150);
 assert.ok(!element('heroBannerContainer').innerHTML.includes('<img onerror='));
 run('openEventSheetByKey(eventKey(fixture))');
 assert.equal(element('sheetEventTime').textContent, '23:30');
@@ -61,7 +68,7 @@ assert.ok(element('standingsContentBox').innerHTML.includes('>13</td>'));
 run("standingsData = { nfl: { divisions: { 'AFC West': [{ name: 'Denver', wins: 3, losses: 1, ties: 0 }] } } }; currentStandingsTab = 'nfl'; renderStandings()");
 assert.ok(element('standingsContentBox').innerHTML.includes('>3-1</td>'));
 run("calendarMeta = { generatedAt: '2020-01-01T00:00:00Z', sources: { nfl: { status: 'ok', updatedAt: '2020-01-01T00:00:00Z' } } }; renderDataStatus()");
-assert.ok(element('dataStatus').textContent.includes('Dati da verificare: NFL'));
+assert.ok(element('dataStatus').textContent.includes('1 fonte da verificare'));
 
 (async () => {
     sandbox.window.calendarData = [event];
@@ -71,7 +78,7 @@ assert.ok(element('dataStatus').textContent.includes('Dati da verificare: NFL'))
     await run('refreshData()');
     assert.equal(element('btnRefresh').disabled, false);
     assert.ok(element('script').src.startsWith('dati.js?v='));
-    assert.ok(element('dataStatus').textContent.includes('Ultimo aggiornamento:'));
+    assert.ok(element('dataStatus').textContent.includes('Aggiornato:'));
     document.head.appendChild = script => script.onerror();
     await run('refreshData()');
     assert.equal(run('allEvents.length'), 1, 'Un errore di rete deve conservare i dati già caricati');
