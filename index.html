@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Sport OS">
-    <meta name="theme-color" content="#151e28">
+    <meta name="theme-color" content="#242522">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
@@ -17,24 +17,90 @@
     <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 
 
+    <!-- Imposta il tema salvato prima del primo disegno, evitando il flash di colore. -->
+    <script type="text/javascript">
+        (function () {
+            try {
+                const savedTheme = localStorage.getItem('sport-os-theme');
+                if (['grafite', 'sabbia', 'bosco'].includes(savedTheme)) {
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                }
+            } catch (error) { /* Navigazione privata: si usa Grafite. */ }
+        })();
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
+        /* Grafite: base neutra senza dominante blu. */
         :root {
-            --bg: #151e28;
-            --surface: rgba(255, 255, 255, 0.045);
-            --border: rgba(180, 200, 220, 0.14);
-            --border-highlight: rgba(180, 200, 220, 0.22);
-            
-            --text-main: #f1f5f9;
-            --text-sub: #a8b9ca;
-            --text-muted: #8195aa;
-
+            color-scheme: dark;
+            --bg: #242522;
+            --surface: rgba(245, 238, 223, 0.065);
+            --border: rgba(227, 217, 196, 0.17);
+            --border-highlight: rgba(227, 217, 196, 0.25);
+            --text-main: #f2eee6;
+            --text-sub: #c3bcad;
+            --text-muted: #a49c8d;
+            --header-bg: rgba(37, 38, 34, 0.96);
+            --desktop-bg: #191a18;
+            --desktop-panel: #2a2b27;
+            --compact-bg: #32322e;
+            --modal-bg: rgba(44, 43, 38, 0.98);
+            --selected-bg: #efe4d2;
+            --selected-text: #211f1a;
+            --search-bg: rgba(245, 238, 223, 0.075);
+            --detail-card-bg: linear-gradient(130deg, #403d35, #2b2a26);
+            --badge-bg: rgba(245, 238, 223, 0.10);
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        /* Sabbia: beige caldo medio, non bianco, con testo nero-bruno. */
+        :root[data-theme="sabbia"] {
+            color-scheme: light;
+            --bg: #baaa91;
+            --surface: rgba(58, 39, 23, 0.065);
+            --border: rgba(66, 45, 27, 0.25);
+            --border-highlight: rgba(66, 45, 27, 0.32);
+            --text-main: #211b16;
+            --text-sub: #43392f;
+            --text-muted: #5a4c3e;
+            --header-bg: rgba(202, 186, 160, 0.97);
+            --desktop-bg: #a9977d;
+            --desktop-panel: #c4b298;
+            --compact-bg: #d2c1a7;
+            --modal-bg: rgba(208, 192, 165, 0.99);
+            --selected-bg: #34291f;
+            --selected-text: #f7eddb;
+            --search-bg: rgba(255, 245, 225, 0.34);
+            --detail-card-bg: linear-gradient(130deg, #dbc9ad, #c5b395);
+            --badge-bg: rgba(54, 36, 22, 0.09);
+        }
+
+        /* Bosco: verde profondo e salvia, con contrasti morbidi. */
+        :root[data-theme="bosco"] {
+            color-scheme: dark;
+            --bg: #1f2922;
+            --surface: rgba(229, 238, 215, 0.07);
+            --border: rgba(214, 232, 199, 0.18);
+            --border-highlight: rgba(214, 232, 199, 0.27);
+            --text-main: #edf0e6;
+            --text-sub: #c3ceba;
+            --text-muted: #a2b29d;
+            --header-bg: rgba(30, 44, 34, 0.97);
+            --desktop-bg: #18221b;
+            --desktop-panel: #25362a;
+            --compact-bg: #2c3c30;
+            --modal-bg: rgba(38, 54, 42, 0.98);
+            --selected-bg: #e2e9d6;
+            --selected-text: #1c2920;
+            --search-bg: rgba(229, 238, 215, 0.085);
+            --detail-card-bg: linear-gradient(130deg, #334b39, #25362a);
+            --badge-bg: rgba(229, 238, 215, 0.09);
         }
 
         * {
@@ -975,6 +1041,82 @@
             display: block;
             margin-top: 10px;
         }
+        /* Applicazione dei temi: nessuna modifica a griglie, spazi o proporzioni. */
+        .top-bar { background: var(--header-bg); }
+        .brand-title, .btn-today, .current-month-text, .search-input { color: var(--text-main); }
+        .search-input { background: var(--search-bg); }
+        .btn-today:active { background: var(--selected-bg); color: var(--selected-text); }
+        .compact-card { background: var(--compact-bg); border-color: var(--border); }
+        .compact-team-name, .standings-table td, .standings-pts, .standings-pos.pos-1,
+        .sheet-team-name, .day-header.today .day-weekday-name { color: var(--text-main); }
+        .day-weekday-name { color: var(--text-sub); }
+        .day-count-badge { color: var(--text-muted); }
+        .view-btn.active, .standings-tab-btn.active, .strip-day.selected,
+        .month-cell.active-cell { background: var(--selected-bg); color: var(--selected-text) !important; }
+        .strip-day.selected .strip-name { color: var(--selected-text); opacity: 0.78; }
+        .strip-day.selected .strip-num { color: var(--selected-text); }
+        .strip-day.selected.has-events .strip-dot,
+        .month-cell.active-cell .strip-dot { background: var(--selected-text) !important; }
+        .strip-day.is-today:not(.selected) { border-color: var(--border-highlight); background: var(--surface); }
+        .modal-sheet { background: var(--modal-bg); }
+        .btn-gcal { background: var(--selected-bg); color: var(--selected-text); }
+        .standings-table-card, .date-strip, .view-switcher-grid, .month-grid { background: var(--surface); }
+        .standings-group-title { background: var(--surface); }
+        .sport-divider-pill { background: var(--badge-bg); }
+        .hero-banner, .featured-match-card { color: #fff; }
+        .hero-banner .hero-team-name, .hero-banner .hero-cta,
+        .featured-match-card .featured-team-name { color: #fff; }
+
+        @media (min-width: 768px) {
+            body { background-color: var(--desktop-bg); }
+            .app-container { background-color: var(--desktop-panel); border-color: var(--border); }
+        }
+
+        /* Nel tema Sabbia i normali contenuti sono scuri; le card evidenziate restano scure con testo bianco. */
+        :root[data-theme="sabbia"] .compact-card [style*="color:#fff"],
+        :root[data-theme="sabbia"] .standings-table-card [style*="color:#fff"],
+        :root[data-theme="sabbia"] #monthSelectedDayEvents [style*="color:#fff"],
+        :root[data-theme="sabbia"] .modal-sheet [style*="color:#fff"],
+        :root[data-theme="sabbia"] .day-header [style*="color:#fff"] {
+            color: var(--text-main) !important;
+        }
+        :root[data-theme="sabbia"] .standings-table th,
+        :root[data-theme="sabbia"] .standings-table td,
+        :root[data-theme="sabbia"] .compact-time,
+        :root[data-theme="sabbia"] .sheet-team-name { color: var(--text-main); }
+        :root[data-theme="sabbia"] .compact-time {
+            background: rgba(52, 41, 31, 0.08);
+            border-color: var(--border);
+        }
+        :root[data-theme="sabbia"] .featured-match-header { color: #f1e9df; }
+
+        /* Selettore di tema solo nelle impostazioni. */
+        .settings-theme-label {
+            font-size: 12px; font-weight: 800; color: var(--text-main);
+            margin-bottom: 9px;
+        }
+        .theme-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+        .theme-option {
+            appearance: none; width: 100%; border: 1px solid var(--border);
+            border-radius: 11px; padding: 8px 6px; cursor: pointer;
+            background: var(--surface); color: var(--text-main);
+            font-size: 11px; font-weight: 700; text-align: center;
+        }
+        .theme-option[aria-pressed="true"] { outline: 2px solid var(--text-main); outline-offset: -2px; }
+        .theme-option:focus-visible { outline: 3px solid var(--text-main); outline-offset: 2px; }
+        .theme-swatch {
+            display: block; height: 29px; border-radius: 7px;
+            margin-bottom: 6px; border: 1px solid rgba(0, 0, 0, 0.18);
+            position: relative;
+        }
+        .theme-swatch::after {
+            content: ''; display: block; position: absolute;
+            width: 48%; height: 58%; border-radius: 4px;
+            left: 7px; top: 5px; background: var(--swatch-surface);
+        }
+        .theme-option[data-theme-choice="grafite"] .theme-swatch { background: #242522; --swatch-surface: #43423b; }
+        .theme-option[data-theme-choice="sabbia"] .theme-swatch { background: #baaa91; --swatch-surface: #e1d0b5; }
+        .theme-option[data-theme-choice="bosco"] .theme-swatch { background: #1f2922; --swatch-surface: #426047; }
     </style>
 </head>
 <body>
@@ -990,7 +1132,7 @@
             <div class="header-actions">
                 <button class="btn-today" id="btnRefresh" onclick="refreshData()" aria-label="Ricarica i dati pubblicati">Aggiorna</button>
                 <button class="btn-today" onclick="jumpToToday()">Oggi</button>
-                <button class="btn-info" onclick="openInfoSheet()">ℹ️</button>
+                <button class="btn-info" onclick="openInfoSheet()" aria-label="Impostazioni" title="Impostazioni">⚙</button>
             </div>
         </div>
         <div id="dataStatus" role="status" aria-live="polite" style="font-size:11px;color:var(--text-sub);margin:6px 0;line-height:1.5;">Caricamento partite…</div>
@@ -1073,7 +1215,25 @@
     <!-- INFO SHEET -->
     <div class="modal-sheet" id="infoSheet" role="dialog" aria-modal="true" aria-label="Informazioni e stato delle fonti" tabindex="-1">
         <div class="sheet-handle"></div>
-        <div style="font-size:16px; font-weight:800; color:#fff; margin-bottom:8px;">Sport OS</div>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-size:16px; font-weight:800; color:var(--text-main);">Impostazioni</div>
+            <button type="button" onclick="closeAllSheets()" aria-label="Chiudi impostazioni" style="background:none; border:none; color:var(--text-sub); font-size:18px; cursor:pointer;">✕</button>
+        </div>
+        <div class="settings-theme-label">Tema dell'interfaccia</div>
+        <div class="theme-options" role="group" aria-label="Scegli il tema">
+            <button type="button" class="theme-option" data-theme-choice="grafite" onclick="setTheme('grafite')" aria-pressed="true">
+                <span class="theme-swatch" aria-hidden="true"></span>Grafite
+            </button>
+            <button type="button" class="theme-option" data-theme-choice="sabbia" onclick="setTheme('sabbia')" aria-pressed="false">
+                <span class="theme-swatch" aria-hidden="true"></span>Sabbia
+            </button>
+            <button type="button" class="theme-option" data-theme-choice="bosco" onclick="setTheme('bosco')" aria-pressed="false">
+                <span class="theme-swatch" aria-hidden="true"></span>Bosco
+            </button>
+        </div>
+        <div style="font-size:11px; line-height:1.5; color:var(--text-muted); margin:8px 0 14px;">
+            Il tema scelto rimane salvato su questo dispositivo.
+        </div>
         <div style="font-size:13px; color:var(--text-sub); line-height:1.5;">
             Gli orari sono espressi nel fuso italiano. Le partite con orario da definire possono avere una data provvisoria. I dati vengono controllati periodicamente; il pulsante Aggiorna ricarica l’ultima versione pubblicata. I risultati vengono mostrati a partita conclusa. Dopo una prima apertura online, puoi consultare l’ultima copia salvata anche senza connessione.
             <div id="sourceStatusDetails" style="margin-top:12px;"></div>
@@ -1091,8 +1251,42 @@
         let activeSheetEvent = null;
         let countdownTimerId = null;
 
+        const THEME_STORAGE_KEY = 'sport-os-theme';
+        const THEME_COLORS = {
+            grafite: '#242522',
+            sabbia: '#baaa91',
+            bosco: '#1f2922'
+        };
+        let currentTheme = 'grafite';
+
+        function setTheme(theme, persist = true) {
+            if (!Object.prototype.hasOwnProperty.call(THEME_COLORS, theme)) return false;
+            currentTheme = theme;
+            if (document.documentElement) document.documentElement.setAttribute('data-theme', theme);
+            const meta = document.querySelector?.('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', THEME_COLORS[theme]);
+            for (const button of document.querySelectorAll?.('[data-theme-choice]') || []) {
+                button.setAttribute('aria-pressed', String(button.getAttribute('data-theme-choice') === theme));
+            }
+            if (persist) {
+                try { window.localStorage?.setItem(THEME_STORAGE_KEY, theme); }
+                catch (error) { /* Anche senza storage il cambio tema resta disponibile. */ }
+            }
+            return true;
+        }
+
+        function initTheme() {
+            let stored = document.documentElement?.getAttribute?.('data-theme');
+            if (!stored) {
+                try { stored = window.localStorage?.getItem(THEME_STORAGE_KEY); }
+                catch (error) { stored = null; }
+            }
+            setTheme(Object.prototype.hasOwnProperty.call(THEME_COLORS, stored) ? stored : 'grafite', false);
+        }
+        initTheme();
+
         function getCardBackground(home, away) {
-            return 'linear-gradient(135deg, #293746, #1b2836)';
+            return 'var(--detail-card-bg)';
         }
 
         // ==========================================
@@ -1140,20 +1334,20 @@
         };
 
         const SPORT_BADGE_THEMES = {
-            seriea: { name: 'SERIE A', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
-            f1: { name: 'FORMULA 1', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
-            nfl: { name: 'NFL', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
-            champions: { name: 'CHAMPIONS LEAGUE', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
-            nazionale: { name: 'ITALIA', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' }
+            seriea: { name: 'SERIE A', color: 'var(--text-sub)', border: 'var(--border-highlight)' },
+            f1: { name: 'FORMULA 1', color: 'var(--text-sub)', border: 'var(--border-highlight)' },
+            nfl: { name: 'NFL', color: 'var(--text-sub)', border: 'var(--border-highlight)' },
+            champions: { name: 'CHAMPIONS LEAGUE', color: 'var(--text-sub)', border: 'var(--border-highlight)' },
+            nazionale: { name: 'ITALIA', color: 'var(--text-sub)', border: 'var(--border-highlight)' }
         };
 
         function hexToRgba(hex, alpha) {
             if (!hex || !hex.startsWith('#')) return `rgba(255, 255, 255, ${alpha})`;
             let c = hex.replace('#', '');
             if (c.length === 3) c = c.split('').map(x => x + x).join('');
-            const r = parseInt(c.substring(0, 2), 16) || 255;
-            const g = parseInt(c.substring(2, 4), 16) || 255;
-            const b = parseInt(c.substring(4, 6), 16) || 255;
+            const r = parseInt(c.substring(0, 2), 16);
+            const g = parseInt(c.substring(2, 4), 16);
+            const b = parseInt(c.substring(4, 6), 16);
             return `rgba(${r}, ${g}, ${b}, ${alpha})`;
         }
 
@@ -1173,13 +1367,38 @@
             const isBroncos = text.includes('broncos') || text.includes('denver');
             const isAway = isToro ? (away.includes('torino') || away.includes('toro')) :
                 isBroncos ? (away.includes('broncos') || away.includes('denver')) : false;
-            const accent = isToro ? '#93505a' : isBroncos ? '#b87850' :
-                e.sport === 'f1' ? '#a75568' : e.sport === 'nazionale' ? '#5682ab' :
-                e.sport === 'champions' ? '#667bb4' : getTeamColor(e.home);
-            const bg = 'linear-gradient(135deg, #273646 0%, #1c2937 100%)';
+            // Il colore importante appartiene alla squadra/gara, non al tema generale.
+            // I gradienti sono volutamente scuri: testi bianchi sempre leggibili, anche in Sabbia.
+            let primary, secondary, accent;
+            if (isToro) {
+                [primary, secondary, accent] = ['#8d1833', '#4d1724', '#dd6780'];
+            } else if (isBroncos) {
+                [primary, secondary, accent] = ['#a94617', '#532312', '#ff8a45'];
+            } else if (e.sport === 'f1') {
+                [primary, secondary, accent] = ['#af183b', '#591728', '#f26783'];
+            } else if (e.sport === 'nazionale') {
+                [primary, secondary, accent] = ['#176b56', '#173d35', '#5bc4a2'];
+            } else {
+                const italian = ['inter', 'milan', 'juventus', 'atalanta', 'bologna',
+                    'roma', 'lazio', 'napoli', 'fiorentina'];
+                const featuredTeam = italian.find(name => text.includes(name));
+                const color = getTeamColor(featuredTeam || e.home);
+                accent = color === '#52525b' ? '#ccb082' : color;
+                // Miscela con antracite per assicurare contrasto anche con accenti molto chiari.
+                const blend = (hex, intensity) => {
+                    const value = hex.replace('#', '');
+                    const channels = [0, 2, 4].map(index => parseInt(value.slice(index, index + 2), 16));
+                    const dark = [35, 30, 32];
+                    return '#' + channels.map((channel, i) =>
+                        Math.round(channel * intensity + dark[i] * (1 - intensity)).toString(16).padStart(2, '0')).join('');
+                };
+                primary = blend(accent, 0.55);
+                secondary = blend(accent, 0.25);
+            }
             const edge = isAway ? 'right' : 'left';
             const opposite = isAway ? 'left' : 'right';
-            const border = `border-${edge}: 6px solid ${accent}; border-${opposite}: 1px solid var(--border);`;
+            const bg = `linear-gradient(${isAway ? '270deg' : '90deg'}, ${primary} 0%, ${secondary} 55%, #251e22 100%)`;
+            const border = `border-${edge}: 6px solid ${accent}; border-${opposite}: 1px solid rgba(255,255,255,0.16);`;
             return { color: accent, isAway, bg, border };
         }
 
@@ -1660,14 +1879,14 @@
                                     <div class="compact-card" role="button" tabindex="0" onclick="openEventSheetByKey('${key}')">
                                         <div style="display:flex; flex-direction:column; gap:2px; overflow:hidden; min-width:0;">
                                             <div style="display:flex; align-items:center; gap:5px;">
-                                                <span style="font-size:9px; font-weight:800; color:#c0d0de; text-transform:uppercase; background:rgba(180,200,220,0.12); padding:1px 5px; border-radius:4px; border:1px solid rgba(180,200,220,0.25); flex-shrink:0;">
+                                                <span style="font-size:9px; font-weight:800; color:var(--text-sub); text-transform:uppercase; background:var(--badge-bg); padding:1px 5px; border-radius:4px; border:1px solid var(--border-highlight); flex-shrink:0;">
                                                     ${sessionTag}
                                                 </span>
                                             </div>
                                             <div class="compact-team-name" style="font-size:12px; font-weight:800; color:#fff; margin-top:2px;">
                                                 ${escapeHtml(e.title)}
                                             </div>
-                                            <div class="compact-subloc" style="font-size:9.5px; color:#94a3b8; max-width:100%;">
+                                            <div class="compact-subloc" style="font-size:9.5px; color:var(--text-muted); max-width:100%;">
                                                 ${escapeHtml(e.loc || 'Circuito')}
                                             </div>
                                         </div>
