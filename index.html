@@ -55,6 +55,7 @@
             --search-bg: rgba(245, 238, 223, 0.075);
             --detail-card-bg: linear-gradient(130deg, #403d35, #2b2a26);
             --badge-bg: rgba(245, 238, 223, 0.10);
+            --today-accent: #ddbe85;
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
@@ -79,6 +80,7 @@
             --search-bg: rgba(255, 245, 225, 0.34);
             --detail-card-bg: linear-gradient(130deg, #dbc9ad, #c5b395);
             --badge-bg: rgba(54, 36, 22, 0.09);
+            --today-accent: #62451f;
         }
 
         /* Bosco: verde profondo e salvia, con contrasti morbidi. */
@@ -101,6 +103,7 @@
             --search-bg: rgba(229, 238, 215, 0.085);
             --detail-card-bg: linear-gradient(130deg, #334b39, #25362a);
             --badge-bg: rgba(229, 238, 215, 0.09);
+            --today-accent: #bcdca1;
         }
 
         * {
@@ -1064,6 +1067,7 @@
         .standings-group-title { background: var(--surface); }
         .sport-divider-pill { background: var(--badge-bg); }
         .hero-banner, .featured-match-card { color: #fff; }
+        .month-cell.active-cell .cell-num { color: var(--selected-text) !important; }
         .hero-banner .hero-team-name, .hero-banner .hero-cta,
         .featured-match-card .featured-team-name { color: #fff; }
 
@@ -2080,7 +2084,7 @@
                 const cell = document.createElement('div');
                 cell.className = `month-cell ${isDiff ? 'diff-month' : ''} ${isSel ? 'active-cell' : ''}`;
                 cell.innerHTML = `
-                    <span class="cell-num" style="${isTod ? 'color:#38bdf8; font-weight:800;' : ''}">${cellD.getDate()}</span>
+                    <span class="cell-num" style="${isTod ? 'color:var(--today-accent); font-weight:800;' : ''}">${cellD.getDate()}</span>
                     ${hasEv ? '<span class="strip-dot" style="display:inline-block; margin-top:2px; background:#fff;"></span>' : ''}
                 `;
                 cell.tabIndex = 0;
