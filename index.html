@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Sport OS">
-    <meta name="theme-color" content="#09090b">
+    <meta name="theme-color" content="#151e28">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
@@ -24,14 +24,14 @@
 
     <style>
         :root {
-            --bg: #09090b;
-            --surface: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-highlight: rgba(255, 255, 255, 0.18);
+            --bg: #151e28;
+            --surface: rgba(255, 255, 255, 0.045);
+            --border: rgba(180, 200, 220, 0.14);
+            --border-highlight: rgba(180, 200, 220, 0.22);
             
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --text-muted: #64748b;
+            --text-main: #f1f5f9;
+            --text-sub: #a8b9ca;
+            --text-muted: #8195aa;
 
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -63,7 +63,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(9, 9, 12, 0.85);
+            background: rgba(24, 35, 47, 0.94);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
@@ -284,14 +284,14 @@
             body {
                 display: flex;
                 justify-content: center;
-                background-color: #060608;
+                background-color: #111a24;
                 padding-top: 14px;
                 padding-bottom: 30px;
             }
             .app-container {
                 max-width: 1280px;
                 width: 95%;
-                background-color: #0c0c0f;
+                background-color: #192430;
                 border: 1px solid rgba(255, 255, 255, 0.08);
                 border-radius: 16px;
                 min-height: calc(100vh - 44px);
@@ -692,7 +692,7 @@
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
-            background: #141417; /* Solido opaco, senza riflessi o blur */
+            background: #202d3b; /* Superficie neutra e leggibile, senza colori casuali */
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
             transition: transform 0.1s;
@@ -916,7 +916,7 @@
         .modal-sheet {
             position: fixed;
             bottom: 0; left: 0; right: 0;
-            background: rgba(16, 16, 20, 0.92);
+            background: rgba(26, 37, 49, 0.96);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             border-top: 1px solid var(--border-highlight);
@@ -1087,9 +1087,7 @@
         let countdownTimerId = null;
 
         function getCardBackground(home, away) {
-            const hColor = getTeamColor(home);
-            const aColor = getTeamColor(away);
-            return `linear-gradient(135deg, ${hexToRgba(hColor, 0.45)} 0%, rgba(20, 20, 26, 0.95) 50%, ${hexToRgba(aColor, 0.45)} 100%)`;
+            return 'linear-gradient(135deg, #293746, #1b2836)';
         }
 
         // ==========================================
@@ -1137,11 +1135,11 @@
         };
 
         const SPORT_BADGE_THEMES = {
-            'seriea': { name: 'SERIE A', color: '#38bdf8', bg: '#18181b', border: 'rgba(2, 132, 199, 0.45)' },
-            'f1': { name: 'FORMULA 1', color: '#ff6b8b', bg: '#18181b', border: 'rgba(210, 20, 58, 0.50)' },
-            'nfl': { name: 'NFL', color: '#fb923c', bg: '#18181b', border: 'rgba(251, 79, 20, 0.45)' },
-            'champions': { name: 'CHAMPIONS LEAGUE', color: '#818cf8', bg: '#18181b', border: 'rgba(37, 99, 235, 0.45)' },
-            'nazionale': { name: 'ITALIA', color: '#60a5fa', bg: '#18181b', border: 'rgba(0, 78, 162, 0.45)' }
+            seriea: { name: 'SERIE A', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
+            f1: { name: 'FORMULA 1', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
+            nfl: { name: 'NFL', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
+            champions: { name: 'CHAMPIONS LEAGUE', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' },
+            nazionale: { name: 'ITALIA', color: '#cedae7', bg: '#202d3b', border: 'rgba(180, 200, 220, 0.26)' }
         };
 
         function hexToRgba(hex, alpha) {
@@ -1164,61 +1162,20 @@
         }
 
         function getTopMatchTheme(e) {
-            const t = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
-            const homeStr = (e.home || '').toLowerCase();
-            const awayStr = (e.away || '').toLowerCase();
-
-            const isToro = t.includes('torino') || t.includes('toro');
-            const isBroncos = t.includes('broncos') || t.includes('denver');
-
-            let color = '#ffffff';
-            let isAway = false;
-
-            if (isToro) {
-                color = '#681019'; // Granata autentico del Torino
-                isAway = awayStr.includes('torino') || awayStr.includes('toro');
-                const bg = isAway
-                    ? `linear-gradient(225deg, rgba(125, 18, 28, 0.88) 0%, rgba(95, 14, 22, 0.65) 45%, rgba(18, 12, 16, 0.96) 100%)`
-                    : `linear-gradient(135deg, rgba(125, 18, 28, 0.88) 0%, rgba(95, 14, 22, 0.65) 45%, rgba(18, 12, 16, 0.96) 100%)`;
-                const border = isAway
-                    ? `border-right: 6px solid #821520; border-left: 1px solid var(--border);`
-                    : `border-left: 6px solid #821520; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else if (isBroncos) {
-                color = '#fb4f14'; // Arancio Broncos
-                isAway = awayStr.includes('broncos') || awayStr.includes('denver');
-                const bg = isAway
-                    ? `linear-gradient(225deg, rgba(251, 79, 20, 0.80) 0%, rgba(195, 55, 10, 0.55) 45%, rgba(12, 18, 28, 0.96) 100%)`
-                    : `linear-gradient(135deg, rgba(251, 79, 20, 0.80) 0%, rgba(195, 55, 10, 0.55) 45%, rgba(12, 18, 28, 0.96) 100%)`;
-                const border = isAway
-                    ? `border-right: 6px solid #fb4f14; border-left: 1px solid var(--border);`
-                    : `border-left: 6px solid #fb4f14; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else if (e.sport === 'f1') {
-                color = '#d2143a'; // Rosso Ciliegia F1
-                isAway = false;
-                const bg = `linear-gradient(135deg, rgba(210, 20, 58, 0.82) 0%, rgba(160, 14, 42, 0.55) 45%, rgba(24, 10, 16, 0.96) 100%)`;
-                const border = `border-left: 6px solid #d2143a; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else if (e.sport === 'nazionale') {
-                color = '#004ea2';
-                isAway = false;
-                const bg = `linear-gradient(135deg, rgba(0, 78, 162, 0.75) 0%, rgba(0, 55, 120, 0.50) 45%, rgba(10, 16, 28, 0.96) 100%)`;
-                const border = `border-left: 6px solid #004ea2; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else if (e.sport === 'champions') {
-                color = '#2563eb';
-                isAway = false;
-                const bg = `linear-gradient(135deg, rgba(37, 99, 235, 0.75) 0%, rgba(25, 70, 175, 0.50) 45%, rgba(12, 16, 30, 0.96) 100%)`;
-                const border = `border-left: 6px solid #2563eb; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            } else {
-                color = getTeamColor(e.home);
-                isAway = false;
-                const bg = `linear-gradient(135deg, ${hexToRgba(color, 0.65)} 0%, rgba(20, 20, 26, 0.95) 100%)`;
-                const border = `border-left: 5px solid ${color}; border-right: 1px solid var(--border);`;
-                return { color, isAway, bg, border };
-            }
+            const text = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
+            const away = (e.away || '').toLowerCase();
+            const isToro = text.includes('torino') || text.includes('toro');
+            const isBroncos = text.includes('broncos') || text.includes('denver');
+            const isAway = isToro ? (away.includes('torino') || away.includes('toro')) :
+                isBroncos ? (away.includes('broncos') || away.includes('denver')) : false;
+            const accent = isToro ? '#93505a' : isBroncos ? '#b87850' :
+                e.sport === 'f1' ? '#a75568' : e.sport === 'nazionale' ? '#5682ab' :
+                e.sport === 'champions' ? '#667bb4' : getTeamColor(e.home);
+            const bg = 'linear-gradient(135deg, #273646 0%, #1c2937 100%)';
+            const edge = isAway ? 'right' : 'left';
+            const opposite = isAway ? 'left' : 'right';
+            const border = `border-${edge}: 6px solid ${accent}; border-${opposite}: 1px solid var(--border);`;
+            return { color: accent, isAway, bg, border };
         }
 
         const SPORT_NAMES = { f1: 'Formula 1', seriea: 'Serie A', nfl: 'NFL', champions: 'Champions League', nazionale: 'Italia' };
@@ -1688,7 +1645,7 @@
                                     <div class="compact-card" onclick="openEventSheetByKey('${key}')">
                                         <div style="display:flex; flex-direction:column; gap:2px; overflow:hidden; min-width:0;">
                                             <div style="display:flex; align-items:center; gap:5px;">
-                                                <span style="font-size:9px; font-weight:800; color:#ff6b8b; text-transform:uppercase; background:rgba(210,20,58,0.22); padding:1px 5px; border-radius:4px; border:1px solid rgba(210,20,58,0.45); flex-shrink:0;">
+                                                <span style="font-size:9px; font-weight:800; color:#c0d0de; text-transform:uppercase; background:rgba(180,200,220,0.12); padding:1px 5px; border-radius:4px; border:1px solid rgba(180,200,220,0.25); flex-shrink:0;">
                                                     ${sessionTag}
                                                 </span>
                                             </div>
