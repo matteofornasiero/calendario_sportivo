@@ -50,17 +50,18 @@
             --header-bg: #1e1f22;
             --desktop-bg: #151619;
             --desktop-panel: #222327;
-            --compact-bg: #303137;
+            --card-bg: #303137;
+            --compact-bg: var(--card-bg);
             --modal-bg: rgba(36, 37, 40, 0.99);
             --selected-bg: #e9d2a6;
             --selected-text: #202125;
             --search-bg: #2b2c31;
-            --detail-card-bg: #313238;
+            --detail-card-bg: var(--card-bg);
             --badge-bg: rgba(243, 239, 233, 0.08);
             --today-accent: #d6ab78;
             --ui-accent: #d6ab78;
             --warning-color: #f0bf84;
-            --featured-bg: #34353b;
+            --featured-bg: var(--card-bg);
             --featured-text: #fbf7f0;
             --featured-sub: #d5d0c8;
             --featured-shadow: 0 7px 20px rgba(0, 0, 0, 0.16);
@@ -68,33 +69,34 @@
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
 
-        /* Sabbia: canvas taupe medio, superfici crema-tenue e testo inchiostro. */
+        /* Sabbia: grigio-tortora desaturato, senza giallo, con superficie unica per le partite. */
         :root[data-theme="sabbia"] {
             color-scheme: light;
-            --bg: #a89984;
-            --surface: rgba(46, 34, 24, 0.055);
-            --border: rgba(58, 43, 30, 0.19);
-            --border-highlight: rgba(58, 43, 30, 0.25);
-            --text-main: #26211c;
-            --text-sub: #392e25;
-            --text-muted: #3b3027;
-            --header-bg: #bbaa94;
-            --desktop-bg: #867767;
-            --desktop-panel: #a89984;
-            --compact-bg: #d0bea7;
-            --modal-bg: rgba(216, 202, 180, 0.99);
-            --selected-bg: #3f342b;
-            --selected-text: #fff3e1;
-            --search-bg: #cbb9a2;
-            --detail-card-bg: #c7b59f;
-            --badge-bg: rgba(46, 34, 24, 0.075);
-            --today-accent: #754433;
-            --ui-accent: #754433;
-            --warning-color: #693818;
-            --featured-bg: #e3d2b9;
-            --featured-text: #28201c;
-            --featured-sub: #594c40;
-            --featured-shadow: 0 6px 17px rgba(44, 31, 22, 0.12);
+            --bg: #999794;
+            --surface: rgba(42, 40, 38, 0.06);
+            --border: rgba(42, 40, 38, 0.20);
+            --border-highlight: rgba(42, 40, 38, 0.29);
+            --text-main: #252320;
+            --text-sub: #35322f;
+            --text-muted: #393632;
+            --header-bg: #aaa8a4;
+            --desktop-bg: #85837f;
+            --desktop-panel: #999794;
+            --card-bg: #b5b3af;
+            --compact-bg: var(--card-bg);
+            --modal-bg: rgba(181, 179, 175, 0.99);
+            --selected-bg: #302e2a;
+            --selected-text: #f7f5f1;
+            --search-bg: var(--card-bg);
+            --detail-card-bg: var(--card-bg);
+            --badge-bg: rgba(42, 40, 38, 0.08);
+            --today-accent: #5f5353;
+            --ui-accent: #5f5353;
+            --warning-color: #784322;
+            --featured-bg: var(--card-bg);
+            --featured-text: #252320;
+            --featured-sub: #484440;
+            --featured-shadow: 0 6px 16px rgba(42, 40, 38, 0.10);
         }
 
         /* Scura: profondità pulita e contrasto più elevato rispetto a Ink. */
@@ -110,17 +112,18 @@
             --header-bg: #16171b;
             --desktop-bg: #0f1012;
             --desktop-panel: #1b1d21;
-            --compact-bg: #27292e;
+            --card-bg: #27292e;
+            --compact-bg: var(--card-bg);
             --modal-bg: rgba(31, 32, 36, 0.99);
             --selected-bg: #d1af7e;
             --selected-text: #15171a;
             --search-bg: #222328;
-            --detail-card-bg: #303136;
+            --detail-card-bg: var(--card-bg);
             --badge-bg: rgba(243, 239, 233, 0.075);
             --today-accent: #e4b67d;
             --ui-accent: #e4b67d;
             --warning-color: #f1c28a;
-            --featured-bg: #2b2c31;
+            --featured-bg: var(--card-bg);
             --featured-text: #f8f3ec;
             --featured-sub: #ccc5be;
             --featured-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
@@ -1200,7 +1203,7 @@
             width: 48%; height: 58%; border-radius: 4px;
             left: 7px; top: 5px; background: var(--swatch-surface);
         }
-        .theme-option[data-theme-choice="sabbia"] .theme-swatch { background: #a89984; --swatch-surface: #d0bea7; }
+        .theme-option[data-theme-choice="sabbia"] .theme-swatch { background: #999794; --swatch-surface: #b5b3af; }
         .theme-option[data-theme-choice="ink"] .theme-swatch { background: #222327; --swatch-surface: #303137; }
         .theme-option[data-theme-choice="scura"] .theme-swatch { background: #141518; --swatch-surface: #27292e; }
         /* Elevazione discreta sulle superfici. Il match importante è un unico
@@ -1517,6 +1520,53 @@
         :root[data-theme="sabbia"] .day-weekday-name { color: var(--text-main); }
         :root[data-theme="sabbia"] .hero-banner .hero-kicker,
         :root[data-theme="sabbia"] .hero-banner .hero-cta { color: var(--match-accent) !important; }
+        /* Accenti e superficie coerenti: la hero non usa gradienti cromatici. */
+        .hero-banner, .featured-match-card, .compact-card { background-color: var(--card-bg); }
+        .hero-container { padding-top: 15px; padding-bottom: 19px; }
+        .hero-banner { padding: 19px 16px 17px; min-height: 218px; }
+        .hero-top { margin-bottom: 12px; }
+        .hero-faceoff { display: grid; grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
+            align-items: center; gap: 5px; min-height: 116px; margin: 0 0 13px; }
+        .hero-team, .hero-team.away {
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; min-width: 0; width: 100%; gap: 9px;
+        }
+        .hero-crest { width: 59px; height: 59px; max-width: 100%; filter: none; }
+        .hero-team-name { font-size: clamp(14px, 4vw, 18px); line-height: 1.12;
+            width: 100%; max-width: 100%; min-height: 33px;
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+            overflow: hidden; text-overflow: ellipsis; overflow-wrap: anywhere;
+        }
+        .hero-banner .hero-team-name.focus-team {
+            color: var(--match-accent) !important; text-decoration: none;
+        }
+        .hero-vs { align-self: center; font-size: 11px; font-weight: 800; opacity: .78; }
+        .hero-banner .hero-badge { gap: 5px; }
+        .hero-banner .hero-kicker { color: var(--featured-sub) !important; }
+        .hero-kicker::before { display: none !important; }
+        .hero-cta, .hero-banner .hero-cta { color: var(--featured-sub) !important; }
+        .hero-bottom { padding-top: 12px; }
+        .hero-banner .focus-event-title { font-size: clamp(21px, 5.5vw, 28px) !important;
+            line-height: 1.2; text-align: center; max-width: 360px;
+            margin: 28px auto !important; color: var(--featured-text) !important; }
+        :root[data-theme="sabbia"] .hero-banner .hero-kicker,
+        :root[data-theme="sabbia"] .hero-banner .hero-cta { color: var(--featured-sub) !important; }
+        .top-bar #dataStatus {
+            margin: 6px 1px 0; text-align: right; font-size: 9px; font-weight: 450;
+            line-height: 1; color: var(--text-muted); opacity: .67; letter-spacing: 0;
+        }
+        .top-bar { padding-bottom: 9px; }
+
+        /* La sfumatura nera in fondo era l'ombra della scheda nascosta: il
+           transform la spostava fuori dallo schermo, non la sua ombra. */
+        .modal-sheet:not(.open) { box-shadow: none !important; }
+        .modal-sheet.open { box-shadow: 0 -5px 22px rgba(0,0,0,.22); }
+
+        @media (max-width: 365px) {
+            .hero-faceoff { grid-template-columns: minmax(0,1fr) 24px minmax(0,1fr); }
+            .hero-crest { width: 51px; height: 51px; }
+            .hero-team-name { font-size: 14px; }
+        }
     </style>
 </head>
 <body>
@@ -1524,7 +1574,6 @@
 
     <!-- Stato essenziale sopra ricerca e comandi, senza marchio ingombrante. -->
     <header class="top-bar">
-        <div id="dataStatus" role="status" aria-live="polite">Caricamento partite…</div>
         <div class="header-tools">
             <div class="search-container" id="searchContainer">
                 <span class="search-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m16 16 5 5"/></svg></span>
@@ -1537,6 +1586,7 @@
                 <button class="btn-info" onclick="openInfoSheet()" aria-label="Impostazioni" title="Impostazioni">⚙</button>
             </div>
         </div>
+        <div id="dataStatus" role="status" aria-live="polite">Caricamento partite…</div>
     </header>
 
     <!-- 2. PROSSIMO TOP MATCH (CARD CON COLORI SQUADRE) -->
@@ -1676,7 +1726,7 @@
 
         const THEME_STORAGE_KEY = 'sport-os-theme';
         const THEME_COLORS = {
-            sabbia: '#a89984',
+            sabbia: '#999794',
             ink: '#222327',
             scura: '#141518'
         };
@@ -1826,10 +1876,9 @@
             // Il colore vive solo nella metà della squadra seguita e sfuma nella
             // superficie propria del tema. Sabbia usa pigmenti meno saturi.
             const sabbia = currentTheme === 'sabbia';
-            const tone = sabbia && (text.includes('torino') || text.includes('toro')) ? '#8b314c' : accent;
-            const alpha = sabbia ? .12 : currentTheme === 'scura' ? .19 : .16;
-            const gradientSide = isAway ? '270deg' : '90deg';
-            const bg = `linear-gradient(${gradientSide}, ${hexToRgba(tone, alpha)} 0%, ${hexToRgba(tone, alpha * .58)} 28%, ${hexToRgba(tone, 0)} 56%), var(--featured-bg)`;
+            // Un solo colore di superficie per ogni partita: l'identita'
+            // sportiva viene dallo stemma e, se utile, dal nome.
+            const bg = 'var(--card-bg)';
 
             // Il colore del club sul testo cambia con lo sfondo:
             // luminoso su Ink/Scura, profondo sulla superficie chiara Sabbia.
