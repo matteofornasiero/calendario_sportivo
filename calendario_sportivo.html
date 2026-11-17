@@ -1658,9 +1658,8 @@
             const alpha = currentTheme === 'sabbia' ? 0.16 : currentTheme === 'scura' ? 0.19 : 0.15;
             const gradientSide = isAway ? '270deg' : '90deg';
             const bg = `linear-gradient(${gradientSide}, ${hexToRgba(tone, alpha)} 0%, ${hexToRgba(tone, alpha * .65)} 25%, ${hexToRgba(tone, 0)} 53%), var(--featured-bg)`;
-            const displayHighlight = currentTheme === 'sabbia'
-                ? (text.includes('torino') || text.includes('toro') ? '#713347' : '#48352d')
-                : highlight;
+            const displayHighlight = currentTheme === 'sabbia' && (text.includes('torino') || text.includes('toro'))
+                ? '#ffd9df' : highlight;
             return {
                 color: accent, highlight: displayHighlight, teamKeys, isAway, bg,
                 border: '1px solid var(--border)'
