@@ -6,7 +6,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -151,6 +151,32 @@ def parse_f1_calendar(data):
     return events
 
 
+
+def fetch_f1_calendar_window(now=None):
+    """Anno in corso, anno seguente quando annunciato e precedente nel primo trimestre."""
+    now = now or datetime.now(ROME)
+    year = now.year
+
+    def season_events(season):
+        url = f"https://api.jolpi.ca/ergast/f1/{season}.json?limit=100"
+        return parse_f1_calendar(get_json(url))
+
+    events = {event["id"]: event for event in season_events(year)}
+    extra_seasons = []
+    if now.month <= 3:
+        extra_seasons.append(year - 1)
+    if now.month >= 8:
+        extra_seasons.append(year + 1)
+    for season in extra_seasons:
+        try:
+            for event in season_events(season):
+                events[event["id"]] = event
+        except (RuntimeError, ValueError, KeyError, IndexError, TypeError) as exc:
+            # Una stagione facoltativa non ancora pubblicata non deve bloccare quella corrente.
+            print(f"Calendario F1 {season} non ancora disponibile: {exc}", file=sys.stderr)
+    return list(events.values())
+
+
 def fetch_f1_standings(year, constructors=False):
     field = "ConstructorStandings" if constructors else "DriverStandings"
     endpoint = "constructorStandings" if constructors else "driverStandings"
@@ -171,6 +197,16 @@ def fetch_f1_standings(year, constructors=False):
     if not rows:
         raise ValueError("Classifica F1 vuota")
     return rows
+
+
+def fetch_f1_standings_with_rollover(year, month, constructors=False):
+    """Nei mesi di pausa mostra la classifica conclusa finche' la nuova non esiste."""
+    try:
+        return fetch_f1_standings(year, constructors), year
+    except (RuntimeError, ValueError, KeyError, IndexError, TypeError):
+        if month > 4:
+            raise
+        return fetch_f1_standings(year - 1, constructors), year - 1
 
 
 def parse_espn_events(data, sport, season, competition_name=None):
@@ -216,6 +252,17 @@ def fetch_espn_calendar(league, sport, season, competition_name=None):
     if not events:
         raise ValueError("Calendario ESPN non disponibile")
     return list(events.values())
+
+
+def fetch_nfl_calendar_with_rollover(season, month):
+    """Prima il nuovo calendario, ma durante l'offseason conserva quello concluso."""
+    try:
+        return fetch_espn_calendar("football/nfl", "nfl", season), season
+    except (RuntimeError, ValueError, KeyError, IndexError, TypeError):
+        if not 3 <= month <= 8:
+            raise
+        return fetch_espn_calendar("football/nfl", "nfl", season - 1), season - 1
+
 
 
 def parse_nfl_standings(data):
@@ -305,6 +352,28 @@ def write_data(path, events, standings, meta):
     temporary.replace(path)
 
 
+
+def check_calendar_quality(key, events, now):
+    """Una risposta formalmente valida non deve cancellare un campionato quasi intero."""
+    minima = {"seriea": 100, "champions": 32, "nfl": 50, "f1": 15}
+    if key not in minima:
+        return
+    if not isinstance(events, list) or len(events) < minima[key]:
+        raise ValueError(f"{key}: calendario troppo corto ({len(events) if isinstance(events, list) else 0} eventi)")
+    active_months = {
+        "seriea": {1, 2, 3, 4, 9, 10, 11, 12},
+        "champions": {1, 2, 3, 4, 9, 10, 11, 12},
+        "nfl": {1, 9, 10, 11, 12},
+        "f1": {3, 4, 5, 6, 7, 8, 9, 10},
+    }
+    if now.month in active_months[key]:
+        today = now.date().isoformat()
+        horizon = (now + timedelta(days=45)).date().isoformat()
+        if not any(today <= event.get("date", "") <= horizon for event in events):
+            raise ValueError(f"{key}: nessun evento nei prossimi 45 giorni durante la stagione attiva")
+
+
+
 def update(output=OUTPUT_FILE, now=None):
     now = now or datetime.now(ROME)
     year = now.year
@@ -315,11 +384,14 @@ def update(output=OUTPUT_FILE, now=None):
     meta = {"schemaVersion": 2, "generatedAt": stamp, "timezone": "Europe/Rome",
             "footballSeason": f"{football_season}/{str(football_season + 1)[2:]}", "sources": {}}
     events, standings, failures = [], {}, []
+    standings_seasons = {}
+    nfl_calendar_season = [None]
 
     def source(key, fetch, fallback):
         previous = old_meta.get("sources", {}).get(key, {})
         try:
             value = fetch()
+            check_calendar_quality(key, value, now)
             meta["sources"][key] = {"status": "ok", "updatedAt": stamp}
             print(f"OK: {key}")
             return value
@@ -330,11 +402,16 @@ def update(output=OUTPUT_FILE, now=None):
             meta["sources"][key] = {"status": "error", "updatedAt": previous.get("updatedAt"), "error": message}
             return fallback
 
+    def auto_nfl_calendar():
+        rows, season = fetch_nfl_calendar_with_rollover(nfl_season, now.month)
+        nfl_calendar_season[0] = season
+        return rows
+
     calendars = [
         ("seriea", lambda: fetch_football_matches("SA", "seriea"), lambda event: event["sport"] == "seriea" and event.get("loc") not in ("Coppa Italia", "Supercoppa")),
         ("champions", lambda: fetch_football_matches("CL", "champions"), lambda event: event["sport"] == "champions"),
-        ("nfl", lambda: fetch_espn_calendar("football/nfl", "nfl", nfl_season), lambda event: event["sport"] == "nfl"),
-        ("f1", lambda: parse_f1_calendar(get_json(f"https://api.jolpi.ca/ergast/f1/{year}.json?limit=100")), lambda event: event["sport"] == "f1"),
+        ("nfl", auto_nfl_calendar, lambda event: event["sport"] == "nfl"),
+        ("f1", lambda: fetch_f1_calendar_window(now), lambda event: event["sport"] == "f1"),
         ("nazionale", fetch_italy, lambda event: event["sport"] == "nazionale"),
         ("coppa", lambda: fetch_espn_calendar("soccer/ita.coppa_italia", "seriea", football_season, "Coppa Italia"), lambda event: event.get("loc") == "Coppa Italia"),
         ("supercoppa", lambda: fetch_espn_calendar("soccer/ita.super_cup", "seriea", football_season, "Supercoppa"), lambda event: event.get("loc") == "Supercoppa"),
@@ -343,16 +420,37 @@ def update(output=OUTPUT_FILE, now=None):
         # I dati v1 contenevano orari e coppe inventati: non sono un fallback affidabile.
         fallback = [event for event in old_events if belongs(event)] if old_meta.get("schemaVersion") == 2 else []
         events.extend(source(key, fetch, fallback))
+        if key == "nfl":
+            season = nfl_calendar_season[0] or old_meta.get("sources", {}).get("nfl", {}).get("season")
+            if season:
+                meta["sources"]["nfl"]["season"] = season
+                if season != nfl_season and meta["sources"]["nfl"]["status"] == "ok":
+                    meta["sources"]["nfl"]["note"] = f"Ultimo calendario disponibile: {season}"
+    def auto_f1_standings(constructors=False):
+        rows, season = fetch_f1_standings_with_rollover(year, now.month, constructors)
+        standings_seasons["f1_constructors" if constructors else "f1_drivers"] = season
+        return rows
+
     tables = {
         "seriea": lambda: fetch_football_standings("SA"),
         "champions": lambda: fetch_football_standings("CL"),
-        "f1_drivers": lambda: fetch_f1_standings(year),
-        "f1_constructors": lambda: fetch_f1_standings(year, True),
-        "nfl": lambda: parse_nfl_standings(get_json(f"https://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?season={nfl_season}&type=0&level=3")),
+        "f1_drivers": lambda: auto_f1_standings(),
+        "f1_constructors": lambda: auto_f1_standings(True),
+        "nfl": lambda: parse_nfl_standings(get_json(f"https://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?season={nfl_season - 1 if 3 <= now.month <= 8 else nfl_season}&type=0&level=3")),
     }
     for key, fetch in tables.items():
         fallback = old_standings.get(key, {} if key == "nfl" else []) if old_meta.get("schemaVersion") == 2 else ({} if key == "nfl" else [])
         standings[key] = source(f"standings_{key}", fetch, fallback)
+        if key == "nfl" and meta["sources"]["standings_nfl"]["status"] == "ok":
+            meta["sources"]["standings_nfl"]["season"] = nfl_season - 1 if 3 <= now.month <= 8 else nfl_season
+            if meta["sources"]["standings_nfl"]["season"] != nfl_season:
+                meta["sources"]["standings_nfl"]["note"] = f"Ultima classifica disponibile: {nfl_season - 1}"
+        if key in ("f1_drivers", "f1_constructors"):
+            used_season = standings_seasons.get(key) or old_meta.get("sources", {}).get(f"standings_{key}", {}).get("season")
+            if used_season:
+                meta["sources"][f"standings_{key}"]["season"] = used_season
+                if used_season != year and meta["sources"][f"standings_{key}"]["status"] == "ok":
+                    meta["sources"][f"standings_{key}"]["note"] = f"Ultima classifica disponibile: {used_season}"
     if not events:
         raise RuntimeError("Nessun calendario disponibile: dati.js non viene sovrascritto")
     meta["partial"] = bool(failures)

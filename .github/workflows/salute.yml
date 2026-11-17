@@ -1,0 +1,53 @@
+name: Controllo automatico salute Sport OS
+
+on:
+  schedule:
+    # Controllo giornaliero indipendente dal workflow che aggiorna i calendari.
+    - cron: '41 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  salute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Scarica i dati correnti
+        uses: actions/checkout@v4
+      - name: Configura Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Installa dipendenze
+        run: python -m pip install -r requirements.txt
+      - name: Controlla freschezza e fonti
+        id: verifica
+        continue-on-error: true
+        run: python monitor_salute.py > salute.txt 2>&1
+      - name: Apri o aggiorna avviso persistente
+        if: steps.verifica.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE='Sport OS: controllo automatico degli aggiornamenti'
+          ISSUE=$(gh issue list --state open --limit 100 --json number,title --jq '.[] | select(.title == "Sport OS: controllo automatico degli aggiornamenti") | .number' | head -1)
+          if [ -z "$ISSUE" ]; then
+            gh issue create --title "$TITLE" --body-file salute.txt
+          else
+            gh issue edit "$ISSUE" --body-file salute.txt
+          fi
+          cat salute.txt
+          exit 1
+      - name: Chiudi avviso quando il servizio si riprende
+        if: steps.verifica.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat salute.txt
+          ISSUE=$(gh issue list --state open --limit 100 --json number,title --jq '.[] | select(.title == "Sport OS: controllo automatico degli aggiornamenti") | .number' | head -1)
+          if [ -n "$ISSUE" ]; then
+            gh issue close "$ISSUE" --comment 'Aggiornamento automatico ripristinato: monitor nuovamente OK.'
+          fi
