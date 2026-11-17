@@ -1830,10 +1830,23 @@
             const alpha = sabbia ? .12 : currentTheme === 'scura' ? .19 : .16;
             const gradientSide = isAway ? '270deg' : '90deg';
             const bg = `linear-gradient(${gradientSide}, ${hexToRgba(tone, alpha)} 0%, ${hexToRgba(tone, alpha * .58)} 28%, ${hexToRgba(tone, 0)} 56%), var(--featured-bg)`;
-            const displayAccent = sabbia && (text.includes('torino') || text.includes('toro')) ? '#8b314c' : accent;
-            const displayHighlight = sabbia
-                ? (text.includes('torino') || text.includes('toro') ? '#70253b' : '#573729')
-                : highlight;
+
+            // Il colore del club sul testo cambia con lo sfondo:
+            // luminoso su Ink/Scura, profondo sulla superficie chiara Sabbia.
+            let displayAccent = accent;
+            if (sabbia) {
+                displayAccent = text.includes('torino') || text.includes('toro') ? '#8b314c' :
+                    text.includes('broncos') || text.includes('denver') ? '#89421f' :
+                    e.sport === 'f1' ? '#902a44' :
+                    e.sport === 'nazionale' ? '#245b50' :
+                    e.sport === 'champions' ? '#3e4e7d' : '#694633';
+            } else {
+                displayAccent = text.includes('torino') || text.includes('toro') ? '#f48daa' :
+                    text.includes('broncos') || text.includes('denver') ? '#ffb472' :
+                    e.sport === 'f1' ? '#ff98ab' :
+                    e.sport === 'nazionale' ? '#a4e2d0' : highlight;
+            }
+            const displayHighlight = sabbia ? displayAccent : highlight;
             return {
                 color: displayAccent, highlight: displayHighlight, teamKeys, isAway, bg,
                 border: '1px solid var(--border)'
