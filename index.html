@@ -75,8 +75,8 @@
             --border: rgba(58, 43, 33, 0.22);
             --border-highlight: rgba(58, 43, 33, 0.31);
             --text-main: #261f1a;
-            --text-sub: #3b3028;
-            --text-muted: #382d25;
+            --text-sub: #332920;
+            --text-muted: #30271f;
             --header-bg: rgba(174, 161, 143, 0.97);
             --desktop-bg: #897b6b;
             --desktop-panel: #ae9d88;
@@ -1220,7 +1220,8 @@
             margin-right: 5px;
         }
         .hero-banner .hero-team-name.focus-team,
-        .featured-match-card .featured-team-name.focus-team {
+        .featured-match-card .featured-team-name.focus-team,
+        .hero-banner .focus-event-title, .featured-match-card .focus-event-title {
             color: var(--match-highlight, #f8ded4) !important;
         }
         .hero-banner .hero-countdown {
@@ -1760,7 +1761,7 @@
                     </div>
                 `;
             } else {
-                faceoffHtml = `<div style="font-size:15px; font-weight:800; color:#fff; margin:4px 0;">${escapeHtml(upcoming.title)}</div>`;
+                faceoffHtml = `<div class="focus-event-title" style="font-size:15px; font-weight:800; margin:4px 0;">${escapeHtml(upcoming.title)}</div>`;
             }
 
             container.innerHTML = `
@@ -1996,7 +1997,7 @@
                             </div>
                         `;
                     } else {
-                        faceoffHtml = `<div style="font-size:15.5px; font-weight:800; color:#fff; margin:6px 0;">${escapeHtml(e.title)}</div>`;
+                        faceoffHtml = `<div class="focus-event-title" style="font-size:15.5px; font-weight:800; margin:6px 0;">${escapeHtml(e.title)}</div>`;
                     }
 
                     html += `
