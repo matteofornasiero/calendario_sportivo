@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-theme="ink">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Sport OS">
-    <meta name="theme-color" content="#242522">
+    <meta name="theme-color" content="#92918d">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
@@ -21,9 +21,11 @@
     <script type="text/javascript">
         (function () {
             try {
-                const savedTheme = localStorage.getItem('sport-os-theme');
-                if (['grafite', 'sabbia', 'bosco'].includes(savedTheme)) {
-                    document.documentElement.setAttribute('data-theme', savedTheme);
+                const storedTheme = localStorage.getItem('sport-os-theme');
+                const theme = storedTheme === 'grafite' ? 'scura'
+                    : storedTheme === 'bosco' ? 'ink' : storedTheme;
+                if (['sabbia', 'ink', 'scura'].includes(theme)) {
+                    document.documentElement.setAttribute('data-theme', theme);
                 }
             } catch (error) { /* Navigazione privata: si usa Grafite. */ }
         })();
@@ -35,32 +37,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* Grafite: base neutra senza dominante blu. */
+        /* Ink: neutro grigio medio, desaturato, senza dominante cromatica. */
         :root {
-            color-scheme: dark;
-            --bg: #242522;
-            --surface: rgba(245, 238, 223, 0.065);
-            --border: rgba(227, 217, 196, 0.17);
-            --border-highlight: rgba(227, 217, 196, 0.25);
-            --text-main: #f2eee6;
-            --text-sub: #c3bcad;
-            --text-muted: #a49c8d;
-            --header-bg: rgba(37, 38, 34, 0.96);
-            --desktop-bg: #191a18;
-            --desktop-panel: #2a2b27;
-            --compact-bg: #32322e;
-            --modal-bg: rgba(44, 43, 38, 0.98);
-            --selected-bg: #efe4d2;
-            --selected-text: #211f1a;
-            --search-bg: rgba(245, 238, 223, 0.075);
-            --detail-card-bg: linear-gradient(130deg, #403d35, #2b2a26);
-            --badge-bg: rgba(245, 238, 223, 0.10);
-            --today-accent: #ddbe85;
+            color-scheme: light;
+            --bg: #92918d;
+            --surface: rgba(27, 27, 26, 0.075);
+            --border: rgba(26, 26, 25, 0.22);
+            --border-highlight: rgba(26, 26, 25, 0.29);
+            --text-main: #1b1b1a;
+            --text-sub: #343431;
+            --text-muted: #3c3b38;
+            --header-bg: rgba(163, 162, 158, 0.97);
+            --desktop-bg: #7c7b77;
+            --desktop-panel: #aaa8a3;
+            --compact-bg: #bab8b3;
+            --modal-bg: rgba(185, 183, 177, 0.99);
+            --selected-bg: #252524;
+            --selected-text: #f5f4f0;
+            --search-bg: rgba(245, 244, 240, 0.25);
+            --detail-card-bg: linear-gradient(130deg, #b7b5af, #a3a19c);
+            --badge-bg: rgba(20, 20, 19, 0.085);
+            --today-accent: #3d3c38;
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
 
-        /* Sabbia: beige caldo medio, non bianco, con testo nero-bruno. */
+        /* Sabbia: beige medio, caldo e spento; testo nero-bruno. */
         :root[data-theme="sabbia"] {
             color-scheme: light;
             --bg: #baaa91;
@@ -83,27 +85,27 @@
             --today-accent: #62451f;
         }
 
-        /* Bosco: verde profondo e salvia, con contrasti morbidi. */
-        :root[data-theme="bosco"] {
+        /* Scura: antracite sobrio, quasi monocromatico e senza blu. */
+        :root[data-theme="scura"] {
             color-scheme: dark;
-            --bg: #1f2922;
-            --surface: rgba(229, 238, 215, 0.07);
-            --border: rgba(214, 232, 199, 0.18);
-            --border-highlight: rgba(214, 232, 199, 0.27);
-            --text-main: #edf0e6;
-            --text-sub: #c3ceba;
-            --text-muted: #a2b29d;
-            --header-bg: rgba(30, 44, 34, 0.97);
-            --desktop-bg: #18221b;
-            --desktop-panel: #25362a;
-            --compact-bg: #2c3c30;
-            --modal-bg: rgba(38, 54, 42, 0.98);
-            --selected-bg: #e2e9d6;
-            --selected-text: #1c2920;
-            --search-bg: rgba(229, 238, 215, 0.085);
-            --detail-card-bg: linear-gradient(130deg, #334b39, #25362a);
-            --badge-bg: rgba(229, 238, 215, 0.09);
-            --today-accent: #bcdca1;
+            --bg: #212120;
+            --surface: rgba(239, 238, 233, 0.068);
+            --border: rgba(227, 226, 220, 0.19);
+            --border-highlight: rgba(227, 226, 220, 0.27);
+            --text-main: #f1f0ec;
+            --text-sub: #cac9c2;
+            --text-muted: #adaca6;
+            --header-bg: rgba(34, 34, 33, 0.97);
+            --desktop-bg: #161615;
+            --desktop-panel: #292928;
+            --compact-bg: #323230;
+            --modal-bg: rgba(43, 43, 41, 0.98);
+            --selected-bg: #e8e7e0;
+            --selected-text: #242423;
+            --search-bg: rgba(239, 238, 233, 0.078);
+            --detail-card-bg: linear-gradient(130deg, #40403d, #2b2b29);
+            --badge-bg: rgba(239, 238, 233, 0.10);
+            --today-accent: #d2c7a6;
         }
 
         * {
@@ -1076,23 +1078,23 @@
             .app-container { background-color: var(--desktop-panel); border-color: var(--border); }
         }
 
-        /* Nel tema Sabbia i normali contenuti sono scuri; le card evidenziate restano scure con testo bianco. */
-        :root[data-theme="sabbia"] .compact-card [style*="color:#fff"],
-        :root[data-theme="sabbia"] .standings-table-card [style*="color:#fff"],
-        :root[data-theme="sabbia"] #monthSelectedDayEvents [style*="color:#fff"],
-        :root[data-theme="sabbia"] .modal-sheet [style*="color:#fff"],
-        :root[data-theme="sabbia"] .day-header [style*="color:#fff"] {
+        /* Nei due temi medi il testo normale è scuro; le card evidenziate hanno sempre testo chiaro. */
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .compact-card [style*="color:#fff"],
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .standings-table-card [style*="color:#fff"],
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) #monthSelectedDayEvents [style*="color:#fff"],
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .modal-sheet [style*="color:#fff"],
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .day-header [style*="color:#fff"] {
             color: var(--text-main) !important;
         }
-        :root[data-theme="sabbia"] .standings-table th,
-        :root[data-theme="sabbia"] .standings-table td,
-        :root[data-theme="sabbia"] .compact-time,
-        :root[data-theme="sabbia"] .sheet-team-name { color: var(--text-main); }
-        :root[data-theme="sabbia"] .compact-time {
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .standings-table th,
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .standings-table td,
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .compact-time,
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .sheet-team-name { color: var(--text-main); }
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .compact-time {
             background: rgba(52, 41, 31, 0.08);
             border-color: var(--border);
         }
-        :root[data-theme="sabbia"] .featured-match-header { color: #f1e9df; }
+        :root:is([data-theme="sabbia"], [data-theme="ink"]) .featured-match-header { color: #f1e9df; }
 
         /* Selettore di tema solo nelle impostazioni. */
         .settings-theme-label {
@@ -1118,9 +1120,9 @@
             width: 48%; height: 58%; border-radius: 4px;
             left: 7px; top: 5px; background: var(--swatch-surface);
         }
-        .theme-option[data-theme-choice="grafite"] .theme-swatch { background: #242522; --swatch-surface: #43423b; }
         .theme-option[data-theme-choice="sabbia"] .theme-swatch { background: #baaa91; --swatch-surface: #e1d0b5; }
-        .theme-option[data-theme-choice="bosco"] .theme-swatch { background: #1f2922; --swatch-surface: #426047; }
+        .theme-option[data-theme-choice="ink"] .theme-swatch { background: #92918d; --swatch-surface: #bab8b3; }
+        .theme-option[data-theme-choice="scura"] .theme-swatch { background: #212120; --swatch-surface: #40403d; }
     </style>
 </head>
 <body>
@@ -1225,14 +1227,14 @@
         </div>
         <div class="settings-theme-label">Tema dell'interfaccia</div>
         <div class="theme-options" role="group" aria-label="Scegli il tema">
-            <button type="button" class="theme-option" data-theme-choice="grafite" onclick="setTheme('grafite')" aria-pressed="true">
-                <span class="theme-swatch" aria-hidden="true"></span>Grafite
-            </button>
             <button type="button" class="theme-option" data-theme-choice="sabbia" onclick="setTheme('sabbia')" aria-pressed="false">
                 <span class="theme-swatch" aria-hidden="true"></span>Sabbia
             </button>
-            <button type="button" class="theme-option" data-theme-choice="bosco" onclick="setTheme('bosco')" aria-pressed="false">
-                <span class="theme-swatch" aria-hidden="true"></span>Bosco
+            <button type="button" class="theme-option" data-theme-choice="ink" onclick="setTheme('ink')" aria-pressed="true">
+                <span class="theme-swatch" aria-hidden="true"></span>Ink
+            </button>
+            <button type="button" class="theme-option" data-theme-choice="scura" onclick="setTheme('scura')" aria-pressed="false">
+                <span class="theme-swatch" aria-hidden="true"></span>Scura
             </button>
         </div>
         <div style="font-size:11px; line-height:1.5; color:var(--text-muted); margin:8px 0 14px;">
@@ -1257,11 +1259,11 @@
 
         const THEME_STORAGE_KEY = 'sport-os-theme';
         const THEME_COLORS = {
-            grafite: '#242522',
             sabbia: '#baaa91',
-            bosco: '#1f2922'
+            ink: '#92918d',
+            scura: '#212120'
         };
-        let currentTheme = 'grafite';
+        let currentTheme = 'ink';
 
         function setTheme(theme, persist = true) {
             if (!Object.prototype.hasOwnProperty.call(THEME_COLORS, theme)) return false;
@@ -1285,7 +1287,9 @@
                 try { stored = window.localStorage?.getItem(THEME_STORAGE_KEY); }
                 catch (error) { stored = null; }
             }
-            setTheme(Object.prototype.hasOwnProperty.call(THEME_COLORS, stored) ? stored : 'grafite', false);
+            const selected = stored === 'grafite' ? 'scura'
+                : stored === 'bosco' ? 'ink' : stored;
+            setTheme(Object.prototype.hasOwnProperty.call(THEME_COLORS, selected) ? selected : 'ink', false);
         }
         initTheme();
 
