@@ -1,0 +1,141 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sport OS//Calendario sportivo//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sport OS · Italy
+X-WR-TIMEZONE:Europe/Rome
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+DTSTAMP:20261117T103327Z
+LAST-MODIFIED:20261117T103327Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:8ba0864b19d13c927fb7984a
+UID:49f315560fe14e3a868ffda0@sport-os.github.io
+DTSTART:20260925T184500Z
+DTEND:20260925T204500Z
+SUMMARY:Italy - Belgium
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861052/competitions/401861052/competitors/162/scores/38?lang=en&region
+ =us'\, 'value': 0.0\, 'displayValue': '0'\, 'winner': False\, 'source': {'
+ id': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api
+ .espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861052/competiti
+ ons/401861052/competitors/459/scores/38?lang=en&region=us'\, 'value': 2.0\
+ , 'displayValue': '2'\, 'winner': True\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:Olimpico\, Roma
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261117T103327Z
+LAST-MODIFIED:20261117T103327Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:727768636b5cf113593e024a
+UID:8e2aacb3e2454fae4876c3a3@sport-os.github.io
+DTSTART:20260928T184500Z
+DTEND:20260928T204500Z
+SUMMARY:Türkiye - Italy
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861077/competitions/401861077/competitors/465/scores/38?lang=en&region
+ =us'\, 'value': 1.0\, 'displayValue': '1'\, 'winner': False\, 'source': {'
+ id': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api
+ .espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861077/competiti
+ ons/401861077/competitors/162/scores/38?lang=en&region=us'\, 'value': 4.0\
+ , 'displayValue': '4'\, 'winner': True\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:Yüzüncü Yil Atatürk Stadyumu\, Bursa
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261117T103327Z
+LAST-MODIFIED:20261117T103327Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:59b2dfb1d5def8506e0fa8e1
+UID:8adebb47fc535c53a194f5e7@sport-os.github.io
+DTSTART:20261002T184500Z
+DTEND:20261002T204500Z
+SUMMARY:France - Italy
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861103/competitions/401861103/competitors/478/scores/38?lang=en&region
+ =us'\, 'value': 1.0\, 'displayValue': '1'\, 'winner': False\, 'source': {'
+ id': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api
+ .espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861103/competiti
+ ons/401861103/competitors/162/scores/38?lang=en&region=us'\, 'value': 1.0\
+ , 'displayValue': '1'\, 'winner': False\, 'source': {'id': '38'\, 'descrip
+ tion': 'SA.ENVOY'}}
+LOCATION:Stade de France\, Saint-Denis
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261117T103327Z
+LAST-MODIFIED:20261117T103327Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:0f5f34e114891f376a33d4d0
+UID:82a3fed57aab06fb3b142976@sport-os.github.io
+DTSTART:20261005T184500Z
+DTEND:20261005T204500Z
+SUMMARY:Italy - Türkiye
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861131/competitions/401861131/competitors/162/scores/38?lang=en&region
+ =us'\, 'value': 3.0\, 'displayValue': '3'\, 'winner': True\, 'source': {'i
+ d': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api.
+ espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861131/competitio
+ ns/401861131/competitors/465/scores/38?lang=en&region=us'\, 'value': 1.0\,
+  'displayValue': '1'\, 'winner': False\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:Renato Dall'Ara\, Bologna
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261117T103327Z
+LAST-MODIFIED:20261117T103327Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:b6bece6127259c1c7004659b
+UID:7c0c1a0d8d7407c7b01de60d@sport-os.github.io
+DTSTART:20261112T194500Z
+DTEND:20261112T214500Z
+SUMMARY:Italy - France
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861151/competitions/401861151/competitors/162/scores/38?lang=en&region
+ =us'\, 'value': 3.0\, 'displayValue': '3'\, 'winner': True\, 'source': {'i
+ d': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api.
+ espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861151/competitio
+ ns/401861151/competitors/478/scores/38?lang=en&region=us'\, 'value': 1.0\,
+  'displayValue': '1'\, 'winner': False\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:San Siro\, Milano
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261117T103327Z
+LAST-MODIFIED:20261117T103327Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:68a4bfb5b62f088d2ac1b5a4
+UID:fe0c77ef9ef914c5b9840791@sport-os.github.io
+DTSTART:20261115T194500Z
+DTEND:20261115T214500Z
+SUMMARY:Belgium - Italy
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861176/competitions/401861176/competitors/459/scores/38?lang=en&region
+ =us'\, 'value': 4.0\, 'displayValue': '4'\, 'winner': True\, 'source': {'i
+ d': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api.
+ espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861176/competitio
+ ns/401861176/competitors/162/scores/38?lang=en&region=us'\, 'value': 1.0\,
+  'displayValue': '1'\, 'winner': False\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:King Baudouin Stadium\, Brussels
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

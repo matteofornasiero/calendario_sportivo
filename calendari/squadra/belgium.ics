@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sport OS//Calendario sportivo//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sport OS · Belgium
+X-WR-TIMEZONE:Europe/Rome
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+DTSTAMP:20261117T103327Z
+LAST-MODIFIED:20261117T103327Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:8ba0864b19d13c927fb7984a
+UID:49f315560fe14e3a868ffda0@sport-os.github.io
+DTSTART:20260925T184500Z
+DTEND:20260925T204500Z
+SUMMARY:Italy - Belgium
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861052/competitions/401861052/competitors/162/scores/38?lang=en&region
+ =us'\, 'value': 0.0\, 'displayValue': '0'\, 'winner': False\, 'source': {'
+ id': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api
+ .espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861052/competiti
+ ons/401861052/competitors/459/scores/38?lang=en&region=us'\, 'value': 2.0\
+ , 'displayValue': '2'\, 'winner': True\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:Olimpico\, Roma
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261117T103327Z
+LAST-MODIFIED:20261117T103327Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:68a4bfb5b62f088d2ac1b5a4
+UID:fe0c77ef9ef914c5b9840791@sport-os.github.io
+DTSTART:20261115T194500Z
+DTEND:20261115T214500Z
+SUMMARY:Belgium - Italy
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861176/competitions/401861176/competitors/459/scores/38?lang=en&region
+ =us'\, 'value': 4.0\, 'displayValue': '4'\, 'winner': True\, 'source': {'i
+ d': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api.
+ espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861176/competitio
+ ns/401861176/competitors/162/scores/38?lang=en&region=us'\, 'value': 1.0\,
+  'displayValue': '1'\, 'winner': False\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:King Baudouin Stadium\, Brussels
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "teams": [
+    {
+      "name": "AC Milan",
+      "path": "calendari/squadra/ac-milan.ics",
+      "count": 1
+    },
+    {
+      "name": "Arezzo",
+      "path": "calendari/squadra/arezzo.ics",
+      "count": 2
+    },
+    {
+      "name": "Arizona Cardinals",
+      "path": "calendari/squadra/arizona-cardinals.ics",
+      "count": 17
+    },
+    {
+      "name": "Arsenal",
+      "path": "calendari/squadra/arsenal.ics",
+      "count": 8
+    },
+    {
+      "name": "AS Roma",
+      "path": "calendari/squadra/as-roma.ics",
+      "count": 1
+    },
+    {
+      "name": "Ascoli",
+      "path": "calendari/squadra/ascoli.ics",
+      "count": 2
+    },
+    {
+      "name": "Aston Villa",
+      "path": "calendari/squadra/aston-villa.ics",
+      "count": 8
+    },
+    {
+      "name": "Atalanta",
+      "path": "calendari/squadra/atalanta.ics",
+      "count": 39
+    },
+    {
+      "name": "Atlanta Falcons",
+      "path": "calendari/squadra/atlanta-falcons.ics",
+      "count": 17
+    },
+    {
+      "name": "Atleti",
+      "path": "calendari/squadra/atleti.ics",
+      "count": 8
+    },
+    {
+      "name": "Baltimore Ravens",
+      "path": "calendari/squadra/baltimore-ravens.ics",
+      "count": 17
+    },
+    {
+      "name": "Barça",
+      "path": "calendari/squadra/barca.ics",
+      "count": 8
+    },
+    {
+      "name": "Bayern",
+      "path": "calendari/squadra/bayern.ics",
+      "count": 8
+    },
+    {
+      "name": "Belgium",
+      "path": "calendari/squadra/belgium.ics",
+      "count": 2
+    },
+    {
+      "name": "Benevento",
+      "path": "calendari/squadra/benevento.ics",
+      "count": 2
+    },
+    {
+      "name": "Bodø/Glimt",
+      "path": "calendari/squadra/bod-glimt.ics",
+      "count": 8
+    },
+    {
+      "name": "Bologna",
+      "path": "calendari/squadra/bologna.ics",
+      "count": 39
+    },
+    {
+      "name": "Buffalo Bills",
+      "path": "calendari/squadra/buffalo-bills.ics",
+      "count": 17
+    },
+    {
+      "name": "Cagliari",
+      "path": "calendari/squadra/cagliari.ics",
+      "count": 40
+    },
+    {
+      "name": "Carolina Panthers",
+      "path": "calendari/squadra/carolina-panthers.ics",
+      "count": 17
+    },
+    {
+      "name": "Carrarese",
+      "path": "calendari/squadra/carrarese.ics",
+      "count": 1
+    },
+    {
+      "name": "Catania",
+      "path": "calendari/squadra/catania.ics",
+      "count": 2
+    },
+    {
+      "name": "Catanzaro",
+      "path": "calendari/squadra/catanzaro.ics",
+      "count": 1
+    },
+    {
+      "name": "Cesena",
+      "path": "calendari/squadra/cesena.ics",
+      "count": 1
+    },
+    {
+      "name": "Chicago Bears",
+      "path": "calendari/squadra/chicago-bears.ics",
+      "count": 17
+    },
+    {
+      "name": "Cincinnati Bengals",
+      "path": "calendari/squadra/cincinnati-bengals.ics",
+      "count": 17
+    },
+    {
+      "name": "Cleveland Browns",
+      "path": "calendari/squadra/cleveland-browns.ics",
+      "count": 17
+    },
+    {
+      "name": "Club Brugge",
+      "path": "calendari/squadra/club-brugge.ics",
+      "count": 8
+    },
+    {
+      "name": "Como",
+      "path": "calendari/squadra/como.ics",
+      "count": 1
+    },
+    {
+      "name": "Como 1907",
+      "path": "calendari/squadra/como-1907.ics",
+      "count": 46
+    },
+    {
+      "name": "Cremonese",
+      "path": "calendari/squadra/cremonese.ics",
+      "count": 3
+    },
+    {
+      "name": "Dallas Cowboys",
+      "path": "calendari/squadra/dallas-cowboys.ics",
+      "count": 17
+    },
+    {
+      "name": "Denver Broncos",
+      "path": "calendari/squadra/denver-broncos.ics",
+      "count": 17
+    },
+    {
+      "name": "Detroit Lions",
+      "path": "calendari/squadra/detroit-lions.ics",
+      "count": 17
+    },
+    {
+      "name": "Dortmund",
+      "path": "calendari/squadra/dortmund.ics",
+      "count": 8
+    },
+    {
+      "name": "Empoli",
+      "path": "calendari/squadra/empoli.ics",
+      "count": 1
+    },
+    {
+      "name": "Fenerbahçe",
+      "path": "calendari/squadra/fenerbahce.ics",
+      "count": 8
+    },
+    {
+      "name": "Feyenoord",
+      "path": "calendari/squadra/feyenoord.ics",
+      "count": 8
+    },
+    {
+      "name": "Fiorentina",
+      "path": "calendari/squadra/fiorentina.ics",
+      "count": 41
+    },
+    {
+      "name": "France",
+      "path": "calendari/squadra/france.ics",
+      "count": 2
+    },
+    {
+      "name": "Frosinone",
+      "path": "calendari/squadra/frosinone.ics",
+      "count": 40
+    },
+    {
+      "name": "Galatasaray",
+      "path": "calendari/squadra/galatasaray.ics",
+      "count": 8
+    },
+    {
+      "name": "Genoa",
+      "path": "calendari/squadra/genoa.ics",
+      "count": 41
+    },
+    {
+      "name": "Green Bay Packers",
+      "path": "calendari/squadra/green-bay-packers.ics",
+      "count": 17
+    },
+    {
+      "name": "Hellas Verona",
+      "path": "calendari/squadra/hellas-verona.ics",
+      "count": 3
+    },
+    {
+      "name": "Houston Texans",
+      "path": "calendari/squadra/houston-texans.ics",
+      "count": 17
+    },
+    {
+      "name": "Indianapolis Colts",
+      "path": "calendari/squadra/indianapolis-colts.ics",
+      "count": 17
+    },
+    {
+      "name": "Inter",
+      "path": "calendari/squadra/inter.ics",
+      "count": 46
+    },
+    {
+      "name": "Internazionale",
+      "path": "calendari/squadra/internazionale.ics",
+      "count": 2
+    },
+    {
+      "name": "Italy",
+      "path": "calendari/squadra/italy.ics",
+      "count": 6
+    },
+    {
+      "name": "Jacksonville Jaguars",
+      "path": "calendari/squadra/jacksonville-jaguars.ics",
+      "count": 17
+    },
+    {
+      "name": "Juve Stabia",
+      "path": "calendari/squadra/juve-stabia.ics",
+      "count": 1
+    },
+    {
+      "name": "Juventus",
+      "path": "calendari/squadra/juventus.ics",
+      "count": 39
+    },
+    {
+      "name": "Kansas City Chiefs",
+      "path": "calendari/squadra/kansas-city-chiefs.ics",
+      "count": 17
+    },
+    {
+      "name": "Las Vegas Raiders",
+      "path": "calendari/squadra/las-vegas-raiders.ics",
+      "count": 17
+    },
+    {
+      "name": "LASK",
+      "path": "calendari/squadra/lask.ics",
+      "count": 8
+    },
+    {
+      "name": "Lazio",
+      "path": "calendari/squadra/lazio.ics",
+      "count": 40
+    },
+    {
+      "name": "Lecce",
+      "path": "calendari/squadra/lecce.ics",
+      "count": 39
+    },
+    {
+      "name": "Lille",
+      "path": "calendari/squadra/lille.ics",
+      "count": 8
+    },
+    {
+      "name": "Liverpool",
+      "path": "calendari/squadra/liverpool.ics",
+      "count": 8
+    },
+    {
+      "name": "Los Angeles Chargers",
+      "path": "calendari/squadra/los-angeles-chargers.ics",
+      "count": 17
+    },
+    {
+      "name": "Los Angeles Rams",
+      "path": "calendari/squadra/los-angeles-rams.ics",
+      "count": 17
+    },
+    {
+      "name": "Man City",
+      "path": "calendari/squadra/man-city.ics",
+      "count": 8
+    },
+    {
+      "name": "Man United",
+      "path": "calendari/squadra/man-united.ics",
+      "count": 8
+    },
+    {
+      "name": "Mantova",
+      "path": "calendari/squadra/mantova.ics",
+      "count": 2
+    },
+    {
+      "name": "Miami Dolphins",
+      "path": "calendari/squadra/miami-dolphins.ics",
+      "count": 17
+    },
+    {
+      "name": "Milan",
+      "path": "calendari/squadra/milan.ics",
+      "count": 38
+    },
+    {
+      "name": "Minnesota Vikings",
+      "path": "calendari/squadra/minnesota-vikings.ics",
+      "count": 17
+    },
+    {
+      "name": "Modena",
+      "path": "calendari/squadra/modena.ics",
+      "count": 1
+    },
+    {
+      "name": "Monza",
+      "path": "calendari/squadra/monza.ics",
+      "count": 41
+    },
+    {
+      "name": "Napoli",
+      "path": "calendari/squadra/napoli.ics",
+      "count": 47
+    },
+    {
+      "name": "New England Patriots",
+      "path": "calendari/squadra/new-england-patriots.ics",
+      "count": 17
+    },
+    {
+      "name": "New Orleans Saints",
+      "path": "calendari/squadra/new-orleans-saints.ics",
+      "count": 17
+    },
+    {
+      "name": "New York Giants",
+      "path": "calendari/squadra/new-york-giants.ics",
+      "count": 17
+    },
+    {
+      "name": "New York Jets",
+      "path": "calendari/squadra/new-york-jets.ics",
+      "count": 17
+    },
+    {
+      "name": "Padova",
+      "path": "calendari/squadra/padova.ics",
+      "count": 1
+    },
+    {
+      "name": "PAE AEK",
+      "path": "calendari/squadra/pae-aek.ics",
+      "count": 8
+    },
+    {
+      "name": "Palermo",
+      "path": "calendari/squadra/palermo.ics",
+      "count": 3
+    },
+    {
+      "name": "Parma",
+      "path": "calendari/squadra/parma.ics",
+      "count": 40
+    },
+    {
+      "name": "Philadelphia Eagles",
+      "path": "calendari/squadra/philadelphia-eagles.ics",
+      "count": 17
+    },
+    {
+      "name": "Pisa",
+      "path": "calendari/squadra/pisa.ics",
+      "count": 2
+    },
+    {
+      "name": "Pittsburgh Steelers",
+      "path": "calendari/squadra/pittsburgh-steelers.ics",
+      "count": 17
+    },
+    {
+      "name": "Porto",
+      "path": "calendari/squadra/porto.ics",
+      "count": 8
+    },
+    {
+      "name": "Potenza",
+      "path": "calendari/squadra/potenza.ics",
+      "count": 1
+    },
+    {
+      "name": "PSG",
+      "path": "calendari/squadra/psg.ics",
+      "count": 8
+    },
+    {
+      "name": "PSV",
+      "path": "calendari/squadra/psv.ics",
+      "count": 8
+    },
+    {
+      "name": "Ravenna",
+      "path": "calendari/squadra/ravenna.ics",
+      "count": 1
+    },
+    {
+      "name": "RB Leipzig",
+      "path": "calendari/squadra/rb-leipzig.ics",
+      "count": 8
+    },
+    {
+      "name": "RC Lens",
+      "path": "calendari/squadra/rc-lens.ics",
+      "count": 8
+    },
+    {
+      "name": "Real Betis",
+      "path": "calendari/squadra/real-betis.ics",
+      "count": 8
+    },
+    {
+      "name": "Real Madrid",
+      "path": "calendari/squadra/real-madrid.ics",
+      "count": 8
+    },
+    {
+      "name": "Roma",
+      "path": "calendari/squadra/roma.ics",
+      "count": 46
+    },
+    {
+      "name": "Sabah FK",
+      "path": "calendari/squadra/sabah-fk.ics",
+      "count": 8
+    },
+    {
+      "name": "Sampdoria",
+      "path": "calendari/squadra/sampdoria.ics",
+      "count": 1
+    },
+    {
+      "name": "San Francisco 49ers",
+      "path": "calendari/squadra/san-francisco-49ers.ics",
+      "count": 17
+    },
+    {
+      "name": "Sassuolo",
+      "path": "calendari/squadra/sassuolo.ics",
+      "count": 41
+    },
+    {
+      "name": "Seattle Seahawks",
+      "path": "calendari/squadra/seattle-seahawks.ics",
+      "count": 17
+    },
+    {
+      "name": "Shaktar",
+      "path": "calendari/squadra/shaktar.ics",
+      "count": 8
+    },
+    {
+      "name": "Sl. Bratislava",
+      "path": "calendari/squadra/sl-bratislava.ics",
+      "count": 8
+    },
+    {
+      "name": "Slavia Praha",
+      "path": "calendari/squadra/slavia-praha.ics",
+      "count": 8
+    },
+    {
+      "name": "Sporting CP",
+      "path": "calendari/squadra/sporting-cp.ics",
+      "count": 8
+    },
+    {
+      "name": "Stuttgart",
+      "path": "calendari/squadra/stuttgart.ics",
+      "count": 8
+    },
+    {
+      "name": "Sudtirol",
+      "path": "calendari/squadra/sudtirol.ics",
+      "count": 2
+    },
+    {
+      "name": "Tampa Bay Buccaneers",
+      "path": "calendari/squadra/tampa-bay-buccaneers.ics",
+      "count": 17
+    },
+    {
+      "name": "TBD Away",
+      "path": "calendari/squadra/tbd-away.ics",
+      "count": 9
+    },
+    {
+      "name": "TBD Home",
+      "path": "calendari/squadra/tbd-home.ics",
+      "count": 9
+    },
+    {
+      "name": "Tennessee Titans",
+      "path": "calendari/squadra/tennessee-titans.ics",
+      "count": 17
+    },
+    {
+      "name": "Torino",
+      "path": "calendari/squadra/torino.ics",
+      "count": 40
+    },
+    {
+      "name": "Türkiye",
+      "path": "calendari/squadra/turkiye.ics",
+      "count": 2
+    },
+    {
+      "name": "Udinese",
+      "path": "calendari/squadra/udinese.ics",
+      "count": 41
+    },
+    {
+      "name": "Union Brescia",
+      "path": "calendari/squadra/union-brescia.ics",
+      "count": 1
+    },
+    {
+      "name": "US Avellino",
+      "path": "calendari/squadra/us-avellino.ics",
+      "count": 1
+    },
+    {
+      "name": "Venezia",
+      "path": "calendari/squadra/venezia.ics",
+      "count": 2
+    },
+    {
+      "name": "Venezia FC",
+      "path": "calendari/squadra/venezia-fc.ics",
+      "count": 38
+    },
+    {
+      "name": "Vicenza",
+      "path": "calendari/squadra/vicenza.ics",
+      "count": 1
+    },
+    {
+      "name": "Viking",
+      "path": "calendari/squadra/viking.ics",
+      "count": 8
+    },
+    {
+      "name": "Villarreal",
+      "path": "calendari/squadra/villarreal.ics",
+      "count": 8
+    },
+    {
+      "name": "Virtus Entella",
+      "path": "calendari/squadra/virtus-entella.ics",
+      "count": 1
+    },
+    {
+      "name": "Washington Commanders",
+      "path": "calendari/squadra/washington-commanders.ics",
+      "count": 17
+    }
+  ],
+  "competitions": [
+    {
+      "name": "Champions League",
+      "path": "calendari/competizione/champions.ics",
+      "count": 144
+    },
+    {
+      "name": "Coppa Italia",
+      "path": "calendari/competizione/coppa.ics",
+      "count": 45
+    },
+    {
+      "name": "Formula 1",
+      "path": "calendari/competizione/f1.ics",
+      "count": 115
+    },
+    {
+      "name": "Nazionale italiana",
+      "path": "calendari/competizione/nazionale.ics",
+      "count": 6
+    },
+    {
+      "name": "NFL",
+      "path": "calendari/competizione/nfl.ics",
+      "count": 285
+    },
+    {
+      "name": "Serie A",
+      "path": "calendari/competizione/seriea.ics",
+      "count": 380
+    },
+    {
+      "name": "Supercoppa italiana",
+      "path": "calendari/competizione/supercoppa.ics",
+      "count": 1
+    }
+  ]
+}

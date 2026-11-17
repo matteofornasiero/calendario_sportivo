@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sport OS//Calendario sportivo//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sport OS · Türkiye
+X-WR-TIMEZONE:Europe/Rome
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+DTSTAMP:20261117T103328Z
+LAST-MODIFIED:20261117T103328Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:727768636b5cf113593e024a
+UID:8e2aacb3e2454fae4876c3a3@sport-os.github.io
+DTSTART:20260928T184500Z
+DTEND:20260928T204500Z
+SUMMARY:Türkiye - Italy
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861077/competitions/401861077/competitors/465/scores/38?lang=en&region
+ =us'\, 'value': 1.0\, 'displayValue': '1'\, 'winner': False\, 'source': {'
+ id': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api
+ .espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861077/competiti
+ ons/401861077/competitors/162/scores/38?lang=en&region=us'\, 'value': 4.0\
+ , 'displayValue': '4'\, 'winner': True\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:Yüzüncü Yil Atatürk Stadyumu\, Bursa
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261117T103328Z
+LAST-MODIFIED:20261117T103328Z
+SEQUENCE:0
+X-SPORT-OS-SIGNATURE:0f5f34e114891f376a33d4d0
+UID:82a3fed57aab06fb3b142976@sport-os.github.io
+DTSTART:20261005T184500Z
+DTEND:20261005T204500Z
+SUMMARY:Italy - Türkiye
+DESCRIPTION:Nazionale italiana · Nations League · Risultato: {'$ref': 'ht
+ tp://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events
+ /401861131/competitions/401861131/competitors/162/scores/38?lang=en&region
+ =us'\, 'value': 3.0\, 'displayValue': '3'\, 'winner': True\, 'source': {'i
+ d': '38'\, 'description': 'SA.ENVOY'}} - {'$ref': 'http://sports.core.api.
+ espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861131/competitio
+ ns/401861131/competitors/465/scores/38?lang=en&region=us'\, 'value': 1.0\,
+  'displayValue': '1'\, 'winner': False\, 'source': {'id': '38'\, 'descript
+ ion': 'SA.ENVOY'}}
+LOCATION:Renato Dall'Ara\, Bologna
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
