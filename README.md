@@ -48,3 +48,9 @@ Il workflow genera `calendari/catalogo.json` e un feed `calendari/squadra/*.ics`
 python genera_abbonamenti.py
 python -m unittest discover -s tests -v
 ```
+
+## Personalizzazione delle partite in evidenza
+
+In **⚙ Impostazioni → In evidenza** si possono aggiungere e rimuovere squadre o competizioni con un solo selettore per categoria e una piccola lista di scelte. Il salvataggio avviene nel browser tramite `localStorage`: non richiede account o API e non cambia i dati per gli altri utenti. Una scelta diversa si applica immediatamente alla partita principale e alle partite evidenziate nell'agenda.
+
+La prima apertura conserva le preferenze precedenti (Torino, Broncos, gare F1, Nazionale, Champions delle italiane). Sono incluse due opzioni distinte per **tutta la F1** e **solo i Gran Premi**, oltre a Serie A, Coppa Italia e Supercoppa. I match delle squadre hanno precedenza sulle competizioni quando sono previsti nelle successive quattro settimane. Se si rimuovono tutte le scelte, non rimane alcuna partita in evidenza. Le preferenze restano sul dispositivo corrente e non sono sincronizzate tra dispositivi o browser.
