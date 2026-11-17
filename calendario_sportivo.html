@@ -1909,73 +1909,66 @@
             return '#52525b';
         }
 
+        function readableAccent(source, onLightSurface) {
+            const bg = onLightSurface ? '#b5b3af' : currentTheme === 'scura' ? '#27292e' : '#303137';
+            const raw = /^#[a-fA-F0-9]{6}$/.test(source) && source !== '#52525b'
+                ? source : (onLightSurface ? '#524036' : '#d7bd9b');
+            const channel = value => {
+                const x = value / 255;
+                return x <= .04045 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4;
+            };
+            const luminosity = rgb => rgb.map(channel).reduce((acc, x, i) =>
+                acc + x * [.2126, .7152, .0722][i], 0);
+            const rgb = hex => [1, 3, 5].map(i => parseInt(hex.substring(i, i + 2), 16));
+            const backgroundLuma = luminosity(rgb(bg));
+            const primary = rgb(raw);
+            const target = onLightSurface ? 0 : 255;
+            for (let step = 0; step <= 20; step++) {
+                const amount = step / 20;
+                const blended = primary.map(v => Math.round(v * (1 - amount) + target * amount));
+                const value = luminosity(blended);
+                const contrast = (Math.max(value, backgroundLuma) + .05) /
+                    (Math.min(value, backgroundLuma) + .05);
+                if (contrast >= 4.5) return '#' + blended.map(v =>
+                    v.toString(16).padStart(2, '0')).join('');
+            }
+            return onLightSurface ? '#252320' : '#f5f0e9';
+        }
+
         function getTopMatchTheme(e) {
-            const text = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
-            const home = (e.home || '').toLowerCase();
-            const away = (e.away || '').toLowerCase();
-            let accent = '#c5ad8b', highlight = '#efdbc5', surface = '#353034', teamKeys = [];
+            const favoriteTeams = featuredPreferences.teams.filter(team =>
+                teamMatches(e.home, team) || teamMatches(e.away, team));
+            const chosen = favoriteTeams[0] || '';
+            const normalized = normalizeTeam(chosen);
+            const light = currentTheme === 'sabbia';
+            let accent;
 
-            // Superfici piatte, appena colorate; il colore societario domina su bordo,
-            // marker e nome della squadra seguita, senza gradienti e senza effetto neon.
-            const select = (keys, a, h, bg) => { teamKeys = keys; accent = a; highlight = h; surface = bg; };
-            if (e.sport === 'f1') {
-                select([], '#ec6679', '#ffc0c8', '#39292e');
+            // Colore identitario soltanto dove e' utile: nome della squadra
+            // seguita. Le altre parti delle card restano monocromatiche.
+            if (normalized.includes('torino') || normalized === 'toro') {
+                accent = light ? '#70253b' : '#f48daa';
+            } else if (normalized.includes('broncos') || normalized.includes('denver')) {
+                accent = light ? '#89421f' : '#ffb472';
+            } else if (chosen) {
+                accent = readableAccent(getTeamColor(chosen), light);
+            } else if (e.sport === 'f1') {
+                accent = light ? '#902a44' : '#ff98ab';
             } else if (e.sport === 'nazionale') {
-                select(['italy', 'italia'], '#72b7a7', '#c4efe3', '#2b3735');
-            } else if (text.includes('torino') || text.includes('toro')) {
-                select(['torino', 'toro'], '#d45170', '#ffc2ce', '#3b2930');
-            } else if (text.includes('broncos') || text.includes('denver')) {
-                select(['broncos', 'denver'], '#f18b48', '#ffd3aa', '#3b3029');
+                accent = light ? '#245b50' : '#a4e2d0';
             } else {
-                const clubs = [
-                    [['inter'], '#78aff1', '#d0e4ff', '#2b3440'],
-                    [['milan'], '#e76f79', '#ffd0d3', '#392b2e'],
-                    [['juventus'], '#d9d2c5', '#f8f2e9', '#323234'],
-                    [['napoli'], '#7bcbe5', '#cff1fb', '#2b3640'],
-                    [['atalanta'], '#77b3e9', '#d2eaff', '#29333f'],
-                    [['roma'], '#edb96f', '#ffe0aa', '#3d312c'],
-                    [['lazio'], '#84c9e4', '#d6f3fb', '#2c373e'],
-                    [['bologna'], '#e47a80', '#ffced0', '#392b2e'],
-                    [['fiorentina'], '#bc99e8', '#e5d2ff', '#352d3d']
-                ];
-                const club = clubs.find(([keys]) => keys.some(key => text.includes(key)));
-                if (club) select(...club);
+                accent = 'var(--featured-text)';
             }
-            const isAway = teamKeys.some(key => away.includes(key)) && !teamKeys.some(key => home.includes(key));
-            const side = isAway ? 'right' : 'left';
-            const opposite = isAway ? 'left' : 'right';
-            // Il colore vive solo nella metà della squadra seguita e sfuma nella
-            // superficie propria del tema. Sabbia usa pigmenti meno saturi.
-            const sabbia = currentTheme === 'sabbia';
-            // Un solo colore di superficie per ogni partita: l'identita'
-            // sportiva viene dallo stemma e, se utile, dal nome.
-            const bg = 'var(--card-bg)';
 
-            // Il colore del club sul testo cambia con lo sfondo:
-            // luminoso su Ink/Scura, profondo sulla superficie chiara Sabbia.
-            let displayAccent = accent;
-            if (sabbia) {
-                displayAccent = text.includes('torino') || text.includes('toro') ? '#70253b' :
-                    text.includes('broncos') || text.includes('denver') ? '#89421f' :
-                    e.sport === 'f1' ? '#902a44' :
-                    e.sport === 'nazionale' ? '#245b50' :
-                    e.sport === 'champions' ? '#3e4e7d' : '#694633';
-            } else {
-                displayAccent = text.includes('torino') || text.includes('toro') ? '#f48daa' :
-                    text.includes('broncos') || text.includes('denver') ? '#ffb472' :
-                    e.sport === 'f1' ? '#ff98ab' :
-                    e.sport === 'nazionale' ? '#a4e2d0' : highlight;
-            }
-            const displayHighlight = sabbia ? displayAccent : highlight;
+            const isAway = !!(chosen && teamMatches(e.away, chosen) &&
+                !teamMatches(e.home, chosen));
             return {
-                color: displayAccent, highlight: displayHighlight, teamKeys, isAway, bg,
-                border: '1px solid var(--border)'
+                color: accent, highlight: accent, teamKeys: favoriteTeams,
+                isAway, bg: 'var(--card-bg)', border: '1px solid var(--border)'
             };
         }
 
         function isFeaturedTeam(name, theme) {
-            const value = (name || '').toLowerCase();
-            return !!(value && theme.teamKeys.some(key => value.includes(key)));
+            return !!(name && theme.teamKeys.some(key => teamMatches(name, key)));
         }
 
         const SPORT_NAMES = { f1: 'Formula 1', seriea: 'Serie A', nfl: 'NFL', champions: 'Champions League', nazionale: 'Italia' };
