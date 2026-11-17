@@ -1265,17 +1265,87 @@
         :root[data-theme="sabbia"] .compact-team-name,
         :root[data-theme="sabbia"] .standings-table td,
         :root[data-theme="sabbia"] .sheet-team-name { color: var(--text-main); }
+        /* Header compatto: lo stato guida l'intestazione, la ricerca e i tre
+           comandi condividono una sola riga e la stessa altezza. */
+        .top-bar { padding: 9px 14px 11px; }
+        #dataStatus { font-size: 11px; line-height: 1.3; color: var(--text-sub);
+            margin: 0 0 9px; font-variant-numeric: tabular-nums; }
+        .header-tools { display: flex; align-items: stretch; gap: 6px; min-width: 0; }
+        .header-tools .search-container { min-width: 0; flex: 1 1 0; max-width: none;
+            display: flex; align-items: center; }
+        .header-tools .search-input { height: 38px; width: 100%; min-width: 0; padding: 0 7px 0 28px;
+            border-radius: 9px; border: 1px solid var(--border-highlight);
+            box-shadow: none !important; appearance: none; -webkit-appearance: none;
+            font-size: 12px; background: var(--search-bg); }
+        .header-tools .search-icon { left: 8px; font-size: 11px; }
+        .header-tools .search-input:focus { border-color: var(--text-muted); }
+        .header-actions { display: flex; align-items: stretch; gap: 5px; margin-left: auto; flex-shrink: 0; }
+        .header-actions .btn-today, .header-actions .btn-info {
+            width: auto; min-width: 0; height: 38px; margin: 0; border-radius: 9px;
+            padding: 0 8px; font-size: 11px; font-weight: 750; box-shadow: none;
+            background: var(--search-bg); color: var(--text-main);
+            border: 1px solid var(--border-highlight); white-space: nowrap;
+        }
+        .header-actions .btn-info { width: 38px; padding: 0; font-size: 16px; }
+        .header-actions button:focus-visible { outline: 2px solid var(--text-main); outline-offset: 2px; }
+        @media (max-width: 365px) {
+            .header-tools { gap: 4px; }
+            .header-actions { gap: 4px; }
+            .header-actions .btn-today { padding: 0 6px; font-size: 10px; }
+            .header-actions .btn-info { width: 34px; }
+            .header-tools .search-input { font-size: 11px; }
+        }
+        @media (min-width: 768px) {
+            .top-bar { padding: 14px 28px; }
+            .header-tools .search-container { max-width: none; }
+        }
+
+        /* La card in evidenza riprende il tema senza macchie di colore pesanti. */
+        .hero-container { padding-top: 8px; padding-bottom: 15px; }
+        .hero-banner, .featured-match-card {
+            box-shadow: var(--featured-shadow);
+            border-radius: 16px;
+        }
+        .hero-banner .hero-countdown { border-color: var(--border-highlight);
+            background: rgba(0,0,0,0.08); }
+        .hero-banner .hero-badge::before,
+        .featured-match-card .featured-match-header > span:first-child::before {
+            background: var(--match-accent); width: 5px; height: 5px; opacity: .8;
+        }
+        .hero-banner .team-stanghetta, .featured-match-card .team-stanghetta {
+            opacity: .6;
+        }
+        .hero-banner .hero-team-name.focus-team,
+        .featured-match-card .featured-team-name.focus-team,
+        .hero-banner .focus-event-title, .featured-match-card .focus-event-title {
+            color: var(--match-highlight) !important;
+        }
+        :root[data-theme="sabbia"] .hero-banner .hero-countdown {
+            background: rgba(255,255,255,.08);
+        }
+
+        /* Vista mese: le frecce sono dentro la vista desktop, non nell'agenda. */
+        .nav-controls-box { padding-top: 3px; padding-bottom: 10px; }
+        .month-view-navigation { display:flex; align-items:center; justify-content:space-between;
+            margin-bottom: 12px; }
+        .month-view-navigation .current-month-text { color: var(--text-main); }
+        @media (min-width: 768px) {
+            .nav-controls-box { display:block; padding: 10px 28px 12px; }
+            .view-switcher-grid { margin-left:auto; }
+        }
     </style>
 </head>
 <body>
 <div class="app-container">
 
-    <!-- 1. TOP BAR (MONOCHROME LIQUID GLASS) -->
+    <!-- Stato essenziale sopra ricerca e comandi, senza marchio ingombrante. -->
     <header class="top-bar">
-        <div class="header-row">
-            <div class="app-brand" onclick="jumpToToday()">
-                <div class="brand-badge">⚽</div>
-                <div class="brand-title">Sport OS</div>
+        <div id="dataStatus" role="status" aria-live="polite">Caricamento partite…</div>
+        <div class="header-tools">
+            <div class="search-container" id="searchContainer">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input type="search" class="search-input" aria-label="Cerca squadra o evento"
+                    placeholder="Cerca squadra o evento..." oninput="handleSearch(this.value)">
             </div>
             <div class="header-actions">
                 <button class="btn-today" id="btnRefresh" onclick="refreshData()" aria-label="Ricarica i dati pubblicati">Aggiorna</button>
@@ -1283,23 +1353,13 @@
                 <button class="btn-info" onclick="openInfoSheet()" aria-label="Impostazioni" title="Impostazioni">⚙</button>
             </div>
         </div>
-        <div id="dataStatus" role="status" aria-live="polite" style="font-size:11px;color:var(--text-sub);margin:6px 0;line-height:1.5;">Caricamento partite…</div>
-        <div class="search-container" id="searchContainer">
-            <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" aria-label="Cerca squadra o evento" placeholder="Cerca squadra o evento..." oninput="handleSearch(this.value)">
-        </div>
     </header>
 
     <!-- 2. PROSSIMO TOP MATCH (CARD CON COLORI SQUADRE) -->
     <div class="hero-container" id="heroBannerContainer"></div>
 
-    <!-- 3. CONTROLLI MESE & SWITCHER VISTE (2 COLONNE: AGENDA & CLASSIFICHE) -->
+    <!-- Agenda e classifiche: niente testata del mese che ruba spazio. -->
     <div class="nav-controls-box">
-        <div class="month-selector-row" id="monthSelectorGroup">
-            <button class="nav-btn" onclick="navigateTime(-1)">‹</button>
-            <div class="current-month-text" id="monthDisplay">Mese 2026</div>
-            <button class="nav-btn" onclick="navigateTime(1)">›</button>
-        </div>
         <div class="view-switcher-grid">
             <button class="view-btn active" id="btnAgendaView" onclick="switchView('agenda')">Agenda</button>
             <button class="view-btn" id="btnStandingsView" onclick="switchView('standings')">Classifiche</button>
@@ -1331,8 +1391,13 @@
             <div id="standingsContentBox"></div>
         </div>
 
-        <!-- VISTA MESE (DISPONIBILE SU PC / DESKTOP) -->
+        <!-- Vista mese desktop: navigazione collocata qui, non nell'agenda. -->
         <div id="monthView" class="month-view-container">
+            <div class="month-view-navigation">
+                <button type="button" class="nav-btn" onclick="navigateTime(-1)" aria-label="Mese precedente">‹</button>
+                <span class="current-month-text" id="monthDisplay"></span>
+                <button type="button" class="nav-btn" onclick="navigateTime(1)" aria-label="Mese successivo">›</button>
+            </div>
             <div class="month-grid-weekdays">
                 <div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div>
             </div>
@@ -1571,9 +1636,20 @@
             const isAway = teamKeys.some(key => away.includes(key)) && !teamKeys.some(key => home.includes(key));
             const side = isAway ? 'right' : 'left';
             const opposite = isAway ? 'left' : 'right';
+            // Il colore vive solo nella metà della squadra seguita e sfuma nella
+            // superficie propria del tema. Sabbia usa pigmenti meno saturi.
+            const tone = currentTheme === 'sabbia'
+                ? (text.includes('torino') || text.includes('toro') ? '#87485a' : accent)
+                : accent;
+            const alpha = currentTheme === 'sabbia' ? 0.16 : currentTheme === 'scura' ? 0.19 : 0.15;
+            const gradientSide = isAway ? '270deg' : '90deg';
+            const bg = `linear-gradient(${gradientSide}, ${hexToRgba(tone, alpha)} 0%, ${hexToRgba(tone, alpha * .65)} 25%, ${hexToRgba(tone, 0)} 53%), var(--featured-bg)`;
+            const displayHighlight = currentTheme === 'sabbia'
+                ? (text.includes('torino') || text.includes('toro') ? '#713347' : '#48352d')
+                : highlight;
             return {
-                color: accent, highlight, teamKeys, isAway, bg: surface,
-                border: `border-${side}: 7px solid ${accent}; border-${opposite}: 1px solid var(--border);`
+                color: accent, highlight: displayHighlight, teamKeys, isAway, bg,
+                border: '1px solid var(--border)'
             };
         }
 
@@ -1664,8 +1740,8 @@
             const updated = calendarMeta.generatedAt && new Date(calendarMeta.generatedAt);
             const stamp = updated && !Number.isNaN(updated.getTime())
                 ? updated.toLocaleString('it-IT', { timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : null;
-            el.textContent = error || (!stamp ? 'Data dell’aggiornamento non disponibile.'
-                : `Aggiornato: ${stamp} · ${stale.length ? `${stale.length} ${stale.length === 1 ? 'fonte' : 'fonti'} da verificare (ℹ️)` : 'Dati disponibili'}`);
+            el.textContent = error || (!stamp ? 'Aggiornamento non disponibile'
+                : `Aggiornato: ${stamp}${stale.length ? ` · ${stale.length} ${stale.length === 1 ? 'fonte da verificare' : 'fonti da verificare'}` : ''}`);
             el.style.color = error || stale.length || !stamp ? 'var(--warning-color)' : 'var(--text-sub)';
             if (window.navigator?.onLine === false && stamp) {
                 el.textContent = `Offline · dati salvati del ${stamp}`;
@@ -1820,14 +1896,12 @@
             const standingsEl = document.getElementById('standingsView');
             const monthEl = document.getElementById('monthView');
             const dateStripEl = document.getElementById('dateStripWrapper');
-            const monthGroupEl = document.getElementById('monthSelectorGroup');
 
             if (agendaEl) agendaEl.style.display = (view === 'agenda') ? 'block' : 'none';
             if (standingsEl) standingsEl.style.display = (view === 'standings') ? 'block' : 'none';
             if (monthEl) monthEl.style.display = (view === 'month') ? 'block' : 'none';
 
             if (dateStripEl) dateStripEl.style.display = (view === 'agenda') ? 'block' : 'none';
-            if (monthGroupEl) monthGroupEl.style.display = (view === 'standings') ? 'none' : 'flex';
             const searchContainer = document.getElementById('searchContainer');
             if (searchContainer) searchContainer.style.display = view === 'standings' ? 'none' : '';
             if (btnAgenda) btnAgenda.ariaPressed = String(view === 'agenda');
