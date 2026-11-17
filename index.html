@@ -1581,6 +1581,41 @@
         :root[data-theme="sabbia"] .featured-match-card [style*="color:#fff"] {
             color: var(--featured-text) !important;
         }
+        /* Hero più compatta, protagonisti gli stemmi. Asset SVG/PNG originali,
+           object-fit contain senza sfocatura artificiale né ritagli. */
+        .hero-container { padding-top: 12px; padding-bottom: 17px; }
+        .hero-banner { padding: 15px 16px 13px; min-height: 0; }
+        .hero-top { margin-bottom: 3px; }
+        .hero-faceoff { min-height: 0; margin: 2px 0 8px; gap: 7px; }
+        .hero-team, .hero-team.away { gap: 7px; }
+        .hero-crest { width: 84px; height: 84px; max-width: 100%; object-fit: contain;
+            image-rendering: auto; filter: none; flex-shrink: 0; }
+        .hero-team-name { min-height: 27px; line-height: 1.12;
+            font-size: clamp(14px, 4vw, 18px); }
+        .hero-bottom { display: flex; align-items: center; justify-content: center;
+            text-align: center; padding-top: 9px; }
+        .hero-kickoff { display: block; font-size: 13px; font-weight: 800; }
+        @media (max-width: 365px) {
+            .hero-crest { width: 74px; height: 74px; }
+            .hero-faceoff { gap: 4px; }
+        }
+        /* Preferenze visibili solo quando l'utente apre la relativa sezione. */
+        .featured-settings-body { padding: 9px 0 6px; }
+        .featured-settings-body > .settings-subtle:first-child { margin: 0 0 12px; }
+        .featured-settings-body .settings-theme-label { display: block; font-size: 12px; margin: 11px 0 5px; }
+        .featured-add-row { display: flex; gap: 8px; align-items: stretch; }
+        .featured-add-row .settings-field { margin: 0; min-width: 0; flex: 1 1 auto; }
+        .featured-add-row .settings-button { flex: 0 0 auto; padding: 0 11px; }
+        .featured-tags { display: flex; flex-wrap: wrap; gap: 6px; min-height: 16px; margin: 9px 0 12px; }
+        .featured-tag { display: inline-flex; align-items: center; gap: 7px; min-width: 0;
+            background: var(--surface); border: 1px solid var(--border-highlight);
+            border-radius: 8px; padding: 5px 5px 5px 9px;
+            color: var(--text-main); font-size: 11px; font-weight: 650; }
+        .featured-tag button { background: transparent; border: 0; color: var(--text-muted);
+            font-size: 15px; font-weight: 700; cursor: pointer; padding: 0 4px;
+            line-height: 1.2; border-radius: 4px; }
+        .featured-tag button:focus-visible { outline: 2px solid var(--text-main); }
+        .featured-settings-body #featuredSaveFeedback { margin: 6px 0 0; min-height: 0; }
     </style>
 </head>
 <body>
@@ -1692,6 +1727,28 @@
                 <span class="theme-swatch" aria-hidden="true"></span>Scura
             </button>
         </div>
+        <hr class="settings-divider">
+        <details class="settings-accordion" id="featuredPreferencesPanel">
+            <summary>In evidenza</summary>
+            <div class="featured-settings-body">
+                <p class="settings-subtle">Scegli quali partite mettere in primo piano. Le preferenze restano salvate su questo dispositivo.</p>
+                <label class="settings-theme-label" for="featuredTeamSelect">Squadre</label>
+                <div class="featured-add-row">
+                    <select id="featuredTeamSelect" class="settings-field" aria-label="Squadra da aggiungere">
+                        <option value="">Seleziona una squadra</option>
+                    </select>
+                    <button type="button" class="settings-button" onclick="addFeaturedTeam()">Aggiungi</button>
+                </div>
+                <div id="featuredTeamTags" class="featured-tags" aria-label="Squadre in evidenza"></div>
+                <label class="settings-theme-label" for="featuredCompetitionSelect">Competizioni</label>
+                <div class="featured-add-row">
+                    <select id="featuredCompetitionSelect" class="settings-field" aria-label="Competizione da aggiungere"></select>
+                    <button type="button" class="settings-button" onclick="addFeaturedCompetition()">Aggiungi</button>
+                </div>
+                <div id="featuredCompetitionTags" class="featured-tags" aria-label="Competizioni in evidenza"></div>
+                <p class="settings-subtle" id="featuredSaveFeedback" role="status" aria-live="polite"></p>
+            </div>
+        </details>
         <hr class="settings-divider">
         <details class="settings-accordion" id="calendarSubscriptionsPanel">
             <summary>Abbonamenti calendario</summary>
@@ -1852,73 +1909,66 @@
             return '#52525b';
         }
 
+        function readableAccent(source, onLightSurface) {
+            const bg = onLightSurface ? '#b5b3af' : currentTheme === 'scura' ? '#27292e' : '#303137';
+            const raw = /^#[a-fA-F0-9]{6}$/.test(source) && source !== '#52525b'
+                ? source : (onLightSurface ? '#524036' : '#d7bd9b');
+            const channel = value => {
+                const x = value / 255;
+                return x <= .04045 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4;
+            };
+            const luminosity = rgb => rgb.map(channel).reduce((acc, x, i) =>
+                acc + x * [.2126, .7152, .0722][i], 0);
+            const rgb = hex => [1, 3, 5].map(i => parseInt(hex.substring(i, i + 2), 16));
+            const backgroundLuma = luminosity(rgb(bg));
+            const primary = rgb(raw);
+            const target = onLightSurface ? 0 : 255;
+            for (let step = 0; step <= 20; step++) {
+                const amount = step / 20;
+                const blended = primary.map(v => Math.round(v * (1 - amount) + target * amount));
+                const value = luminosity(blended);
+                const contrast = (Math.max(value, backgroundLuma) + .05) /
+                    (Math.min(value, backgroundLuma) + .05);
+                if (contrast >= 4.5) return '#' + blended.map(v =>
+                    v.toString(16).padStart(2, '0')).join('');
+            }
+            return onLightSurface ? '#252320' : '#f5f0e9';
+        }
+
         function getTopMatchTheme(e) {
-            const text = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
-            const home = (e.home || '').toLowerCase();
-            const away = (e.away || '').toLowerCase();
-            let accent = '#c5ad8b', highlight = '#efdbc5', surface = '#353034', teamKeys = [];
+            const favoriteTeams = featuredPreferences.teams.filter(team =>
+                teamMatches(e.home, team) || teamMatches(e.away, team));
+            const chosen = favoriteTeams[0] || '';
+            const normalized = normalizeTeam(chosen);
+            const light = currentTheme === 'sabbia';
+            let accent;
 
-            // Superfici piatte, appena colorate; il colore societario domina su bordo,
-            // marker e nome della squadra seguita, senza gradienti e senza effetto neon.
-            const select = (keys, a, h, bg) => { teamKeys = keys; accent = a; highlight = h; surface = bg; };
-            if (e.sport === 'f1') {
-                select([], '#ec6679', '#ffc0c8', '#39292e');
+            // Colore identitario soltanto dove e' utile: nome della squadra
+            // seguita. Le altre parti delle card restano monocromatiche.
+            if (normalized.includes('torino') || normalized === 'toro') {
+                accent = light ? '#70253b' : '#f48daa';
+            } else if (normalized.includes('broncos') || normalized.includes('denver')) {
+                accent = light ? '#89421f' : '#ffb472';
+            } else if (chosen) {
+                accent = readableAccent(getTeamColor(chosen), light);
+            } else if (e.sport === 'f1') {
+                accent = light ? '#902a44' : '#ff98ab';
             } else if (e.sport === 'nazionale') {
-                select(['italy', 'italia'], '#72b7a7', '#c4efe3', '#2b3735');
-            } else if (text.includes('torino') || text.includes('toro')) {
-                select(['torino', 'toro'], '#d45170', '#ffc2ce', '#3b2930');
-            } else if (text.includes('broncos') || text.includes('denver')) {
-                select(['broncos', 'denver'], '#f18b48', '#ffd3aa', '#3b3029');
+                accent = light ? '#245b50' : '#a4e2d0';
             } else {
-                const clubs = [
-                    [['inter'], '#78aff1', '#d0e4ff', '#2b3440'],
-                    [['milan'], '#e76f79', '#ffd0d3', '#392b2e'],
-                    [['juventus'], '#d9d2c5', '#f8f2e9', '#323234'],
-                    [['napoli'], '#7bcbe5', '#cff1fb', '#2b3640'],
-                    [['atalanta'], '#77b3e9', '#d2eaff', '#29333f'],
-                    [['roma'], '#edb96f', '#ffe0aa', '#3d312c'],
-                    [['lazio'], '#84c9e4', '#d6f3fb', '#2c373e'],
-                    [['bologna'], '#e47a80', '#ffced0', '#392b2e'],
-                    [['fiorentina'], '#bc99e8', '#e5d2ff', '#352d3d']
-                ];
-                const club = clubs.find(([keys]) => keys.some(key => text.includes(key)));
-                if (club) select(...club);
+                accent = 'var(--featured-text)';
             }
-            const isAway = teamKeys.some(key => away.includes(key)) && !teamKeys.some(key => home.includes(key));
-            const side = isAway ? 'right' : 'left';
-            const opposite = isAway ? 'left' : 'right';
-            // Il colore vive solo nella metà della squadra seguita e sfuma nella
-            // superficie propria del tema. Sabbia usa pigmenti meno saturi.
-            const sabbia = currentTheme === 'sabbia';
-            // Un solo colore di superficie per ogni partita: l'identita'
-            // sportiva viene dallo stemma e, se utile, dal nome.
-            const bg = 'var(--card-bg)';
 
-            // Il colore del club sul testo cambia con lo sfondo:
-            // luminoso su Ink/Scura, profondo sulla superficie chiara Sabbia.
-            let displayAccent = accent;
-            if (sabbia) {
-                displayAccent = text.includes('torino') || text.includes('toro') ? '#70253b' :
-                    text.includes('broncos') || text.includes('denver') ? '#89421f' :
-                    e.sport === 'f1' ? '#902a44' :
-                    e.sport === 'nazionale' ? '#245b50' :
-                    e.sport === 'champions' ? '#3e4e7d' : '#694633';
-            } else {
-                displayAccent = text.includes('torino') || text.includes('toro') ? '#f48daa' :
-                    text.includes('broncos') || text.includes('denver') ? '#ffb472' :
-                    e.sport === 'f1' ? '#ff98ab' :
-                    e.sport === 'nazionale' ? '#a4e2d0' : highlight;
-            }
-            const displayHighlight = sabbia ? displayAccent : highlight;
+            const isAway = !!(chosen && teamMatches(e.away, chosen) &&
+                !teamMatches(e.home, chosen));
             return {
-                color: displayAccent, highlight: displayHighlight, teamKeys, isAway, bg,
-                border: '1px solid var(--border)'
+                color: accent, highlight: accent, teamKeys: favoriteTeams,
+                isAway, bg: 'var(--card-bg)', border: '1px solid var(--border)'
             };
         }
 
         function isFeaturedTeam(name, theme) {
-            const value = (name || '').toLowerCase();
-            return !!(value && theme.teamKeys.some(key => value.includes(key)));
+            return !!(name && theme.teamKeys.some(key => teamMatches(name, key)));
         }
 
         const SPORT_NAMES = { f1: 'Formula 1', seriea: 'Serie A', nfl: 'NFL', champions: 'Champions League', nazionale: 'Italia' };
@@ -1930,15 +1980,162 @@
             return `${year}-${month}-${day}`;
         }
 
-        function isTop(e) {
-            if (e.isTop) return true;
-            const t = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
-            if (e.sport === 'seriea' && (t.includes('torino') || t.includes('toro'))) return true;
-            if (e.sport === 'nfl' && (t.includes('broncos') || t.includes('denver'))) return true;
-            if (e.sport === 'f1' && t.includes('gara')) return true;
-            if (e.sport === 'champions') return ['inter', 'milan', 'juventus', 'atalanta', 'bologna', 'roma', 'lazio', 'napoli', 'fiorentina'].some(sq => t.includes(sq));
-            if (e.sport === 'nazionale') return true;
-            return false;
+        // Le preferenze iniziali replicano la vecchia selezione incorporata nel
+        // codice. Dopo ogni modifica, a scegliere e' soltanto l'utente.
+        const FEATURED_STORAGE_KEY = 'sport-os-featured-v1';
+        const FEATURED_COMPETITIONS = [
+            { id: 'seriea', name: 'Serie A' },
+            { id: 'coppa', name: 'Coppa Italia' },
+            { id: 'supercoppa', name: 'Supercoppa italiana' },
+            { id: 'champions', name: 'Champions League' },
+            { id: 'champions-it', name: 'Champions · squadre italiane' },
+            { id: 'nfl', name: 'NFL' },
+            { id: 'f1', name: 'Formula 1 · tutte le sessioni' },
+            { id: 'f1-race', name: 'Formula 1 · solo Gran Premi' },
+            { id: 'nazionale', name: 'Nazionale italiana' }
+        ];
+        const ITALIAN_CHAMPIONS_TEAMS = [
+            'inter', 'milan', 'juventus', 'atalanta', 'bologna',
+            'roma', 'lazio', 'napoli', 'fiorentina'
+        ];
+        const DEFAULT_FEATURED = {
+            teams: ['Torino', 'Denver Broncos'],
+            competitions: ['f1-race', 'champions-it', 'nazionale']
+        };
+        const normalizeTeam = name => String(name || '').trim().toLocaleLowerCase('it-IT').replace(/\s+/g, ' ');
+        const teamMatches = (name, selected) => {
+            const a = normalizeTeam(name), b = normalizeTeam(selected);
+            return !!(a && b && (a === b || a.includes(b) || b.includes(a)));
+        };
+
+        function loadFeaturedPreferences() {
+            const defaults = () => ({
+                teams: [...DEFAULT_FEATURED.teams],
+                competitions: [...DEFAULT_FEATURED.competitions]
+            });
+            let saved;
+            try { saved = window.localStorage?.getItem(FEATURED_STORAGE_KEY); }
+            catch (error) { return defaults(); }
+            if (!saved) return defaults();
+            try {
+                const parsed = JSON.parse(saved);
+                if (!parsed || !Array.isArray(parsed.teams) || !Array.isArray(parsed.competitions)) return defaults();
+                const teams = parsed.teams.filter(s => typeof s === 'string' && s.trim() && s.length <= 90)
+                    .slice(0, 25).map(s => s.trim());
+                const competitions = parsed.competitions.filter(s =>
+                    FEATURED_COMPETITIONS.some(c => c.id === s)).slice(0, FEATURED_COMPETITIONS.length);
+                return {
+                    teams: [...new Map(teams.map(s => [normalizeTeam(s), s])).values()],
+                    competitions: [...new Set(competitions)]
+                };
+            } catch (error) { return defaults(); }
+        }
+        let featuredPreferences = loadFeaturedPreferences();
+
+        function competitionKey(event) {
+            if (event.sport === 'seriea') {
+                const loc = String(event.loc || '').toLowerCase();
+                if (loc.includes('supercoppa')) return 'supercoppa';
+                if (loc.includes('coppa italia')) return 'coppa';
+            }
+            return event.sport || '';
+        }
+        function preferredTeamForEvent(event) {
+            return featuredPreferences.teams.find(team =>
+                teamMatches(event.home, team) || teamMatches(event.away, team)) || null;
+        }
+        function matchesPreferredCompetition(event, id) {
+            const key = competitionKey(event);
+            if (id === 'f1-race') return key === 'f1' && /\bgara\b/i.test(event.title || '');
+            if (id === 'champions-it') return key === 'champions' &&
+                ITALIAN_CHAMPIONS_TEAMS.some(team =>
+                    teamMatches(event.home, team) || teamMatches(event.away, team));
+            return key === id;
+        }
+        function featuredPriority(event) {
+            if (preferredTeamForEvent(event)) return 2;
+            return featuredPreferences.competitions.some(id => matchesPreferredCompetition(event, id)) ? 1 : 0;
+        }
+        function isTop(event) { return featuredPriority(event) > 0; }
+
+        function availableFeaturedTeams() {
+            const names = new Map();
+            const invalid = new Set(['', 'tbd', 'unknown', 'home', 'away', 'da definire', 'to be decided']);
+            for (const event of allEvents) {
+                if (event.sport === 'f1') continue;
+                for (const name of [event.home, event.away]) {
+                    if (typeof name !== 'string') continue;
+                    const value = name.trim(), key = normalizeTeam(value);
+                    if (!invalid.has(key) && key.length > 1 && !names.has(key)) names.set(key, value);
+                }
+            }
+            // Le scelte esistenti restano eliminabili anche se una squadra non
+            // appare piu' nel dataset della nuova stagione.
+            for (const name of featuredPreferences.teams) {
+                if (!names.has(normalizeTeam(name))) names.set(normalizeTeam(name), name);
+            }
+            return [...names.values()].sort((a, b) => a.localeCompare(b, 'it'));
+        }
+
+        let featuredTeamOptions = [];
+        function renderFeaturedSettings() {
+            const teamSelect = document.getElementById('featuredTeamSelect');
+            const compSelect = document.getElementById('featuredCompetitionSelect');
+            const teamTags = document.getElementById('featuredTeamTags');
+            const compTags = document.getElementById('featuredCompetitionTags');
+            if (!teamSelect || !compSelect || !teamTags || !compTags) return;
+
+            featuredTeamOptions = availableFeaturedTeams().filter(name =>
+                !featuredPreferences.teams.some(saved => normalizeTeam(saved) === normalizeTeam(name)));
+            teamSelect.innerHTML = '<option value="">Scegli una squadra…</option>' +
+                featuredTeamOptions.map((name, index) =>
+                    `<option value="${index}">${escapeHtml(name)}</option>`).join('');
+            compSelect.innerHTML = '<option value="">Scegli una competizione…</option>' +
+                FEATURED_COMPETITIONS.filter(c => !featuredPreferences.competitions.includes(c.id))
+                    .map(c => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join('');
+
+            teamTags.innerHTML = featuredPreferences.teams.map((name, i) =>
+                `<span class="featured-tag">${escapeHtml(name)}<button type="button" aria-label="Rimuovi ${escapeHtml(name)}" onclick="removeFeaturedChoice('teams',${i})">×</button></span>`).join('')
+                || '<span class="settings-subtle">Nessuna squadra selezionata</span>';
+            compTags.innerHTML = featuredPreferences.competitions.map((id, i) => {
+                const label = FEATURED_COMPETITIONS.find(c => c.id === id)?.name || id;
+                return `<span class="featured-tag">${escapeHtml(label)}<button type="button" aria-label="Rimuovi ${escapeHtml(label)}" onclick="removeFeaturedChoice('competitions',${i})">×</button></span>`;
+            }).join('') || '<span class="settings-subtle">Nessuna competizione selezionata</span>';
+        }
+
+        function commitFeaturedPreferences() {
+            const feedback = document.getElementById('featuredSaveFeedback');
+            try {
+                window.localStorage?.setItem(FEATURED_STORAGE_KEY, JSON.stringify(featuredPreferences));
+                if (feedback) feedback.textContent = '';
+            } catch (error) {
+                if (feedback) feedback.textContent = 'Preferenze attive, ma non salvabili su questo dispositivo.';
+            }
+            renderFeaturedSettings();
+            renderHeroBanner();
+            renderAll();
+        }
+        function addFeaturedTeam() {
+            const select = document.getElementById('featuredTeamSelect');
+            const index = select ? Number(select.value) : -1;
+            if (!select?.value || !Number.isInteger(index) || index < 0 || index >= featuredTeamOptions.length) return;
+            const name = featuredTeamOptions[index];
+            if (featuredPreferences.teams.some(s => normalizeTeam(s) === normalizeTeam(name))) return;
+            if (featuredPreferences.teams.length >= 25) return;
+            featuredPreferences.teams.push(name);
+            commitFeaturedPreferences();
+        }
+        function addFeaturedCompetition() {
+            const id = document.getElementById('featuredCompetitionSelect')?.value;
+            if (!FEATURED_COMPETITIONS.some(c => c.id === id) || featuredPreferences.competitions.includes(id)) return;
+            featuredPreferences.competitions.push(id);
+            commitFeaturedPreferences();
+        }
+        function removeFeaturedChoice(kind, index) {
+            if (!['teams', 'competitions'].includes(kind) || !Number.isInteger(index) ||
+                index < 0 || index >= featuredPreferences[kind].length) return;
+            featuredPreferences[kind].splice(index, 1);
+            commitFeaturedPreferences();
         }
 
         const SOURCE_NAMES = {
@@ -1973,6 +2170,22 @@
             } catch { return ''; }
         }
 
+        // Preferisce le versioni vettoriali o 500px già presenti nei feed.
+        // Non ingrandisce miniature né introduce servizi o download nuovi.
+        function bestHeroCrest(name, fallback) {
+            const target = normalizeTeam(name);
+            if (target) for (const event of allEvents) {
+                for (const [team, crest] of [[event.home, event.homeCrest], [event.away, event.awayCrest]]) {
+                    if (normalizeTeam(team) !== target || typeof crest !== 'string') continue;
+                    if (/\/500\//.test(crest) || /\.svg(?:\?|$)/i.test(crest)) {
+                        const good = safeImage(crest);
+                        if (good) return good;
+                    }
+                }
+            }
+            return safeImage(fallback);
+        }
+
         function eventKey(event) {
             return encodeURIComponent(event.id || JSON.stringify([event.date, event.time, event.title])).replace(/'/g, '%27');
         }
@@ -1991,9 +2204,22 @@
         function getUpcomingHeroMatch() {
             const now = Date.now();
             const today = todayInRome();
-            return allEvents.filter(e => isTop(e) && !['FINISHED', 'AWARDED', 'POSTPONED', 'CANCELLED'].includes(e.status)
-                && (e.startUtc ? Date.parse(e.startUtc) > now : e.date >= today))
-                .sort((a, b) => a.date.localeCompare(b.date) || (a.time || '99:99').localeCompare(b.time || '99:99'))[0] || null;
+            const eligible = allEvents.filter(e => isTop(e) &&
+                !['FINISHED', 'AWARDED', 'POSTPONED', 'CANCELLED'].includes(e.status) &&
+                (e.startUtc ? Date.parse(e.startUtc) > now : e.date >= today))
+                .sort((a, b) => a.date.localeCompare(b.date) ||
+                    (a.time || '99:99').localeCompare(b.time || '99:99'));
+            if (!eligible.length) return null;
+
+            // Le squadre hanno precedenza sulle competizioni quando hanno
+            // una partita entro quattro settimane; lontano da quel periodo
+            // rimane protagonista il prossimo evento rilevante.
+            const horizon = new Date(today + 'T12:00:00');
+            horizon.setDate(horizon.getDate() + 28);
+            const nextMonth = formatDate(horizon);
+            return eligible.find(e => featuredPriority(e) === 2 && e.date <= nextMonth)
+                || eligible.find(e => e.date <= nextMonth)
+                || eligible[0];
         }
 
         function renderDataStatus(error = '') {
@@ -2043,6 +2269,7 @@
                 standingsData = window.standingsData || {};
                 calendarMeta = window.calendarMeta;
                 lastFetchAt = Date.now();
+                renderFeaturedSettings();
                 renderDataStatus();
                 renderHeroBanner();
                 switchView(currentView);
@@ -2088,12 +2315,12 @@
                 faceoffHtml = `
                     <div class="hero-faceoff">
                         <div class="hero-team">
-                            <img src="${safeImage(upcoming.homeCrest)}" class="hero-crest" alt="">
+                            <img src="${bestHeroCrest(upcoming.home, upcoming.homeCrest)}" class="hero-crest" alt="${escapeHtml(upcoming.home || 'Squadra di casa')}" loading="eager" decoding="async">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.home, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.home || 'Casa')}</span>
                         </div>
                         <div class="hero-vs">${resultLabel(upcoming)}</div>
                         <div class="hero-team away">
-                            <img src="${safeImage(upcoming.awayCrest)}" class="hero-crest" alt="">
+                            <img src="${bestHeroCrest(upcoming.away, upcoming.awayCrest)}" class="hero-crest" alt="${escapeHtml(upcoming.away || 'Squadra ospite')}" loading="eager" decoding="async">
                             <span class="hero-team-name${isFeaturedTeam(upcoming.away, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.away || 'Trasferta')}</span>
                         </div>
                     </div>
@@ -2109,7 +2336,7 @@
                         <span class="hero-countdown" id="heroCountdownTimer">In arrivo</span>
                     </div>
                     ${faceoffHtml}
-                    <div class="hero-bottom"><span class="hero-kickoff">${dStr} · ${timeLabel(upcoming)}</span><span class="hero-cta">Apri partita <span aria-hidden="true">›</span></span></div>
+                    <div class="hero-bottom"><span class="hero-kickoff">${escapeHtml(dStr)} · ${escapeHtml(timeLabel(upcoming))}</span></div>
                 </div>
             `;
             if (countdownTimerId) clearInterval(countdownTimerId);
@@ -2880,6 +3107,7 @@
         }
 
         function openInfoSheet() {
+            renderFeaturedSettings();
             loadSubscriptionsCatalog();
             document.getElementById('modalBackdrop').classList.add('open');
             document.getElementById('infoSheet').classList.add('open');
