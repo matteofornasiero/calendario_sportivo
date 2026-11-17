@@ -45,7 +45,7 @@ assert.equal(run("setTheme('sabbia')"), true);
 assert.equal(run('currentTheme'), 'sabbia');
 assert.equal(storage.get('sport-os-theme'), 'sabbia');
 assert.equal(document.documentElement.getAttribute('data-theme'), 'sabbia');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#a89984');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#999794');
 assert.equal(themeChoices[0].getAttribute('aria-pressed'), 'true');
 assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'false');
 assert.equal(run("setTheme('non-esiste')"), false);
@@ -71,9 +71,13 @@ const themeBlock = theme => {
 };
 const themeColor = (theme, key) => {
     const block = themeBlock(theme);
-    const found = block.match(new RegExp('--' + key + ':\\s*(#[0-9a-fA-F]{6})'));
+    const found = block.match(new RegExp('--' + key + ':\\s*([^;]+);'));
     assert.ok(found, 'Colore assente: ' + theme + ' / ' + key);
-    return found[1];
+    const value = found[1].trim();
+    const reference = value.match(/^var\(--([a-z-]+)\)$/);
+    if (reference) return themeColor(theme, reference[1]);
+    assert.match(value, /^#[0-9a-fA-F]{6}$/, 'Colore non esadecimale: ' + key);
+    return value;
 };
 const linear = channel => {
     const x = channel / 255;
@@ -88,6 +92,7 @@ const contrast = (a, b) => {
 for (const theme of ['sabbia', 'ink', 'scura']) {
     const bg = themeColor(theme, 'bg');
     const card = themeColor(theme, 'compact-bg');
+    const shared = themeColor(theme, 'card-bg');
     const main = themeColor(theme, 'text-main');
     const sub = themeColor(theme, 'text-sub');
     const muted = themeColor(theme, 'text-muted');
@@ -95,6 +100,8 @@ for (const theme of ['sabbia', 'ink', 'scura']) {
     const selectedText = themeColor(theme, 'selected-text');
     const featured = themeColor(theme, 'featured-bg');
     const featuredText = themeColor(theme, 'featured-text');
+    assert.equal(card, shared, theme + ': schede evento non uniformi');
+    assert.equal(featured, shared, theme + ': hero più chiara o scura delle altre card');
     assert.ok(contrast(bg, main) >= 4.5, theme + ' testo principale non leggibile');
     assert.ok(contrast(card, main) >= 4.5, theme + ' testo card non leggibile');
     assert.ok(contrast(bg, sub) >= 4.5, theme + ' testo secondario non leggibile');
@@ -104,41 +111,42 @@ for (const theme of ['sabbia', 'ink', 'scura']) {
     assert.ok(contrast(bg, card) <= 2.5, theme + ' card normali troppo staccate dal fondo');
 }
 
-// Una gerarchia editoriale: il Torino e le sue partite si riconoscono subito.
-const napoliTorino = { sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino' };
-const accentByTheme = {
-    sabbia: '#8b314c',
-    ink: '#f48daa',
-    scura: '#f48daa'
-};
-const tintByTheme = {};
+// Le squadre contano: stemmi grandi e nome in evidenza, senza sfumature
+// decorative. Hero e partite dell'elenco usano ESATTAMENTE la stessa superficie.
+const napoliTorino = { sport: 'seriea', title: 'Napoli - Torino', home: 'Napoli', away: 'Torino' };
+const accentByTheme = { sabbia: '#70253b', ink: '#f48daa', scura: '#f48daa' };
 for (const theme of ['ink', 'scura', 'sabbia']) {
     run("setTheme('" + theme + "')");
     const match = run('getTopMatchTheme(' + JSON.stringify(napoliTorino) + ')');
-    assert.equal(match.color, accentByTheme[theme], 'Accento adattivo: ' + theme);
-    assert.equal(match.highlight, theme === 'sabbia' ? '#8b314c' : '#ffc2ce');
-    assert.equal(match.isAway, true);
-    assert.ok(match.bg.includes('linear-gradient(270deg'), 'Sfumatura dalla squadra in trasferta: ' + theme);
-    assert.ok(match.bg.includes('56%), var(--featured-bg)'), 'La tinta si fonde con la superficie: ' + theme);
+    assert.equal(match.color, accentByTheme[theme], 'Accento leggibile in ' + theme);
+    assert.equal(match.bg, 'var(--card-bg)', 'Niente sfumatura sulla card: ' + theme);
     assert.equal(match.border, '1px solid var(--border)');
-    assert.ok(match.bg.includes('rgba('), 'La tinta è trasparente: ' + theme);
-    tintByTheme[theme] = match.bg;
-    assert.ok(contrast(themeColor(theme, 'featured-bg'), match.color) >= 4.5,
-        'Segnale cromatico leggibile sulla card: ' + theme);
+    assert.equal(match.isAway, true);
+    assert.ok(contrast(themeColor(theme, 'card-bg'), match.color) >= 4.5,
+        'Colore della squadra leggibile sulla superficie: ' + theme);
 }
-assert.notEqual(tintByTheme.sabbia, tintByTheme.ink);
-assert.notEqual(tintByTheme.ink, tintByTheme.scura);
 run("setTheme('ink')");
-assert.ok(run("getTopMatchTheme({sport:'nfl', title:'Broncos - Raiders', home:'Broncos',away:'Raiders'}).bg").includes('linear-gradient(90deg'));
+assert.equal(run("getTopMatchTheme({sport:'nfl', title:'Broncos - Raiders', home:'Broncos', away:'Raiders'}).bg"), 'var(--card-bg)');
 assert.equal(run("isFeaturedTeam('Torino', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), true);
 assert.equal(run("isFeaturedTeam('Napoli', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), false);
-assert.ok(html.includes('class="hero-kicker"'), 'Indicazione DA SEGUIRE sopra il match');
-assert.ok(html.includes('DA SEGUIRE') && html.includes('Apri partita'), 'La card principale guida la lettura');
-assert.ok(html.includes('Barlow+Semi+Condensed'), 'Tipografia editoriale per titoli e date');
-assert.ok(html.includes('SPORT OS / EDITORIAL SCORECARD v2'), 'Il sistema visivo editoriale deve essere presente');
-assert.ok(html.includes('border-bottom: 3px solid transparent'), 'Le tab non devono essere pillole vetrate');
-assert.ok(html.includes('.sport-section-divider::after'), 'La competizione si allinea a una regola sottile');
-assert.ok(html.includes('.date-strip {') && html.includes('background: transparent !important'), 'Settimana senza contenitore vetro');
+assert.ok(html.includes('DA SEGUIRE') && html.includes('Apri partita'), 'Partita protagonista presente');
+assert.ok(html.includes('.hero-crest { width: 59px; height: 59px;'), 'Stemmi grandi nel primo piano');
+assert.ok(html.includes('min-height: 116px; margin: 0 0 13px;'), 'Sfida centrata, non vuota');
+const awayHeroStart = html.indexOf('<div class="hero-team away">');
+assert.ok(awayHeroStart >= 0);
+assert.ok(html.indexOf('class="hero-crest"', awayHeroStart)
+    < html.indexOf('class="hero-team-name', awayHeroStart), 'Stemma sopra nome anche in trasferta');
+assert.ok(html.includes('.modal-sheet:not(.open) { box-shadow: none !important; }'),
+    'Nessuna ombra nera in fondo dalla scheda nascosta');
+assert.ok(html.indexOf('class="header-tools"') < html.indexOf('id="dataStatus"'),
+    'Aggiornamento discreto sotto i comandi');
+assert.ok(html.includes('font-size: 9px; font-weight: 450;'), 'Orario aggiornamento minimale');
+assert.ok(html.includes('Barlow+Semi+Condensed'), 'Tipografia editoriale presente');
+assert.ok(html.includes('SPORT OS / EDITORIAL SCORECARD v2'), 'Sistema visivo editoriale presente');
+assert.ok(html.includes('border-bottom: 3px solid transparent'), 'Tab tipografiche');
+assert.ok(html.includes('.sport-section-divider::after'), 'Etichette sport coese');
+assert.ok(html.includes('.date-strip {') && html.includes('background: transparent !important'),
+    'Settimana non vetrata');
 
 // Header compatto, senza logo e mese sopra l'agenda.
 assert.ok(!html.includes('class="app-brand"') && !html.includes('class="brand-title"'));
@@ -240,6 +248,33 @@ assert.ok(element('dataStatus').textContent.includes('1 fonte da verificare'));
     assert.equal(run('formatDate(currentDate)'), '2099-10-15', 'Swipe verso sinistra: settimana successiva');
     weekNav.listeners.keydown({key:'ArrowLeft',preventDefault(){}});
     assert.equal(run('formatDate(currentDate)'), '2099-10-08', 'Freccia da tastiera: settimana precedente');
+    // Quando Web Animations è disponibile, entrambe le settimane si spostano
+    // in orizzontale; nei browser ridotti o vecchi resta il cambio immediato.
+    const animatedStrip = element('dateStrip');
+    let animationCalls = 0;
+    animatedStrip.offsetTop = 13;
+    animatedStrip.offsetLeft = 14;
+    animatedStrip.getBoundingClientRect = () => ({width: 290});
+    animatedStrip.cloneNode = () => ({
+        style: {}, setAttribute() {}, removeAttribute() {},
+        querySelectorAll: () => [], remove() { this.removed = true; },
+        animate() { return {finished: Promise.resolve()}; }
+    });
+    animatedStrip.animate = frames => {
+        animationCalls++;
+        assert.ok(frames[0].transform.includes('translateX(100%)'));
+        return {finished: Promise.resolve()};
+    };
+    run('animateWeekShift(1)');
+    assert.equal(run('formatDate(currentDate)'), '2099-10-15');
+    assert.equal(animationCalls, 1, 'L' + "'animazione deve essere reale'");
+    await Promise.resolve();
+    assert.equal(run('weekShiftInProgress'), false, 'Animazione pulita dopo la fine');
+    sandbox.window.matchMedia = () => ({matches: true});
+    run('animateWeekShift(-1)');
+    assert.equal(run('formatDate(currentDate)'), '2099-10-08', 'Accessibilità: movimento ridotto');
+    assert.equal(animationCalls, 1, 'Nessuna animazione con reduce motion');
+    delete sandbox.window.matchMedia;
     run('allEvents = [fixture]');
     run('activeSheetEvent = null');
     await run('refreshData()');
