@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # Ogni ora, evitando l'inizio dell'ora.
-    - cron: '17 * * * *'
+    # Due tentativi per ora: GitHub Actions puo' ritardare o saltare gli avvii pianificati.
+    - cron: '17,47 * * * *'
   workflow_dispatch:
 
 concurrency:
