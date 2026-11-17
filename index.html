@@ -1333,6 +1333,17 @@
             .nav-controls-box { display:block; padding: 10px 28px 12px; }
             .view-switcher-grid { margin-left:auto; }
         }
+        /* Data e sport sulla stessa riga; niente contatori ridondanti. */
+        .day-header { align-items: center; margin-top: 23px; margin-bottom: 8px; }
+        .day-inline-sport { font-size: 10px; font-weight: 700; letter-spacing: .25px;
+            text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
+        .sport-section-divider { justify-content: flex-start; margin: 12px 0 6px; }
+        .sport-divider-pill { display: inline-flex; padding: 0 4px;
+            background: transparent !important; color: var(--text-muted);
+            border: 0 !important; border-radius: 0; box-shadow: none;
+            font-size: 10px; font-weight: 700; letter-spacing: .35px;
+            transform: none; }
+        .date-strip-wrapper { touch-action: pan-y; }
     </style>
 </head>
 <body>
@@ -1369,7 +1380,7 @@
 
     <!-- 4. DATE STRIP SETTIMANALE -->
     <div class="date-strip-wrapper" id="dateStripWrapper">
-        <div class="date-strip" id="dateStrip"></div>
+        <div class="date-strip" id="dateStrip" aria-label="Giorni della settimana; scorri lateralmente per cambiare settimana"></div>
     </div>
 
     <!-- 5. CONTENUTO PRINCIPALE -->
@@ -1510,6 +1521,9 @@
             if (persist) {
                 try { window.localStorage?.setItem(THEME_STORAGE_KEY, theme); }
                 catch (error) { /* Anche senza storage il cambio tema resta disponibile. */ }
+                // Il gradiente e l'evidenza della squadra dipendono dal tema scelto.
+                renderHeroBanner();
+                if (currentView === 'agenda') renderAgendaFeed();
             }
             return true;
         }
@@ -1801,6 +1815,7 @@
         }
 
         function initData() {
+            installWeekNavigation();
             switchView(currentView);
             refreshData();
             if (window.navigator?.serviceWorker) window.navigator.serviceWorker.register('sw.js').catch(() => {});
@@ -1946,6 +1961,32 @@
             if (el) el.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
         }
 
+        // La barra dei sette giorni si sfoglia lateralmente: le frecce grandi
+        // del mese non servono più. ArrowLeft/Right resta disponibile da tastiera.
+        function installWeekNavigation() {
+            const wrapper = document.getElementById('dateStripWrapper');
+            if (!wrapper || wrapper.dataset?.weekNavigationReady) return;
+            if (wrapper.dataset) wrapper.dataset.weekNavigationReady = 'true';
+            let touch = null;
+            wrapper.addEventListener('touchstart', e => {
+                if (e.touches?.length !== 1) return;
+                touch = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }, { passive: true });
+            wrapper.addEventListener('touchend', e => {
+                if (!touch || !e.changedTouches?.length) return;
+                const dx = e.changedTouches[0].clientX - touch.x;
+                const dy = e.changedTouches[0].clientY - touch.y;
+                touch = null;
+                if (Math.abs(dx) >= 40 && Math.abs(dx) > Math.abs(dy) * 1.25)
+                    navigateTime(dx < 0 ? 1 : -1);
+            }, { passive: true });
+            wrapper.addEventListener('keydown', e => {
+                if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+                e.preventDefault();
+                navigateTime(e.key === 'ArrowRight' ? 1 : -1);
+            });
+        }
+
         function renderDateStrip() {
             const strip = document.getElementById('dateStrip');
             if (!strip) return;
@@ -2032,6 +2073,11 @@
                 const fullDayStr = dObj.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
                 const evs = groups[dKey];
 
+                const sportKinds = [...new Set(evs.map(e => e.sport || 'altro'))];
+                const onlySport = sportKinds.length === 1
+                    ? (SPORT_BADGE_THEMES[sportKinds[0]]?.name || SPORT_NAMES[sportKinds[0]] || sportKinds[0]).toUpperCase()
+                    : '';
+
                 // LA PARTITA IN PRIMO PIANO NELL'HERO BANNER NON DEVE MAI ESSERE DUPLICATA GIGANTE SOTTO:
                 // SOTTO RIMANE MA VIENE MOSTRATA COME PARTITA NORMALE NEL BOX PICCOLO 2x2!
                 const topMatches = evs.filter(e => isTop(e) && !isHeroMatch(e));
@@ -2042,7 +2088,7 @@
                         <!-- Intestazione giorno pulita, fluttuante, senza riquadro -->
                         <div class="day-header ${isTod ? 'today' : ''}">
                             <span class="day-weekday-name">${fullDayStr}${isTod ? ' • Oggi' : ''}</span>
-                            <span class="day-count-badge">${evs.length} ${evs.length === 1 ? 'evento' : 'eventi'}</span>
+                            ${onlySport ? `<span class="day-inline-sport">${escapeHtml(onlySport)}</span>` : ''}
                         </div>
                 `;
 
@@ -2114,15 +2160,14 @@
                             border: 'rgba(255, 255, 255, 0.25)'
                         };
 
-                        // Piccola scritta centrata pulita, senza emoji
-                        html += `
+                        // Una sola competizione: già accanto alla data, senza
+                        // ripetizioni. Più sport: intestazione piccola allineata alle card.
+                        if (!onlySport) html += `
                             <div class="sport-section-divider">
-                                <div class="sport-divider-pill" style="color: ${badgeTheme.color}; border-color: ${badgeTheme.border};">
-                                    ${badgeTheme.name}
-                                </div>
+                                <span class="sport-divider-pill">${escapeHtml(badgeTheme.name)}</span>
                             </div>
-                            <div class="regular-matches-grid">
                         `;
+                        html += `<div class="regular-matches-grid">`;
 
                         spEvents.forEach(e => {
 
