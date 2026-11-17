@@ -1,6 +1,6 @@
 // Online usa la rete; senza connessione mostra l'ultima copia salvata.
 const PREFIX = `sport-os:${new URL(self.registration.scope).pathname}:`;
-const CACHE = PREFIX + 'v7';
+const CACHE = PREFIX + 'v8';
 const assetUrl = path => new URL(path, self.registration.scope).href;
 const HOME = assetUrl('index.html');
 const DATA = assetUrl('dati.js');
