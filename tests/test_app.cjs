@@ -45,18 +45,18 @@ assert.equal(run("setTheme('sabbia')"), true);
 assert.equal(run('currentTheme'), 'sabbia');
 assert.equal(storage.get('sport-os-theme'), 'sabbia');
 assert.equal(document.documentElement.getAttribute('data-theme'), 'sabbia');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#9e907f');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#a89984');
 assert.equal(themeChoices[0].getAttribute('aria-pressed'), 'true');
 assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'false');
 assert.equal(run("setTheme('non-esiste')"), false);
 assert.equal(run('currentTheme'), 'sabbia');
 run("setTheme('scura')");
 assert.equal(storage.get('sport-os-theme'), 'scura');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#171718');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#141518');
 assert.equal(themeChoices[2].getAttribute('aria-pressed'), 'true');
 run("setTheme('ink')");
 assert.equal(storage.get('sport-os-theme'), 'ink');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#242426');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#222327');
 assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'true');
 
 // Verifica numericamente il contrasto WCAG AA del testo in tutte le palette.
@@ -104,28 +104,41 @@ for (const theme of ['sabbia', 'ink', 'scura']) {
     assert.ok(contrast(bg, card) <= 2.5, theme + ' card normali troppo staccate dal fondo');
 }
 
-// Le card hanno un gradiente breve e trasparente SOLO sulla metà della squadra.
-// Cambiando tema cambiano pigmento e intensità; niente bordo societario pesante.
+// Una gerarchia editoriale: il Torino e le sue partite si riconoscono subito.
 const napoliTorino = { sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino' };
+const accentByTheme = {
+    sabbia: '#8b314c',
+    ink: '#f48daa',
+    scura: '#f48daa'
+};
 const tintByTheme = {};
 for (const theme of ['ink', 'scura', 'sabbia']) {
     run("setTheme('" + theme + "')");
-    const accent = run('getTopMatchTheme(' + JSON.stringify(napoliTorino) + ')');
-    assert.equal(accent.color, '#d45170');
-    assert.equal(accent.isAway, true);
-    assert.ok(accent.bg.includes('linear-gradient(270deg'), 'Sfumatura sulla metà destra: ' + theme);
-    assert.ok(accent.bg.includes('53%), var(--featured-bg)'), 'La sfumatura si fonde con la card: ' + theme);
-    assert.equal(accent.border, '1px solid var(--border)');
-    assert.ok(accent.bg.includes('rgba('), 'Colore semitrasparente: ' + theme);
-    if (theme === 'sabbia') assert.equal(accent.highlight, '#ffd9df', 'Il nome Toro deve restare leggibile in Sabbia');
-    tintByTheme[theme] = accent.bg;
+    const match = run('getTopMatchTheme(' + JSON.stringify(napoliTorino) + ')');
+    assert.equal(match.color, accentByTheme[theme], 'Accento adattivo: ' + theme);
+    assert.equal(match.highlight, theme === 'sabbia' ? '#8b314c' : '#ffc2ce');
+    assert.equal(match.isAway, true);
+    assert.ok(match.bg.includes('linear-gradient(270deg'), 'Sfumatura dalla squadra in trasferta: ' + theme);
+    assert.ok(match.bg.includes('56%), var(--featured-bg)'), 'La tinta si fonde con la superficie: ' + theme);
+    assert.equal(match.border, '1px solid var(--border)');
+    assert.ok(match.bg.includes('rgba('), 'La tinta è trasparente: ' + theme);
+    tintByTheme[theme] = match.bg;
+    assert.ok(contrast(themeColor(theme, 'featured-bg'), match.color) >= 4.5,
+        'Segnale cromatico leggibile sulla card: ' + theme);
 }
-assert.notEqual(tintByTheme.sabbia, tintByTheme.ink, 'La sfumatura chiara deve essere diversa dalla scura');
-assert.notEqual(tintByTheme.ink, tintByTheme.scura, 'Intensità in base al tema');
+assert.notEqual(tintByTheme.sabbia, tintByTheme.ink);
+assert.notEqual(tintByTheme.ink, tintByTheme.scura);
 run("setTheme('ink')");
-assert.ok(run("getTopMatchTheme({sport:'nfl', title:'Broncos - Raiders', home:'Broncos',away:'Raiders'}).bg").includes('linear-gradient(90deg'), 'Sfumatura dalla squadra in casa');
+assert.ok(run("getTopMatchTheme({sport:'nfl', title:'Broncos - Raiders', home:'Broncos',away:'Raiders'}).bg").includes('linear-gradient(90deg'));
 assert.equal(run("isFeaturedTeam('Torino', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), true);
 assert.equal(run("isFeaturedTeam('Napoli', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), false);
+assert.ok(html.includes('class="hero-kicker"'), 'Indicazione DA SEGUIRE sopra il match');
+assert.ok(html.includes('DA SEGUIRE') && html.includes('Apri partita'), 'La card principale guida la lettura');
+assert.ok(html.includes('Barlow+Semi+Condensed'), 'Tipografia editoriale per titoli e date');
+assert.ok(html.includes('SPORT OS / EDITORIAL SCORECARD v2'), 'Il sistema visivo editoriale deve essere presente');
+assert.ok(html.includes('border-bottom: 3px solid transparent'), 'Le tab non devono essere pillole vetrate');
+assert.ok(html.includes('.sport-section-divider::after'), 'La competizione si allinea a una regola sottile');
+assert.ok(html.includes('.date-strip {') && html.includes('background: transparent !important'), 'Settimana senza contenitore vetro');
 
 // Header compatto, senza logo e mese sopra l'agenda.
 assert.ok(!html.includes('class="app-brand"') && !html.includes('class="brand-title"'));
@@ -238,5 +251,5 @@ assert.ok(element('dataStatus').textContent.includes('1 fonte da verificare'));
     assert.equal(run('allEvents.length'), 1, 'Un errore di rete deve conservare i dati già caricati');
     assert.ok(element('dataStatus').textContent.includes('Ricaricamento fallito'));
     assert.equal(element('btnRefresh').disabled, false);
-    console.log('OK: orari, chiavi dettagli, HTML, classifiche, calendario, navigazione e ricaricamento.');
+    console.log('OK: gerarchia editoriale, contrasti, team highlight, orari, classifiche, calendari e rete.');
 })().catch(error => { console.error(error); process.exitCode = 1; });
