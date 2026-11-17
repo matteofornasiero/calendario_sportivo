@@ -9,7 +9,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Australia",
     "venue": "Albert Park Grand Prix Circuit, Melbourne, Australia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -22,7 +22,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Australia",
     "venue": "Albert Park Grand Prix Circuit, Melbourne, Australia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -35,7 +35,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Australia",
     "venue": "Albert Park Grand Prix Circuit, Melbourne, Australia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -48,7 +48,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Australia",
     "venue": "Albert Park Grand Prix Circuit, Melbourne, Australia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -61,7 +61,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Australia",
     "venue": "Albert Park Grand Prix Circuit, Melbourne, Australia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -74,7 +74,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "China",
     "venue": "Shanghai International Circuit, Shanghai, China",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -87,7 +87,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "China",
     "venue": "Shanghai International Circuit, Shanghai, China",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -100,7 +100,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "China",
     "venue": "Shanghai International Circuit, Shanghai, China",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -113,7 +113,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "China",
     "venue": "Shanghai International Circuit, Shanghai, China",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -126,7 +126,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "China",
     "venue": "Shanghai International Circuit, Shanghai, China",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -139,7 +139,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Japan",
     "venue": "Suzuka Circuit, Suzuka, Japan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -152,7 +152,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Japan",
     "venue": "Suzuka Circuit, Suzuka, Japan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -165,7 +165,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Japan",
     "venue": "Suzuka Circuit, Suzuka, Japan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -178,7 +178,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Japan",
     "venue": "Suzuka Circuit, Suzuka, Japan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -191,7 +191,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Japan",
     "venue": "Suzuka Circuit, Suzuka, Japan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -204,7 +204,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Miami International Autodrome, Miami, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -217,7 +217,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Miami International Autodrome, Miami, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -230,7 +230,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Miami International Autodrome, Miami, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -243,7 +243,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Miami International Autodrome, Miami, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -256,7 +256,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Miami International Autodrome, Miami, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -269,7 +269,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Canada",
     "venue": "Circuit Gilles Villeneuve, Montreal, Canada",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -282,7 +282,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Canada",
     "venue": "Circuit Gilles Villeneuve, Montreal, Canada",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -295,7 +295,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Canada",
     "venue": "Circuit Gilles Villeneuve, Montreal, Canada",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -308,7 +308,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Canada",
     "venue": "Circuit Gilles Villeneuve, Montreal, Canada",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -321,7 +321,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Canada",
     "venue": "Circuit Gilles Villeneuve, Montreal, Canada",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -334,7 +334,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Monaco",
     "venue": "Circuit de Monaco, Monte Carlo, Monaco",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -347,7 +347,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Monaco",
     "venue": "Circuit de Monaco, Monte Carlo, Monaco",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -360,7 +360,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Monaco",
     "venue": "Circuit de Monaco, Monte Carlo, Monaco",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -373,7 +373,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Monaco",
     "venue": "Circuit de Monaco, Monte Carlo, Monaco",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -386,7 +386,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Monaco",
     "venue": "Circuit de Monaco, Monte Carlo, Monaco",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -399,7 +399,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Circuit de Barcelona-Catalunya, Barcelona, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -412,7 +412,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Circuit de Barcelona-Catalunya, Barcelona, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -425,7 +425,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Circuit de Barcelona-Catalunya, Barcelona, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -438,7 +438,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Circuit de Barcelona-Catalunya, Barcelona, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -451,7 +451,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Circuit de Barcelona-Catalunya, Barcelona, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -464,7 +464,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Austria",
     "venue": "Red Bull Ring, Spielberg, Austria",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -477,7 +477,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Austria",
     "venue": "Red Bull Ring, Spielberg, Austria",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -490,7 +490,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Austria",
     "venue": "Red Bull Ring, Spielberg, Austria",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -503,7 +503,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Austria",
     "venue": "Red Bull Ring, Spielberg, Austria",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -516,7 +516,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Austria",
     "venue": "Red Bull Ring, Spielberg, Austria",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -529,7 +529,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "UK",
     "venue": "Silverstone Circuit, Silverstone, UK",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -542,7 +542,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "UK",
     "venue": "Silverstone Circuit, Silverstone, UK",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -555,7 +555,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "UK",
     "venue": "Silverstone Circuit, Silverstone, UK",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -568,7 +568,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "UK",
     "venue": "Silverstone Circuit, Silverstone, UK",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -581,7 +581,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "UK",
     "venue": "Silverstone Circuit, Silverstone, UK",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -594,7 +594,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Belgium",
     "venue": "Circuit de Spa-Francorchamps, Spa, Belgium",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -607,7 +607,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Belgium",
     "venue": "Circuit de Spa-Francorchamps, Spa, Belgium",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -620,7 +620,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Belgium",
     "venue": "Circuit de Spa-Francorchamps, Spa, Belgium",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -633,7 +633,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Belgium",
     "venue": "Circuit de Spa-Francorchamps, Spa, Belgium",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -646,7 +646,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Belgium",
     "venue": "Circuit de Spa-Francorchamps, Spa, Belgium",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -659,7 +659,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Hungary",
     "venue": "Hungaroring, Budapest, Hungary",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -672,7 +672,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Hungary",
     "venue": "Hungaroring, Budapest, Hungary",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -685,7 +685,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Hungary",
     "venue": "Hungaroring, Budapest, Hungary",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -698,7 +698,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Hungary",
     "venue": "Hungaroring, Budapest, Hungary",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -711,7 +711,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Hungary",
     "venue": "Hungaroring, Budapest, Hungary",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -1104,7 +1104,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Netherlands",
     "venue": "Circuit Park Zandvoort, Zandvoort, Netherlands",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -1117,7 +1117,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Netherlands",
     "venue": "Circuit Park Zandvoort, Zandvoort, Netherlands",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -1130,7 +1130,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Netherlands",
     "venue": "Circuit Park Zandvoort, Zandvoort, Netherlands",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -1143,7 +1143,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Netherlands",
     "venue": "Circuit Park Zandvoort, Zandvoort, Netherlands",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -1236,7 +1236,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Netherlands",
     "venue": "Circuit Park Zandvoort, Zandvoort, Netherlands",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -1683,7 +1683,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Italy",
     "venue": "Autodromo Nazionale di Monza, Monza, Italy",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -1696,7 +1696,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Italy",
     "venue": "Autodromo Nazionale di Monza, Monza, Italy",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -1729,7 +1729,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Italy",
     "venue": "Autodromo Nazionale di Monza, Monza, Italy",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -1762,7 +1762,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Italy",
     "venue": "Autodromo Nazionale di Monza, Monza, Italy",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -1835,7 +1835,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Italy",
     "venue": "Autodromo Nazionale di Monza, Monza, Italy",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -2346,7 +2346,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Madring, Madrid, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -2359,7 +2359,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Madring, Madrid, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -2392,7 +2392,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Madring, Madrid, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -2425,7 +2425,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Madring, Madrid, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -2478,7 +2478,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Spain",
     "venue": "Madring, Madrid, Spain",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -3419,7 +3419,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Azerbaijan",
     "venue": "Baku City Circuit, Baku, Azerbaijan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -3432,7 +3432,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Azerbaijan",
     "venue": "Baku City Circuit, Baku, Azerbaijan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -3464,7 +3464,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Azerbaijan",
     "venue": "Baku City Circuit, Baku, Azerbaijan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -3477,8 +3477,45 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Azerbaijan",
     "venue": "Baku City Circuit, Baku, Azerbaijan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
+  },
+  {
+    "date": "2026-09-25",
+    "time": "20:45",
+    "timeConfirmed": true,
+    "startUtc": "2026-09-25T18:45:00+00:00",
+    "id": "espn-nazionale-401861052",
+    "title": "Italy - Belgium",
+    "sport": "nazionale",
+    "loc": "Nations League",
+    "home": "Italy",
+    "away": "Belgium",
+    "homeCrest": "",
+    "awayCrest": "",
+    "venue": "Olimpico, Roma",
+    "homeScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861052/competitions/401861052/competitors/162/scores/38?lang=en\u0026region=us",
+      "value": 0.0,
+      "displayValue": "0",
+      "winner": false,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "awayScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861052/competitions/401861052/competitors/459/scores/38?lang=en\u0026region=us",
+      "value": 2.0,
+      "displayValue": "2",
+      "winner": true,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "status": "FINISHED",
+    "isTop": true
   },
   {
     "date": "2026-09-26",
@@ -3490,7 +3527,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Azerbaijan",
     "venue": "Baku City Circuit, Baku, Azerbaijan",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -3760,6 +3797,43 @@ window.calendarData = [
     "isTop": true
   },
   {
+    "date": "2026-09-28",
+    "time": "20:45",
+    "timeConfirmed": true,
+    "startUtc": "2026-09-28T18:45:00+00:00",
+    "id": "espn-nazionale-401861077",
+    "title": "Türkiye - Italy",
+    "sport": "nazionale",
+    "loc": "Nations League",
+    "home": "Türkiye",
+    "away": "Italy",
+    "homeCrest": "",
+    "awayCrest": "",
+    "venue": "Yüzüncü Yil Atatürk Stadyumu, Bursa",
+    "homeScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861077/competitions/401861077/competitors/465/scores/38?lang=en\u0026region=us",
+      "value": 1.0,
+      "displayValue": "1",
+      "winner": false,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "awayScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861077/competitions/401861077/competitors/162/scores/38?lang=en\u0026region=us",
+      "value": 4.0,
+      "displayValue": "4",
+      "winner": true,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "status": "FINISHED",
+    "isTop": true
+  },
+  {
     "date": "2026-09-29",
     "time": "02:15",
     "timeConfirmed": true,
@@ -3807,7 +3881,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Malaysia",
     "venue": "Sepang International Circuit, Kuala Lumpur, Malaysia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -3820,8 +3894,45 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Malaysia",
     "venue": "Sepang International Circuit, Kuala Lumpur, Malaysia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
+  },
+  {
+    "date": "2026-10-02",
+    "time": "20:45",
+    "timeConfirmed": true,
+    "startUtc": "2026-10-02T18:45:00+00:00",
+    "id": "espn-nazionale-401861103",
+    "title": "France - Italy",
+    "sport": "nazionale",
+    "loc": "Nations League",
+    "home": "France",
+    "away": "Italy",
+    "homeCrest": "",
+    "awayCrest": "",
+    "venue": "Stade de France, Saint-Denis",
+    "homeScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861103/competitions/401861103/competitors/478/scores/38?lang=en\u0026region=us",
+      "value": 1.0,
+      "displayValue": "1",
+      "winner": false,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "awayScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861103/competitions/401861103/competitors/162/scores/38?lang=en\u0026region=us",
+      "value": 1.0,
+      "displayValue": "1",
+      "winner": false,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "status": "FINISHED",
+    "isTop": true
   },
   {
     "date": "2026-10-03",
@@ -3833,7 +3944,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Malaysia",
     "venue": "Sepang International Circuit, Kuala Lumpur, Malaysia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -3846,7 +3957,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Malaysia",
     "venue": "Sepang International Circuit, Kuala Lumpur, Malaysia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -3859,7 +3970,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Malaysia",
     "venue": "Sepang International Circuit, Kuala Lumpur, Malaysia",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -4129,6 +4240,43 @@ window.calendarData = [
     "isTop": false
   },
   {
+    "date": "2026-10-05",
+    "time": "20:45",
+    "timeConfirmed": true,
+    "startUtc": "2026-10-05T18:45:00+00:00",
+    "id": "espn-nazionale-401861131",
+    "title": "Italy - Türkiye",
+    "sport": "nazionale",
+    "loc": "Nations League",
+    "home": "Italy",
+    "away": "Türkiye",
+    "homeCrest": "",
+    "awayCrest": "",
+    "venue": "Renato Dall'Ara, Bologna",
+    "homeScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861131/competitions/401861131/competitors/162/scores/38?lang=en\u0026region=us",
+      "value": 3.0,
+      "displayValue": "3",
+      "winner": true,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "awayScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861131/competitions/401861131/competitors/465/scores/38?lang=en\u0026region=us",
+      "value": 1.0,
+      "displayValue": "1",
+      "winner": false,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "status": "FINISHED",
+    "isTop": true
+  },
+  {
     "date": "2026-10-06",
     "time": "02:15",
     "timeConfirmed": true,
@@ -4176,7 +4324,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Singapore",
     "venue": "Marina Bay Street Circuit, Marina Bay, Singapore",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -4189,7 +4337,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Singapore",
     "venue": "Marina Bay Street Circuit, Marina Bay, Singapore",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -4202,7 +4350,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Singapore",
     "venue": "Marina Bay Street Circuit, Marina Bay, Singapore",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -4235,7 +4383,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Singapore",
     "venue": "Marina Bay Street Circuit, Marina Bay, Singapore",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -4308,7 +4456,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Singapore",
     "venue": "Marina Bay Street Circuit, Marina Bay, Singapore",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -5912,7 +6060,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Circuit of the Americas, Austin, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -5945,7 +6093,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Circuit of the Americas, Austin, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -6018,7 +6166,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Circuit of the Americas, Austin, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -6051,7 +6199,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Circuit of the Americas, Austin, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -6316,7 +6464,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Circuit of the Americas, Austin, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -6643,7 +6791,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Mexico",
     "venue": "Autódromo Hermanos Rodríguez, Mexico City, Mexico",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -6656,7 +6804,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Mexico",
     "venue": "Autódromo Hermanos Rodríguez, Mexico City, Mexico",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -6709,7 +6857,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Mexico",
     "venue": "Autódromo Hermanos Rodríguez, Mexico City, Mexico",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -6742,7 +6890,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Mexico",
     "venue": "Autódromo Hermanos Rodríguez, Mexico City, Mexico",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -7007,7 +7155,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Mexico",
     "venue": "Autódromo Hermanos Rodríguez, Mexico City, Mexico",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -7534,7 +7682,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Brazil",
     "venue": "Autódromo José Carlos Pace, São Paulo, Brazil",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -7547,7 +7695,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Brazil",
     "venue": "Autódromo José Carlos Pace, São Paulo, Brazil",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -7620,7 +7768,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Brazil",
     "venue": "Autódromo José Carlos Pace, São Paulo, Brazil",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -7653,7 +7801,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Brazil",
     "venue": "Autódromo José Carlos Pace, São Paulo, Brazil",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -7765,7 +7913,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Brazil",
     "venue": "Autódromo José Carlos Pace, São Paulo, Brazil",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -8060,16 +8208,36 @@ window.calendarData = [
     "time": "20:45",
     "timeConfirmed": true,
     "startUtc": "2026-11-12T19:45:00+00:00",
-    "id": "italy-2442824",
-    "title": "Italia - France",
+    "id": "espn-nazionale-401861151",
+    "title": "Italy - France",
     "sport": "nazionale",
-    "loc": "UEFA Nations League",
-    "home": "Italia",
+    "loc": "Nations League",
+    "home": "Italy",
     "away": "France",
-    "homeCrest": "https://r2.thesportsdb.com/images/media/team/badge/fxijcp1726167035.png",
-    "awayCrest": "https://r2.thesportsdb.com/images/media/team/badge/ejx5za1788198941.png",
-    "venue": "Stadio Olimpico",
-    "status": "SCHEDULED",
+    "homeCrest": "",
+    "awayCrest": "",
+    "venue": "San Siro, Milano",
+    "homeScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861151/competitions/401861151/competitors/162/scores/38?lang=en\u0026region=us",
+      "value": 3.0,
+      "displayValue": "3",
+      "winner": true,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "awayScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861151/competitions/401861151/competitors/478/scores/38?lang=en\u0026region=us",
+      "value": 1.0,
+      "displayValue": "1",
+      "winner": false,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "status": "FINISHED",
     "isTop": true
   },
   {
@@ -8245,6 +8413,43 @@ window.calendarData = [
   },
   {
     "date": "2026-11-15",
+    "time": "20:45",
+    "timeConfirmed": true,
+    "startUtc": "2026-11-15T19:45:00+00:00",
+    "id": "espn-nazionale-401861176",
+    "title": "Belgium - Italy",
+    "sport": "nazionale",
+    "loc": "Nations League",
+    "home": "Belgium",
+    "away": "Italy",
+    "homeCrest": "",
+    "awayCrest": "",
+    "venue": "King Baudouin Stadium, Brussels",
+    "homeScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861176/competitions/401861176/competitors/459/scores/38?lang=en\u0026region=us",
+      "value": 4.0,
+      "displayValue": "4",
+      "winner": true,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "awayScore": {
+      "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/uefa.nations/events/401861176/competitions/401861176/competitors/162/scores/38?lang=en\u0026region=us",
+      "value": 1.0,
+      "displayValue": "1",
+      "winner": false,
+      "source": {
+        "id": "38",
+        "description": "SA.ENVOY"
+      }
+    },
+    "status": "FINISHED",
+    "isTop": true
+  },
+  {
+    "date": "2026-11-15",
     "time": "22:05",
     "timeConfirmed": true,
     "startUtc": "2026-11-15T21:05:00+00:00",
@@ -8335,7 +8540,7 @@ window.calendarData = [
     "venue": "M\u0026T Bank Stadium, Baltimore",
     "homeScore": null,
     "awayScore": null,
-    "status": "SCHEDULED",
+    "status": "IN_PLAY",
     "isTop": false
   },
   {
@@ -20209,59 +20414,58 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-16T22:05:33.942063+00:00",
+  "generatedAt": "2026-11-17T01:59:39.169462+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "nazionale": {
-      "status": "error",
-      "updatedAt": "2026-10-16T17:26:06.795974+00:00",
-      "error": "HTTP 403 dalla fonte dati"
+      "status": "ok",
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-16T22:05:33.942063+00:00"
+      "updatedAt": "2026-11-17T01:59:39.169462+00:00"
     }
   },
-  "partial": true
+  "partial": false
 };
