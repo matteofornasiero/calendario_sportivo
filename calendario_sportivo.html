@@ -2289,7 +2289,89 @@
             if (document.body) document.body.style.overflow = 'hidden';
         }
 
+        let subscriptionCatalog = null;
+        let subscriptionLoading = false;
+
+        async function loadSubscriptionsCatalog() {
+            if (subscriptionCatalog || subscriptionLoading) return;
+            subscriptionLoading = true;
+            const feedback = document.getElementById('subscriptionFeedback');
+            if (feedback) feedback.textContent = 'Caricamento calendari…';
+            try {
+                const response = await fetch('calendari/catalogo.json?v=' + Date.now(), { cache: 'no-store' });
+                if (!response.ok) throw new Error('catalogo non disponibile');
+                const catalog = await response.json();
+                const validEntry = row => row && typeof row.name === 'string'
+                    && typeof row.path === 'string'
+                    && /^calendari\/(squadra|competizione)\/[a-z0-9-]+\.ics$/.test(row.path);
+                if (catalog.schemaVersion !== 1 || !Array.isArray(catalog.teams)
+                    || !Array.isArray(catalog.competitions)) throw new Error('formato catalogo errato');
+                subscriptionCatalog = {
+                    teams: catalog.teams.filter(row => validEntry(row) && row.path.startsWith('calendari/squadra/')),
+                    competitions: catalog.competitions.filter(row => validEntry(row) && row.path.startsWith('calendari/competizione/'))
+                };
+                renderSubscriptionOptions();
+            } catch (error) {
+                if (feedback) feedback.textContent = 'Abbonamenti momentaneamente non disponibili. Riprova online.';
+                const choice = document.getElementById('subscriptionChoice');
+                if (choice) { choice.disabled = true; choice.innerHTML = '<option value="">Nessun calendario disponibile</option>'; }
+            } finally {
+                subscriptionLoading = false;
+            }
+        }
+
+        function renderSubscriptionOptions() {
+            const kind = document.getElementById('subscriptionKind')?.value;
+            const select = document.getElementById('subscriptionChoice');
+            if (!select || !subscriptionCatalog) return;
+            const choices = subscriptionCatalog[kind] || [];
+            select.innerHTML = choices.length ? choices.map((row, index) =>
+                `<option value="${index}">${escapeHtml(row.name)}</option>`
+            ).join('') : '<option value="">Nessun calendario disponibile</option>';
+            select.disabled = choices.length === 0;
+            select.value = choices.length ? '0' : '';
+            updateSubscriptionLink();
+        }
+
+        function updateSubscriptionLink() {
+            const kind = document.getElementById('subscriptionKind')?.value;
+            const index = document.getElementById('subscriptionChoice')?.value;
+            const selected = subscriptionCatalog?.[kind]?.[Number(index)];
+            const urlField = document.getElementById('subscriptionUrl');
+            const copyButton = document.getElementById('subscriptionCopy');
+            const subscribeButton = document.getElementById('subscriptionOpen');
+            const feedback = document.getElementById('subscriptionFeedback');
+            if (!urlField || !copyButton || !subscribeButton) return;
+            const valid = !!selected && index !== '';
+            const url = valid ? new URL(selected.path, window.location.href).href : '';
+            urlField.value = url;
+            urlField.style.display = 'none';
+            copyButton.disabled = !valid;
+            subscribeButton.href = valid ? url.replace(/^https:/, 'webcal:') : '#';
+            subscribeButton.style.pointerEvents = valid ? 'auto' : 'none';
+            subscribeButton.style.opacity = valid ? '1' : '0.45';
+            subscribeButton.setAttribute('aria-disabled', String(!valid));
+            if (feedback) feedback.textContent = valid ? '' : 'Nessun calendario disponibile.';
+        }
+
+        async function copySubscriptionLink() {
+            const field = document.getElementById('subscriptionUrl');
+            const feedback = document.getElementById('subscriptionFeedback');
+            if (!field?.value) return;
+            try {
+                if (!window.navigator?.clipboard?.writeText) throw new Error('Clipboard API non supportata');
+                await window.navigator.clipboard.writeText(field.value);
+                if (feedback) feedback.textContent = 'Link copiato. Aggiungilo da URL nel tuo calendario.';
+            } catch (error) {
+                field.style.display = 'block';
+                field.focus();
+                field.select?.();
+                if (feedback) feedback.textContent = 'Seleziona e copia il link qui sopra.';
+            }
+        }
+
         function openInfoSheet() {
+            loadSubscriptionsCatalog();
             document.getElementById('modalBackdrop').classList.add('open');
             document.getElementById('infoSheet').classList.add('open');
             document.getElementById('infoSheet').focus?.();
