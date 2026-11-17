@@ -247,7 +247,7 @@ def parse_nfl_standings(data):
 
 def fetch_italy():
     events = []
-    data = get_json("https://www.thesportsdb.com/api/v1/json/3/eventsnext.php?id=133910")
+    data = get_json("https://www.thesportsdb.com/api/v1/json/123/eventsnext.php?id=133910")
     for event in data["events"] or []:
         home = (event.get("strHomeTeam") or "").replace("Italy", "Italia")
         away = (event.get("strAwayTeam") or "").replace("Italy", "Italia")
@@ -256,6 +256,8 @@ def fetch_italy():
                        "loc": event.get("strLeague") or "Internazionale", "home": home, "away": away,
                        "homeCrest": event.get("strHomeTeamBadge") or "", "awayCrest": event.get("strAwayTeamBadge") or "",
                        "venue": event.get("strVenue") or "", "status": "SCHEDULED", "isTop": True})
+    if not events:
+        raise ValueError("Nessuna partita della Nazionale nella risposta della fonte")
     return events
 
 
