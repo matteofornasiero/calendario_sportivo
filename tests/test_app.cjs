@@ -117,6 +117,7 @@ for (const theme of ['ink', 'scura', 'sabbia']) {
     assert.ok(accent.bg.includes('53%), var(--featured-bg)'), 'La sfumatura si fonde con la card: ' + theme);
     assert.equal(accent.border, '1px solid var(--border)');
     assert.ok(accent.bg.includes('rgba('), 'Colore semitrasparente: ' + theme);
+    if (theme === 'sabbia') assert.equal(accent.highlight, '#ffd9df', 'Il nome Toro deve restare leggibile in Sabbia');
     tintByTheme[theme] = accent.bg;
 }
 assert.notEqual(tintByTheme.sabbia, tintByTheme.ink, 'La sfumatura chiara deve essere diversa dalla scura');
