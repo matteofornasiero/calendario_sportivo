@@ -70,6 +70,25 @@ class SeasonTransitionTests(unittest.TestCase):
         fetch.assert_called_once()
 
 
+class CalendarQualityTests(unittest.TestCase):
+    def test_short_core_feed_rejected(self):
+        with self.assertRaisesRegex(ValueError, "troppo corto"):
+            calendar.check_calendar_quality("seriea", [{"date": "2026-11-18"}], datetime(2026, 11, 17, tzinfo=timezone.utc))
+
+    def test_no_upcoming_matches_during_regular_season_rejected(self):
+        historical = [{"date": "2026-04-01"}] * 380
+        with self.assertRaisesRegex(ValueError, "prossimi 45 giorni"):
+            calendar.check_calendar_quality("seriea", historical, datetime(2026, 11, 17, tzinfo=timezone.utc))
+
+    def test_winter_f1_calendar_without_upcoming_races_is_valid(self):
+        historical = [{"date": "2026-11-01"}] * 115
+        calendar.check_calendar_quality("f1", historical, datetime(2026, 12, 17, tzinfo=timezone.utc))
+
+    def test_valid_core_feed_accepted(self):
+        events = [{"date": "2026-11-19"}] * 380
+        calendar.check_calendar_quality("seriea", events, datetime(2026, 11, 17, tzinfo=timezone.utc))
+
+
 class MonitorTests(unittest.TestCase):
     def setUp(self):
         self.now = datetime(2026, 11, 17, 10, tzinfo=timezone.utc)
