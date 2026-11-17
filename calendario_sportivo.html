@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Sport OS">
-    <meta name="theme-color" content="#a7a39e">
+    <meta name="theme-color" content="#242426">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
@@ -37,90 +37,90 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* Ink: neutro grigio medio, desaturato, senza dominante cromatica. */
+        /* INK — carbone neutro, UI a profondità controllata (default). */
         :root {
-            color-scheme: light;
-            --bg: #a7a39e;
-            --surface: rgba(27, 27, 26, 0.075);
-            --border: rgba(26, 26, 25, 0.22);
-            --border-highlight: rgba(26, 26, 25, 0.29);
-            --text-main: #272522;
-            --text-sub: #383530;
-            --text-muted: #393631;
-            --header-bg: rgba(181, 177, 170, 0.97);
-            --desktop-bg: #928e88;
-            --desktop-panel: #b9b4ad;
-            --compact-bg: #d1ccc5;
-            --modal-bg: rgba(205, 200, 193, 0.99);
-            --selected-bg: #35322f;
-            --selected-text: #f5f4f0;
-            --search-bg: rgba(239, 234, 227, 0.38);
-            --detail-card-bg: #d5d0c8;
-            --badge-bg: rgba(20, 20, 19, 0.085);
-            --today-accent: #45403b;
-            --warning-color: #684126;
-            --featured-bg: #e0dbd3;
-            --featured-text: #262320;
-            --featured-sub: #514a45;
-            --featured-shadow: 0 3px 12px rgba(35, 29, 25, 0.12);
+            color-scheme: dark;
+            --bg: #242426;
+            --surface: rgba(242, 237, 229, 0.055);
+            --border: rgba(232, 225, 216, 0.12);
+            --border-highlight: rgba(232, 225, 216, 0.20);
+            --text-main: #f2efeb;
+            --text-sub: #cdc7c0;
+            --text-muted: #afa8a0;
+            --header-bg: rgba(33, 33, 35, 0.97);
+            --desktop-bg: #181819;
+            --desktop-panel: #29292b;
+            --compact-bg: #353538;
+            --modal-bg: rgba(40, 40, 42, 0.99);
+            --selected-bg: #514c49;
+            --selected-text: #faf6f0;
+            --search-bg: rgba(242, 237, 229, 0.065);
+            --detail-card-bg: #353236;
+            --badge-bg: rgba(242, 237, 229, 0.085);
+            --today-accent: #e2c5a4;
+            --warning-color: #f0bf84;
+            --featured-bg: #343034;
+            --featured-text: #f7f1ed;
+            --featured-sub: #d4c6c1;
+            --featured-shadow: 0 4px 15px rgba(0, 0, 0, 0.17);
             --safe-top: env(safe-area-inset-top, 0px);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
 
-        /* Sabbia: beige medio, caldo e spento; testo nero-bruno. */
+        /* SABBIA — taupe medio caldo, senza superfici biancastre. */
         :root[data-theme="sabbia"] {
             color-scheme: light;
-            --bg: #baaa91;
-            --surface: rgba(58, 39, 23, 0.065);
-            --border: rgba(66, 45, 27, 0.25);
-            --border-highlight: rgba(66, 45, 27, 0.32);
-            --text-main: #211b16;
-            --text-sub: #43392f;
-            --text-muted: #493a2e;
-            --header-bg: rgba(202, 186, 160, 0.97);
-            --desktop-bg: #a9977d;
-            --desktop-panel: #c4b298;
-            --compact-bg: #d2c1a7;
-            --modal-bg: rgba(208, 192, 165, 0.99);
-            --selected-bg: #34291f;
-            --selected-text: #f7eddb;
-            --search-bg: rgba(255, 245, 225, 0.34);
-            --detail-card-bg: linear-gradient(130deg, #dbc9ad, #c5b395);
-            --badge-bg: rgba(54, 36, 22, 0.09);
-            --today-accent: #62451f;
-            --warning-color: #70421e;
-            --featured-bg: #e2d0b7;
-            --featured-text: #2a211b;
-            --featured-sub: #594a3c;
-            --featured-shadow: 0 3px 12px rgba(58, 38, 19, 0.13);
+            --bg: #9e907f;
+            --surface: rgba(51, 38, 29, 0.075);
+            --border: rgba(58, 43, 33, 0.22);
+            --border-highlight: rgba(58, 43, 33, 0.31);
+            --text-main: #261f1a;
+            --text-sub: #332920;
+            --text-muted: #30271f;
+            --header-bg: rgba(174, 161, 143, 0.97);
+            --desktop-bg: #897b6b;
+            --desktop-panel: #ae9d88;
+            --compact-bg: #c0b19d;
+            --modal-bg: rgba(187, 173, 153, 0.99);
+            --selected-bg: #3e332b;
+            --selected-text: #f7eee1;
+            --search-bg: rgba(238, 225, 205, 0.24);
+            --detail-card-bg: #c2b4a1;
+            --badge-bg: rgba(60, 42, 29, 0.10);
+            --today-accent: #5b3a2d;
+            --warning-color: #693818;
+            --featured-bg: #392d30;
+            --featured-text: #fbf1ed;
+            --featured-sub: #d9c9c4;
+            --featured-shadow: 0 4px 15px rgba(37, 25, 18, 0.19);
         }
 
-        /* Scura: antracite sobrio, quasi monocromatico e senza blu. */
+        /* SCURA — nero grafite morbido, mai blu puro. */
         :root[data-theme="scura"] {
             color-scheme: dark;
-            --bg: #212120;
-            --surface: rgba(239, 238, 233, 0.068);
-            --border: rgba(227, 226, 220, 0.19);
-            --border-highlight: rgba(227, 226, 220, 0.27);
-            --text-main: #f1f0ec;
-            --text-sub: #cac9c2;
-            --text-muted: #adaca6;
-            --header-bg: rgba(34, 34, 33, 0.97);
-            --desktop-bg: #161615;
-            --desktop-panel: #292928;
-            --compact-bg: #323230;
-            --modal-bg: rgba(43, 43, 41, 0.98);
-            --selected-bg: #e8e7e0;
-            --selected-text: #242423;
-            --search-bg: rgba(239, 238, 233, 0.078);
-            --detail-card-bg: linear-gradient(130deg, #40403d, #2b2b29);
-            --badge-bg: rgba(239, 238, 233, 0.10);
-            --today-accent: #d2c7a6;
-            --warning-color: #e8bd83;
-            --featured-bg: #3c3b38;
-            --featured-text: #f4f1eb;
-            --featured-sub: #d0c9bd;
-            --featured-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
+            --bg: #171718;
+            --surface: rgba(243, 240, 235, 0.058);
+            --border: rgba(234, 229, 222, 0.12);
+            --border-highlight: rgba(234, 229, 222, 0.20);
+            --text-main: #f4f1eb;
+            --text-sub: #ccc6bf;
+            --text-muted: #aaa49e;
+            --header-bg: rgba(23, 23, 24, 0.98);
+            --desktop-bg: #101011;
+            --desktop-panel: #1d1d1e;
+            --compact-bg: #29292b;
+            --modal-bg: rgba(31, 31, 33, 0.99);
+            --selected-bg: #424040;
+            --selected-text: #faf6f0;
+            --search-bg: rgba(243, 240, 235, 0.065);
+            --detail-card-bg: #303033;
+            --badge-bg: rgba(243, 240, 235, 0.09);
+            --today-accent: #d8baa0;
+            --warning-color: #f1c28a;
+            --featured-bg: #30292d;
+            --featured-text: #f8f1ed;
+            --featured-sub: #d4c4bf;
+            --featured-shadow: 0 5px 16px rgba(0, 0, 0, 0.22);
         }
 
         * {
@@ -1093,23 +1093,23 @@
             .app-container { background-color: var(--desktop-panel); border-color: var(--border); }
         }
 
-        /* Nei due temi medi il testo normale è scuro; le card evidenziate hanno sempre testo chiaro. */
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .compact-card [style*="color:#fff"],
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .standings-table-card [style*="color:#fff"],
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) #monthSelectedDayEvents [style*="color:#fff"],
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .modal-sheet [style*="color:#fff"],
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .day-header [style*="color:#fff"] {
+        /* Sabbia usa testo scuro soltanto sulle superfici normali. */
+        :root[data-theme="sabbia"] .compact-card [style*="color:#fff"],
+        :root[data-theme="sabbia"] .standings-table-card [style*="color:#fff"],
+        :root[data-theme="sabbia"] #monthSelectedDayEvents [style*="color:#fff"],
+        :root[data-theme="sabbia"] .modal-sheet [style*="color:#fff"],
+        :root[data-theme="sabbia"] .day-header [style*="color:#fff"] {
             color: var(--text-main) !important;
         }
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .standings-table th,
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .standings-table td,
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .compact-time,
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .sheet-team-name { color: var(--text-main); }
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .compact-time {
+        :root[data-theme="sabbia"] .standings-table th,
+        :root[data-theme="sabbia"] .standings-table td,
+        :root[data-theme="sabbia"] .compact-time,
+        :root[data-theme="sabbia"] .sheet-team-name { color: var(--text-main); }
+        :root[data-theme="sabbia"] .compact-time {
             background: rgba(52, 41, 31, 0.08);
             border-color: var(--border);
         }
-        :root:is([data-theme="sabbia"], [data-theme="ink"]) .featured-match-header { color: #f1e9df; }
+        :root[data-theme="sabbia"] .featured-match-header { color: #f1e9df; }
 
         /* Gerarchia tranquilla: fondo uniforme, niente gradienti né ombre scure a fondo card. */
         .hero-banner, .featured-match-card {
@@ -1197,9 +1197,74 @@
             width: 48%; height: 58%; border-radius: 4px;
             left: 7px; top: 5px; background: var(--swatch-surface);
         }
-        .theme-option[data-theme-choice="sabbia"] .theme-swatch { background: #baaa91; --swatch-surface: #e1d0b5; }
-        .theme-option[data-theme-choice="ink"] .theme-swatch { background: #a7a39e; --swatch-surface: #d1ccc5; }
-        .theme-option[data-theme-choice="scura"] .theme-swatch { background: #212120; --swatch-surface: #40403d; }
+        .theme-option[data-theme-choice="sabbia"] .theme-swatch { background: #9e907f; --swatch-surface: #c0b19d; }
+        .theme-option[data-theme-choice="ink"] .theme-swatch { background: #242426; --swatch-surface: #353538; }
+        .theme-option[data-theme-choice="scura"] .theme-swatch { background: #171718; --swatch-surface: #303033; }
+        /* Elevazione discreta sulle superfici. Il match importante è un unico
+           colore pieno (mai gradienti/vignette) e un accento societario deciso. */
+        .hero-banner, .featured-match-card {
+            border-top-color: rgba(255,255,255,0.13);
+            box-shadow: var(--featured-shadow);
+            outline-offset: 3px;
+        }
+        .hero-banner .hero-badge::before,
+        .featured-match-card .featured-match-header > span:first-child::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            display: inline-block;
+            flex-shrink: 0;
+            vertical-align: 1px;
+            border-radius: 2px;
+            background: var(--match-accent, #c5ad8b);
+            margin-right: 5px;
+        }
+        .hero-banner .hero-team-name.focus-team,
+        .featured-match-card .featured-team-name.focus-team,
+        .hero-banner .focus-event-title, .featured-match-card .focus-event-title {
+            color: var(--match-highlight, #f8ded4) !important;
+        }
+        .hero-banner .hero-countdown {
+            border-color: var(--match-accent, #c5ad8b);
+            color: var(--featured-text) !important;
+            background: rgba(0,0,0,0.12);
+        }
+        .hero-banner .team-stanghetta, .featured-match-card .team-stanghetta {
+            opacity: 0.9;
+            box-shadow: none;
+        }
+        .hero-banner .hero-vs, .featured-match-card .featured-vs-badge {
+            background: rgba(0,0,0,0.16);
+            border-color: rgba(255,255,255,0.17);
+            color: var(--featured-text);
+        }
+        .hero-banner .hero-bottom, .featured-match-card .featured-match-footer {
+            border-top-color: rgba(255,255,255,0.13);
+        }
+        .compact-card {
+            background: var(--compact-bg);
+            box-shadow: 0 2px 7px rgba(0,0,0,0.12);
+            border-color: var(--border);
+        }
+        .date-strip, .view-switcher-grid {
+            box-shadow: none;
+            border-color: var(--border);
+        }
+        .app-brand .brand-badge { box-shadow: none; }
+        .hero-banner:focus-visible, .featured-match-card:focus-visible,
+        .compact-card:focus-visible { outline: 2px solid var(--text-main); }
+        .hero-crest, .featured-crest, .compact-crest { filter: none; }
+        .day-header .day-weekday-name, .day-header .day-count-badge { color: var(--text-sub); }
+        .day-header.today .day-weekday-name { color: var(--text-main); }
+        :root[data-theme="sabbia"] .hero-banner .focus-team,
+        :root[data-theme="sabbia"] .featured-match-card .focus-team {
+            color: var(--match-highlight) !important;
+        }
+        /* I contenuti normali sono leggibili anche nei due temi scuri; Sabbia
+           mantiene testo nero-bruno sulle card normali e sui dettagli. */
+        :root[data-theme="sabbia"] .compact-team-name,
+        :root[data-theme="sabbia"] .standings-table td,
+        :root[data-theme="sabbia"] .sheet-team-name { color: var(--text-main); }
     </style>
 </head>
 <body>
@@ -1362,9 +1427,9 @@
 
         const THEME_STORAGE_KEY = 'sport-os-theme';
         const THEME_COLORS = {
-            sabbia: '#baaa91',
-            ink: '#a7a39e',
-            scura: '#212120'
+            sabbia: '#9e907f',
+            ink: '#242426',
+            scura: '#171718'
         };
         let currentTheme = 'ink';
 
@@ -1473,23 +1538,48 @@
 
         function getTopMatchTheme(e) {
             const text = `${e.title || ''} ${e.home || ''} ${e.away || ''}`.toLowerCase();
+            const home = (e.home || '').toLowerCase();
             const away = (e.away || '').toLowerCase();
-            const isToro = text.includes('torino') || text.includes('toro');
-            const isBroncos = text.includes('broncos') || text.includes('denver');
-            const isAway = isToro ? (away.includes('torino') || away.includes('toro')) :
-                isBroncos ? (away.includes('broncos') || away.includes('denver')) : false;
+            let accent = '#c5ad8b', highlight = '#efdbc5', surface = '#353034', teamKeys = [];
 
-            // Sottile accento identificativo, non un'intera superficie tinta.
-            const accent = isToro ? '#ae7980' : isBroncos ? '#bf916a' :
-                e.sport === 'f1' ? '#b98083' : e.sport === 'nazionale' ? '#7f9a8d' :
-                e.sport === 'champions' ? '#968ba1' : '#a19082';
-            const edge = isAway ? 'right' : 'left';
+            // Superfici piatte, appena colorate; il colore societario domina su bordo,
+            // marker e nome della squadra seguita, senza gradienti e senza effetto neon.
+            const select = (keys, a, h, bg) => { teamKeys = keys; accent = a; highlight = h; surface = bg; };
+            if (e.sport === 'f1') {
+                select([], '#ec6679', '#ffc0c8', '#39292e');
+            } else if (e.sport === 'nazionale') {
+                select(['italy', 'italia'], '#72b7a7', '#c4efe3', '#2b3735');
+            } else if (text.includes('torino') || text.includes('toro')) {
+                select(['torino', 'toro'], '#d45170', '#ffc2ce', '#3b2930');
+            } else if (text.includes('broncos') || text.includes('denver')) {
+                select(['broncos', 'denver'], '#f18b48', '#ffd3aa', '#3b3029');
+            } else {
+                const clubs = [
+                    [['inter'], '#78aff1', '#d0e4ff', '#2b3440'],
+                    [['milan'], '#e76f79', '#ffd0d3', '#392b2e'],
+                    [['juventus'], '#d9d2c5', '#f8f2e9', '#323234'],
+                    [['napoli'], '#7bcbe5', '#cff1fb', '#2b3640'],
+                    [['atalanta'], '#77b3e9', '#d2eaff', '#29333f'],
+                    [['roma'], '#edb96f', '#ffe0aa', '#3d312c'],
+                    [['lazio'], '#84c9e4', '#d6f3fb', '#2c373e'],
+                    [['bologna'], '#e47a80', '#ffced0', '#392b2e'],
+                    [['fiorentina'], '#bc99e8', '#e5d2ff', '#352d3d']
+                ];
+                const club = clubs.find(([keys]) => keys.some(key => text.includes(key)));
+                if (club) select(...club);
+            }
+            const isAway = teamKeys.some(key => away.includes(key)) && !teamKeys.some(key => home.includes(key));
+            const side = isAway ? 'right' : 'left';
             const opposite = isAway ? 'left' : 'right';
             return {
-                color: accent, isAway,
-                bg: 'var(--featured-bg)',
-                border: `border-${edge}: 4px solid ${accent}; border-${opposite}: 1px solid var(--border);`
+                color: accent, highlight, teamKeys, isAway, bg: surface,
+                border: `border-${side}: 7px solid ${accent}; border-${opposite}: 1px solid var(--border);`
             };
+        }
+
+        function isFeaturedTeam(name, theme) {
+            const value = (name || '').toLowerCase();
+            return !!(value && theme.teamKeys.some(key => value.includes(key)));
         }
 
         const SPORT_NAMES = { f1: 'Formula 1', seriea: 'Serie A', nfl: 'NFL', champions: 'Champions League', nazionale: 'Italia' };
@@ -1660,22 +1750,22 @@
                         <div class="hero-team">
                             <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(upcoming.home)};"></span>
                             <img src="${safeImage(upcoming.homeCrest)}" class="hero-crest" alt="">
-                            <span class="hero-team-name">${escapeHtml(upcoming.home || 'Casa')}</span>
+                            <span class="hero-team-name${isFeaturedTeam(upcoming.home, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.home || 'Casa')}</span>
                         </div>
                         <div class="hero-vs">${resultLabel(upcoming)}</div>
                         <div class="hero-team away">
-                            <span class="hero-team-name">${escapeHtml(upcoming.away || 'Trasferta')}</span>
+                            <span class="hero-team-name${isFeaturedTeam(upcoming.away, theme) ? ' focus-team' : ''}">${escapeHtml(upcoming.away || 'Trasferta')}</span>
                             <img src="${safeImage(upcoming.awayCrest)}" class="hero-crest" alt="">
                             <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(upcoming.away)};"></span>
                         </div>
                     </div>
                 `;
             } else {
-                faceoffHtml = `<div style="font-size:15px; font-weight:800; color:#fff; margin:4px 0;">${escapeHtml(upcoming.title)}</div>`;
+                faceoffHtml = `<div class="focus-event-title" style="font-size:15px; font-weight:800; margin:4px 0;">${escapeHtml(upcoming.title)}</div>`;
             }
 
             container.innerHTML = `
-                <div class="hero-banner" role="button" tabindex="0" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
+                <div class="hero-banner" role="button" tabindex="0" style="background: ${theme.bg}; ${theme.border} --match-accent: ${theme.color}; --match-highlight: ${theme.highlight};" onclick="openEventSheetByKey('${key}')">
                     <div class="hero-top"><div class="hero-badge">${escapeHtml(sportTag)} • ${escapeHtml(upcoming.loc || '')}</div><div class="hero-countdown" id="heroCountdownTimer">In arrivo</div></div>
                     ${faceoffHtml}
                     <div class="hero-bottom"><span>${dStr} · ${timeLabel(upcoming)} ${upcoming.venue ? '• ' + escapeHtml(upcoming.venue) : ''}</span><span class="hero-cta">Dettagli ›</span></div>
@@ -1896,22 +1986,22 @@
                                 <div class="featured-team">
                                     <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(e.home)};"></span>
                                     <img src="${safeImage(e.homeCrest)}" class="featured-crest" alt="">
-                                    <span class="featured-team-name">${escapeHtml(e.home || 'Casa')}</span>
+                                    <span class="featured-team-name${isFeaturedTeam(e.home, theme) ? ' focus-team' : ''}">${escapeHtml(e.home || 'Casa')}</span>
                                 </div>
                                 <div class="featured-vs-badge">${resultLabel(e)}</div>
                                 <div class="featured-team away">
-                                    <span class="featured-team-name">${escapeHtml(e.away || 'Trasferta')}</span>
+                                    <span class="featured-team-name${isFeaturedTeam(e.away, theme) ? ' focus-team' : ''}">${escapeHtml(e.away || 'Trasferta')}</span>
                                     <img src="${safeImage(e.awayCrest)}" class="featured-crest" alt="">
                                     <span class="team-stanghetta" style="height:24px; width:4px; background: ${getTeamColor(e.away)};"></span>
                                 </div>
                             </div>
                         `;
                     } else {
-                        faceoffHtml = `<div style="font-size:15.5px; font-weight:800; color:#fff; margin:6px 0;">${escapeHtml(e.title)}</div>`;
+                        faceoffHtml = `<div class="focus-event-title" style="font-size:15.5px; font-weight:800; margin:6px 0;">${escapeHtml(e.title)}</div>`;
                     }
 
                     html += `
-                        <div class="featured-match-card" role="button" tabindex="0" style="background: ${theme.bg}; ${theme.border}" onclick="openEventSheetByKey('${key}')">
+                        <div class="featured-match-card" role="button" tabindex="0" style="background: ${theme.bg}; ${theme.border} --match-accent: ${theme.color}; --match-highlight: ${theme.highlight};" onclick="openEventSheetByKey('${key}')">
                             <div class="featured-match-header">
                                 <span>${escapeHtml(sportTag)} • ${escapeHtml(e.loc || 'Ufficiale')}</span>
                                 <span style="color:#fff; font-weight:800; font-size:12.5px;">${timeLabel(e)}${e.status === "FINISHED" && e.homeScore != null ? " · " + resultLabel(e) : ""}</span>
