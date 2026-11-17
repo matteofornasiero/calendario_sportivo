@@ -18,7 +18,7 @@ Calendario sportivo statico pubblicato tramite GitHub Pages. **Non richiede comp
 
 ## Cosa puo' ancora richiedere un intervento
 
-Il sistema non puo' correggere automaticamente la revoca di `FOOTBALL_DATA_API_KEY`, la chiusura di un servizio API, una modifica incompatibile al suo formato, o lo spegnimento delle GitHub Actions da parte di GitHub. I workflow programmati in repository pubblici possono essere disattivati da GitHub dopo 60 giorni senza attivita' nel repository; gli aggiornamenti periodici del dataset creano normalmente attivita', ma non sono una garanzia assoluta. Consultare [GitHub Actions](../../actions) e le issue in caso di avviso.
+Il sistema non puo' correggere automaticamente la revoca di `FOOTBALL_DATA_API_KEY`, la chiusura di un servizio API, una modifica incompatibile al suo formato, o lo spegnimento delle GitHub Actions da parte di GitHub. I workflow programmati in repository pubblici possono essere disattivati da GitHub dopo 60 giorni senza attivita' nel repository; gli aggiornamenti periodici del dataset creano normalmente attivita', ma non sono una garanzia assoluta. Consultare [GitHub Actions](https://github.com/matteofornasiero/calendario_sportivo/actions) e le issue in caso di avviso.
 
 ## Verifiche locali
 
