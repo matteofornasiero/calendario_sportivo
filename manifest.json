@@ -4,8 +4,8 @@
   "description": "Calendario Sportivo Personale",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#242426",
-  "theme_color": "#242426",
+  "background_color": "#222327",
+  "theme_color": "#222327",
   "orientation": "portrait",
   "icons": [
     {
