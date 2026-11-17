@@ -31,3 +31,20 @@ python monitor_salute.py
 ```
 
 La chiave personale `FOOTBALL_DATA_API_KEY` deve restare nei Secrets di GitHub Actions, mai nel repository.
+
+## Abbonamenti calendario gratuiti
+
+Da **⚙ Impostazioni → Calendario** si può scegliere una singola squadra o competizione, copiare un link pubblico `.ics` e sottoscriverlo tramite l'app calendario. Nessun account né API aggiuntive.
+
+Il workflow genera `calendari/catalogo.json` e un feed `calendari/squadra/*.ics` o `calendari/competizione/*.ics` a ogni aggiornamento. L'URL è stabile; un evento conserva il proprio UID anche quando cambia data, orario o risultato. I calendari già esistenti non sono riscritti se gli eventi non cambiano. Le date senza ora certa sono indicate come **provvisorie** e mostrate come eventi di giornata intera.
+
+- **Google Calendar:** da browser su computer → Altri calendari → + → Da URL → incollare il link. Non è possibile creare direttamente questo tipo di abbonamento nell'app Google Calendar per Android. Dopo l'aggiunta su computer, il calendario appare anche sul telefono.
+- **Apple Calendario:** Calendari → Aggiungi calendario → Aggiungi calendario in abbonamento, oppure usare il link `webcal:`.
+- Gli abbonamenti sono pubblici e di sola lettura. GitHub Pages aggiorna il file durante le pubblicazioni automatiche; **Google e Apple decidono autonomamente quando riscaricarlo**: quindi la sincronizzazione non è istantanea né in diretta.
+
+### Controllo manuale del generatore (senza nuove API)
+
+```bash
+python genera_abbonamenti.py
+python -m unittest discover -s tests -v
+```
