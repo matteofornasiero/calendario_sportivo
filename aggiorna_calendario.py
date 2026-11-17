@@ -254,6 +254,17 @@ def fetch_espn_calendar(league, sport, season, competition_name=None):
     return list(events.values())
 
 
+def fetch_nfl_calendar_with_rollover(season, month):
+    """Prima il nuovo calendario, ma durante l'offseason conserva quello concluso."""
+    try:
+        return fetch_espn_calendar("football/nfl", "nfl", season), season
+    except (RuntimeError, ValueError, KeyError, IndexError, TypeError):
+        if not 3 <= month <= 8:
+            raise
+        return fetch_espn_calendar("football/nfl", "nfl", season - 1), season - 1
+
+
+
 def parse_nfl_standings(data):
     result = {"divisions": {}, "conferences": {}, "playoffs": {}}
     for conference in data["children"]:
@@ -352,6 +363,7 @@ def update(output=OUTPUT_FILE, now=None):
             "footballSeason": f"{football_season}/{str(football_season + 1)[2:]}", "sources": {}}
     events, standings, failures = [], {}, []
     standings_seasons = {}
+    nfl_calendar_season = [None]
 
     def source(key, fetch, fallback):
         previous = old_meta.get("sources", {}).get(key, {})
@@ -367,10 +379,15 @@ def update(output=OUTPUT_FILE, now=None):
             meta["sources"][key] = {"status": "error", "updatedAt": previous.get("updatedAt"), "error": message}
             return fallback
 
+    def auto_nfl_calendar():
+        rows, season = fetch_nfl_calendar_with_rollover(nfl_season, now.month)
+        nfl_calendar_season[0] = season
+        return rows
+
     calendars = [
         ("seriea", lambda: fetch_football_matches("SA", "seriea"), lambda event: event["sport"] == "seriea" and event.get("loc") not in ("Coppa Italia", "Supercoppa")),
         ("champions", lambda: fetch_football_matches("CL", "champions"), lambda event: event["sport"] == "champions"),
-        ("nfl", lambda: fetch_espn_calendar("football/nfl", "nfl", nfl_season), lambda event: event["sport"] == "nfl"),
+        ("nfl", auto_nfl_calendar, lambda event: event["sport"] == "nfl"),
         ("f1", lambda: fetch_f1_calendar_window(now), lambda event: event["sport"] == "f1"),
         ("nazionale", fetch_italy, lambda event: event["sport"] == "nazionale"),
         ("coppa", lambda: fetch_espn_calendar("soccer/ita.coppa_italia", "seriea", football_season, "Coppa Italia"), lambda event: event.get("loc") == "Coppa Italia"),
@@ -380,6 +397,12 @@ def update(output=OUTPUT_FILE, now=None):
         # I dati v1 contenevano orari e coppe inventati: non sono un fallback affidabile.
         fallback = [event for event in old_events if belongs(event)] if old_meta.get("schemaVersion") == 2 else []
         events.extend(source(key, fetch, fallback))
+        if key == "nfl":
+            season = nfl_calendar_season[0] or old_meta.get("sources", {}).get("nfl", {}).get("season")
+            if season:
+                meta["sources"]["nfl"]["season"] = season
+                if season != nfl_season and meta["sources"]["nfl"]["status"] == "ok":
+                    meta["sources"]["nfl"]["note"] = f"Ultimo calendario disponibile: {season}"
     def auto_f1_standings(constructors=False):
         rows, season = fetch_f1_standings_with_rollover(year, now.month, constructors)
         standings_seasons["f1_constructors" if constructors else "f1_drivers"] = season
@@ -390,11 +413,15 @@ def update(output=OUTPUT_FILE, now=None):
         "champions": lambda: fetch_football_standings("CL"),
         "f1_drivers": lambda: auto_f1_standings(),
         "f1_constructors": lambda: auto_f1_standings(True),
-        "nfl": lambda: parse_nfl_standings(get_json(f"https://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?season={nfl_season}&type=0&level=3")),
+        "nfl": lambda: parse_nfl_standings(get_json(f"https://site.web.api.espn.com/apis/v2/sports/football/nfl/standings?season={nfl_season - 1 if 3 <= now.month <= 8 else nfl_season}&type=0&level=3")),
     }
     for key, fetch in tables.items():
         fallback = old_standings.get(key, {} if key == "nfl" else []) if old_meta.get("schemaVersion") == 2 else ({} if key == "nfl" else [])
         standings[key] = source(f"standings_{key}", fetch, fallback)
+        if key == "nfl" and meta["sources"]["standings_nfl"]["status"] == "ok":
+            meta["sources"]["standings_nfl"]["season"] = nfl_season - 1 if 3 <= now.month <= 8 else nfl_season
+            if meta["sources"]["standings_nfl"]["season"] != nfl_season:
+                meta["sources"]["standings_nfl"]["note"] = f"Ultima classifica disponibile: {nfl_season - 1}"
         if key in ("f1_drivers", "f1_constructors"):
             used_season = standings_seasons.get(key) or old_meta.get("sources", {}).get(f"standings_{key}", {}).get("season")
             if used_season:
