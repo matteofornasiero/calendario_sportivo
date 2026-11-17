@@ -175,6 +175,12 @@ assert.equal(run("isTop({ sport:'champions', title:'Arsenal - PSG',home:'Arsenal
 assert.equal(run("isTop({ sport:'seriea',title:'Napoli - Roma',home:'Napoli',away:'Roma',isTop:true })"), false,
     'Le vecchie bandierine sorgente non forzano più le preferenze');
 assert.equal(run('isTop(fixture)'), true);
+run("allEvents = [fixture, {sport:'seriea',home:'Torino',homeCrest:'https://a.espncdn.com/i/teamlogos/soccer/500/239.png'}]");
+assert.equal(run("bestHeroCrest('Torino','https://crests.football-data.org/586.png')"),
+    'https://a.espncdn.com/i/teamlogos/soccer/500/239.png', 'Lo stemma hero usa il 500px già disponibile');
+assert.equal(run("bestHeroCrest('Arsenal','https://crests.football-data.org/57.png')"),
+    'https://crests.football-data.org/57.png', 'Nessun logo inventato se manca quello HD');
+run('allEvents = [fixture]');
 run('renderFeaturedSettings()');
 assert.ok(element('featuredTeamTags').innerHTML.includes('Torino'));
 assert.ok(element('featuredCompetitionTags').innerHTML.includes('Gran Premi'));
