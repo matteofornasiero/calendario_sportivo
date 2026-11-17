@@ -129,9 +129,10 @@ run("setTheme('ink')");
 assert.equal(run("getTopMatchTheme({sport:'nfl', title:'Broncos - Raiders', home:'Broncos', away:'Raiders'}).bg"), 'var(--card-bg)');
 assert.equal(run("isFeaturedTeam('Torino', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), true);
 assert.equal(run("isFeaturedTeam('Napoli', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), false);
-assert.ok(html.includes('DA SEGUIRE') && html.includes('Apri partita'), 'Partita protagonista presente');
-assert.ok(html.includes('.hero-crest { width: 59px; height: 59px;'), 'Stemmi grandi nel primo piano');
-assert.ok(html.includes('min-height: 116px; margin: 0 0 13px;'), 'Sfida centrata, non vuota');
+assert.ok(html.includes('DA SEGUIRE') && !html.includes('Apri partita'), 'Partita protagonista senza CTA ridondante');
+assert.ok(html.includes('.hero-crest { width: 84px; height: 84px;'), 'Stemmi grandi nel primo piano');
+assert.ok(html.includes('.hero-faceoff { min-height: 0; margin: 2px 0 8px;'), 'Sfida centrata e card più compatta');
+assert.ok(html.includes('display: flex; align-items: center; justify-content: center;'), 'Data e orario centrati in fondo');
 const awayHeroStart = html.indexOf('<div class="hero-team away">');
 assert.ok(awayHeroStart >= 0);
 assert.ok(html.indexOf('class="hero-crest"', awayHeroStart)
@@ -155,13 +156,62 @@ assert.ok(!html.includes('id="monthSelectorGroup"'));
 assert.ok(html.includes('class="month-view-navigation"'), 'Navigazione mese solo su desktop nella vista mese');
 assert.ok(html.includes('box-shadow: none !important; appearance: none;'), 'Nessuna ombra sul campo ricerca');
 assert.ok(!html.includes('Gli orari sono espressi nel fuso italiano.'), 'Impostazioni prolisse');
-assert.ok(html.includes('id="calendarSubscriptionsPanel"') && html.includes('id="sourceStatusPanel"'), 'Pannelli nelle impostazioni');
+assert.ok(html.includes('id="calendarSubscriptionsPanel"') && html.includes('id="sourceStatusPanel"')
+    && html.includes('id="featuredPreferencesPanel"'), 'Impostazioni e preferenze compatte');
 
 const event = { id: 'fixture-1', date: '2099-10-08', time: '23:30', timeConfirmed: true,
     startUtc: '2099-10-08T21:30:00Z', title: `Torino - L'Aquila "test" <img onerror=alert(1)>`,
     home: 'Torino', away: `L'Aquila`, homeCrest: '', awayCrest: '', sport: 'seriea', status: 'TIMED', isTop: true };
 sandbox.fixture = event;
 run('allEvents = [fixture]');
+
+// Le preferenze iniziali riproducono la selezione attuale e sono modificabili.
+assert.equal(run('featuredPreferences.teams.join(",")'), 'Torino,Denver Broncos');
+assert.equal(run('featuredPreferences.competitions.join(",")'), 'f1-race,champions-it,nazionale');
+assert.equal(run("isTop({ sport:'f1', title:'GARA: Monza' })"), true);
+assert.equal(run("isTop({ sport:'f1', title:'Prove libere: Monza' })"), false);
+assert.equal(run("isTop({ sport:'champions', title:'Inter - Arsenal',home:'Inter',away:'Arsenal' })"), true);
+assert.equal(run("isTop({ sport:'champions', title:'Arsenal - PSG',home:'Arsenal',away:'PSG' })"), false);
+assert.equal(run("isTop({ sport:'seriea',title:'Napoli - Roma',home:'Napoli',away:'Roma',isTop:true })"), false,
+    'Le vecchie bandierine sorgente non forzano più le preferenze');
+assert.equal(run('isTop(fixture)'), true);
+run('renderFeaturedSettings()');
+assert.ok(element('featuredTeamTags').innerHTML.includes('Torino'));
+assert.ok(element('featuredCompetitionTags').innerHTML.includes('Gran Premi'));
+
+// Aggiungi una squadra dal feed e rimuovila in un solo tocco.
+const aquilaIndex = run("featuredTeamOptions.findIndex(name => name === \"L'Aquila\")");
+assert.ok(aquilaIndex >= 0);
+element('featuredTeamSelect').value = String(aquilaIndex);
+run('addFeaturedTeam()');
+assert.equal(run("featuredPreferences.teams.includes(\"L'Aquila\")"), true);
+assert.ok(JSON.parse(storage.get('sport-os-featured-v1')).teams.includes("L'Aquila"), 'Salvataggio locale delle squadre');
+assert.equal(run('loadFeaturedPreferences().teams.length'), 3, 'La scelta persiste dopo una riapertura');
+run("removeFeaturedChoice('teams', 0)"); // Rimuove Torino.
+assert.equal(run('isTop(fixture)'), true, 'La squadra appena aggiunta rimane in evidenza');
+run("removeFeaturedChoice('teams', 1)"); // Rimuove L'Aquila.
+assert.equal(run('isTop(fixture)'), false, 'Rimozione reale, senza eccezioni nel codice');
+assert.ok(!JSON.parse(storage.get('sport-os-featured-v1')).teams.includes('Torino'));
+
+// Una competizione aggiunta evidenzia immediatamente tutti i suoi eventi.
+element('featuredCompetitionSelect').value = 'seriea';
+run('addFeaturedCompetition()');
+assert.equal(run('isTop(fixture)'), true);
+assert.ok(storage.get('sport-os-featured-v1').includes('"seriea"'));
+run("removeFeaturedChoice('competitions', 3)");
+assert.equal(run('isTop(fixture)'), false);
+
+// La Formula 1 intera è distinta dalle sole gare; coppe e Supercoppa dalla Serie A.
+assert.equal(run("competitionKey({sport:'seriea',loc:'Coppa Italia'})"), 'coppa');
+assert.equal(run("competitionKey({sport:'seriea',loc:'Supercoppa'})"), 'supercoppa');
+assert.equal(run("matchesPreferredCompetition({sport:'f1',title:'PROVE LIBERE 1'},'f1')"), true);
+assert.equal(run("matchesPreferredCompetition({sport:'f1',title:'PROVE LIBERE 1'},'f1-race')"), false);
+
+// Il comportamento storico viene ripristinato dopo aver testato la personalizzazione.
+run('featuredPreferences = {teams:[...DEFAULT_FEATURED.teams],competitions:[...DEFAULT_FEATURED.competitions]}');
+run('commitFeaturedPreferences()');
+assert.equal(run('isTop(fixture)'), true);
+
 run("searchQuery = \"l'aquila\"");
 assert.equal(run('getFilteredEvents().length'), 1, 'La ricerca deve gestire gli apostrofi');
 run("searchQuery = ''");
