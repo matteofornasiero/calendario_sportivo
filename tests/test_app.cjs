@@ -8,7 +8,8 @@ assert.equal(html, fs.readFileSync(path.join(root, 'calendario_sportivo.html'), 
 const code = html.match(/<script>([\s\S]*?)<\/script>/)[1];
 const elements = new Map();
 const element = id => {
-    if (!elements.has(id)) elements.set(id, { textContent: '', innerHTML: '', style: {}, attributes: {},
+    if (!elements.has(id)) elements.set(id, { textContent: '', innerHTML: '', style: {}, attributes: {}, dataset: {}, listeners: {},
+        addEventListener(type, listener) { this.listeners[type] = listener; },
         classList: { add() {}, remove() {}, toggle() {} },
         setAttribute(name, value) { this.attributes[name] = value; },
         getAttribute(name) { return this.attributes[name] || null; },
@@ -103,31 +104,37 @@ for (const theme of ['sabbia', 'ink', 'scura']) {
     assert.ok(contrast(bg, card) <= 2.5, theme + ' card normali troppo staccate dal fondo');
 }
 
-// Le card preferite sono solide e immediatamente distinguibili; il Torino prevale
-// anche in trasferta, anziché usare il blu della squadra di casa.
-for (const [sport, title, home, away, accent, surface] of [
-    ['seriea', 'Napoli - Torino', 'Napoli', 'Torino', '#d45170', '#3b2930'],
-    ['nfl', 'Denver Broncos - Raiders', 'Denver Broncos', 'Raiders', '#f18b48', '#3b3029'],
-    ['f1', 'GARA: Monza', '', '', '#ec6679', '#39292e'],
-    ['nazionale', 'Italia - Francia', 'Italia', 'France', '#72b7a7', '#2b3735'],
-    ['champions', 'Inter - Arsenal', 'Inter', 'Arsenal', '#78aff1', '#2b3440']
-]) {
-    const theme = run('getTopMatchTheme(' + JSON.stringify({ sport, title, home, away }) + ')');
-    assert.equal(theme.color, accent, 'Accento squadra: ' + title);
-    assert.equal(theme.bg, surface, 'Superficie colorata discreta: ' + title);
-    assert.ok(!theme.bg.includes('gradient'), 'Niente sfumatura: ' + title);
-    assert.ok(theme.border.includes('7px solid ' + accent), 'Bordo evidente: ' + title);
-    assert.ok(contrast(surface, '#f7f1ed') >= 4.5, 'Testo leggibile: ' + title);
+// Le card hanno un gradiente breve e trasparente SOLO sulla metà della squadra.
+// Cambiando tema cambiano pigmento e intensità; niente bordo societario pesante.
+const napoliTorino = { sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino' };
+const tintByTheme = {};
+for (const theme of ['ink', 'scura', 'sabbia']) {
+    run("setTheme('" + theme + "')");
+    const accent = run('getTopMatchTheme(' + JSON.stringify(napoliTorino) + ')');
+    assert.equal(accent.color, '#d45170');
+    assert.equal(accent.isAway, true);
+    assert.ok(accent.bg.includes('linear-gradient(270deg'), 'Sfumatura sulla metà destra: ' + theme);
+    assert.ok(accent.bg.includes('53%), var(--featured-bg)'), 'La sfumatura si fonde con la card: ' + theme);
+    assert.equal(accent.border, '1px solid var(--border)');
+    assert.ok(accent.bg.includes('rgba('), 'Colore semitrasparente: ' + theme);
+    if (theme === 'sabbia') assert.equal(accent.highlight, '#ffd9df', 'Il nome Toro deve restare leggibile in Sabbia');
+    tintByTheme[theme] = accent.bg;
 }
-const torinoAway = run("getTopMatchTheme({ sport: 'seriea', title: 'Napoli - Torino', home: 'Napoli', away: 'Torino' })");
-assert.ok(torinoAway.border.includes('border-right'), 'Accento a destra quando il Torino è in trasferta');
+assert.notEqual(tintByTheme.sabbia, tintByTheme.ink, 'La sfumatura chiara deve essere diversa dalla scura');
+assert.notEqual(tintByTheme.ink, tintByTheme.scura, 'Intensità in base al tema');
+run("setTheme('ink')");
+assert.ok(run("getTopMatchTheme({sport:'nfl', title:'Broncos - Raiders', home:'Broncos',away:'Raiders'}).bg").includes('linear-gradient(90deg'), 'Sfumatura dalla squadra in casa');
 assert.equal(run("isFeaturedTeam('Torino', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), true);
 assert.equal(run("isFeaturedTeam('Napoli', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), false);
-assert.ok(html.includes('focus-team'), 'Nome della squadra evidenziata');
-assert.ok(html.includes('focus-event-title'), 'Titolo gara F1 evidenziato');
+
+// Header compatto, senza logo e mese sopra l'agenda.
+assert.ok(!html.includes('class="app-brand"') && !html.includes('class="brand-title"'));
+assert.ok(html.includes('class="header-tools"') && html.includes('id="searchContainer"'));
+assert.ok(!html.includes('id="monthSelectorGroup"'));
+assert.ok(html.includes('class="month-view-navigation"'), 'Navigazione mese solo su desktop nella vista mese');
+assert.ok(html.includes('box-shadow: none !important; appearance: none;'), 'Nessuna ombra sul campo ricerca');
 assert.ok(!html.includes('Gli orari sono espressi nel fuso italiano.'), 'Impostazioni prolisse');
-assert.ok(html.includes('id="calendarSubscriptionsPanel"') && html.includes('id="sourceStatusPanel"'), 'Pannelli di impostazioni');
-assert.ok(!html.includes('<details class="settings-accordion" id="sourceStatusPanel" open'), 'Stato chiuso di default');
+assert.ok(html.includes('id="calendarSubscriptionsPanel"') && html.includes('id="sourceStatusPanel"'), 'Pannelli nelle impostazioni');
 
 const event = { id: 'fixture-1', date: '2099-10-08', time: '23:30', timeConfirmed: true,
     startUtc: '2099-10-08T21:30:00Z', title: `Torino - L'Aquila "test" <img onerror=alert(1)>`,
@@ -201,6 +208,26 @@ assert.ok(element('dataStatus').textContent.includes('1 fonte da verificare'));
     sandbox.window.calendarData = [event];
     sandbox.window.standingsData = {};
     sandbox.window.calendarMeta = { schemaVersion: 2, generatedAt: new Date().toISOString(), sources: {} };
+    // Una competizione sola: etichetta in linea con la data, senza contatori.
+    run("searchQuery = ''; currentView = 'agenda'; currentDate = new Date('2099-10-08T12:00:00'); selectedDateStr = '2099-10-08'; allEvents = [fixture];");
+    run('renderAgendaFeed()');
+    assert.ok(element('agendaFeed').innerHTML.includes('day-inline-sport'), 'Sport accanto al giorno');
+    assert.ok(!element('agendaFeed').innerHTML.includes('1 evento'), 'Contatore eventi rimosso');
+    assert.ok(!element('agendaFeed').innerHTML.includes('sport-section-divider'), 'Non ripetere unica competizione');
+    run("allEvents.push({id:'f1-late',sport:'f1',date:'2099-10-08',time:'18:00',title:'Prove libere: GP',loc:'Circuito',timeConfirmed:true,startUtc:'2099-10-08T16:00:00Z',status:'TIMED'});");
+    run('renderAgendaFeed()');
+    assert.ok(element('agendaFeed').innerHTML.includes('sport-section-divider'), 'Più sport mostrati come piccole etichette');
+    assert.ok(!element('agendaFeed').innerHTML.includes('2 eventi'), 'Contatore non ricompare');
+    // La settimana rimane sfogliabile dopo la rimozione delle frecce.
+    run('installWeekNavigation()');
+    const weekNav = element('dateStripWrapper');
+    assert.ok(weekNav.listeners.touchstart && weekNav.listeners.touchend && weekNav.listeners.keydown);
+    weekNav.listeners.touchstart({ touches: [{clientX: 200, clientY: 100}] });
+    weekNav.listeners.touchend({ changedTouches: [{clientX: 80, clientY: 102}] });
+    assert.equal(run('formatDate(currentDate)'), '2099-10-15', 'Swipe verso sinistra: settimana successiva');
+    weekNav.listeners.keydown({key:'ArrowLeft',preventDefault(){}});
+    assert.equal(run('formatDate(currentDate)'), '2099-10-08', 'Freccia da tastiera: settimana precedente');
+    run('allEvents = [fixture]');
     run('activeSheetEvent = null');
     await run('refreshData()');
     assert.equal(element('btnRefresh').disabled, false);
