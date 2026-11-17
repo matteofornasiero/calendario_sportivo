@@ -77,8 +77,8 @@
             --border: rgba(42, 40, 38, 0.20);
             --border-highlight: rgba(42, 40, 38, 0.29);
             --text-main: #252320;
-            --text-sub: #35322f;
-            --text-muted: #393632;
+            --text-sub: #302d2b;
+            --text-muted: #2e2c29;
             --header-bg: #aaa8a4;
             --desktop-bg: #85837f;
             --desktop-panel: #999794;
@@ -1573,6 +1573,14 @@
         @media (prefers-reduced-motion: reduce) {
             .date-strip, .strip-day { animation: none !important; transition: none !important; }
         }
+        /* Le schede di altri eventi importanti condividono il contrasto del tema. */
+        :root[data-theme="sabbia"] .featured-match-card .featured-match-header,
+        :root[data-theme="sabbia"] .featured-match-card .featured-match-footer {
+            color: var(--featured-sub) !important;
+        }
+        :root[data-theme="sabbia"] .featured-match-card [style*="color:#fff"] {
+            color: var(--featured-text) !important;
+        }
     </style>
 </head>
 <body>
@@ -1890,7 +1898,7 @@
             // luminoso su Ink/Scura, profondo sulla superficie chiara Sabbia.
             let displayAccent = accent;
             if (sabbia) {
-                displayAccent = text.includes('torino') || text.includes('toro') ? '#8b314c' :
+                displayAccent = text.includes('torino') || text.includes('toro') ? '#70253b' :
                     text.includes('broncos') || text.includes('denver') ? '#89421f' :
                     e.sport === 'f1' ? '#902a44' :
                     e.sport === 'nazionale' ? '#245b50' :
