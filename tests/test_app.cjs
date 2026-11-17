@@ -30,7 +30,9 @@ const sandbox = { document, window: { addEventListener() {},
     localStorage: {
         getItem(key) { return storage.get(key) || null; },
         setItem(key, value) { storage.set(key, value); }
-    } }, URL, URLSearchParams, Intl, Date,
+    }, navigator: { clipboard: { writeText: async value => { sandbox.lastCopied = value; } } },
+        location: { href: 'https://matteofornasiero.github.io/calendario_sportivo/' }
+    }, URL, URLSearchParams, Intl, Date,
     setTimeout, clearTimeout, setInterval: () => 1, clearInterval() {}, console };
 const context = vm.createContext(sandbox);
 vm.runInContext(code, context);
@@ -53,7 +55,7 @@ assert.equal(element('metaThemeColor').getAttribute('content'), '#212120');
 assert.equal(themeChoices[2].getAttribute('aria-pressed'), 'true');
 run("setTheme('ink')");
 assert.equal(storage.get('sport-os-theme'), 'ink');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#92918d');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#a7a39e');
 assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'true');
 
 // Verifica numericamente il contrasto WCAG AA del testo in tutte le palette.
@@ -90,26 +92,32 @@ for (const theme of ['sabbia', 'ink', 'scura']) {
     const muted = themeColor(theme, 'text-muted');
     const selected = themeColor(theme, 'selected-bg');
     const selectedText = themeColor(theme, 'selected-text');
+    const featured = themeColor(theme, 'featured-bg');
+    const featuredText = themeColor(theme, 'featured-text');
     assert.ok(contrast(bg, main) >= 4.5, theme + ' testo principale non leggibile');
     assert.ok(contrast(card, main) >= 4.5, theme + ' testo card non leggibile');
     assert.ok(contrast(bg, sub) >= 4.5, theme + ' testo secondario non leggibile');
     assert.ok(contrast(bg, muted) >= 4.5, theme + ' testo attenuato non leggibile');
     assert.ok(contrast(selected, selectedText) >= 4.5, theme + ' selezione poco leggibile');
+    assert.ok(contrast(featured, featuredText) >= 4.5, theme + ' card in evidenza poco leggibile');
 }
 
-// Le card che interessano restano vivaci con nomi leggibili: Torino, Broncos, F1, club italiani.
+// Le card in evidenza devono restare sobrie, senza gradienti o ombre vistose.
 for (const [sport, title, home, away, expectedAccent] of [
-    ['seriea', 'Torino - Roma', 'Torino', 'Roma', '#8d1833'],
-    ['nfl', 'Denver Broncos - Raiders', 'Denver Broncos', 'Raiders', '#a94617'],
-    ['f1', 'GARA: Monza', '', '', '#af183b'],
-    ['champions', 'Juventus - PSG', 'Juventus', 'PSG', 'linear-gradient']
+    ['seriea', 'Torino - Roma', 'Torino', 'Roma', '#ae7980'],
+    ['nfl', 'Denver Broncos - Raiders', 'Denver Broncos', 'Raiders', '#bf916a'],
+    ['f1', 'GARA: Monza', '', '', '#b98083'],
+    ['nazionale', 'Italia - Francia', 'Italy', 'France', '#7f9a8d']
 ]) {
     const palette = run('getTopMatchTheme(' + JSON.stringify({ sport, title, home, away }) + ')');
-    assert.ok(palette.bg.includes(expectedAccent), 'Colore card principale: ' + title);
-    const firstHex = palette.bg.match(/#[0-9a-f]{6}/i)[0];
-    assert.ok(contrast(firstHex, '#ffffff') >= 4.5, 'Contrasto card evidenziata: ' + title);
+    assert.equal(palette.color, expectedAccent, 'Accento: ' + title);
+    assert.equal(palette.bg, 'var(--featured-bg)', 'Sfondi piatti, senza degradé: ' + title);
+    assert.ok(palette.border.includes('4px solid ' + expectedAccent));
 }
-assert.ok(run("getTopMatchTheme({ sport: 'seriea', title: 'Roma - Torino', home: 'Roma', away: 'Torino' }).border").includes('border-right'), 'Colore a destra in trasferta');
+assert.ok(run("getTopMatchTheme({ sport: 'seriea', title: 'Roma - Torino', home: 'Roma', away: 'Torino' }).border").includes('border-right'));
+assert.ok(!html.includes('Gli orari sono espressi nel fuso italiano.'), 'Impostazioni prolisse');
+assert.ok(html.includes('id="calendarSubscriptionsPanel"') && html.includes('id="sourceStatusPanel"'), 'Pannelli nascosti nelle impostazioni');
+assert.ok(!html.includes('<details class="settings-accordion" id="sourceStatusPanel" open'), 'Lo stato non deve essere aperto di default');
 
 
 const event = { id: 'fixture-1', date: '2099-10-08', time: '23:30', timeConfirmed: true,
@@ -162,6 +170,25 @@ run("calendarMeta = { generatedAt: '2020-01-01T00:00:00Z', sources: { nfl: { sta
 assert.ok(element('dataStatus').textContent.includes('1 fonte da verificare'));
 
 (async () => {
+    // Abbonamento dal catalogo pubblico, con URL stabili e selettore squadra/competizione.
+    element('subscriptionKind').value = 'teams';
+    sandbox.fetch = async () => ({ ok: true, json: async () => ({
+        schemaVersion: 1,
+        teams: [{ name: 'Torino', path: 'calendari/squadra/torino.ics', count: 40 },
+            { name: '<script>bad</script>', path: 'https://evil.example/calendar.ics' }],
+        competitions: [{ name: 'Serie A', path: 'calendari/competizione/seriea.ics', count: 380 }]
+    }) });
+    await run('loadSubscriptionsCatalog()');
+    assert.equal(run('subscriptionCatalog.teams.length'), 1, 'Escludi URL non validi');
+    assert.equal(element('subscriptionChoice').disabled, false);
+    assert.equal(element('subscriptionUrl').value, 'https://matteofornasiero.github.io/calendario_sportivo/calendari/squadra/torino.ics');
+    assert.equal(element('subscriptionCopy').disabled, false);
+    assert.equal(element('subscriptionOpen').href, 'webcal://matteofornasiero.github.io/calendario_sportivo/calendari/squadra/torino.ics');
+    await run('copySubscriptionLink()');
+    assert.equal(sandbox.lastCopied, element('subscriptionUrl').value);
+    element('subscriptionKind').value = 'competitions';
+    run('renderSubscriptionOptions()');
+    assert.equal(element('subscriptionUrl').value, 'https://matteofornasiero.github.io/calendario_sportivo/calendari/competizione/seriea.ics');
     sandbox.window.calendarData = [event];
     sandbox.window.standingsData = {};
     sandbox.window.calendarMeta = { schemaVersion: 2, generatedAt: new Date().toISOString(), sources: {} };
