@@ -86,11 +86,13 @@ for (const theme of ['sabbia', 'ink', 'scura']) {
     const bg = themeColor(theme, 'bg');
     const card = themeColor(theme, 'compact-bg');
     const main = themeColor(theme, 'text-main');
+    const sub = themeColor(theme, 'text-sub');
     const muted = themeColor(theme, 'text-muted');
     const selected = themeColor(theme, 'selected-bg');
     const selectedText = themeColor(theme, 'selected-text');
     assert.ok(contrast(bg, main) >= 4.5, theme + ' testo principale non leggibile');
     assert.ok(contrast(card, main) >= 4.5, theme + ' testo card non leggibile');
+    assert.ok(contrast(bg, sub) >= 4.5, theme + ' testo secondario non leggibile');
     assert.ok(contrast(bg, muted) >= 4.5, theme + ' testo attenuato non leggibile');
     assert.ok(contrast(selected, selectedText) >= 4.5, theme + ' selezione poco leggibile');
 }
