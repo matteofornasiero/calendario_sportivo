@@ -44,18 +44,18 @@ assert.equal(run("setTheme('sabbia')"), true);
 assert.equal(run('currentTheme'), 'sabbia');
 assert.equal(storage.get('sport-os-theme'), 'sabbia');
 assert.equal(document.documentElement.getAttribute('data-theme'), 'sabbia');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#baaa91');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#9e907f');
 assert.equal(themeChoices[0].getAttribute('aria-pressed'), 'true');
 assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'false');
 assert.equal(run("setTheme('non-esiste')"), false);
 assert.equal(run('currentTheme'), 'sabbia');
 run("setTheme('scura')");
 assert.equal(storage.get('sport-os-theme'), 'scura');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#212120');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#171718');
 assert.equal(themeChoices[2].getAttribute('aria-pressed'), 'true');
 run("setTheme('ink')");
 assert.equal(storage.get('sport-os-theme'), 'ink');
-assert.equal(element('metaThemeColor').getAttribute('content'), '#a7a39e');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#242426');
 assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'true');
 
 // Verifica numericamente il contrasto WCAG AA del testo in tutte le palette.
@@ -100,25 +100,34 @@ for (const theme of ['sabbia', 'ink', 'scura']) {
     assert.ok(contrast(bg, muted) >= 4.5, theme + ' testo attenuato non leggibile');
     assert.ok(contrast(selected, selectedText) >= 4.5, theme + ' selezione poco leggibile');
     assert.ok(contrast(featured, featuredText) >= 4.5, theme + ' card in evidenza poco leggibile');
+    assert.ok(contrast(bg, card) <= 2.5, theme + ' card normali troppo staccate dal fondo');
 }
 
-// Le card in evidenza devono restare sobrie, senza gradienti o ombre vistose.
-for (const [sport, title, home, away, expectedAccent] of [
-    ['seriea', 'Torino - Roma', 'Torino', 'Roma', '#ae7980'],
-    ['nfl', 'Denver Broncos - Raiders', 'Denver Broncos', 'Raiders', '#bf916a'],
-    ['f1', 'GARA: Monza', '', '', '#b98083'],
-    ['nazionale', 'Italia - Francia', 'Italy', 'France', '#7f9a8d']
+// Le card preferite sono solide e immediatamente distinguibili; il Torino prevale
+// anche in trasferta, anziché usare il blu della squadra di casa.
+for (const [sport, title, home, away, accent, surface] of [
+    ['seriea', 'Napoli - Torino', 'Napoli', 'Torino', '#d45170', '#3b2930'],
+    ['nfl', 'Denver Broncos - Raiders', 'Denver Broncos', 'Raiders', '#f18b48', '#3b3029'],
+    ['f1', 'GARA: Monza', '', '', '#ec6679', '#39292e'],
+    ['nazionale', 'Italia - Francia', 'Italia', 'France', '#72b7a7', '#2b3735'],
+    ['champions', 'Inter - Arsenal', 'Inter', 'Arsenal', '#78aff1', '#2b3440']
 ]) {
-    const palette = run('getTopMatchTheme(' + JSON.stringify({ sport, title, home, away }) + ')');
-    assert.equal(palette.color, expectedAccent, 'Accento: ' + title);
-    assert.equal(palette.bg, 'var(--featured-bg)', 'Sfondi piatti, senza degradé: ' + title);
-    assert.ok(palette.border.includes('4px solid ' + expectedAccent));
+    const theme = run('getTopMatchTheme(' + JSON.stringify({ sport, title, home, away }) + ')');
+    assert.equal(theme.color, accent, 'Accento squadra: ' + title);
+    assert.equal(theme.bg, surface, 'Superficie colorata discreta: ' + title);
+    assert.ok(!theme.bg.includes('gradient'), 'Niente sfumatura: ' + title);
+    assert.ok(theme.border.includes('7px solid ' + accent), 'Bordo evidente: ' + title);
+    assert.ok(contrast(surface, '#f7f1ed') >= 4.5, 'Testo leggibile: ' + title);
 }
-assert.ok(run("getTopMatchTheme({ sport: 'seriea', title: 'Roma - Torino', home: 'Roma', away: 'Torino' }).border").includes('border-right'));
+const torinoAway = run("getTopMatchTheme({ sport: 'seriea', title: 'Napoli - Torino', home: 'Napoli', away: 'Torino' })");
+assert.ok(torinoAway.border.includes('border-right'), 'Accento a destra quando il Torino è in trasferta');
+assert.equal(run("isFeaturedTeam('Torino', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), true);
+assert.equal(run("isFeaturedTeam('Napoli', getTopMatchTheme({sport:'seriea', title:'Napoli - Torino', home:'Napoli', away:'Torino'}))"), false);
+assert.ok(html.includes('focus-team'), 'Nome della squadra evidenziata');
+assert.ok(html.includes('focus-event-title'), 'Titolo gara F1 evidenziato');
 assert.ok(!html.includes('Gli orari sono espressi nel fuso italiano.'), 'Impostazioni prolisse');
-assert.ok(html.includes('id="calendarSubscriptionsPanel"') && html.includes('id="sourceStatusPanel"'), 'Pannelli nascosti nelle impostazioni');
-assert.ok(!html.includes('<details class="settings-accordion" id="sourceStatusPanel" open'), 'Lo stato non deve essere aperto di default');
-
+assert.ok(html.includes('id="calendarSubscriptionsPanel"') && html.includes('id="sourceStatusPanel"'), 'Pannelli di impostazioni');
+assert.ok(!html.includes('<details class="settings-accordion" id="sourceStatusPanel" open'), 'Stato chiuso di default');
 
 const event = { id: 'fixture-1', date: '2099-10-08', time: '23:30', timeConfirmed: true,
     startUtc: '2099-10-08T21:30:00Z', title: `Torino - L'Aquila "test" <img onerror=alert(1)>`,
