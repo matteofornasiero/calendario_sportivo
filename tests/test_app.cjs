@@ -8,19 +8,110 @@ assert.equal(html, fs.readFileSync(path.join(root, 'calendario_sportivo.html'), 
 const code = html.match(/<script>([\s\S]*?)<\/script>/)[1];
 const elements = new Map();
 const element = id => {
-    if (!elements.has(id)) elements.set(id, { textContent: '', innerHTML: '', style: {},
+    if (!elements.has(id)) elements.set(id, { textContent: '', innerHTML: '', style: {}, attributes: {},
         classList: { add() {}, remove() {}, toggle() {} },
-        removeAttribute(name) { delete this[name]; }, remove() {}, appendChild() {} });
+        setAttribute(name, value) { this.attributes[name] = value; },
+        getAttribute(name) { return this.attributes[name] || null; },
+        removeAttribute(name) { delete this.attributes[name]; }, remove() {}, appendChild() {} });
     return elements.get(id);
 };
+const themeChoices = ['sabbia', 'ink', 'scura'].map(theme => {
+    const choice = element('theme-choice-' + theme);
+    choice.setAttribute('data-theme-choice', theme);
+    return choice;
+});
+const storage = new Map();
 const document = { readyState: 'loading', hidden: false, getElementById: element,
+    documentElement: element('documentElement'), querySelector: () => element('metaThemeColor'),
+    querySelectorAll: selector => selector === '[data-theme-choice]' ? themeChoices : [],
     addEventListener() {}, createElement: () => element('script'),
     head: { appendChild(script) { script.onload(); } } };
-const sandbox = { document, window: { addEventListener() {} }, URL, URLSearchParams, Intl, Date,
+const sandbox = { document, window: { addEventListener() {},
+    localStorage: {
+        getItem(key) { return storage.get(key) || null; },
+        setItem(key, value) { storage.set(key, value); }
+    } }, URL, URLSearchParams, Intl, Date,
     setTimeout, clearTimeout, setInterval: () => 1, clearInterval() {}, console };
 const context = vm.createContext(sandbox);
 vm.runInContext(code, context);
 const run = expression => vm.runInContext(expression, context);
+
+// Cambiare tema non richiede una rete o un account; persiste anche con preferenze locali.
+assert.equal(run('currentTheme'), 'ink');
+assert.equal(run("setTheme('sabbia')"), true);
+assert.equal(run('currentTheme'), 'sabbia');
+assert.equal(storage.get('sport-os-theme'), 'sabbia');
+assert.equal(document.documentElement.getAttribute('data-theme'), 'sabbia');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#baaa91');
+assert.equal(themeChoices[0].getAttribute('aria-pressed'), 'true');
+assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'false');
+assert.equal(run("setTheme('non-esiste')"), false);
+assert.equal(run('currentTheme'), 'sabbia');
+run("setTheme('scura')");
+assert.equal(storage.get('sport-os-theme'), 'scura');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#212120');
+assert.equal(themeChoices[2].getAttribute('aria-pressed'), 'true');
+run("setTheme('ink')");
+assert.equal(storage.get('sport-os-theme'), 'ink');
+assert.equal(element('metaThemeColor').getAttribute('content'), '#92918d');
+assert.equal(themeChoices[1].getAttribute('aria-pressed'), 'true');
+
+// Verifica numericamente il contrasto WCAG AA del testo in tutte le palette.
+const css = html.match(/<style>([\s\S]*?)<\/style>/)[1];
+const themeBlock = theme => {
+    const pattern = theme === 'ink'
+        ? /:root\s*\{([^}]+)\}/
+        : new RegExp(':root\\[data-theme="' + theme + '"\\]\\s*\\{([^}]+)\\}');
+    const found = css.match(pattern);
+    assert.ok(found, 'CSS tema assente: ' + theme);
+    return found[1];
+};
+const themeColor = (theme, key) => {
+    const block = themeBlock(theme);
+    const found = block.match(new RegExp('--' + key + ':\\s*(#[0-9a-fA-F]{6})'));
+    assert.ok(found, 'Colore assente: ' + theme + ' / ' + key);
+    return found[1];
+};
+const linear = channel => {
+    const x = channel / 255;
+    return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4;
+};
+const luminance = hex => [1, 3, 5].map(offset => parseInt(hex.slice(offset, offset + 2), 16))
+    .map(linear).reduce((sum, value, i) => sum + value * [0.2126, 0.7152, 0.0722][i], 0);
+const contrast = (a, b) => {
+    const x = luminance(a), y = luminance(b);
+    return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
+};
+for (const theme of ['sabbia', 'ink', 'scura']) {
+    const bg = themeColor(theme, 'bg');
+    const card = themeColor(theme, 'compact-bg');
+    const main = themeColor(theme, 'text-main');
+    const sub = themeColor(theme, 'text-sub');
+    const muted = themeColor(theme, 'text-muted');
+    const selected = themeColor(theme, 'selected-bg');
+    const selectedText = themeColor(theme, 'selected-text');
+    assert.ok(contrast(bg, main) >= 4.5, theme + ' testo principale non leggibile');
+    assert.ok(contrast(card, main) >= 4.5, theme + ' testo card non leggibile');
+    assert.ok(contrast(bg, sub) >= 4.5, theme + ' testo secondario non leggibile');
+    assert.ok(contrast(bg, muted) >= 4.5, theme + ' testo attenuato non leggibile');
+    assert.ok(contrast(selected, selectedText) >= 4.5, theme + ' selezione poco leggibile');
+}
+
+// Le card che interessano restano vivaci con nomi leggibili: Torino, Broncos, F1, club italiani.
+for (const [sport, title, home, away, expectedAccent] of [
+    ['seriea', 'Torino - Roma', 'Torino', 'Roma', '#8d1833'],
+    ['nfl', 'Denver Broncos - Raiders', 'Denver Broncos', 'Raiders', '#a94617'],
+    ['f1', 'GARA: Monza', '', '', '#af183b'],
+    ['champions', 'Juventus - PSG', 'Juventus', 'PSG', 'linear-gradient']
+]) {
+    const palette = run('getTopMatchTheme(' + JSON.stringify({ sport, title, home, away }) + ')');
+    assert.ok(palette.bg.includes(expectedAccent), 'Colore card principale: ' + title);
+    const firstHex = palette.bg.match(/#[0-9a-f]{6}/i)[0];
+    assert.ok(contrast(firstHex, '#ffffff') >= 4.5, 'Contrasto card evidenziata: ' + title);
+}
+assert.ok(run("getTopMatchTheme({ sport: 'seriea', title: 'Roma - Torino', home: 'Roma', away: 'Torino' }).border").includes('border-right'), 'Colore a destra in trasferta');
+
+
 const event = { id: 'fixture-1', date: '2099-10-08', time: '23:30', timeConfirmed: true,
     startUtc: '2099-10-08T21:30:00Z', title: `Torino - L'Aquila "test" <img onerror=alert(1)>`,
     home: 'Torino', away: `L'Aquila`, homeCrest: '', awayCrest: '', sport: 'seriea', status: 'TIMED', isTop: true };
