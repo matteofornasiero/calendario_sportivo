@@ -8570,9 +8570,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
     "venue": "Reliant Stadium, Houston",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "26",
+    "awayScore": "3",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -8585,7 +8585,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Las Vegas Strip Street Circuit, Las Vegas, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -19468,7 +19468,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".400",
           "diff": -50,
-          "seed": 10,
+          "seed": 11,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 4
@@ -19491,12 +19491,12 @@ window.standingsData = {
         {
           "name": "Houston Texans",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 6,
           "ties": 0,
-          "pct": ".333",
-          "diff": 14,
-          "seed": 11,
+          "pct": ".400",
+          "diff": 37,
+          "seed": 9,
           "div": "AFC South",
           "conf": "AFC",
           "pos": 2
@@ -19505,10 +19505,10 @@ window.standingsData = {
           "name": "Indianapolis Colts",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
           "wins": 3,
-          "losses": 7,
+          "losses": 8,
           "ties": 0,
-          "pct": ".300",
-          "diff": -63,
+          "pct": ".273",
+          "diff": -86,
           "seed": 12,
           "div": "AFC South",
           "conf": "AFC",
@@ -19563,7 +19563,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".400",
           "diff": -38,
-          "seed": 9,
+          "seed": 10,
           "div": "AFC West",
           "conf": "AFC",
           "pos": 3
@@ -19906,6 +19906,19 @@ window.standingsData = {
           "pos": 2
         },
         {
+          "name": "Houston Texans",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+          "wins": 4,
+          "losses": 6,
+          "ties": 0,
+          "pct": ".400",
+          "diff": 37,
+          "seed": 9,
+          "div": "AFC South",
+          "conf": "AFC",
+          "pos": 2
+        },
+        {
           "name": "Las Vegas Raiders",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
           "wins": 4,
@@ -19913,7 +19926,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".400",
           "diff": -38,
-          "seed": 9,
+          "seed": 10,
           "div": "AFC West",
           "conf": "AFC",
           "pos": 3
@@ -19926,32 +19939,19 @@ window.standingsData = {
           "ties": 0,
           "pct": ".400",
           "diff": -50,
-          "seed": 10,
+          "seed": 11,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 4
         },
         {
-          "name": "Houston Texans",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-          "wins": 3,
-          "losses": 6,
-          "ties": 0,
-          "pct": ".333",
-          "diff": 14,
-          "seed": 11,
-          "div": "AFC South",
-          "conf": "AFC",
-          "pos": 2
-        },
-        {
           "name": "Indianapolis Colts",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
           "wins": 3,
-          "losses": 7,
+          "losses": 8,
           "ties": 0,
-          "pct": ".300",
-          "diff": -63,
+          "pct": ".273",
+          "diff": -86,
           "seed": 12,
           "div": "AFC South",
           "conf": "AFC",
@@ -20414,60 +20414,60 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T03:27:52.630990+00:00",
+  "generatedAt": "2026-11-20T13:04:27.858700+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00"
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00"
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00",
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00",
       "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00"
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00"
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00"
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00"
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00"
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00"
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00",
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00",
       "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00",
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00",
       "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-20T03:27:52.630990+00:00",
+      "updatedAt": "2026-11-20T13:04:27.858700+00:00",
       "season": 2026
     }
   },
