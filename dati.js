@@ -8704,7 +8704,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "USA",
     "venue": "Las Vegas Strip Street Circuit, Las Vegas, USA",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": true
   },
   {
@@ -20414,60 +20414,60 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-22T02:18:18.601796+00:00",
+  "generatedAt": "2026-11-22T09:53:05.096483+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00",
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00",
       "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00",
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00",
       "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00",
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00",
       "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-22T02:18:18.601796+00:00",
+      "updatedAt": "2026-11-22T09:53:05.096483+00:00",
       "season": 2026
     }
   },
