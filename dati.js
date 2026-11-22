@@ -8688,9 +8688,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/113.png",
     "awayCrest": "https://crests.football-data.org/586.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 1,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 12,
     "isTop": true
   },
@@ -18557,6 +18557,17 @@ window.standingsData = {
     },
     {
       "pos": 7,
+      "name": "Napoli",
+      "crest": "https://crests.football-data.org/113.png",
+      "played": 12,
+      "won": 5,
+      "draw": 3,
+      "lost": 4,
+      "points": 18,
+      "diff": 5
+    },
+    {
+      "pos": 8,
       "name": "Juventus",
       "crest": "https://crests.football-data.org/109.png",
       "played": 11,
@@ -18567,7 +18578,7 @@ window.standingsData = {
       "diff": 3
     },
     {
-      "pos": 8,
+      "pos": 9,
       "name": "Bologna",
       "crest": "https://crests.football-data.org/103.png",
       "played": 11,
@@ -18576,17 +18587,6 @@ window.standingsData = {
       "lost": 4,
       "points": 17,
       "diff": 2
-    },
-    {
-      "pos": 9,
-      "name": "Napoli",
-      "crest": "https://crests.football-data.org/113.png",
-      "played": 12,
-      "won": 4,
-      "draw": 4,
-      "lost": 4,
-      "points": 16,
-      "diff": 4
     },
     {
       "pos": 10,
@@ -18601,23 +18601,23 @@ window.standingsData = {
     },
     {
       "pos": 11,
-      "name": "Torino",
-      "crest": "https://crests.football-data.org/586.png",
-      "played": 12,
-      "won": 4,
-      "draw": 3,
-      "lost": 5,
-      "points": 15,
-      "diff": -2
-    },
-    {
-      "pos": 12,
       "name": "Atalanta",
       "crest": "https://crests.football-data.org/102.png",
       "played": 11,
       "won": 4,
       "draw": 2,
       "lost": 5,
+      "points": 14,
+      "diff": -3
+    },
+    {
+      "pos": 12,
+      "name": "Torino",
+      "crest": "https://crests.football-data.org/586.png",
+      "played": 12,
+      "won": 4,
+      "draw": 2,
+      "lost": 6,
       "points": 14,
       "diff": -3
     },
@@ -20414,60 +20414,60 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T20:34:39.442859+00:00",
+  "generatedAt": "2026-11-22T02:18:18.601796+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00"
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00"
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00",
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00",
       "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00"
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00"
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00"
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00"
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00"
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00"
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00",
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00",
       "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00",
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00",
       "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-21T20:34:39.442859+00:00",
+      "updatedAt": "2026-11-22T02:18:18.601796+00:00",
       "season": 2026
     }
   },
