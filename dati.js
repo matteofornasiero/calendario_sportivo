@@ -8721,9 +8721,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/109.png",
     "awayCrest": "https://crests.football-data.org/454.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 4,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 12,
     "isTop": false
   },
@@ -8741,9 +8741,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/103.png",
     "awayCrest": "https://crests.football-data.org/115.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 1,
+    "awayScore": 1,
+    "status": "FINISHED",
     "matchday": 12,
     "isTop": false
   },
@@ -8761,9 +8761,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/471.png",
     "awayCrest": "https://crests.football-data.org/107.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "TIMED",
+    "homeScore": 0,
+    "awayScore": 2,
+    "status": "FINISHED",
     "matchday": 12,
     "isTop": false
   },
@@ -8783,7 +8783,7 @@ window.calendarData = [
     "venue": "",
     "homeScore": null,
     "awayScore": null,
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "matchday": 12,
     "isTop": false
   },
@@ -18524,6 +18524,17 @@ window.standingsData = {
     },
     {
       "pos": 4,
+      "name": "Milan",
+      "crest": "https://crests.football-data.org/98.png",
+      "played": 12,
+      "won": 8,
+      "draw": 3,
+      "lost": 1,
+      "points": 27,
+      "diff": 11
+    },
+    {
+      "pos": 5,
       "name": "Como 1907",
       "crest": "https://crests.football-data.org/7397.png",
       "played": 12,
@@ -18534,29 +18545,29 @@ window.standingsData = {
       "diff": 10
     },
     {
-      "pos": 5,
-      "name": "Milan",
-      "crest": "https://crests.football-data.org/98.png",
-      "played": 11,
-      "won": 7,
-      "draw": 3,
-      "lost": 1,
-      "points": 24,
-      "diff": 10
-    },
-    {
       "pos": 6,
-      "name": "Frosinone",
-      "crest": "https://crests.football-data.org/470.png",
-      "played": 11,
+      "name": "Juventus",
+      "crest": "https://crests.football-data.org/109.png",
+      "played": 12,
       "won": 6,
-      "draw": 2,
+      "draw": 3,
       "lost": 3,
-      "points": 20,
-      "diff": 9
+      "points": 21,
+      "diff": 7
     },
     {
       "pos": 7,
+      "name": "Frosinone",
+      "crest": "https://crests.football-data.org/470.png",
+      "played": 12,
+      "won": 6,
+      "draw": 2,
+      "lost": 4,
+      "points": 20,
+      "diff": 8
+    },
+    {
+      "pos": 8,
       "name": "Napoli",
       "crest": "https://crests.football-data.org/113.png",
       "played": 12,
@@ -18567,29 +18578,29 @@ window.standingsData = {
       "diff": 5
     },
     {
-      "pos": 8,
-      "name": "Juventus",
-      "crest": "https://crests.football-data.org/109.png",
-      "played": 11,
-      "won": 5,
-      "draw": 3,
-      "lost": 3,
-      "points": 18,
-      "diff": 3
-    },
-    {
       "pos": 9,
       "name": "Bologna",
       "crest": "https://crests.football-data.org/103.png",
-      "played": 11,
+      "played": 12,
       "won": 5,
-      "draw": 2,
+      "draw": 3,
       "lost": 4,
-      "points": 17,
+      "points": 18,
       "diff": 2
     },
     {
       "pos": 10,
+      "name": "Genoa",
+      "crest": "https://crests.football-data.org/107.png",
+      "played": 12,
+      "won": 5,
+      "draw": 1,
+      "lost": 6,
+      "points": 16,
+      "diff": -3
+    },
+    {
+      "pos": 11,
       "name": "Cagliari",
       "crest": "https://crests.football-data.org/104.png",
       "played": 12,
@@ -18600,7 +18611,7 @@ window.standingsData = {
       "diff": -7
     },
     {
-      "pos": 11,
+      "pos": 12,
       "name": "Atalanta",
       "crest": "https://crests.football-data.org/102.png",
       "played": 11,
@@ -18611,7 +18622,7 @@ window.standingsData = {
       "diff": -3
     },
     {
-      "pos": 12,
+      "pos": 13,
       "name": "Torino",
       "crest": "https://crests.football-data.org/586.png",
       "played": 12,
@@ -18620,17 +18631,6 @@ window.standingsData = {
       "lost": 6,
       "points": 14,
       "diff": -3
-    },
-    {
-      "pos": 13,
-      "name": "Genoa",
-      "crest": "https://crests.football-data.org/107.png",
-      "played": 11,
-      "won": 4,
-      "draw": 1,
-      "lost": 6,
-      "points": 13,
-      "diff": -5
     },
     {
       "pos": 14,
@@ -18669,12 +18669,12 @@ window.standingsData = {
       "pos": 17,
       "name": "Sassuolo",
       "crest": "https://crests.football-data.org/471.png",
-      "played": 11,
+      "played": 12,
       "won": 2,
       "draw": 2,
-      "lost": 7,
+      "lost": 8,
       "points": 8,
-      "diff": -13
+      "diff": -15
     },
     {
       "pos": 18,
@@ -18689,25 +18689,25 @@ window.standingsData = {
     },
     {
       "pos": 19,
-      "name": "Venezia FC",
-      "crest": "https://crests.football-data.org/454.png",
-      "played": 11,
-      "won": 2,
-      "draw": 0,
-      "lost": 9,
+      "name": "Udinese",
+      "crest": "https://crests.football-data.org/115.png",
+      "played": 12,
+      "won": 1,
+      "draw": 3,
+      "lost": 8,
       "points": 6,
       "diff": -13
     },
     {
       "pos": 20,
-      "name": "Udinese",
-      "crest": "https://crests.football-data.org/115.png",
-      "played": 11,
-      "won": 1,
-      "draw": 2,
-      "lost": 8,
-      "points": 5,
-      "diff": -13
+      "name": "Venezia FC",
+      "crest": "https://crests.football-data.org/454.png",
+      "played": 12,
+      "won": 2,
+      "draw": 0,
+      "lost": 10,
+      "points": 6,
+      "diff": -17
     }
   ],
   "champions": [
@@ -19113,49 +19113,49 @@ window.standingsData = {
       "pos": "1",
       "name": "Andrea Kimi Antonelli",
       "team": "Mercedes",
-      "points": "390",
+      "points": "402",
       "wins": "9"
     },
     {
       "pos": "2",
       "name": "Max Verstappen",
       "team": "Red Bull",
-      "points": "279",
-      "wins": "3"
+      "points": "304",
+      "wins": "4"
     },
     {
       "pos": "3",
-      "name": "George Russell",
-      "team": "Mercedes",
-      "points": "262",
-      "wins": "3"
+      "name": "Lewis Hamilton",
+      "team": "Ferrari",
+      "points": "267",
+      "wins": "1"
     },
     {
       "pos": "4",
-      "name": "Lewis Hamilton",
-      "team": "Ferrari",
-      "points": "261",
-      "wins": "1"
+      "name": "George Russell",
+      "team": "Mercedes",
+      "points": "264",
+      "wins": "3"
     },
     {
       "pos": "5",
-      "name": "Charles Leclerc",
-      "team": "Ferrari",
-      "points": "249",
-      "wins": "1"
+      "name": "Lando Norris",
+      "team": "McLaren",
+      "points": "264",
+      "wins": "3"
     },
     {
       "pos": "6",
-      "name": "Lando Norris",
-      "team": "McLaren",
-      "points": "246",
-      "wins": "3"
+      "name": "Charles Leclerc",
+      "team": "Ferrari",
+      "points": "250",
+      "wins": "1"
     },
     {
       "pos": "7",
       "name": "Oscar Piastri",
       "team": "McLaren",
-      "points": "152",
+      "points": "167",
       "wins": "0"
     },
     {
@@ -19176,7 +19176,7 @@ window.standingsData = {
       "pos": "10",
       "name": "Pierre Gasly",
       "team": "Alpine F1 Team",
-      "points": "42",
+      "points": "52",
       "wins": "0"
     },
     {
@@ -19190,7 +19190,7 @@ window.standingsData = {
       "pos": "12",
       "name": "Franco Colapinto",
       "team": "Alpine F1 Team",
-      "points": "27",
+      "points": "35",
       "wins": "0"
     },
     {
@@ -19216,22 +19216,22 @@ window.standingsData = {
     },
     {
       "pos": "16",
+      "name": "Carlos Sainz",
+      "team": "Williams",
+      "points": "11",
+      "wins": "0"
+    },
+    {
+      "pos": "17",
       "name": "Esteban Ocon",
       "team": "Haas F1 Team",
       "points": "7",
       "wins": "0"
     },
     {
-      "pos": "17",
+      "pos": "18",
       "name": "Fernando Alonso",
       "team": "Aston Martin",
-      "points": "7",
-      "wins": "0"
-    },
-    {
-      "pos": "18",
-      "name": "Carlos Sainz",
-      "team": "Williams",
       "points": "7",
       "wins": "0"
     },
@@ -19290,28 +19290,28 @@ window.standingsData = {
       "pos": "1",
       "name": "Mercedes",
       "team": "",
-      "points": "652",
+      "points": "666",
       "wins": "12"
     },
     {
       "pos": "2",
       "name": "Ferrari",
       "team": "",
-      "points": "510",
+      "points": "517",
       "wins": "2"
     },
     {
       "pos": "3",
       "name": "Red Bull",
       "team": "",
-      "points": "415",
-      "wins": "3"
+      "points": "440",
+      "wins": "4"
     },
     {
       "pos": "4",
       "name": "McLaren",
       "team": "",
-      "points": "398",
+      "points": "431",
       "wins": "3"
     },
     {
@@ -19325,7 +19325,7 @@ window.standingsData = {
       "pos": "6",
       "name": "Alpine F1 Team",
       "team": "",
-      "points": "69",
+      "points": "87",
       "wins": "0"
     },
     {
@@ -19346,7 +19346,7 @@ window.standingsData = {
       "pos": "9",
       "name": "Williams",
       "team": "",
-      "points": "12",
+      "points": "16",
       "wins": "0"
     },
     {
@@ -20414,60 +20414,60 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-22T09:53:05.096483+00:00",
+  "generatedAt": "2026-11-22T17:52:26.165180+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00",
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00",
       "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00"
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00",
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00",
       "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00",
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00",
       "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-22T09:53:05.096483+00:00",
+      "updatedAt": "2026-11-22T17:52:26.165180+00:00",
       "season": 2026
     }
   },
