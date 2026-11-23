@@ -9032,7 +9032,7 @@ window.calendarData = [
     "venue": "",
     "homeScore": null,
     "awayScore": null,
-    "status": "TIMED",
+    "status": "IN_PLAY",
     "matchday": 12,
     "isTop": false
   },
@@ -18634,6 +18634,17 @@ window.standingsData = {
     },
     {
       "pos": 14,
+      "name": "Fiorentina",
+      "crest": "https://crests.football-data.org/99.png",
+      "played": 12,
+      "won": 2,
+      "draw": 4,
+      "lost": 6,
+      "points": 10,
+      "diff": -8
+    },
+    {
+      "pos": 15,
       "name": "Lecce",
       "crest": "https://crests.football-data.org/5890.png",
       "played": 12,
@@ -18644,18 +18655,18 @@ window.standingsData = {
       "diff": -13
     },
     {
-      "pos": 15,
-      "name": "Fiorentina",
-      "crest": "https://crests.football-data.org/99.png",
-      "played": 11,
+      "pos": 16,
+      "name": "Monza",
+      "crest": "https://crests.football-data.org/5911.png",
+      "played": 12,
       "won": 2,
-      "draw": 3,
-      "lost": 6,
-      "points": 9,
+      "draw": 2,
+      "lost": 8,
+      "points": 8,
       "diff": -8
     },
     {
-      "pos": 16,
+      "pos": 17,
       "name": "Parma",
       "crest": "https://crests.football-data.org/112.png",
       "played": 12,
@@ -18666,7 +18677,7 @@ window.standingsData = {
       "diff": -12
     },
     {
-      "pos": 17,
+      "pos": 18,
       "name": "Sassuolo",
       "crest": "https://crests.football-data.org/471.png",
       "played": 12,
@@ -18675,17 +18686,6 @@ window.standingsData = {
       "lost": 8,
       "points": 8,
       "diff": -15
-    },
-    {
-      "pos": 18,
-      "name": "Monza",
-      "crest": "https://crests.football-data.org/5911.png",
-      "played": 11,
-      "won": 2,
-      "draw": 1,
-      "lost": 8,
-      "points": 7,
-      "diff": -8
     },
     {
       "pos": 19,
@@ -20414,60 +20414,60 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-23T07:49:45.397811+00:00",
+  "generatedAt": "2026-11-23T20:18:55.678620+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00"
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00"
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00",
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00",
       "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00"
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00"
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00"
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00"
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00"
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00"
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00",
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00",
       "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00",
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00",
       "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-23T07:49:45.397811+00:00",
+      "updatedAt": "2026-11-23T20:18:55.678620+00:00",
       "season": 2026
     }
   },
