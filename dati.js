@@ -9030,9 +9030,9 @@ window.calendarData = [
     "homeCrest": "https://crests.football-data.org/5911.png",
     "awayCrest": "https://crests.football-data.org/99.png",
     "venue": "",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": 3,
+    "awayScore": 0,
+    "status": "FINISHED",
     "matchday": 12,
     "isTop": false
   },
@@ -9050,9 +9050,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
     "venue": "Northwest Stadium, Landover",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "SCHEDULED",
+    "homeScore": "22",
+    "awayScore": "20",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -18634,14 +18634,14 @@ window.standingsData = {
     },
     {
       "pos": 14,
-      "name": "Fiorentina",
-      "crest": "https://crests.football-data.org/99.png",
+      "name": "Monza",
+      "crest": "https://crests.football-data.org/5911.png",
       "played": 12,
-      "won": 2,
-      "draw": 4,
-      "lost": 6,
+      "won": 3,
+      "draw": 1,
+      "lost": 8,
       "points": 10,
-      "diff": -8
+      "diff": -5
     },
     {
       "pos": 15,
@@ -18656,14 +18656,14 @@ window.standingsData = {
     },
     {
       "pos": 16,
-      "name": "Monza",
-      "crest": "https://crests.football-data.org/5911.png",
+      "name": "Fiorentina",
+      "crest": "https://crests.football-data.org/99.png",
       "played": 12,
       "won": 2,
-      "draw": 2,
-      "lost": 8,
-      "points": 8,
-      "diff": -8
+      "draw": 3,
+      "lost": 7,
+      "points": 9,
+      "diff": -11
     },
     {
       "pos": 17,
@@ -19425,11 +19425,11 @@ window.standingsData = {
           "name": "Cincinnati Bengals",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
           "wins": 7,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".778",
-          "diff": 85,
-          "seed": 3,
+          "pct": ".700",
+          "diff": 83,
+          "seed": 4,
           "div": "AFC North",
           "conf": "AFC",
           "pos": 1
@@ -19483,7 +19483,7 @@ window.standingsData = {
           "ties": 0,
           "pct": ".700",
           "diff": 120,
-          "seed": 4,
+          "seed": 3,
           "div": "AFC South",
           "conf": "AFC",
           "pos": 1
@@ -19612,11 +19612,11 @@ window.standingsData = {
         {
           "name": "Washington Commanders",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 5,
           "ties": 1,
-          "pct": ".389",
-          "diff": -27,
+          "pct": ".450",
+          "diff": -25,
           "seed": 11,
           "div": "NFC East",
           "conf": "NFC",
@@ -19828,19 +19828,6 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Cincinnati Bengals",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-          "wins": 7,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".778",
-          "diff": 85,
-          "seed": 3,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 1
-        },
-        {
           "name": "Jacksonville Jaguars",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
           "wins": 7,
@@ -19848,8 +19835,21 @@ window.standingsData = {
           "ties": 0,
           "pct": ".700",
           "diff": 120,
-          "seed": 4,
+          "seed": 3,
           "div": "AFC South",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
+          "name": "Cincinnati Bengals",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "wins": 7,
+          "losses": 3,
+          "ties": 0,
+          "pct": ".700",
+          "diff": 83,
+          "seed": 4,
+          "div": "AFC North",
           "conf": "AFC",
           "pos": 1
         },
@@ -20144,11 +20144,11 @@ window.standingsData = {
         {
           "name": "Washington Commanders",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
-          "wins": 3,
+          "wins": 4,
           "losses": 5,
           "ties": 1,
-          "pct": ".389",
-          "diff": -27,
+          "pct": ".450",
+          "diff": -25,
           "seed": 11,
           "div": "NFC East",
           "conf": "NFC",
@@ -20250,19 +20250,6 @@ window.standingsData = {
           "pos": 1
         },
         {
-          "name": "Cincinnati Bengals",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-          "wins": 7,
-          "losses": 2,
-          "ties": 0,
-          "pct": ".778",
-          "diff": 85,
-          "seed": 3,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 1
-        },
-        {
           "name": "Jacksonville Jaguars",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
           "wins": 7,
@@ -20270,8 +20257,21 @@ window.standingsData = {
           "ties": 0,
           "pct": ".700",
           "diff": 120,
-          "seed": 4,
+          "seed": 3,
           "div": "AFC South",
+          "conf": "AFC",
+          "pos": 1
+        },
+        {
+          "name": "Cincinnati Bengals",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+          "wins": 7,
+          "losses": 3,
+          "ties": 0,
+          "pct": ".700",
+          "diff": 83,
+          "seed": 4,
+          "div": "AFC North",
           "conf": "AFC",
           "pos": 1
         },
@@ -20414,60 +20414,60 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-23T20:18:55.678620+00:00",
+  "generatedAt": "2026-11-24T04:50:39.928396+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00",
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00",
       "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00"
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00",
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00",
       "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00",
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00",
       "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-23T20:18:55.678620+00:00",
+      "updatedAt": "2026-11-24T04:50:39.928396+00:00",
       "season": 2026
     }
   },
