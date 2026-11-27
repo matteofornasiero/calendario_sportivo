@@ -9486,9 +9486,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
     "venue": "Highmark Stadium, Orchard Park",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "13",
+    "awayScore": "10",
+    "status": "FINISHED",
     "isTop": false
   },
   {
@@ -9501,7 +9501,7 @@ window.calendarData = [
     "sport": "f1",
     "loc": "Qatar",
     "venue": "Lusail International Circuit, Lusail, Qatar",
-    "status": "SCHEDULED",
+    "status": "PAST",
     "isTop": false
   },
   {
@@ -19370,11 +19370,11 @@ window.standingsData = {
         {
           "name": "Buffalo Bills",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "wins": 9,
+          "wins": 10,
           "losses": 1,
           "ties": 0,
-          "pct": ".900",
-          "diff": 105,
+          "pct": ".909",
+          "diff": 108,
           "seed": 1,
           "div": "AFC East",
           "conf": "AFC",
@@ -19546,10 +19546,10 @@ window.standingsData = {
           "name": "Kansas City Chiefs",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
           "wins": 8,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".800",
-          "diff": 108,
+          "pct": ".727",
+          "diff": 105,
           "seed": 5,
           "div": "AFC West",
           "conf": "AFC",
@@ -19804,11 +19804,11 @@ window.standingsData = {
         {
           "name": "Buffalo Bills",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "wins": 9,
+          "wins": 10,
           "losses": 1,
           "ties": 0,
-          "pct": ".900",
-          "diff": 105,
+          "pct": ".909",
+          "diff": 108,
           "seed": 1,
           "div": "AFC East",
           "conf": "AFC",
@@ -19857,10 +19857,10 @@ window.standingsData = {
           "name": "Kansas City Chiefs",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
           "wins": 8,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".800",
-          "diff": 108,
+          "pct": ".727",
+          "diff": 105,
           "seed": 5,
           "div": "AFC West",
           "conf": "AFC",
@@ -20226,11 +20226,11 @@ window.standingsData = {
         {
           "name": "Buffalo Bills",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-          "wins": 9,
+          "wins": 10,
           "losses": 1,
           "ties": 0,
-          "pct": ".900",
-          "diff": 105,
+          "pct": ".909",
+          "diff": 108,
           "seed": 1,
           "div": "AFC East",
           "conf": "AFC",
@@ -20279,10 +20279,10 @@ window.standingsData = {
           "name": "Kansas City Chiefs",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
           "wins": 8,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".800",
-          "diff": 108,
+          "pct": ".727",
+          "diff": 105,
           "seed": 5,
           "div": "AFC West",
           "conf": "AFC",
@@ -20414,60 +20414,60 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-27T04:18:34.123673+00:00",
+  "generatedAt": "2026-11-27T13:58:32.320676+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00"
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00"
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00",
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00",
       "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00"
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00"
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00"
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00"
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00"
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00"
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00",
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00",
       "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00",
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00",
       "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-27T04:18:34.123673+00:00",
+      "updatedAt": "2026-11-27T13:58:32.320676+00:00",
       "season": 2026
     }
   },
