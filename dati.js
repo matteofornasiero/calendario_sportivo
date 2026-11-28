@@ -9551,9 +9551,9 @@ window.calendarData = [
     "homeCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
     "awayCrest": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
     "venue": "Acrisure Stadium, Pittsburgh",
-    "homeScore": null,
-    "awayScore": null,
-    "status": "IN_PLAY",
+    "homeScore": "27",
+    "awayScore": "5",
+    "status": "FINISHED",
     "isTop": true
   },
   {
@@ -19435,6 +19435,19 @@ window.standingsData = {
           "pos": 1
         },
         {
+          "name": "Pittsburgh Steelers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "wins": 7,
+          "losses": 4,
+          "ties": 0,
+          "pct": ".636",
+          "diff": 35,
+          "seed": 6,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 2
+        },
+        {
           "name": "Cleveland Browns",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
           "wins": 6,
@@ -19442,19 +19455,6 @@ window.standingsData = {
           "ties": 0,
           "pct": ".600",
           "diff": -32,
-          "seed": 6,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 2
-        },
-        {
-          "name": "Pittsburgh Steelers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-          "wins": 6,
-          "losses": 4,
-          "ties": 0,
-          "pct": ".600",
-          "diff": 13,
           "seed": 7,
           "div": "AFC North",
           "conf": "AFC",
@@ -19533,10 +19533,10 @@ window.standingsData = {
           "name": "Denver Broncos",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
           "wins": 8,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".800",
-          "diff": 26,
+          "pct": ".727",
+          "diff": 4,
           "seed": 2,
           "div": "AFC West",
           "conf": "AFC",
@@ -19818,10 +19818,10 @@ window.standingsData = {
           "name": "Denver Broncos",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
           "wins": 8,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".800",
-          "diff": 26,
+          "pct": ".727",
+          "diff": 4,
           "seed": 2,
           "div": "AFC West",
           "conf": "AFC",
@@ -19867,6 +19867,19 @@ window.standingsData = {
           "pos": 2
         },
         {
+          "name": "Pittsburgh Steelers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "wins": 7,
+          "losses": 4,
+          "ties": 0,
+          "pct": ".636",
+          "diff": 35,
+          "seed": 6,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 2
+        },
+        {
           "name": "Cleveland Browns",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
           "wins": 6,
@@ -19874,19 +19887,6 @@ window.standingsData = {
           "ties": 0,
           "pct": ".600",
           "diff": -32,
-          "seed": 6,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 2
-        },
-        {
-          "name": "Pittsburgh Steelers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-          "wins": 6,
-          "losses": 4,
-          "ties": 0,
-          "pct": ".600",
-          "diff": 13,
           "seed": 7,
           "div": "AFC North",
           "conf": "AFC",
@@ -20240,10 +20240,10 @@ window.standingsData = {
           "name": "Denver Broncos",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
           "wins": 8,
-          "losses": 2,
+          "losses": 3,
           "ties": 0,
-          "pct": ".800",
-          "diff": 26,
+          "pct": ".727",
+          "diff": 4,
           "seed": 2,
           "div": "AFC West",
           "conf": "AFC",
@@ -20289,6 +20289,19 @@ window.standingsData = {
           "pos": 2
         },
         {
+          "name": "Pittsburgh Steelers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+          "wins": 7,
+          "losses": 4,
+          "ties": 0,
+          "pct": ".636",
+          "diff": 35,
+          "seed": 6,
+          "div": "AFC North",
+          "conf": "AFC",
+          "pos": 2
+        },
+        {
           "name": "Cleveland Browns",
           "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
           "wins": 6,
@@ -20296,19 +20309,6 @@ window.standingsData = {
           "ties": 0,
           "pct": ".600",
           "diff": -32,
-          "seed": 6,
-          "div": "AFC North",
-          "conf": "AFC",
-          "pos": 2
-        },
-        {
-          "name": "Pittsburgh Steelers",
-          "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-          "wins": 6,
-          "losses": 4,
-          "ties": 0,
-          "pct": ".600",
-          "diff": 13,
           "seed": 7,
           "div": "AFC North",
           "conf": "AFC",
@@ -20414,60 +20414,60 @@ window.standingsData = {
 
 window.calendarMeta = {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-27T22:45:09.351075+00:00",
+  "generatedAt": "2026-11-28T07:59:22.125597+00:00",
   "timezone": "Europe/Rome",
   "footballSeason": "2026/27",
   "sources": {
     "seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00"
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00"
     },
     "champions": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00"
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00"
     },
     "nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00",
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00",
       "season": 2026
     },
     "f1": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00"
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00"
     },
     "nazionale": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00"
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00"
     },
     "coppa": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00"
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00"
     },
     "supercoppa": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00"
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00"
     },
     "standings_seriea": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00"
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00"
     },
     "standings_champions": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00"
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00"
     },
     "standings_f1_drivers": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00",
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00",
       "season": 2026
     },
     "standings_f1_constructors": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00",
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00",
       "season": 2026
     },
     "standings_nfl": {
       "status": "ok",
-      "updatedAt": "2026-11-27T22:45:09.351075+00:00",
+      "updatedAt": "2026-11-28T07:59:22.125597+00:00",
       "season": 2026
     }
   },
